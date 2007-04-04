@@ -1,0 +1,27 @@
+<h1>Listing plans</h1>
+
+<table>
+  <tr>
+  <% for column in Plan.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for plan in @plans %>
+  <tr>
+  <% for column in Plan.content_columns %>
+    <td><%=h plan.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => plan %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => plan %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => plan }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @plan_pages.current.previous } if @plan_pages.current.previous %>
+<%= link_to 'Next page', { :page => @plan_pages.current.next } if @plan_pages.current.next %> 
+
+<br />
+
+<%= link_to 'New plan', :action => 'new' %>
