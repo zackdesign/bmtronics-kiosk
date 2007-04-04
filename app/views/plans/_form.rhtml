@@ -1,0 +1,38 @@
+<%= error_messages_for 'plan' %>
+
+<!--[form:plan]-->
+<p><label for="plan_name">Name</label><br/>
+<%= text_field 'plan', 'name'  %></p>
+
+<p><label for="plan_comments">Comments</label><br/>
+<%= text_area 'plan', 'comments'  %></p>
+
+<p><label for="plan_price">Price</label><br/>
+$<%= text_field 'plan', 'price'  %></p>
+
+<p><label for="plan_flexi_code">Flexi code</label><br/>
+<%= text_field 'plan', 'flexi_code'  %></p>
+
+<p><label for="plan_flexi_price">Flexi price</label><br/>
+$<%= text_field 'plan', 'flexi_price'  %></p>
+
+<p><label for="plan_offer">Offer</label><br/>
+<%= text_field 'plan', 'offer'  %></p>
+
+<p><label for="plan_contract">Contract (months)</label><br/>
+<%= text_field 'plan', 'contract'  %></p>
+
+<p><label for="plan_offer_price">Offer price</label><br/>
+$<%= text_field 'plan', 'offer_price'  %></p>
+
+<% for phone in @phones %>
+
+<p>Phones included in this plan:</p>
+
+<p><input type="checkbox" name="plan[phone_ids][]" value="<%= phone.id %>" />
+<label for="plan_phone_id"><%= phone.name %></label></p>
+
+<% end %>
+
+<!--[eoform:plan]-->
+

@@ -1,0 +1,17 @@
+<%= error_messages_for 'phone' %>
+
+<!--[form:phone]-->
+<p><label for="phone_name">Name</label><br/>
+<%= text_field 'phone', 'name'  %></p>
+
+<p><label for="phone_description">Description</label><br/>
+<%= text_area 'phone', 'description'  %></p>
+
+<p><label for="phone_outright">Buy Outright Cost</label><br/>
+$<%= text_field 'phone', 'outright'  %></p>
+
+<p><label for="phone_outofstock">Outofstock</label><br/>
+<select id="phone_outofstock" name="phone[outofstock]"><option value="false" selected>False</option><option value="true">True</option></select></p>
+
+<!--[eoform:phone]-->
+
