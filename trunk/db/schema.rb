@@ -2,12 +2,12 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 7) do
+ActiveRecord::Schema.define(:version => 8) do
 
   create_table "accessories", :force => true do |t|
     t.column "name",         :text
     t.column "description",  :text
-    t.column "price",        :integer
+    t.column "price",        :float
     t.column "created_at",   :datetime
     t.column "updated_at",   :datetime
     t.column "outofstock",   :boolean,  :default => false

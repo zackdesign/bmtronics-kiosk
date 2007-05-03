@@ -1,0 +1,63 @@
+<style>
+.label
+{
+	font-weight: bold;
+}
+
+.text
+{
+}
+
+.list
+{
+	width: 20em;
+	height: 10em;
+	overflow: scroll;
+}
+</style>
+
+<div class="label">Name:</div>
+<div class="text"><%=h @accessory.name %></div>
+
+<div class="label">Description:</div>
+<div class="text"><%=h @accessory.description %></div>
+
+<div class="label">Price:</div>
+<div class="text"><%= number_to_currency @accessory.price %></div>
+
+<div class="label">Stock:</div>
+<div class="text"><%= ((@accessory.outofstock?) ? "Sold Out" : "Available") %></div>
+
+<div class="label">Discontinued:</div>
+<div class="text"><%= ((@accessory.discontinued?) ? "Yes" : "No") %></div>
+
+<div class="label">Phones with this accessory:</div>
+<%
+  unless @accessory.phones.empty?
+%>
+<div class="list">
+<%
+    for phone in @accessory.phones
+%>
+<%= phone.name %><br />
+<%
+    end
+%>
+</div>
+Number of phones: <%=  @accessory.phones.count %>
+<%
+  else
+%>
+    <div>None</div>
+<%
+  end
+%>
+
+<div class="label">Created:</div>
+<div class="text"><%=  @accessory.created_at.strftime("%b %d %Y at %H:%M:%S") %></div>
+
+<div class="label">Updated:</div>
+<div class="text"><%=  @accessory.updated_at.strftime("%b %d %Y at %H:%M:%S") %></div>
+
+<%= link_to 'Edit', :action => 'edit', :id => @accessory %> |
+<%= link_to 'Back', :action => 'list' %>

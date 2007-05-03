@@ -1,0 +1,36 @@
+<h1>Listing Accessories</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Stock</th>
+    <th>Discontinued</th>
+    <th>Phones</th>
+    <th>Created</th>
+    <th>Updated</th>
+    <th colspan="3">Actions</th>
+  </tr>
+  
+<% for accessory in @accessories %>
+  <tr>
+    <td><%=h accessory.name %></td>
+    <td><%=h accessory.description %></td>
+    <td><%=  number_to_currency accessory.price %></td>
+    <td><%=  ((accessory.outofstock?) ? "Sold Out" : "Available") %></td>
+    <td><%=  ((accessory.discontinued?) ? "Yes" : "No") %></td>
+    <td><%=  accessory.phones.count %></td>
+    <td><%=  accessory.created_at.strftime("%b %d %Y at %H:%M:%S") %></td>
+    <td><%=  accessory.updated_at.strftime("%b %d %Y at %H:%M:%S") %></td>
+    <td><%= link_to 'Show', :action => 'show', :id => accessory %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => accessory %></td>
+    <td><%= link_to 'Delete', { :action => 'destroy', :id => accessory }, :confirm => ((accessory.phones.empty?) ? "Permanently delete this accessory ?" : "WARNING: Deleting this accessory will also delete it from #{accessory.phones.count} phone(s).\n\nPermanently delete this accessory ?"), :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @accessory_pages.current.previous } if @accessory_pages.current.previous %>
+<%= link_to 'Next page', { :page => @accessory_pages.current.next } if @accessory_pages.current.next %> 
+
+<%= link_to 'New accessory', :action => 'new' %>

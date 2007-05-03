@@ -1,0 +1,25 @@
+<%= error_messages_for 'accessory' %>
+
+<!--[form:accessory]-->
+<p><label for="accessory_name">Name</label><br/>
+<%= text_area 'accessory', 'name'  %></p>
+
+<p><label for="accessory_description">Description</label><br/>
+<%= text_area 'accessory', 'description'  %></p>
+
+<p><label for="accessory_price">Price</label><br/>
+<%= text_field 'accessory', 'price'  %></p>
+
+<!--<p><label for="accessory_created_at">Created at</label><br/>
+<%= datetime_select 'accessory', 'created_at'  %></p>
+
+<p><label for="accessory_updated_at">Updated at</label><br/>
+<%= datetime_select 'accessory', 'updated_at'  %></p>-->
+
+<p><label for="accessory_outofstock">Outofstock</label><br/>
+<select id="accessory_outofstock" name="accessory[outofstock]"><option value="false" selected>False</option><option value="true">True</option></select></p>
+
+<p><label for="accessory_discontinued">Discontinued</label><br/>
+<select id="accessory_discontinued" name="accessory[discontinued]"><option value="false" selected>False</option><option value="true">True</option></select></p>
+<!--[eoform:accessory]-->
+
