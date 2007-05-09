@@ -16825,3 +16825,462 @@ Rendering plans/list
   [4;35;1mPhone Load (0.000205)[0m   [0mSELECT * FROM phones INNER JOIN phones_plans ON phones.id = phones_plans.phone_id WHERE (phones_plans.plan_id = 1 ) [0m
   [4;36;1mPhone Columns (0.001294)[0m   [0;1mSHOW FIELDS FROM phones[0m
 Completed in 0.04509 (22 reqs/sec) | Rendering: 0.01783 (39%) | DB: 0.00687 (15%) | 200 OK [http://isaac/plans]
+
+
+Processing PlansController#new (for 127.0.0.1 at 2007-05-09 16:23:39) [GET]
+  Session ID: 751d88cdf91c317bf61bba3400dd2976
+  Parameters: {"action"=>"new", "controller"=>"plans"}
+  [4;35;1mPlan Columns (0.001547)[0m   [0mSHOW FIELDS FROM plans[0m
+DEPRECATION WARNING: find_all is deprecated and will be removed from Rails 2.0 (use find(:all, ...))  See http://www.rubyonrails.org/deprecation for details. (called from new at /var/www/bmtronics-kiosk/config/../app/controllers/plans_controller.rb:24)
+  [4;36;1mPhone Load (0.000192)[0m   [0;1mSELECT * FROM phones [0m
+Rendering  within layouts/main
+Rendering plans/new
+  [4;35;1mPhone Columns (0.002052)[0m   [0mSHOW FIELDS FROM phones[0m
+Rendered plans/_form (0.00787)
+Completed in 0.03719 (26 reqs/sec) | Rendering: 0.01226 (32%) | DB: 0.00379 (10%) | 200 OK [http://isaac/plans/new]
+
+
+Processing PlansController#new (for 127.0.0.1 at 2007-05-09 16:30:10) [GET]
+  Session ID: 751d88cdf91c317bf61bba3400dd2976
+  Parameters: {"action"=>"new", "controller"=>"plans"}
+  [4;36;1mPlan Columns (0.004251)[0m   [0;1mSHOW FIELDS FROM plans[0m
+DEPRECATION WARNING: find_all is deprecated and will be removed from Rails 2.0 (use find(:all, ...))  See http://www.rubyonrails.org/deprecation for details. (called from new at /var/www/bmtronics-kiosk/config/../app/controllers/plans_controller.rb:24)
+  [4;35;1mPhone Load (0.000190)[0m   [0mSELECT * FROM phones [0m
+Rendering  within layouts/main
+Rendering plans/new
+  [4;36;1mPhone Columns (0.001320)[0m   [0;1mSHOW FIELDS FROM phones[0m
+Rendered plans/_form (0.00758)
+ERROR: compiling _run_rhtml_47app47views47layouts47main46rhtml RAISED compile error
+/var/www/bmtronics-kiosk/config/../app/views/layouts/main.rhtml:47: syntax error, unexpected kELSE, expecting kTHEN or ':' or '\n' or ';'
+_erbout.concat "      "; _erbout.concat(( link_to(image_tag(if :action == "new" "tabs/tab_new_sh.gif" else "tabs/tab_new_up.gif" end , 
+                                                                                                          ^
+/var/www/bmtronics-kiosk/config/../app/views/layouts/main.rhtml:47: syntax error, unexpected kEND, expecting ')'
+_erbout.concat "      "; _erbout.concat(( link_to(image_tag(if :action == "new" "tabs/tab_new_sh.gif" else "tabs/tab_new_up.gif" end , 
+                                                                                                                                    ^
+/var/www/bmtronics-kiosk/config/../app/views/layouts/main.rhtml:48: syntax error, unexpected ',', expecting ')'
+/var/www/bmtronics-kiosk/config/../app/views/layouts/main.rhtml:49: syntax error, unexpected ',', expecting ')'
+/var/www/bmtronics-kiosk/config/../app/views/layouts/main.rhtml:50: syntax error, unexpected ',', expecting ')'
+/var/www/bmtronics-kiosk/config/../app/views/layouts/main.rhtml:51: syntax error, unexpected ',', expecting ')'
+/var/www/bmtronics-kiosk/config/../app/views/layouts/main.rhtml:52: syntax error, unexpected ',', expecting ')'
+/var/www/bmtronics-kiosk/config/../app/views/layouts/main.rhtml:54: syntax error, unexpected ')', expecting kEND
+                 { :action => "new" }) ).to_s); _erbout.concat "\n"
+                                        ^
+Function body: def _run_rhtml_47app47views47layouts47main46rhtml(local_assigns)
+_erbout = ''; _erbout.concat "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n"
+_erbout.concat "       \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n"
+_erbout.concat "\n"
+_erbout.concat "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">\n"
+_erbout.concat "<head>\n"
+_erbout.concat "  <meta http-equiv=\"content-type\" content=\"text/html;charset=UTF-8\" />\n"
+_erbout.concat "  <title>Plans: "; _erbout.concat(( controller.action_name ).to_s); _erbout.concat "</title>\n"
+_erbout.concat "  "; _erbout.concat(( stylesheet_link_tag "main" , :media => "all" ).to_s); _erbout.concat "\n"
+_erbout.concat "  <script type=\"text/JavaScript\">\n"
+_erbout.concat "<!--\n"
+_erbout.concat "function MM_swapImgRestore() { //v3.0\n"
+_erbout.concat "  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;\n"
+_erbout.concat "}\n"
+_erbout.concat "\n"
+_erbout.concat "function MM_findObj(n, d) { //v4.01\n"
+_erbout.concat "  var p,i,x;  if(!d) d=document; if((p=n.indexOf(\"?\"))>0&&parent.frames.length) {\n"
+_erbout.concat "    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}\n"
+_erbout.concat "  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];\n"
+_erbout.concat "  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);\n"
+_erbout.concat "  if(!x && d.getElementById) x=d.getElementById(n); return x;\n"
+_erbout.concat "}\n"
+_erbout.concat "\n"
+_erbout.concat "function MM_swapImage() { //v3.0\n"
+_erbout.concat "  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)\n"
+_erbout.concat "   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}\n"
+_erbout.concat "}\n"
+_erbout.concat "function inputFocus(ref, defaultString) {\n"
+_erbout.concat "\tif (ref.value == defaultString) {\n"
+_erbout.concat "\t\tref.value = '';\n"
+_erbout.concat "\t}\n"
+_erbout.concat "}\n"
+_erbout.concat "\n"
+_erbout.concat "function inputBlur(ref, defaultString) {\n"
+_erbout.concat "\tif (ref.value == '')  {\n"
+_erbout.concat "\t\tref.value = defaultString;\n"
+_erbout.concat "\t}\n"
+_erbout.concat "}\n"
+_erbout.concat "//-->\n"
+_erbout.concat "</script>\n"
+_erbout.concat "</head>\n"
+_erbout.concat "<body>\n"
+_erbout.concat "\n"
+_erbout.concat "<div id=\"headerArea\">\n"
+_erbout.concat "   "; _erbout.concat(( image_tag("leftCol_logo.gif" , :size => "157x96", :alt => "BM Tronics Admin" ) ).to_s); _erbout.concat "\n"
+_erbout.concat "\t<div id=\"menuArea\">\n"
+_erbout.concat "      \n"
+_erbout.concat "      "; _erbout.concat(( link_to(image_tag(if :action == "new" "tabs/tab_new_sh.gif" else "tabs/tab_new_up.gif" end , 
+                    :size => "76x26",
+                    :onmouseout => "MM_swapImgRestore()",
+                    :onmouseover => "MM_swapImage('tab1','','/images/tabs/tab_new_up.gif',0)",
+                    :name => "tab1",
+                    :id   => "tab1",
+                    :border => 0 ),                  
+                 { :action => "new" }) ).to_s); _erbout.concat "\n"
+_erbout.concat "\t</div>\n"
+_erbout.concat "</div>\n"
+_erbout.concat "<div id=\"sideArea\">\n"
+_erbout.concat "\t<div id=\"navcontainer\">\n"
+_erbout.concat "\t  <ul id=\"navlist\">\n"
+_erbout.concat "\n"
+_erbout.concat "\t\t\n"
+_erbout.concat "\t\t<li><a href=\"/plans\">Plans</a></li>\n"
+_erbout.concat "\t\t<li><a href=\"/phones\">Phones</a></li>\n"
+_erbout.concat "\t\t<li><a href=\"/accessories\">Accessories</a></li>\n"
+_erbout.concat "\t\t<li><a href=\"/features\">Features</a></li>\n"
+_erbout.concat "\n"
+_erbout.concat "\t  </ul>\n"
+_erbout.concat "  </div>\n"
+_erbout.concat "  \n"
+_erbout.concat "</div>\n"
+_erbout.concat "<div id=\"leftColumn\">\n"
+_erbout.concat "    "; _erbout.concat(( yield  ).to_s); _erbout.concat "\n"
+_erbout.concat "</div>\n"
+_erbout.concat "\n"
+_erbout.concat "<div id=\"caption\">\n"
+_erbout.concat "\t<div align=\"right\">"; _erbout.concat(( flash[:notice] ).to_s); _erbout.concat "</div>\n"
+_erbout.concat "</div>\n"
+_erbout.concat "\n"
+_erbout.concat "\n"
+_erbout.concat "</body>\n"
+_erbout.concat "</html>\n"
+_erbout
+end
+Backtrace: /var/www/bmtronics-kiosk/config/../app/views/layouts/main.rhtml:83:in `compile_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:319:in `compile_and_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:254:in `render_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+/usr/bin/mongrel_rails:16:in `load'
+/usr/bin/mongrel_rails:16
+
+
+ActionView::TemplateError (compile error
+/var/www/bmtronics-kiosk/config/../app/views/layouts/main.rhtml:47: syntax error, unexpected kELSE, expecting kTHEN or ':' or '\n' or ';'
+_erbout.concat "      "; _erbout.concat(( link_to(image_tag(if :action == "new" "tabs/tab_new_sh.gif" else "tabs/tab_new_up.gif" end , 
+                                                                                                          ^
+/var/www/bmtronics-kiosk/config/../app/views/layouts/main.rhtml:47: syntax error, unexpected kEND, expecting ')'
+_erbout.concat "      "; _erbout.concat(( link_to(image_tag(if :action == "new" "tabs/tab_new_sh.gif" else "tabs/tab_new_up.gif" end , 
+                                                                                                                                    ^
+/var/www/bmtronics-kiosk/config/../app/views/layouts/main.rhtml:48: syntax error, unexpected ',', expecting ')'
+/var/www/bmtronics-kiosk/config/../app/views/layouts/main.rhtml:49: syntax error, unexpected ',', expecting ')'
+/var/www/bmtronics-kiosk/config/../app/views/layouts/main.rhtml:50: syntax error, unexpected ',', expecting ')'
+/var/www/bmtronics-kiosk/config/../app/views/layouts/main.rhtml:51: syntax error, unexpected ',', expecting ')'
+/var/www/bmtronics-kiosk/config/../app/views/layouts/main.rhtml:52: syntax error, unexpected ',', expecting ')'
+/var/www/bmtronics-kiosk/config/../app/views/layouts/main.rhtml:54: syntax error, unexpected ')', expecting kEND
+                 { :action => "new" }) ).to_s); _erbout.concat "\n"
+                                        ^) on line #47 of app/views/layouts/main.rhtml:
+44:    <%= image_tag("leftCol_logo.gif" , :size => "157x96", :alt => "BM Tronics Admin" ) %>
+45: 	<div id="menuArea">
+46:       
+47:       <%= link_to(image_tag(if :action == "new" "tabs/tab_new_sh.gif" else "tabs/tab_new_up.gif" end , 
+48:                     :size => "76x26",
+49:                     :onmouseout => "MM_swapImgRestore()",
+50:                     :onmouseover => "MM_swapImage('tab1','','/images/tabs/tab_new_up.gif',0)",
+
+    #{RAILS_ROOT}/app/views/layouts/main.rhtml:83:in `compile_template'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:319:in `compile_and_render_template'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:254:in `render_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/bin/mongrel_rails:16:in `load'
+    /usr/bin/mongrel_rails:16
+
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing PlansController#new (for 127.0.0.1 at 2007-05-09 16:31:13) [GET]
+  Session ID: 751d88cdf91c317bf61bba3400dd2976
+  Parameters: {"action"=>"new", "controller"=>"plans"}
+  [4;35;1mPlan Columns (0.003184)[0m   [0mSHOW FIELDS FROM plans[0m
+DEPRECATION WARNING: find_all is deprecated and will be removed from Rails 2.0 (use find(:all, ...))  See http://www.rubyonrails.org/deprecation for details. (called from new at /var/www/bmtronics-kiosk/config/../app/controllers/plans_controller.rb:24)
+  [4;36;1mPhone Load (0.001067)[0m   [0;1mSELECT * FROM phones [0m
+Rendering  within layouts/main
+Rendering plans/new
+  [4;35;1mPhone Columns (0.002001)[0m   [0mSHOW FIELDS FROM phones[0m
+Rendered plans/_form (0.01399)
+Completed in 0.06908 (14 reqs/sec) | Rendering: 0.03699 (53%) | DB: 0.00757 (10%) | 200 OK [http://isaac/plans/new]
+
+
+Processing PlansController#new (for 127.0.0.1 at 2007-05-09 16:31:26) [GET]
+  Session ID: 751d88cdf91c317bf61bba3400dd2976
+  Parameters: {"action"=>"new", "controller"=>"plans"}
+  [4;36;1mPlan Columns (0.004139)[0m   [0;1mSHOW FIELDS FROM plans[0m
+DEPRECATION WARNING: find_all is deprecated and will be removed from Rails 2.0 (use find(:all, ...))  See http://www.rubyonrails.org/deprecation for details. (called from new at /var/www/bmtronics-kiosk/config/../app/controllers/plans_controller.rb:24)
+  [4;35;1mPhone Load (0.000348)[0m   [0mSELECT * FROM phones [0m
+Rendering  within layouts/main
+Rendering plans/new
+  [4;36;1mPhone Columns (0.002364)[0m   [0;1mSHOW FIELDS FROM phones[0m
+Rendered plans/_form (0.01432)
+Completed in 0.06827 (14 reqs/sec) | Rendering: 0.03302 (48%) | DB: 0.00685 (10%) | 200 OK [http://isaac/plans/new]
+
+
+Processing PlansController#index (for 127.0.0.1 at 2007-05-09 16:31:29) [GET]
+  Session ID: 751d88cdf91c317bf61bba3400dd2976
+  Parameters: {"action"=>"index", "controller"=>"plans"}
+  [4;35;1mPlan Columns (0.001693)[0m   [0mSHOW FIELDS FROM plans[0m
+  [4;36;1mSQL (0.000197)[0m   [0;1mSELECT count(*) AS count_all FROM plans [0m
+  [4;35;1mPlan Load (0.000195)[0m   [0mSELECT * FROM plans LIMIT 0, 10[0m
+Rendering layoutfalseactionlist within layouts/main
+Rendering plans/list
+  [4;36;1mJoin Table Columns (0.001220)[0m   [0;1mSHOW FIELDS FROM phones_plans[0m
+  [4;35;1mPhone Load (0.000213)[0m   [0mSELECT * FROM phones INNER JOIN phones_plans ON phones.id = phones_plans.phone_id WHERE (phones_plans.plan_id = 1 ) [0m
+  [4;36;1mPhone Columns (0.001297)[0m   [0;1mSHOW FIELDS FROM phones[0m
+Completed in 0.03467 (28 reqs/sec) | Rendering: 0.01855 (53%) | DB: 0.00482 (13%) | 200 OK [http://isaac/plans]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2007-05-09 16:38:19) [GET]
+  Session ID: 751d88cdf91c317bf61bba3400dd2976
+  Parameters: {"action"=>"index", "controller"=>"plans"}
+
+
+SyntaxError (/var/www/bmtronics-kiosk/config/../app/controllers/plans_controller.rb:25: syntax error, unexpected '=', expecting kEND
+    :action = 'new'   # This is not what I want - what I want is some way to know what the action is inside the layout
+             ^):
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:203:in `load_without_new_constant_marking'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:203:in `load_file'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:202:in `load_file'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:94:in `require_or_load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:248:in `load_missing_constant'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:452:in `const_missing'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:464:in `const_missing'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/inflector.rb:250:in `constantize'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/core_ext/string/inflections.rb:148:in `constantize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1284:in `recognize'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/bin/mongrel_rails:16:in `load'
+    /usr/bin/mongrel_rails:16
+
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing PlansController#index (for 127.0.0.1 at 2007-05-09 16:38:35) [GET]
+  Session ID: 751d88cdf91c317bf61bba3400dd2976
+  Parameters: {"action"=>"index", "controller"=>"plans"}
+  [4;35;1mPlan Columns (0.003151)[0m   [0mSHOW FIELDS FROM plans[0m
+  [4;36;1mSQL (0.000586)[0m   [0;1mSELECT count(*) AS count_all FROM plans [0m
+  [4;35;1mPlan Load (0.000276)[0m   [0mSELECT * FROM plans LIMIT 0, 10[0m
+Rendering layoutfalseactionlist within layouts/main
+Rendering plans/list
+  [4;36;1mJoin Table Columns (0.001717)[0m   [0;1mSHOW FIELDS FROM phones_plans[0m
+  [4;35;1mPhone Load (0.000539)[0m   [0mSELECT * FROM phones INNER JOIN phones_plans ON phones.id = phones_plans.phone_id WHERE (phones_plans.plan_id = 1 ) [0m
+  [4;36;1mPhone Columns (0.001850)[0m   [0;1mSHOW FIELDS FROM phones[0m
+
+
+ActionView::TemplateError (undefined local variable or method `action' for #<#<Class:0xb6b0401c>:0xb6b03ff4>) on line #48 of app/views/layouts/main.rhtml:
+45: 	<div id="menuArea">
+46:       
+47:       <%= 
+48:           if action == "new"
+49:             image = "tabs/tab_new_up.gif"
+50:           else
+51:             image = "tabs/tab_new_sh.gif"
+
+    #{RAILS_ROOT}/app/views/layouts/main.rhtml:48:in `_run_rhtml_47app47views47layouts47main46rhtml'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `compile_and_render_template'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:254:in `render_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    #{RAILS_ROOT}/app/controllers/plans_controller.rb:7:in `index'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `perform_action_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/bin/mongrel_rails:16:in `load'
+    /usr/bin/mongrel_rails:16
+
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing PlansController#index (for 127.0.0.1 at 2007-05-09 16:38:53) [GET]
+  Session ID: 751d88cdf91c317bf61bba3400dd2976
+  Parameters: {"action"=>"index", "controller"=>"plans"}
+  [4;35;1mPlan Columns (0.001887)[0m   [0mSHOW FIELDS FROM plans[0m
+  [4;36;1mSQL (0.000471)[0m   [0;1mSELECT count(*) AS count_all FROM plans [0m
+  [4;35;1mPlan Load (0.000276)[0m   [0mSELECT * FROM plans LIMIT 0, 10[0m
+Rendering layoutfalseactionlist within layouts/main
+Rendering plans/list
+  [4;36;1mJoin Table Columns (0.001577)[0m   [0;1mSHOW FIELDS FROM phones_plans[0m
+  [4;35;1mPhone Load (0.000977)[0m   [0mSELECT * FROM phones INNER JOIN phones_plans ON phones.id = phones_plans.phone_id WHERE (phones_plans.plan_id = 1 ) [0m
+  [4;36;1mPhone Columns (0.002108)[0m   [0;1mSHOW FIELDS FROM phones[0m
+Completed in 0.07173 (13 reqs/sec) | Rendering: 0.04846 (67%) | DB: 0.01140 (15%) | 200 OK [http://isaac/plans]
+
+
+Processing PlansController#new (for 127.0.0.1 at 2007-05-09 16:38:56) [GET]
+  Session ID: 751d88cdf91c317bf61bba3400dd2976
+  Parameters: {"action"=>"new", "controller"=>"plans"}
+  [4;35;1mPlan Columns (0.002420)[0m   [0mSHOW FIELDS FROM plans[0m
+DEPRECATION WARNING: find_all is deprecated and will be removed from Rails 2.0 (use find(:all, ...))  See http://www.rubyonrails.org/deprecation for details. (called from new at /var/www/bmtronics-kiosk/config/../app/controllers/plans_controller.rb:24)
+  [4;36;1mPhone Load (0.000560)[0m   [0;1mSELECT * FROM phones [0m
+Rendering  within layouts/main
+Rendering plans/new
+  [4;35;1mPhone Columns (0.001845)[0m   [0mSHOW FIELDS FROM phones[0m
+Rendered plans/_form (0.01131)
+Completed in 0.05108 (19 reqs/sec) | Rendering: 0.01925 (37%) | DB: 0.00482 (9%) | 200 OK [http://isaac/plans/new]
+
+
+Processing PhonesController#index (for 127.0.0.1 at 2007-05-09 16:38:58) [GET]
+  Session ID: 751d88cdf91c317bf61bba3400dd2976
+  Parameters: {"action"=>"index", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.002039)[0m   [0;1mSHOW FIELDS FROM phones[0m
+  [4;35;1mSQL (0.000957)[0m   [0mSELECT count(*) AS count_all FROM phones [0m
+  [4;36;1mPhone Load (0.000583)[0m   [0;1mSELECT * FROM phones LIMIT 0, 10[0m
+Rendering layoutfalseactionlist within layouts/main
+Rendering phones/list
+Completed in 0.03948 (25 reqs/sec) | Rendering: 0.02201 (55%) | DB: 0.00358 (9%) | 200 OK [http://isaac/phones]
+
+
+Processing PhonesController#new (for 127.0.0.1 at 2007-05-09 16:38:59) [GET]
+  Session ID: 751d88cdf91c317bf61bba3400dd2976
+  Parameters: {"action"=>"new", "controller"=>"phones"}
+  [4;35;1mPhone Columns (0.002107)[0m   [0mSHOW FIELDS FROM phones[0m
+Rendering  within layouts/main
+Rendering phones/new
+Rendered phones/_form (0.01268)
+Completed in 0.05883 (16 reqs/sec) | Rendering: 0.04356 (74%) | DB: 0.00211 (3%) | 200 OK [http://isaac/phones/new]
+
+
+Processing PlansController#index (for 127.0.0.1 at 2007-05-09 16:39:01) [GET]
+  Session ID: 751d88cdf91c317bf61bba3400dd2976
+  Parameters: {"action"=>"index", "controller"=>"plans"}
+  [4;36;1mPlan Columns (0.001526)[0m   [0;1mSHOW FIELDS FROM plans[0m
+  [4;35;1mSQL (0.000173)[0m   [0mSELECT count(*) AS count_all FROM plans [0m
+  [4;36;1mPlan Load (0.000168)[0m   [0;1mSELECT * FROM plans LIMIT 0, 10[0m
+Rendering layoutfalseactionlist within layouts/main
+Rendering plans/list
+  [4;35;1mJoin Table Columns (0.001040)[0m   [0mSHOW FIELDS FROM phones_plans[0m
+  [4;36;1mPhone Load (0.000190)[0m   [0;1mSELECT * FROM phones INNER JOIN phones_plans ON phones.id = phones_plans.phone_id WHERE (phones_plans.plan_id = 1 ) [0m
+  [4;35;1mPhone Columns (0.001690)[0m   [0mSHOW FIELDS FROM phones[0m
+Completed in 0.05255 (19 reqs/sec) | Rendering: 0.02896 (55%) | DB: 0.00479 (9%) | 200 OK [http://isaac/plans]

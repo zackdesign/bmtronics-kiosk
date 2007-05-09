@@ -22,6 +22,7 @@ class PlansController < ApplicationController
   def new
     @plan = Plan.new
     @phones = Phone.find_all
+    @action = 'new'   # This is not what I want - what I want is some way to know what the action is inside the layout
   end
 
   def create

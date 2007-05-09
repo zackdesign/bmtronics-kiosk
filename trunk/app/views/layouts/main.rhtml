@@ -44,7 +44,14 @@ function inputBlur(ref, defaultString) {
    <%= image_tag("leftCol_logo.gif" , :size => "157x96", :alt => "BM Tronics Admin" ) %>
 	<div id="menuArea">
       
-      <%= link_to(image_tag("tabs/tab_new_sh.gif" , 
+      <%= 
+          if @action == "new"
+            image = "tabs/tab_new_up.gif"
+          else
+            image = "tabs/tab_new_sh.gif"
+          end
+          
+          link_to(image_tag(image , 
                     :size => "76x26",
                     :onmouseout => "MM_swapImgRestore()",
                     :onmouseover => "MM_swapImage('tab1','','/images/tabs/tab_new_up.gif',0)",
