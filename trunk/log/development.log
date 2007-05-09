@@ -3859,3 +3859,294 @@ Migrating to PhonesAccessories (7)
   [4;36;1mSQL (0.000555)[0m   [0;1mSHOW KEYS FROM phones_plans[0m
   [4;35;1mSQL (0.002527)[0m   [0mSHOW FIELDS FROM plans[0m
   [4;36;1mSQL (0.000550)[0m   [0;1mSHOW KEYS FROM plans[0m
+
+
+Processing PlansController#index (for 127.0.0.1 at 2007-05-09 13:06:44) [GET]
+  Session ID: b16d56e8ed69e80f0dd18675081bd5c9
+  Parameters: {"action"=>"index", "controller"=>"plans"}
+  [4;36;1mSQL (0.000297)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mPlan Columns (0.073839)[0m   [0mSHOW FIELDS FROM plans[0m
+  [4;36;1mSQL (0.000522)[0m   [0;1mSELECT count(*) AS count_all FROM plans [0m
+  [4;35;1mPlan Load (0.000493)[0m   [0mSELECT * FROM plans LIMIT 0, 10[0m
+Rendering layoutfalseactionlist within layouts/plans
+Rendering plans/list
+Completed in 0.18063 (5 reqs/sec) | Rendering: 0.01286 (7%) | DB: 0.07515 (41%) | 200 OK [http://isaac/]
+
+
+Processing AccessoriesController#index (for 127.0.0.1 at 2007-05-09 13:06:50) [GET]
+  Session ID: b16d56e8ed69e80f0dd18675081bd5c9
+  Parameters: {"action"=>"index", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.010792)[0m   [0;1mSHOW FIELDS FROM accessories[0m
+  [4;35;1mSQL (0.000646)[0m   [0mSELECT count(*) AS count_all FROM accessories [0m
+  [4;36;1mAccessory Load (0.000795)[0m   [0;1mSELECT * FROM accessories LIMIT 0, 10[0m
+Rendering layoutfalseactionlist within layouts/accessories
+Rendering accessories/list
+  [4;35;1mPhone Columns (0.017127)[0m   [0mSHOW FIELDS FROM phones[0m
+  [4;36;1mSQL (0.011483)[0m   [0;1mSELECT count(*) AS count_all FROM phones INNER JOIN phones_accessories ON phones.id = phones_accessories.phone_id WHERE (phones_accessories.accessory_id = 1 ) [0m
+  [4;35;1mJoin Table Columns (0.001010)[0m   [0mSHOW FIELDS FROM phones_accessories[0m
+  [4;36;1mPhone Load (0.000736)[0m   [0;1mSELECT * FROM phones INNER JOIN phones_accessories ON phones.id = phones_accessories.phone_id WHERE (phones_accessories.accessory_id = 1 ) [0m
+  [4;35;1mSQL (0.000164)[0m   [0mSELECT count(*) AS count_all FROM phones INNER JOIN phones_accessories ON phones.id = phones_accessories.phone_id WHERE (phones_accessories.accessory_id = 1 ) [0m
+Completed in 0.09883 (10 reqs/sec) | Rendering: 0.03517 (35%) | DB: 0.04275 (43%) | 200 OK [http://isaac/accessories]
+
+
+Processing AccessoriesController#show (for 127.0.0.1 at 2007-05-09 13:06:54) [GET]
+  Session ID: b16d56e8ed69e80f0dd18675081bd5c9
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.001390)[0m   [0;1mSHOW FIELDS FROM accessories[0m
+  [4;35;1mAccessory Load (0.000561)[0m   [0mSELECT * FROM accessories WHERE (accessories.id = 1) [0m
+Rendering  within layouts/accessories
+Rendering accessories/show
+  [4;36;1mJoin Table Columns (0.001015)[0m   [0;1mSHOW FIELDS FROM phones_accessories[0m
+  [4;35;1mPhone Load (0.000292)[0m   [0mSELECT * FROM phones INNER JOIN phones_accessories ON phones.id = phones_accessories.phone_id WHERE (phones_accessories.accessory_id = 1 ) [0m
+  [4;36;1mPhone Columns (0.001339)[0m   [0;1mSHOW FIELDS FROM phones[0m
+  [4;35;1mSQL (0.000214)[0m   [0mSELECT count(*) AS count_all FROM phones INNER JOIN phones_accessories ON phones.id = phones_accessories.phone_id WHERE (phones_accessories.accessory_id = 1 ) [0m
+Completed in 0.03641 (27 reqs/sec) | Rendering: 0.02202 (60%) | DB: 0.00481 (13%) | 200 OK [http://isaac/accessories/show/1]
+  [4;36;1mSQL (0.000225)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;35;1mSQL (0.010314)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000130)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000101)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000098)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000099)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000096)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000104)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000109)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to ChangeAccessoryPriceToFloat (8)
+  [4;35;1mSQL (0.016820)[0m   [0mSHOW COLUMNS FROM accessories LIKE 'price'[0m
+  [4;36;1mSQL (0.133909)[0m   [0;1mALTER TABLE accessories CHANGE price price float DEFAULT NULL[0m
+  [4;35;1mSQL (0.000390)[0m   [0mUPDATE schema_info SET version = 8[0m
+  [4;36;1mSQL (0.000379)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000480)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.001384)[0m   [0;1mSHOW FIELDS FROM accessories[0m
+  [4;35;1mSQL (0.000558)[0m   [0mSHOW KEYS FROM accessories[0m
+  [4;36;1mSQL (0.001488)[0m   [0;1mSHOW FIELDS FROM features[0m
+  [4;35;1mSQL (0.000742)[0m   [0mSHOW KEYS FROM features[0m
+  [4;36;1mSQL (0.001253)[0m   [0;1mSHOW FIELDS FROM phones[0m
+  [4;35;1mSQL (0.000781)[0m   [0mSHOW KEYS FROM phones[0m
+  [4;36;1mSQL (0.000948)[0m   [0;1mSHOW FIELDS FROM phones_accessories[0m
+  [4;35;1mSQL (0.000575)[0m   [0mSHOW KEYS FROM phones_accessories[0m
+  [4;36;1mSQL (0.001372)[0m   [0;1mSHOW FIELDS FROM phones_features[0m
+  [4;35;1mSQL (0.000577)[0m   [0mSHOW KEYS FROM phones_features[0m
+  [4;36;1mSQL (0.001429)[0m   [0;1mSHOW FIELDS FROM phones_plans[0m
+  [4;35;1mSQL (0.000582)[0m   [0mSHOW KEYS FROM phones_plans[0m
+  [4;36;1mSQL (0.001586)[0m   [0;1mSHOW FIELDS FROM plans[0m
+  [4;35;1mSQL (0.000606)[0m   [0mSHOW KEYS FROM plans[0m
+
+
+Processing AccessoriesController#list (for 127.0.0.1 at 2007-05-09 13:07:32) [GET]
+  Session ID: b16d56e8ed69e80f0dd18675081bd5c9
+  Parameters: {"action"=>"list", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.001339)[0m   [0;1mSHOW FIELDS FROM accessories[0m
+  [4;35;1mSQL (0.000570)[0m   [0mSELECT count(*) AS count_all FROM accessories [0m
+  [4;36;1mAccessory Load (0.000513)[0m   [0;1mSELECT * FROM accessories LIMIT 0, 10[0m
+Rendering  within layouts/accessories
+Rendering accessories/list
+  [4;35;1mPhone Columns (0.001325)[0m   [0mSHOW FIELDS FROM phones[0m
+  [4;36;1mSQL (0.000177)[0m   [0;1mSELECT count(*) AS count_all FROM phones INNER JOIN phones_accessories ON phones.id = phones_accessories.phone_id WHERE (phones_accessories.accessory_id = 1 ) [0m
+  [4;35;1mJoin Table Columns (0.001516)[0m   [0mSHOW FIELDS FROM phones_accessories[0m
+  [4;36;1mPhone Load (0.000201)[0m   [0;1mSELECT * FROM phones INNER JOIN phones_accessories ON phones.id = phones_accessories.phone_id WHERE (phones_accessories.accessory_id = 1 ) [0m
+  [4;35;1mSQL (0.000182)[0m   [0mSELECT count(*) AS count_all FROM phones INNER JOIN phones_accessories ON phones.id = phones_accessories.phone_id WHERE (phones_accessories.accessory_id = 1 ) [0m
+Completed in 0.03507 (28 reqs/sec) | Rendering: 0.01869 (53%) | DB: 0.00582 (16%) | 200 OK [http://isaac/accessories/list]
+
+
+Processing AccessoriesController#edit (for 127.0.0.1 at 2007-05-09 13:07:34) [GET]
+  Session ID: b16d56e8ed69e80f0dd18675081bd5c9
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.001320)[0m   [0;1mSHOW FIELDS FROM accessories[0m
+  [4;35;1mAccessory Load (0.000587)[0m   [0mSELECT * FROM accessories WHERE (accessories.id = 1) [0m
+Rendering  within layouts/accessories
+Rendering accessories/edit
+Rendered accessories/_form (0.01020)
+Completed in 0.03057 (32 reqs/sec) | Rendering: 0.01852 (60%) | DB: 0.00191 (6%) | 200 OK [http://isaac/accessories/edit/1]
+
+
+Processing AccessoriesController#list (for 127.0.0.1 at 2007-05-09 13:07:37) [GET]
+  Session ID: b16d56e8ed69e80f0dd18675081bd5c9
+  Parameters: {"action"=>"list", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.002469)[0m   [0;1mSHOW FIELDS FROM accessories[0m
+  [4;35;1mSQL (0.000183)[0m   [0mSELECT count(*) AS count_all FROM accessories [0m
+  [4;36;1mAccessory Load (0.000159)[0m   [0;1mSELECT * FROM accessories LIMIT 0, 10[0m
+Rendering  within layouts/accessories
+Rendering accessories/list
+  [4;35;1mPhone Columns (0.001316)[0m   [0mSHOW FIELDS FROM phones[0m
+  [4;36;1mSQL (0.000176)[0m   [0;1mSELECT count(*) AS count_all FROM phones INNER JOIN phones_accessories ON phones.id = phones_accessories.phone_id WHERE (phones_accessories.accessory_id = 1 ) [0m
+  [4;35;1mJoin Table Columns (0.001016)[0m   [0mSHOW FIELDS FROM phones_accessories[0m
+  [4;36;1mPhone Load (0.000179)[0m   [0;1mSELECT * FROM phones INNER JOIN phones_accessories ON phones.id = phones_accessories.phone_id WHERE (phones_accessories.accessory_id = 1 ) [0m
+  [4;35;1mSQL (0.000157)[0m   [0mSELECT count(*) AS count_all FROM phones INNER JOIN phones_accessories ON phones.id = phones_accessories.phone_id WHERE (phones_accessories.accessory_id = 1 ) [0m
+Completed in 0.03251 (30 reqs/sec) | Rendering: 0.01613 (49%) | DB: 0.00566 (17%) | 200 OK [http://isaac/accessories/list]
+
+
+Processing FeaturesController#index (for 127.0.0.1 at 2007-05-09 13:07:42) [GET]
+  Session ID: b16d56e8ed69e80f0dd18675081bd5c9
+  Parameters: {"action"=>"index", "controller"=>"features"}
+  [4;36;1mFeature Columns (0.002123)[0m   [0;1mSHOW FIELDS FROM features[0m
+  [4;35;1mSQL (0.000768)[0m   [0mSELECT count(*) AS count_all FROM features [0m
+  [4;36;1mFeature Load (0.000729)[0m   [0;1mSELECT * FROM features LIMIT 0, 10[0m
+Rendering layoutfalseactionlist within layouts/features
+Rendering features/list
+  [4;35;1mPhone Columns (0.003503)[0m   [0mSHOW FIELDS FROM phones[0m
+  [4;36;1mSQL (0.001490)[0m   [0;1mSELECT count(*) AS count_all FROM phones INNER JOIN phones_features ON phones.id = phones_features.phone_id WHERE (phones_features.feature_id = 1 ) [0m
+  [4;35;1mJoin Table Columns (0.002596)[0m   [0mSHOW FIELDS FROM phones_features[0m
+  [4;36;1mPhone Load (0.001595)[0m   [0;1mSELECT * FROM phones INNER JOIN phones_features ON phones.id = phones_features.phone_id WHERE (phones_features.feature_id = 1 ) [0m
+  [4;35;1mSQL (0.000438)[0m   [0mSELECT count(*) AS count_all FROM phones INNER JOIN phones_features ON phones.id = phones_features.phone_id WHERE (phones_features.feature_id = 1 ) [0m
+Completed in 0.08185 (12 reqs/sec) | Rendering: 0.04758 (58%) | DB: 0.01324 (16%) | 200 OK [http://isaac/features]
+
+
+Processing FeaturesController#show (for 127.0.0.1 at 2007-05-09 13:07:45) [GET]
+  Session ID: b16d56e8ed69e80f0dd18675081bd5c9
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"features"}
+  [4;36;1mFeature Columns (0.001198)[0m   [0;1mSHOW FIELDS FROM features[0m
+  [4;35;1mFeature Load (0.000563)[0m   [0mSELECT * FROM features WHERE (features.id = 1) [0m
+Rendering  within layouts/features
+Rendering features/show
+  [4;36;1mJoin Table Columns (0.001020)[0m   [0;1mSHOW FIELDS FROM phones_features[0m
+  [4;35;1mPhone Load (0.000228)[0m   [0mSELECT * FROM phones INNER JOIN phones_features ON phones.id = phones_features.phone_id WHERE (phones_features.feature_id = 1 ) [0m
+  [4;36;1mPhone Columns (0.001444)[0m   [0;1mSHOW FIELDS FROM phones[0m
+  [4;35;1mSQL (0.000195)[0m   [0mSELECT count(*) AS count_all FROM phones INNER JOIN phones_features ON phones.id = phones_features.phone_id WHERE (phones_features.feature_id = 1 ) [0m
+Completed in 0.14447 (6 reqs/sec) | Rendering: 0.13050 (90%) | DB: 0.00465 (3%) | 200 OK [http://isaac/features/show/1]
+
+
+Processing FeaturesController#list (for 127.0.0.1 at 2007-05-09 13:07:48) [GET]
+  Session ID: b16d56e8ed69e80f0dd18675081bd5c9
+  Parameters: {"action"=>"list", "controller"=>"features"}
+  [4;36;1mFeature Columns (0.001286)[0m   [0;1mSHOW FIELDS FROM features[0m
+  [4;35;1mSQL (0.000181)[0m   [0mSELECT count(*) AS count_all FROM features [0m
+  [4;36;1mFeature Load (0.000168)[0m   [0;1mSELECT * FROM features LIMIT 0, 10[0m
+Rendering  within layouts/features
+Rendering features/list
+  [4;35;1mPhone Columns (0.001312)[0m   [0mSHOW FIELDS FROM phones[0m
+  [4;36;1mSQL (0.000309)[0m   [0;1mSELECT count(*) AS count_all FROM phones INNER JOIN phones_features ON phones.id = phones_features.phone_id WHERE (phones_features.feature_id = 1 ) [0m
+  [4;35;1mJoin Table Columns (0.001011)[0m   [0mSHOW FIELDS FROM phones_features[0m
+  [4;36;1mPhone Load (0.000187)[0m   [0;1mSELECT * FROM phones INNER JOIN phones_features ON phones.id = phones_features.phone_id WHERE (phones_features.feature_id = 1 ) [0m
+  [4;35;1mSQL (0.000180)[0m   [0mSELECT count(*) AS count_all FROM phones INNER JOIN phones_features ON phones.id = phones_features.phone_id WHERE (phones_features.feature_id = 1 ) [0m
+Completed in 0.03245 (30 reqs/sec) | Rendering: 0.01783 (54%) | DB: 0.00463 (14%) | 200 OK [http://isaac/features/list]
+
+
+Processing PhonesController#index (for 127.0.0.1 at 2007-05-09 13:07:52) [GET]
+  Session ID: b16d56e8ed69e80f0dd18675081bd5c9
+  Parameters: {"action"=>"index", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.003267)[0m   [0;1mSHOW FIELDS FROM phones[0m
+  [4;35;1mSQL (0.001003)[0m   [0mSELECT count(*) AS count_all FROM phones [0m
+  [4;36;1mPhone Load (0.001197)[0m   [0;1mSELECT * FROM phones LIMIT 0, 10[0m
+Rendering layoutfalseactionlist within layouts/phones
+Rendering phones/list
+Completed in 0.05635 (17 reqs/sec) | Rendering: 0.03359 (59%) | DB: 0.00547 (9%) | 200 OK [http://isaac/phones]
+
+
+Processing PhonesController#show (for 127.0.0.1 at 2007-05-09 13:07:58) [GET]
+  Session ID: b16d56e8ed69e80f0dd18675081bd5c9
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"phones"}
+  [4;35;1mPhone Columns (0.001378)[0m   [0mSHOW FIELDS FROM phones[0m
+  [4;36;1mPhone Load (0.000542)[0m   [0;1mSELECT * FROM phones WHERE (phones.id = 1) [0m
+Rendering  within layouts/phones
+Rendering phones/show
+Completed in 0.01687 (59 reqs/sec) | Rendering: 0.00758 (44%) | DB: 0.00192 (11%) | 200 OK [http://isaac/phones/show/1]
+
+
+Processing PhonesController#list (for 127.0.0.1 at 2007-05-09 13:08:02) [GET]
+  Session ID: b16d56e8ed69e80f0dd18675081bd5c9
+  Parameters: {"action"=>"list", "controller"=>"phones"}
+  [4;35;1mPhone Columns (0.001320)[0m   [0mSHOW FIELDS FROM phones[0m
+  [4;36;1mSQL (0.000154)[0m   [0;1mSELECT count(*) AS count_all FROM phones [0m
+  [4;35;1mPhone Load (0.000153)[0m   [0mSELECT * FROM phones LIMIT 0, 10[0m
+Rendering  within layouts/phones
+Rendering phones/list
+Completed in 0.01626 (61 reqs/sec) | Rendering: 0.00720 (44%) | DB: 0.00163 (10%) | 200 OK [http://isaac/phones/list]
+
+
+Processing AccessoriesController#index (for 127.0.0.1 at 2007-05-09 13:08:12) [GET]
+  Session ID: b16d56e8ed69e80f0dd18675081bd5c9
+  Parameters: {"action"=>"index", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.002183)[0m   [0;1mSHOW FIELDS FROM accessories[0m
+  [4;35;1mSQL (0.000652)[0m   [0mSELECT count(*) AS count_all FROM accessories [0m
+  [4;36;1mAccessory Load (0.000214)[0m   [0;1mSELECT * FROM accessories LIMIT 0, 10[0m
+Rendering layoutfalseactionlist within layouts/accessories
+Rendering accessories/list
+  [4;35;1mPhone Columns (0.001358)[0m   [0mSHOW FIELDS FROM phones[0m
+  [4;36;1mSQL (0.000176)[0m   [0;1mSELECT count(*) AS count_all FROM phones INNER JOIN phones_accessories ON phones.id = phones_accessories.phone_id WHERE (phones_accessories.accessory_id = 1 ) [0m
+  [4;35;1mJoin Table Columns (0.001020)[0m   [0mSHOW FIELDS FROM phones_accessories[0m
+  [4;36;1mPhone Load (0.000184)[0m   [0;1mSELECT * FROM phones INNER JOIN phones_accessories ON phones.id = phones_accessories.phone_id WHERE (phones_accessories.accessory_id = 1 ) [0m
+  [4;35;1mSQL (0.000169)[0m   [0mSELECT count(*) AS count_all FROM phones INNER JOIN phones_accessories ON phones.id = phones_accessories.phone_id WHERE (phones_accessories.accessory_id = 1 ) [0m
+Completed in 0.21491 (4 reqs/sec) | Rendering: 0.18790 (87%) | DB: 0.00596 (2%) | 200 OK [http://isaac/accessories]
+
+
+Processing PlansController#index (for 127.0.0.1 at 2007-05-09 13:08:15) [GET]
+  Session ID: b16d56e8ed69e80f0dd18675081bd5c9
+  Parameters: {"action"=>"index", "controller"=>"plans"}
+  [4;36;1mPlan Columns (0.004162)[0m   [0;1mSHOW FIELDS FROM plans[0m
+  [4;35;1mSQL (0.000301)[0m   [0mSELECT count(*) AS count_all FROM plans [0m
+  [4;36;1mPlan Load (0.000375)[0m   [0;1mSELECT * FROM plans LIMIT 0, 10[0m
+Rendering layoutfalseactionlist within layouts/plans
+Rendering plans/list
+Completed in 0.04790 (20 reqs/sec) | Rendering: 0.01855 (38%) | DB: 0.00484 (10%) | 200 OK [http://isaac/]
+
+
+Processing PlansController#index (for 127.0.0.1 at 2007-05-09 13:10:42) [GET]
+  Session ID: b16d56e8ed69e80f0dd18675081bd5c9
+  Parameters: {"action"=>"index", "controller"=>"plans"}
+  [4;35;1mPlan Columns (0.004063)[0m   [0mSHOW FIELDS FROM plans[0m
+  [4;36;1mSQL (0.000430)[0m   [0;1mSELECT count(*) AS count_all FROM plans [0m
+  [4;35;1mPlan Load (0.000439)[0m   [0mSELECT * FROM plans LIMIT 0, 10[0m
+Rendering layoutfalseactionlist within layouts/plans
+Rendering plans/list
+Completed in 0.04481 (22 reqs/sec) | Rendering: 0.01681 (37%) | DB: 0.00493 (11%) | 200 OK [http://isaac/]
+
+
+Processing PlansController#index (for 127.0.0.1 at 2007-05-09 13:10:44) [GET]
+  Session ID: b16d56e8ed69e80f0dd18675081bd5c9
+  Parameters: {"action"=>"index", "controller"=>"plans"}
+  [4;36;1mPlan Columns (0.004182)[0m   [0;1mSHOW FIELDS FROM plans[0m
+  [4;35;1mSQL (0.000463)[0m   [0mSELECT count(*) AS count_all FROM plans [0m
+  [4;36;1mPlan Load (0.000502)[0m   [0;1mSELECT * FROM plans LIMIT 0, 10[0m
+Rendering layoutfalseactionlist within layouts/plans
+Rendering plans/list
+Completed in 0.04450 (22 reqs/sec) | Rendering: 0.01779 (39%) | DB: 0.00515 (11%) | 200 OK [http://isaac/]
+
+
+Processing PlansController#show (for 127.0.0.1 at 2007-05-09 13:10:46) [GET]
+  Session ID: b16d56e8ed69e80f0dd18675081bd5c9
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"plans"}
+  [4;35;1mPlan Columns (0.001678)[0m   [0mSHOW FIELDS FROM plans[0m
+  [4;36;1mPlan Load (0.000891)[0m   [0;1mSELECT * FROM plans WHERE (plans.id = 1) [0m
+Rendering  within layouts/plans
+Rendering plans/show
+Completed in 0.02155 (46 reqs/sec) | Rendering: 0.00829 (38%) | DB: 0.00257 (11%) | 200 OK [http://isaac/plans/show/1]
+
+
+Processing PlansController#list (for 127.0.0.1 at 2007-05-09 13:10:48) [GET]
+  Session ID: b16d56e8ed69e80f0dd18675081bd5c9
+  Parameters: {"action"=>"list", "controller"=>"plans"}
+  [4;35;1mPlan Columns (0.001714)[0m   [0mSHOW FIELDS FROM plans[0m
+  [4;36;1mSQL (0.000164)[0m   [0;1mSELECT count(*) AS count_all FROM plans [0m
+  [4;35;1mPlan Load (0.000161)[0m   [0mSELECT * FROM plans LIMIT 0, 10[0m
+Rendering  within layouts/plans
+Rendering plans/list
+Completed in 0.02176 (45 reqs/sec) | Rendering: 0.01015 (46%) | DB: 0.00204 (9%) | 200 OK [http://isaac/plans/list]
+
+
+Processing PlansController#edit (for 127.0.0.1 at 2007-05-09 13:10:50) [GET]
+  Session ID: b16d56e8ed69e80f0dd18675081bd5c9
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"plans"}
+  [4;36;1mPlan Columns (0.001530)[0m   [0;1mSHOW FIELDS FROM plans[0m
+  [4;35;1mPlan Load (0.000181)[0m   [0mSELECT * FROM plans WHERE (plans.id = 1) [0m
+DEPRECATION WARNING: find_all is deprecated and will be removed from Rails 2.0 (use find(:all, ...))  See http://www.rubyonrails.org/deprecation for details. (called from edit at /var/www/bmtronics-kiosk/config/../app/controllers/plans_controller.rb:37)
+  [4;36;1mPhone Load (0.000673)[0m   [0;1mSELECT * FROM phones [0m
+Rendering  within layouts/plans
+Rendering plans/edit
+  [4;35;1mPhone Columns (0.001402)[0m   [0mSHOW FIELDS FROM phones[0m
+  [4;36;1mJoin Table Columns (0.001206)[0m   [0;1mSHOW FIELDS FROM phones_plans[0m
+  [4;35;1mPhone Load (0.000687)[0m   [0mSELECT * FROM phones INNER JOIN phones_plans ON phones.id = phones_plans.phone_id WHERE (phones_plans.plan_id = 1 ) [0m
+Rendered plans/_form (0.01458)
+Completed in 0.04155 (24 reqs/sec) | Rendering: 0.01890 (45%) | DB: 0.00568 (13%) | 200 OK [http://isaac/plans/edit/1]
+
+
+Processing PlansController#list (for 127.0.0.1 at 2007-05-09 13:10:52) [GET]
+  Session ID: b16d56e8ed69e80f0dd18675081bd5c9
+  Parameters: {"action"=>"list", "controller"=>"plans"}
+  [4;36;1mPlan Columns (0.001704)[0m   [0;1mSHOW FIELDS FROM plans[0m
+  [4;35;1mSQL (0.000165)[0m   [0mSELECT count(*) AS count_all FROM plans [0m
+  [4;36;1mPlan Load (0.000297)[0m   [0;1mSELECT * FROM plans LIMIT 0, 10[0m
+Rendering  within layouts/plans
+Rendering plans/list
+Completed in 0.02289 (43 reqs/sec) | Rendering: 0.00987 (43%) | DB: 0.00217 (9%) | 200 OK [http://isaac/plans/list]
