@@ -16768,3 +16768,60 @@ Rendering plans/list
   [4;36;1mPhone Load (0.000206)[0m   [0;1mSELECT * FROM phones INNER JOIN phones_plans ON phones.id = phones_plans.phone_id WHERE (phones_plans.plan_id = 1 ) [0m
   [4;35;1mPhone Columns (0.001762)[0m   [0mSHOW FIELDS FROM phones[0m
 Completed in 0.05019 (19 reqs/sec) | Rendering: 0.01878 (37%) | DB: 0.00653 (13%) | 200 OK [http://isaac/plans]
+
+
+Processing PhonesController#index (for 127.0.0.1 at 2007-05-09 16:20:04) [GET]
+  Session ID: 751d88cdf91c317bf61bba3400dd2976
+  Parameters: {"action"=>"index", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.003391)[0m   [0;1mSHOW FIELDS FROM phones[0m
+  [4;35;1mSQL (0.000478)[0m   [0mSELECT count(*) AS count_all FROM phones [0m
+  [4;36;1mPhone Load (0.000505)[0m   [0;1mSELECT * FROM phones LIMIT 0, 10[0m
+Rendering layoutfalseactionlist within layouts/main
+Rendering phones/list
+Completed in 0.03934 (25 reqs/sec) | Rendering: 0.01709 (43%) | DB: 0.00437 (11%) | 200 OK [http://isaac/phones]
+
+
+Processing AccessoriesController#index (for 127.0.0.1 at 2007-05-09 16:20:05) [GET]
+  Session ID: 751d88cdf91c317bf61bba3400dd2976
+  Parameters: {"action"=>"index", "controller"=>"accessories"}
+  [4;35;1mAccessory Columns (0.001371)[0m   [0mSHOW FIELDS FROM accessories[0m
+  [4;36;1mSQL (0.000189)[0m   [0;1mSELECT count(*) AS count_all FROM accessories [0m
+  [4;35;1mAccessory Load (0.000176)[0m   [0mSELECT * FROM accessories LIMIT 0, 10[0m
+Rendering layoutfalseactionlist within layouts/main
+Rendering accessories/list
+  [4;36;1mPhone Columns (0.001377)[0m   [0;1mSHOW FIELDS FROM phones[0m
+  [4;35;1mSQL (0.000193)[0m   [0mSELECT count(*) AS count_all FROM phones INNER JOIN phones_accessories ON phones.id = phones_accessories.phone_id WHERE (phones_accessories.accessory_id = 1 ) [0m
+  [4;36;1mJoin Table Columns (0.001000)[0m   [0;1mSHOW FIELDS FROM phones_accessories[0m
+  [4;35;1mPhone Load (0.000198)[0m   [0mSELECT * FROM phones INNER JOIN phones_accessories ON phones.id = phones_accessories.phone_id WHERE (phones_accessories.accessory_id = 1 ) [0m
+  [4;36;1mSQL (0.000188)[0m   [0;1mSELECT count(*) AS count_all FROM phones INNER JOIN phones_accessories ON phones.id = phones_accessories.phone_id WHERE (phones_accessories.accessory_id = 1 ) [0m
+Completed in 0.03498 (28 reqs/sec) | Rendering: 0.01897 (54%) | DB: 0.00469 (13%) | 200 OK [http://isaac/accessories]
+
+
+Processing FeaturesController#index (for 127.0.0.1 at 2007-05-09 16:20:06) [GET]
+  Session ID: 751d88cdf91c317bf61bba3400dd2976
+  Parameters: {"action"=>"index", "controller"=>"features"}
+  [4;35;1mFeature Columns (0.001203)[0m   [0mSHOW FIELDS FROM features[0m
+  [4;36;1mSQL (0.000244)[0m   [0;1mSELECT count(*) AS count_all FROM features [0m
+  [4;35;1mFeature Load (0.000305)[0m   [0mSELECT * FROM features LIMIT 0, 10[0m
+Rendering layoutfalseactionlist within layouts/main
+Rendering features/list
+  [4;36;1mPhone Columns (0.002455)[0m   [0;1mSHOW FIELDS FROM phones[0m
+  [4;35;1mSQL (0.000305)[0m   [0mSELECT count(*) AS count_all FROM phones INNER JOIN phones_features ON phones.id = phones_features.phone_id WHERE (phones_features.feature_id = 1 ) [0m
+  [4;36;1mJoin Table Columns (0.000995)[0m   [0;1mSHOW FIELDS FROM phones_features[0m
+  [4;35;1mPhone Load (0.000225)[0m   [0mSELECT * FROM phones INNER JOIN phones_features ON phones.id = phones_features.phone_id WHERE (phones_features.feature_id = 1 ) [0m
+  [4;36;1mSQL (0.000217)[0m   [0;1mSELECT count(*) AS count_all FROM phones INNER JOIN phones_features ON phones.id = phones_features.phone_id WHERE (phones_features.feature_id = 1 ) [0m
+Completed in 0.05857 (17 reqs/sec) | Rendering: 0.02814 (48%) | DB: 0.00595 (10%) | 200 OK [http://isaac/features]
+
+
+Processing PlansController#index (for 127.0.0.1 at 2007-05-09 16:20:08) [GET]
+  Session ID: 751d88cdf91c317bf61bba3400dd2976
+  Parameters: {"action"=>"index", "controller"=>"plans"}
+  [4;35;1mPlan Columns (0.003710)[0m   [0mSHOW FIELDS FROM plans[0m
+  [4;36;1mSQL (0.000362)[0m   [0;1mSELECT count(*) AS count_all FROM plans [0m
+  [4;35;1mPlan Load (0.000199)[0m   [0mSELECT * FROM plans LIMIT 0, 10[0m
+Rendering layoutfalseactionlist within layouts/main
+Rendering plans/list
+  [4;36;1mJoin Table Columns (0.001101)[0m   [0;1mSHOW FIELDS FROM phones_plans[0m
+  [4;35;1mPhone Load (0.000205)[0m   [0mSELECT * FROM phones INNER JOIN phones_plans ON phones.id = phones_plans.phone_id WHERE (phones_plans.plan_id = 1 ) [0m
+  [4;36;1mPhone Columns (0.001294)[0m   [0;1mSHOW FIELDS FROM phones[0m
+Completed in 0.04509 (22 reqs/sec) | Rendering: 0.01783 (39%) | DB: 0.00687 (15%) | 200 OK [http://isaac/plans]
