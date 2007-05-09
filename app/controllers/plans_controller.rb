@@ -18,11 +18,12 @@ class PlansController < ApplicationController
 
   def new
     @plan = Plan.new
-    @phones = Phone.find(:all)
+    @phones = Phone.find_all
   end
 
   def create
-    @plan = Plan.Phones.new(params[:plan, :phone])
+    @plan = Plan.new(params[:plan])
+    @plan.phones = Phone.find(@params[:phone_ids]) if @params[:phone_ids]
     if @plan.save
       flash[:notice] = 'Plan was successfully created.'
       redirect_to :action => 'list'
@@ -33,10 +34,20 @@ class PlansController < ApplicationController
 
   def edit
     @plan = Plan.find(params[:id])
+    @phones = Phone.find_all
   end
 
   def update
     @plan = Plan.find(params[:id])
+    
+    if @params[:phone_ids]
+      @plan.phones = Phone.find(@params[:phone_ids]) 
+    else
+      for phone in @plan.phones
+        @plan.remove_phones(phone)
+      end
+    end
+         
     if @plan.update_attributes(params[:plan])
       flash[:notice] = 'Plan was successfully updated.'
       redirect_to :action => 'show', :id => @plan

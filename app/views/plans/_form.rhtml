@@ -22,15 +22,13 @@ $<%= text_field 'plan', 'flexi_price'  %></p>
 <p><label for="plan_contract">Contract (months)</label><br/>
 <%= text_field 'plan', 'contract'  %></p>
 
-<p><label for="plan_offer_price">Offer price</label><br/>
-$<%= text_field 'plan', 'offer_price'  %></p>
-
 <% for phone in @phones %>
 
 <p>Phones included in this plan:</p>
 
-<p><input type="checkbox" name="plan[phone_ids][]" value="<%= phone.id %>" />
-<label for="plan_phone_id"><%= phone.name %></label></p>
+<p><input type="checkbox" name="phone_ids[]" value="<%= phone.id %>" id="<%= phone.id %>" 
+    <%if @plan.phones.include? phone%>checked="checked"<%end%> />
+<label for="phone_id"><%= phone.name %></label></p>
 
 <% end %>
 

@@ -5,6 +5,7 @@
   <% for column in Plan.content_columns %>
     <th><%= column.human_name %></th>
   <% end %>
+    <td>Phones</th>
   </tr>
   
 <% for plan in @plans %>
@@ -12,6 +13,11 @@
   <% for column in Plan.content_columns %>
     <td><%=h plan.send(column.name) %></td>
   <% end %>
+    <td>
+      <% for phone in plan.phones %>
+        <%= phone.name %>
+      <% end %>
+    </td>
     <td><%= link_to 'Show', :action => 'show', :id => plan %></td>
     <td><%= link_to 'Edit', :action => 'edit', :id => plan %></td>
     <td><%= link_to 'Destroy', { :action => 'destroy', :id => plan }, :confirm => 'Are you sure?', :method => :post %></td>
