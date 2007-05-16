@@ -1,25 +1,29 @@
 <%= error_messages_for 'accessory' %>
 
 <!--[form:accessory]-->
+<p>Current picture<br/>
+<% unless @accessory.picture_data.blank? %>
+<%=  image_tag(url_for({ :action => 'picture', :id => @accessory.id }), :alt => @accessory.picture_name) %><br />
+<%=  check_box_tag 'remove_picture' %><label for="remove_picture">Remove picture</label>
+<% else %>
+None
+<% end %></p>
+
+<p><label for="accessory_picture_data">New picture</label><br/>
+<%= file_field 'accessory', 'picture' %></p>
+
 <p><label for="accessory_name">Name</label><br/>
-<%= text_area 'accessory', 'name'  %></p>
+<%= text_field 'accessory', 'name' %></p>
 
 <p><label for="accessory_description">Description</label><br/>
-<%= text_area 'accessory', 'description'  %></p>
+<%= text_area 'accessory', 'description' %></p>
 
 <p><label for="accessory_price">Price</label><br/>
-<%= text_field 'accessory', 'price'  %></p>
+<%= text_field 'accessory', 'price' %></p>
 
-<!--<p><label for="accessory_created_at">Created at</label><br/>
-<%= datetime_select 'accessory', 'created_at'  %></p>
-
-<p><label for="accessory_updated_at">Updated at</label><br/>
-<%= datetime_select 'accessory', 'updated_at'  %></p>-->
-
-<p><label for="accessory_outofstock">Outofstock</label><br/>
-<select id="accessory_outofstock" name="accessory[outofstock]"><option value="false" selected>False</option><option value="true">True</option></select></p>
+<p><label for="accessory_outofstock">Stock</label><br/>
+<%= select 'accessory', 'outofstock', { 'Available' => 'false', 'Sold Out' => 'true' }, :selected => @accessory.outofstock.to_s %></p>
 
 <p><label for="accessory_discontinued">Discontinued</label><br/>
-<select id="accessory_discontinued" name="accessory[discontinued]"><option value="false" selected>False</option><option value="true">True</option></select></p>
+<%= select 'accessory', 'discontinued', { 'No' => 'false', 'Yes' => 'true' }, :selected => @accessory.discontinued.to_s %></p>
 <!--[eoform:accessory]-->
-
