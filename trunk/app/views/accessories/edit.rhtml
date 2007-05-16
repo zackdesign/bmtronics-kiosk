@@ -1,6 +1,6 @@
-<h1>Editing Accessory</h1>
+<h1>Edit Accessory</h1>
 
-<% form_tag :action => 'update', :id => @accessory do %>
+<% form_tag({ :action => 'update', :id => @accessory }, :multipart => true) do %>
   <%= render :partial => 'form' %>
   <%= submit_tag 'Edit' %>
 <% end %>
