@@ -21,4 +21,8 @@ class Accessory < ActiveRecord::Base
     # Validate the format of the image only if there is one
     return ((self.picture_name != nil) || (self.picture_type != nil) || (self.picture_data != nil))
   end
+
+  def phones_to_accessories=(phone_ids)
+    self.phones = Phone.find(phone_ids)
+  end
 end

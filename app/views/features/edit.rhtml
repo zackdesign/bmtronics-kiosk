@@ -1,8 +1,9 @@
-<h1>Editing feature</h1>
+<h1>Edit Feature</h1>
 
 <% form_tag :action => 'update', :id => @feature do %>
   <%= render :partial => 'form' %>
   <%= submit_tag 'Edit' %>
+  <input type="reset" value="Undo" />
 <% end %>
 
 <%= link_to 'Show', :action => 'show', :id => @feature %> |

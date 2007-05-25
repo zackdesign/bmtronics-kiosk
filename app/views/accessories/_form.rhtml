@@ -19,11 +19,14 @@ None
 <%= text_area 'accessory', 'description' %></p>
 
 <p><label for="accessory_price">Price</label><br/>
-<%= text_field 'accessory', 'price' %></p>
+$<%= text_field 'accessory', 'price' %></p>
 
 <p><label for="accessory_outofstock">Stock</label><br/>
 <%= select 'accessory', 'outofstock', { 'Available' => 'false', 'Sold Out' => 'true' }, :selected => @accessory.outofstock.to_s %></p>
 
 <p><label for="accessory_discontinued">Discontinued</label><br/>
 <%= select 'accessory', 'discontinued', { 'No' => 'false', 'Yes' => 'true' }, :selected => @accessory.discontinued.to_s %></p>
+
+<p><label for="accessory_phones">Phones that can use this accessory</label><br/>
+<%= select_tag('accessory[phones_to_accessories][]', options_for_select(@phones.collect { |phone| [phone.name, phone.id] }, @accessory.phones.collect { |phone| phone.id }), { :multiple => true }) %></p>
 <!--[eoform:accessory]-->

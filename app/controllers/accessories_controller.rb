@@ -3,7 +3,7 @@ class AccessoriesController < ApplicationController
   require 'RMagick'
   include Magick
 
-  layout "main"  
+  layout "main"
 
   def index
     list
@@ -24,6 +24,7 @@ class AccessoriesController < ApplicationController
 
   def new
     @accessory = Accessory.new
+    @phones = Phone.find(:all)
   end
 
   def create
@@ -46,6 +47,7 @@ class AccessoriesController < ApplicationController
 
   def edit
     @accessory = Accessory.find(params[:id])
+    @phones = Phone.find(:all)
   end
 
   def update

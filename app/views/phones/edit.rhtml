@@ -1,8 +1,9 @@
-<h1>Editing phone</h1>
+<h1>Edit Phone</h1>
 
-<% form_tag :action => 'update', :id => @phone do %>
+<% form_tag({ :action => 'update', :id => @phone }, :multipart => true) do %>
   <%= render :partial => 'form' %>
   <%= submit_tag 'Edit' %>
+  <input type="reset" value="Undo" />
 <% end %>
 
 <%= link_to 'Show', :action => 'show', :id => @phone %> |

@@ -16,15 +16,14 @@
 }
 </style>
 
+<h1><%=h @accessory.name %></h1>
+
 <p><div class="label">Picture:</div>
 <% unless @accessory.picture_data.blank? %>
 <%=  link_to(image_tag(url_for({ :action => 'picture', :id => @accessory.id }), { :alt => @accessory.picture_name, :border => 0 }), url_for({ :action => 'actual', :id => @accessory.id }), :popup => true) %>
 <% else %>
 None
 <% end %></p>
-
-<div class="label">Name:</div>
-<div class="text"><%=h @accessory.name %></div>
 
 <div class="label">Description:</div>
 <div class="text"><%=h @accessory.description %></div>

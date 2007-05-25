@@ -9,11 +9,15 @@ class Feature < ActiveRecord::Base
 
 #  before_destroy :check_not_inuse
 
-  def check_not_inuse()
-    unless phones.empty? then
-      errors.add :name, "The #{:name} feature can\'t be deleted since it\'s attached to one or more phones."
-    end
+#  def check_not_inuse()
+#    unless phones.empty? then
+#      errors.add :name, "The #{:name} feature can\'t be deleted since it\'s attached to one or more phones."
+#    end
+#
+#    return phones.empty?
+#  end
 
-    return phones.empty?
+  def phones_to_features=(phone_ids)
+    self.phones = Phone.find(phone_ids)
   end
 end
