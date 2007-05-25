@@ -2,15 +2,12 @@
 
 <!--[form:feature]-->
 <p><label for="feature_name">Name</label><br/>
-<%= text_area 'feature', 'name'  %></p>
+<%= text_field 'feature', 'name'  %></p>
 
 <p><label for="feature_description">Description</label><br/>
 <%= text_area 'feature', 'description'  %></p>
 
-<!--<p><label for="feature_created_at">Created at</label><br/>
-<%= datetime_select 'feature', 'created_at'  %></p>
+<p><label for="feature_phones">Phones with this feature</label><br/>
+<%= select_tag('feature[phones_to_features][]', options_for_select(@phones.collect { |phone| [phone.name, phone.id] }, @feature.phones.collect { |phone| phone.id }), { :multiple => true }) %></p>
 
-<p><label for="feature_updated_at">Updated at</label><br/>
-<%= datetime_select 'feature', 'updated_at'  %></p>-->
 <!--[eoform:feature]-->
-

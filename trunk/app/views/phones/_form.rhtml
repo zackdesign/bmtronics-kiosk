@@ -1,17 +1,37 @@
 <%= error_messages_for 'phone' %>
 
 <!--[form:phone]-->
+<p>Current picture<br/>
+<% unless @phone.picture_data.blank? %>
+<%=  image_tag(url_for({ :action => 'picture', :id => @phone.id }), :alt => @phone.picture_name) %><br />
+<%=  check_box_tag 'remove_picture' %><label for="remove_picture">Remove picture</label>
+<% else %>
+None
+<% end %></p>
+
+<p><label for="phone_picture_data">New picture</label><br/>
+<%= file_field 'phone', 'picture' %></p>
+
 <p><label for="phone_name">Name</label><br/>
 <%= text_field 'phone', 'name'  %></p>
 
 <p><label for="phone_description">Description</label><br/>
 <%= text_area 'phone', 'description'  %></p>
 
+<p><label for="phone_features">Features</label><br/>
+<%= select_tag('phone[features_to_phones][]', options_for_select(@features.collect { |feature| [feature.name, feature.id] }, @phone.features.collect { |feature| feature.id }), { :multiple => true }) %></p>
+
 <p><label for="phone_outright">Buy Outright Cost</label><br/>
 $<%= text_field 'phone', 'outright'  %></p>
 
-<p><label for="phone_outofstock">Outofstock</label><br/>
-<select id="phone_outofstock" name="phone[outofstock]"><option value="false" selected>False</option><option value="true">True</option></select></p>
+<p><label for="phone_outofstock">Stock</label><br/>
+<!-- <select id="phone_outofstock" name="phone[outofstock]"><option value="false" selected>False</option><option value="true">True</option></select></p> -->
+<%= select 'phone', 'outofstock', { 'Available' => 'false', 'Sold Out' => 'true' }, :selected => @phone.outofstock.to_s %></p>
+
+<p><label for="phone_discontinued">Discontinued</label><br/>
+<%= select 'phone', 'discontinued', { 'No' => 'false', 'Yes' => 'true' }, :selected => @phone.discontinued.to_s %></p>
+
+<p><label for="phone_accessories">Accessories</label><br/>
+<%= select_tag('phone[accessories_to_phones][]', options_for_select(@accessories.collect { |accessory| [accessory.name, accessory.id] }, @phone.accessories.collect { |accessory| accessory.id }), { :multiple => true }) %></p>
 
 <!--[eoform:phone]-->
-

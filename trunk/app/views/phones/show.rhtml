@@ -1,8 +1,97 @@
-<% for column in Phone.content_columns %>
-<p>
-  <b><%= column.human_name %>:</b> <%=h @phone.send(column.name) %>
-</p>
-<% end %>
+<style>
+.label
+{
+	font-weight: bold;
+}
+
+.text
+{
+}
+
+.list
+{
+	width: 50em;
+	height: 20em;
+	overflow: scroll;
+}
+
+.name
+{
+	font-weight: bold;
+}
+
+</style>
+
+<h1><%=h @phone.name %></h1>
+
+<p><div class="label">Picture:</div>
+<% unless @phone.picture_data.blank? %>
+<%=  link_to(image_tag(url_for({ :action => 'picture', :id => @phone.id }), { :alt => @phone.picture_name, :border => 0 }), url_for({ :action => 'actual', :id => @phone.id }), :popup => true) %>
+<% else %>
+None
+<% end %></p>
+
+<div class="label">Description:</div>
+<div class="text"><%=h @phone.description %></div>
+
+<div class="label">Features:</div>
+<%
+  unless @phone.features.empty?
+%>
+<div class="list">
+<%
+    for feature in @phone.features
+%>
+<span class="name"><%= feature.name %></span> - <%= feature.description %><br />
+<%
+    end
+%>
+</div>
+Number of features: <%=  @phone.features.count %>
+<%
+  else
+%>
+    <div>None</div>
+<%
+  end
+%>
+
+<div class="label">Buy Outright Cost:</div>
+<div class="text"><%= number_to_currency @phone.outright %></div>
+
+<div class="label">Stock:</div>
+<div class="text"><%= ((@phone.outofstock?) ? "Sold Out" : "Available") %></div>
+
+<div class="label">Discontinued:</div>
+<div class="text"><%= ((@phone.discontinued?) ? "Yes" : "No") %></div>
+
+<div class="label">Accessories:</div>
+<%
+  unless @phone.accessories.empty?
+%>
+<div class="list">
+<%
+    for accessory in @phone.accessories
+%>
+<span class="name"><%= accessory.name %></span> - <%= accessory.description %><br />
+<%
+    end
+%>
+</div>
+Number of accessories: <%=  @phone.accessories.count %>
+<%
+  else
+%>
+    <div>None</div>
+<%
+  end
+%>
+
+<div class="label">Created:</div>
+<div class="text"><%=  @phone.created_at.strftime("%b %d %Y at %H:%M:%S") %></div>
+
+<div class="label">Updated:</div>
+<div class="text"><%=  @phone.updated_at.strftime("%b %d %Y at %H:%M:%S") %></div>
 
 <%= link_to 'Edit', :action => 'edit', :id => @phone %> |
 <%= link_to 'Back', :action => 'list' %>

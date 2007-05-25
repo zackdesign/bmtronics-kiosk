@@ -21,6 +21,7 @@ class FeaturesController < ApplicationController
 
   def new
     @feature = Feature.new
+    @phones = Phone.find(:all)
   end
 
   def create
@@ -35,6 +36,7 @@ class FeaturesController < ApplicationController
 
   def edit
     @feature = Feature.find(params[:id])
+    @phones = Phone.find(:all)
   end
 
   def update
