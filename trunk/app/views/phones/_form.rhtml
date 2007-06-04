@@ -18,8 +18,34 @@ None
 <p><label for="phone_description">Description</label><br/>
 <%= text_area 'phone', 'description'  %></p>
 
-<p><label for="phone_features">Features</label><br/>
-<%= select_tag('phone[features_to_phones][]', options_for_select(@features.collect { |feature| [feature.name, feature.id] }, @phone.features.collect { |feature| feature.id }), { :multiple => true }) %></p>
+<p><label for="phone_features">Features</label>
+<div id="tab_view_features">
+<% for @tab in @feature_tabs -%>
+	<div class="dhtmlgoodies_aTab">
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+<%   @first_time = true
+     @count = 0
+     @tab.each_index { |findex|
+       feature = @tab[findex]
+       unless @first_time
+         if findex % 4 == 0 -%>
+            </tr>
+			<tr>
+<%       end
+       else
+         @first_time = false
+       end -%>
+				<td><div style="width: 147px;"><label for="phone[features_to_phones][]"><%= check_box_tag 'phone[features_to_phones][]', feature.id, (@phone.features.collect { |f| f.id }).include?(feature.id) -%><%= feature.name -%></label></div></td>
+<%   } -%>
+			</tr>
+		</table>
+	</div>
+<% end -%>
+</div>
+<label for="phone[features_to_phones][]"><%= check_box_tag 'phone[features_to_phones][]', -1, false -%>Remove all features from phone</label></p>
+<% feature_tabs = "Array('" << @feature_letters.join("', '") << "')" %>
+<%= javascript_tag "initTabs('tab_view_features', " << feature_tabs << ", 0, 600, '');" %>
 
 <p><label for="phone_outright">Buy Outright Cost</label><br/>
 $<%= text_field 'phone', 'outright'  %></p>
@@ -31,7 +57,33 @@ $<%= text_field 'phone', 'outright'  %></p>
 <p><label for="phone_discontinued">Discontinued</label><br/>
 <%= select 'phone', 'discontinued', { 'No' => 'false', 'Yes' => 'true' }, :selected => @phone.discontinued.to_s %></p>
 
-<p><label for="phone_accessories">Accessories</label><br/>
-<%= select_tag('phone[accessories_to_phones][]', options_for_select(@accessories.collect { |accessory| [accessory.name, accessory.id] }, @phone.accessories.collect { |accessory| accessory.id }), { :multiple => true }) %></p>
+<p><label for="phone_accessories">Accessories</label>
+<div id="tab_view_accessories">
+<% for @tab in @accessory_tabs -%>
+	<div class="dhtmlgoodies_aTab">
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+<%   @first_time = true
+     @count = 0
+     @tab.each_index { |aindex|
+       accessory = @tab[aindex]
+       unless @first_time
+         if aindex % 4 == 0 -%>
+            </tr>
+			<tr>
+<%       end
+       else
+         @first_time = false
+       end -%>
+				<td><div style="width: 147px;"><label for="phone[accessories_to_phones][]"><%= check_box_tag 'phone[accessories_to_phones][]', accessory.id, (@phone.accessories.collect { |a| a.id }).include?(accessory.id) -%><%= accessory.name -%></label></div></td>
+<%   } -%>
+			</tr>
+		</table>
+	</div>
+<% end -%>
+</div>
+<label for="phone[accessories_to_phones][]"><%= check_box_tag 'phone[accessories_to_phones][]', -1, false -%>Remove all accessories from phone</label></p>
+<% accessory_tabs = "Array('" << @accessory_letters.join("', '") << "')" %>
+<%= javascript_tag "initTabs('tab_view_accessories', " << accessory_tabs << ", 0, 600, '');" %>
 
 <!--[eoform:phone]-->

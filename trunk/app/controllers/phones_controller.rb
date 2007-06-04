@@ -24,8 +24,74 @@ class PhonesController < ApplicationController
 
   def new
     @phone = Phone.new
-    @accessories = Accessory.find(:all)
-    @features = Feature.find(:all)
+    @accessories = Accessory.find(:all, :order => 'name ASC')
+    @features = Feature.find(:all, :order => 'name ASC')
+
+    # Create the Accessory tabs
+    @current_letter = ''
+    @accessory_letters = Array.new
+    @accessory_tabs = Array.new
+    @tab = Array.new
+    @first_time = true
+
+    @accessories.each { |accessory|
+      if @first_time
+        @tab << accessory
+      end
+
+      first_letter = accessory.name[0,1].upcase
+      unless (first_letter == @current_letter)
+        @accessory_letters.push(first_letter)
+        @current_letter = first_letter
+        unless @first_time
+          @accessory_tabs << @tab
+          @tab = Array.new(1, accessory)
+        end
+      else
+        @tab << accessory
+      end
+
+      if @first_time
+        @first_time = false
+      end
+    }
+
+    unless @tab.empty?
+      @accessory_tabs << @tab
+    end
+
+    # Create the Feature tabs
+    @current_letter = ''
+    @feature_letters = Array.new
+    @feature_tabs = Array.new
+    @tab = Array.new
+    @first_time = true
+
+    @features.each { |feature|
+      if @first_time
+        @tab << feature
+      end
+
+      first_letter = feature.name[0,1].upcase
+      unless (first_letter == @current_letter)
+        @feature_letters.push(first_letter)
+        @current_letter = first_letter
+        unless @first_time
+          @feature_tabs << @tab
+          @tab = Array.new(1, feature)
+        end
+      else
+        @tab << feature
+      end
+
+      if @first_time
+        @first_time = false
+      end
+    }
+
+    unless @tab.empty?
+      @feature_tabs << @tab
+    end
   end
 
   def create
@@ -48,8 +114,74 @@ class PhonesController < ApplicationController
 
   def edit
     @phone = Phone.find(params[:id])
-    @accessories = Accessory.find(:all)
-    @features = Feature.find(:all)
+    @accessories = Accessory.find(:all, :order => 'name ASC')
+    @features = Feature.find(:all, :order => 'name ASC')
+
+    # Create the Accessory tabs
+    @current_letter = ''
+    @accessory_letters = Array.new
+    @accessory_tabs = Array.new
+    @tab = Array.new
+    @first_time = true
+
+    @accessories.each { |accessory|
+      if @first_time
+        @tab << accessory
+      end
+
+      first_letter = accessory.name[0,1].upcase
+      unless (first_letter == @current_letter)
+        @accessory_letters.push(first_letter)
+        @current_letter = first_letter
+        unless @first_time
+          @accessory_tabs << @tab
+          @tab = Array.new(1, accessory)
+        end
+      else
+        @tab << accessory
+      end
+
+      if @first_time
+        @first_time = false
+      end
+    }
+
+    unless @tab.empty?
+      @accessory_tabs << @tab
+    end
+
+    # Create the Feature tabs
+    @current_letter = ''
+    @feature_letters = Array.new
+    @feature_tabs = Array.new
+    @tab = Array.new
+    @first_time = true
+
+    @features.each { |feature|
+      if @first_time
+        @tab << feature
+      end
+
+      first_letter = feature.name[0,1].upcase
+      unless (first_letter == @current_letter)
+        @feature_letters.push(first_letter)
+        @current_letter = first_letter
+        unless @first_time
+          @feature_tabs << @tab
+          @tab = Array.new(1, feature)
+        end
+      else
+        @tab << feature
+      end
+
+      if @first_time
+        @first_time = false
+      end
+    }
+
+    unless @tab.empty?
+      @feature_tabs << @tab
+    end
   end
 
   def update

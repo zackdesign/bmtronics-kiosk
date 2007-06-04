@@ -23,6 +23,13 @@ class Accessory < ActiveRecord::Base
   end
 
   def phones_to_accessories=(phone_ids)
-    self.phones = Phone.find(phone_ids)
+#    self.phones = Phone.find(phone_ids)
+    @local_phone_ids = phone_ids
+    if @local_phone_ids.include?("-1")
+      @phones = []
+    else
+      @phones = Phone.find(@local_phone_ids)
+    end
+    self.phones = @phones
   end
 end

@@ -6,6 +6,9 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Plans: <%= controller.action_name %></title>
   <%= stylesheet_link_tag "main" , :media => "all" %>
+  <%= stylesheet_link_tag "tab-view" , :media => "all" %>
+  <%= javascript_include_tag "ajax" %>
+  <%= javascript_include_tag "tab-view" %>
   <script type="text/JavaScript">
 <!--
 function MM_swapImgRestore() { //v3.0
@@ -43,7 +46,6 @@ function inputBlur(ref, defaultString) {
 <div id="headerArea">
    <%= image_tag("leftCol_logo.gif" , :size => "157x96", :alt => "BM Tronics Admin" ) %>
 	<div id="menuArea">
-      
       <%= 
           if @action == "new"
             image = "tabs/tab_new_up.gif"
@@ -59,6 +61,38 @@ function inputBlur(ref, defaultString) {
                     :id   => "tab1",
                     :border => 0 ),                  
                  { :action => "new" }) %>
+
+      <%= 
+          if @action == "new"
+            image = "tabs/tab_new_up.gif"
+          else
+            image = "tabs/tab_new_sh.gif"
+          end
+          
+          link_to(image_tag(image , 
+                    :size => "76x26",
+                    :onmouseout => "MM_swapImgRestore()",
+                    :onmouseover => "MM_swapImage('tab2','','/images/tabs/tab_new_up.gif',0)",
+                    :name => "tab2",
+                    :id   => "tab2",
+                    :border => 0 ),                  
+                 { :action => "list" }) %>
+
+      <%= 
+          if @action == "new"
+            image = "tabs/tab_new_up.gif"
+          else
+            image = "tabs/tab_new_sh.gif"
+          end
+          
+          link_to(image_tag(image , 
+                    :size => "76x26",
+                    :onmouseout => "MM_swapImgRestore()",
+                    :onmouseover => "MM_swapImage('tab3','','/images/tabs/tab_new_up.gif',0)",
+                    :name => "tab3",
+                    :id   => "tab3",
+                    :border => 0 ),                  
+                 { :action => "listarch" }) %>
 	</div>
 </div>
 <div id="sideArea">
