@@ -24,10 +24,24 @@ class Phone < ActiveRecord::Base
   end
 
   def accessories_to_phones=(accessory_ids)
-    self.accessories = Accessory.find(accessory_ids)
+#    self.accessories = Accessory.find(accessory_ids)
+    @local_accessory_ids = accessory_ids
+    if @local_accessory_ids.include?("-1")
+      @accessories = []
+    else
+      @accessories = Accessory.find(@local_accessory_ids)
+    end
+    self.accessories = @accessories
   end
 
   def features_to_phones=(feature_ids)
-    self.features = Feature.find(feature_ids)
+#    self.features = Feature.find(feature_ids)
+    @local_feature_ids = feature_ids
+    if @local_feature_ids.include?("-1")
+      @features = []
+    else
+      @features = Feature.find(@local_feature_ids)
+    end
+    self.features = @features
   end
 end

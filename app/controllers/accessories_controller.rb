@@ -15,7 +15,13 @@ class AccessoriesController < ApplicationController
          :redirect_to => { :action => :list }
 
   def list
-    @accessory_pages, @accessories = paginate :accessories, :per_page => 10
+#    @accessory_pages, @accessories = paginate :accessories, :per_page => 10
+    @accessory_pages, @accessories = paginate :accessories, { :per_page => 10, :conditions => 'active = 1' }
+  end
+
+  def listarch
+    @accessory_pages, @accessories = paginate :accessories, { :per_page => 10, :conditions => 'active = 0' }
+    render :action => 'list'
   end
 
   def show
@@ -24,7 +30,38 @@ class AccessoriesController < ApplicationController
 
   def new
     @accessory = Accessory.new
-    @phones = Phone.find(:all)
+    @phones = Phone.find(:all, :order => 'name ASC')
+    @current_letter = ''
+    @letters = Array.new
+    @tabs = Array.new
+    @tab = Array.new
+    @first_time = true
+
+    @phones.each { |phone|
+      if @first_time
+        @tab << phone
+      end
+
+      first_letter = phone.name[0,1].upcase
+      unless (first_letter == @current_letter)
+        @letters.push(first_letter)
+        @current_letter = first_letter
+        unless @first_time
+          @tabs << @tab
+          @tab = Array.new(1, phone)
+        end
+      else
+        @tab << phone
+      end
+
+      if @first_time
+        @first_time = false
+      end
+    }
+
+    unless @tab.empty?
+      @tabs << @tab
+    end
   end
 
   def create
@@ -47,7 +84,38 @@ class AccessoriesController < ApplicationController
 
   def edit
     @accessory = Accessory.find(params[:id])
-    @phones = Phone.find(:all)
+    @phones = Phone.find(:all, :order => 'name ASC')
+    @current_letter = ''
+    @letters = Array.new
+    @tabs = Array.new
+    @tab = Array.new
+    @first_time = true
+
+    @phones.each { |phone|
+      if @first_time
+        @tab << phone
+      end
+
+      first_letter = phone.name[0,1].upcase
+      unless (first_letter == @current_letter)
+        @letters.push(first_letter)
+        @current_letter = first_letter
+        unless @first_time
+          @tabs << @tab
+          @tab = Array.new(1, phone)
+        end
+      else
+        @tab << phone
+      end
+
+      if @first_time
+        @first_time = false
+      end
+    }
+
+    unless @tab.empty?
+      @tabs << @tab
+    end
   end
 
   def update
@@ -88,9 +156,35 @@ class AccessoriesController < ApplicationController
     end
   end
 
-  def destroy
+  def delete
     Accessory.find(params[:id]).destroy
     redirect_to :action => 'list'
+  end
+
+  def deletearch
+    @accessory = Accessory.find(params[:id])
+    @destroyed = @accessory.destroy
+    redirect_to :action => 'listarch'
+  end
+
+  def archive
+    @accessory = Accessory.find(params[:id])
+    if @accessory.update_attribute(:active, false)
+      flash[:notice] = 'Accessory was successfully archived.'
+    else
+      flash[:notice] = 'Accessory could not be archived.'
+    end
+    redirect_to :action => 'list'
+  end
+
+  def unarchive
+    @accessory = Accessory.find(params[:id])
+    if @accessory.update_attribute(:active, true)
+      flash[:notice] = 'Accessory was successfully unarchived.'
+    else
+      flash[:notice] = 'Accessory could not be unarchived.'
+    end
+    redirect_to :action => 'listarch'
   end
 
   def thumbnail

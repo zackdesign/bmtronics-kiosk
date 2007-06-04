@@ -1,4 +1,8 @@
+<% if params[:action] == 'listarch' -%>
+<h1>Archived Accessories</h1>
+<% else -%>
 <h1>Accessories</h1>
+<% end -%>
 
 <table>
   <tr>
@@ -9,7 +13,7 @@
     <th>Stock</th>
     <th>Discontinued</th>
     <th>Phones</th>
-    <th colspan="3">Actions</th>
+    <th>Actions</th>
   </tr>
   
 <% for accessory in @accessories %>
@@ -21,9 +25,7 @@
     <td><%=  ((accessory.outofstock?) ? "Sold Out" : "Available") %></td>
     <td><%=  ((accessory.discontinued?) ? "Yes" : "No") %></td>
     <td><%=  accessory.phones.count %></td>
-    <td><%= link_to 'Show', :action => 'show', :id => accessory %></td>
-    <td><%= link_to 'Edit', :action => 'edit', :id => accessory %></td>
-    <td><%= link_to 'Delete', { :action => 'destroy', :id => accessory }, :confirm => ((accessory.phones.empty?) ? "Permanently delete this accessory ?" : "WARNING: Deleting this accessory will also delete it from #{accessory.phones.count} phone(s).\n\nPermanently delete this accessory ?"), :method => :post %></td>
+    <td><%= link_to 'Show', :action => 'show', :id => accessory %>&nbsp;<%= link_to 'Edit', :action => 'edit', :id => accessory %>&nbsp;<% if params[:action] == 'listarch' -%><%= link_to 'Unarchive', { :action => 'unarchive', :id => accessory }, :confirm => "Unarchive this accessory ?", :method => :post %><% else -%><%= link_to 'Archive', { :action => 'archive', :id => accessory }, :confirm => ((accessory.phones.empty?) ? "Archive this accessory ?" : "WARNING: This accessory is still used by #{accessory.phones.count} phone(s).\n\nArchive this accessory ?"), :method => :post %><% end -%>&nbsp;<% if params[:action] == 'listarch' -%><%= link_to 'Delete', { :action => 'deletearch', :id => accessory }, :confirm => ((accessory.phones.empty?) ? "Permanently delete this accessory ?" : "WARNING: Deleting this accessory will also delete it from #{accessory.phones.count} phone(s).\n\nPermanently delete this accessory ?"), :method => :post %><% else -%><%= link_to 'Delete', { :action => 'delete', :id => accessory }, :confirm => ((accessory.phones.empty?) ? "Permanently delete this accessory ?" : "WARNING: Deleting this accessory will also delete it from #{accessory.phones.count} phone(s).\n\nPermanently delete this accessory ?"), :method => :post %><% end -%></td>
   </tr>
 <% end %>
 </table>
