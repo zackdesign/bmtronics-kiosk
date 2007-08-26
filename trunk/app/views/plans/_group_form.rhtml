@@ -1,0 +1,16 @@
+<%= error_messages_for 'plan_group' %>
+
+<!--[form:plan_group]-->
+<p><label for="plan_group_name">Name</label><br/>
+<%= text_field 'plan_group', 'name'  %></p>
+
+<p><label for="plan_group_description">Description</label><br/>
+<%= text_area 'plan_group', 'description'  %></p>
+
+<p><label for="plan_group_categories">Categories</label><br/>
+<label for="plan_group[categories_chk][]"><%= check_box_tag 'plan_group[categories_chk][]', "consumer", (@plan_group.categories.include?('consumer')) %>Consumer</label>&nbsp;<label for="plan_group[categories_chk][]"><%= check_box_tag 'plan_group[categories_chk][]', "business", (@plan_group.categories.include?('business')) %>Business</label>&nbsp;<label for="plan_group[categories_chk][]"><%= check_box_tag 'plan_group[categories_chk][]', "corporate", (@plan_group.categories.include?('corporate')) %>Corporate</label></p>
+
+<p><label for="plan_group_discontinued">Discontinued</label><br/>
+<%= check_box 'plan_group', 'discontinued' %></p>
+
+<!--[eoform:plan_group]-->

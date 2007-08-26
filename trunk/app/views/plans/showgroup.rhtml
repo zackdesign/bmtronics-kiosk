@@ -1,0 +1,8 @@
+<% for column in PlanGroup.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @plan_group.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'editgroup', :id => @plan_group %> |
+<%= link_to 'Back', :action => 'listgroups' %>

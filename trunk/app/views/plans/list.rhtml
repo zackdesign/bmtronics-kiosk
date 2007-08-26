@@ -1,26 +1,67 @@
-<h1>Listing plans</h1>
+<style>
+th
+{
+	vertical-align: bottom;
+}
+</style>
+
+<h1>Plans</h1>
 
 <table>
   <tr>
+<!--
   <% for column in Plan.content_columns %>
     <th><%= column.human_name %></th>
   <% end %>
     <td>Phones</th>
+-->
+    <th>Name</th>
+    <!--<th>Comments</th>-->
+    <th>Categories</th>
+    <th>Codes</th>
+    <th>Contract Period</th>
+    <th>Handsets</th>
+    <!--<th>Plan Group</th>-->
+    <!--<th>Handset Cost</th>-->
+    <th>Offer</th>
+    <th>Offer Price</th>
+    <th>Monthly<!-- Repayments--></th>
+    <th>Discont.<!--inued--></th>
+    <th>Actions</th>
   </tr>
   
 <% for plan in @plans %>
-  <tr>
+  <tr valign="top">
+<!--
   <% for column in Plan.content_columns %>
     <td><%=h plan.send(column.name) %></td>
   <% end %>
-    <td>
-      <% for phone in plan.phones %>
-        <%= phone.name %>
+-->
+    <td><%=h plan.name %></td>
+    <!--<td><%=h plan.comments %></td>-->
+    <td><!--<%=h (plan.categories.split(',').each { |c| c.capitalize }).join(',') %>-->
+      <ul>
+      <% for cat in plan.categories.split(',') %>
+        <li><%= cat.capitalize %></li>
       <% end %>
+      </ul>
     </td>
-    <td><%= link_to 'Show', :action => 'show', :id => plan %></td>
-    <td><%= link_to 'Edit', :action => 'edit', :id => plan %></td>
-    <td><%= link_to 'Destroy', { :action => 'destroy', :id => plan }, :confirm => 'Are you sure?', :method => :post %></td>
+    <td><%=h plan.code %></td>
+    <td><%=  plan.period %></td>
+    <td>
+      <ul>
+      <% for phone in plan.phones %>
+        <li><%= phone.name %></li>
+      <% end %>
+      </ul>
+    </td>
+    <!--<td><%=h plan.plan_group %></td>-->
+    <!--<td><%=  number_to_currency plan.handset_cost %></td>-->
+    <td><%=h plan.offer %></td>
+    <td><%=  number_to_currency plan.offer_price %></td>
+    <td><%=  number_to_currency plan.repayments %></td>
+    <td><%=  ((plan.discontinued?) ? "Yes" : "No") %></td>
+    <td><%= link_to 'Show', :action => 'show', :id => plan %><br /><%= link_to 'Edit', :action => 'edit', :id => plan %><br /><%= link_to 'Delete', { :action => 'destroy', :id => plan }, :confirm => 'Are you sure?', :method => :post %></td>
   </tr>
 <% end %>
 </table>
@@ -29,4 +70,4 @@
 <%= link_to 'Next page', { :page => @plan_pages.current.next } if @plan_pages.current.next %> 
 
 <br />
-
+<%= link_to 'Plan Groups', { :action => "listgroups" } %>
