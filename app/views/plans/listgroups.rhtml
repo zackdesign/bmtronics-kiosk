@@ -1,0 +1,40 @@
+<h1>Plan Groups</h1>
+
+<table>
+  <tr>
+<!--  <% for column in PlanGroup.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %> -->
+    <th>Name</th>
+    <th>Description</th>
+    <th>Categories</th>
+    <th>Discontinued</th>
+    <th>Actions</th>
+  </tr>
+  
+<% for plan_group in @plan_groups %>
+  <tr>
+<!--  <% for column in PlanGroup.content_columns %>
+    <td><%=h plan_group.send(column.name) %></td>
+  <% end %>
+    <td>
+      <%# for phone in plan.phones %>
+        <%#= phone.name %>
+      <%# end %>
+    </td> -->
+    <td><%=h plan_group.name %></td>
+    <td><%=h plan_group.description %></td>
+    <td><%=  plan_group.categories %></td>
+    <td><%=  plan_group.discontinued %></td>
+    <td><%= link_to 'Show', :action => 'showgroup', :id => plan_group %>&nbsp;<!--</td>
+    <td>--><%= link_to 'Edit', :action => 'editgroup', :id => plan_group %>&nbsp;<!--</td>
+    <td>--><%= link_to 'Destroy', { :action => 'destroy', :id => plan_group }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @plan_groups_pages.current.previous } if @plan_groups_pages.current.previous %>
+<%= link_to 'Next page', { :page => @plan_groups_pages.current.next } if @plan_groups_pages.current.next %> 
+
+<br />
+<%= link_to 'Plans', { :action => "list" } %>

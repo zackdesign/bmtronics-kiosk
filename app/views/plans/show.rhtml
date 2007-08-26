@@ -1,8 +1,97 @@
+<style>
+.label
+{
+	font-weight: bold;
+}
+
+.text
+{
+}
+
+.list
+{
+	width: 20em;
+	height: 10em;
+	overflow: scroll;
+}
+</style>
+
+<h1><%=h @plan.name %></h1>
+<!--
 <% for column in Plan.content_columns %>
 <p>
   <b><%= column.human_name %>:</b> <%=h @plan.send(column.name) %>
 </p>
 <% end %>
+-->
+
+<div class="label">Categories:</div>
+<%
+  unless @plan.categories.empty?
+%>
+<!--<div class="list">-->
+<ul>
+<%
+    for cat in @plan.categories.split(',')
+%>
+<li><%= cat.capitalize %></li>
+<%
+    end
+%>
+<!--</div>-->
+</ul>
+<%
+  else
+%>
+    <div>None</div>
+<%
+  end
+%>
+
+<div class="label">Comments:</div>
+<div class="text"><%=h @plan.comments %></div>
+
+<div class="label">Codes:</div>
+<div class="text"><%=h @plan.code %></div>
+
+<div class="label">Contract Period (months):</div>
+<div class="text"><%=  @plan.period %></div>
+
+<!-- Make phones and handset costs into table -->
+<div class="label">Phones included in this plan:</div>
+<!--<div class="text"><%=  @plan.period %></div>-->
+<table>
+	<tr>
+		<th>Handset</th>
+		<th>Handset Cost</th>
+	</tr>
+<%  for phone in @plan.phones %>
+	<tr>
+		<td><%=h phone.name %></td>
+		<!--<td><%=  number_to_currency @plan.handset_cost %></td>-->
+		<td><%=  number_to_currency phone.handset_cost %></td>
+	</tr>
+<%  end %>
+</table>
+
+<!--<div class="label">Handset cost:</div>
+<div class="text"><%=  number_to_currency @plan.handset_cost %></div>-->
+<!-- Make phones and handset costs into table -->
+
+<div class="label">Offer:</div>
+<div class="text"><%=h @plan.offer %></div>
+
+<div class="label">Offer Price:</div>
+<div class="text"><%=  number_to_currency @plan.offer_price %></div>
+
+<div class="label">Monthly repayments:</div>
+<div class="text"><%=  number_to_currency @plan.repayments %></div>
+
+<div class="label">Discontinued:</div>
+<div class="text"><%= ((@plan.discontinued?) ? "Yes" : "No") %></div>
+
+<div class="label">Charges:</div>
+<div class="text"><!--<%= ((@plan.discontinued?) ? "Yes" : "No") %>--></div>
 
 <%= link_to 'Edit', :action => 'edit', :id => @plan %> |
 <%= link_to 'Back', :action => 'list' %>

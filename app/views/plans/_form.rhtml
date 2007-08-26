@@ -1,36 +1,103 @@
 <%= error_messages_for 'plan' %>
 
 <!--[form:plan]-->
+
+<%= javascript_tag "function handset_click(sender, id)
+{
+//	alert('handset_cost' + id);
+	
+	var cost = document.getElementById('handset_cost' + id);
+	if (cost)
+	{
+		if (!sender.checked)
+		{
+			cost.value = '';
+		}
+		cost.disabled = !sender.checked;
+	}
+}"
+%>
+
+<%= javascript_tag "function cost_change(sender, id)
+{
+//	alert(sender.value);
+
+	var cbx = document.getElementById('handset' + id);
+	if (cbx)
+	{
+		cbx.value = '' + id + '|' + sender.value;
+	}
+}"
+%>
+
 <p><label for="plan_name">Name</label><br/>
 <%= text_field 'plan', 'name'  %></p>
+
+<p>
+<input type="checkbox" name="plan[plan_category_set][]" value="consumer" id="plan[plan_category_set][]" <%if @plan.categories.include?("consumer")%>checked="checked"<%end%> /><label for="plan[plan_category_set][]">Consumer</label>
+<input type="checkbox" name="plan[plan_category_set][]" value="business" id="plan[plan_category_set][]" <%if @plan.categories.include?("business")%>checked="checked"<%end%> /><label for="plan[plan_category_set][]">Business</label>
+<input type="checkbox" name="plan[plan_category_set][]" value="corporate" id="plan[plan_category_set][]" <%if @plan.categories.include?("corporate")%>checked="checked"<%end%> /><label for="plan[plan_category_set][]">Corporate</label>
+</p>
 
 <p><label for="plan_comments">Comments</label><br/>
 <%= text_area 'plan', 'comments'  %></p>
 
-<p><label for="plan_price">Price</label><br/>
-$<%= text_field 'plan', 'price'  %></p>
+<p><label for="plan_code">Codes</label><br/>
+<%= text_field 'plan', 'code'  %></p>
 
-<p><label for="plan_flexi_code">Flexi code</label><br/>
-<%= text_field 'plan', 'flexi_code'  %></p>
+<p><label for="plan_period">Contract Period (months)</label><br/>
+<%= text_field 'plan', 'period'  %></p>
 
-<p><label for="plan_flexi_price">Flexi price</label><br/>
-$<%= text_field 'plan', 'flexi_price'  %></p>
+<p>Phones included in this plan:</p>
+
+<p><%#= debug @plan.phones %></p>
+
+<p><table><tr><th>Handset</th><th>Handset Cost</th></tr>
+<% for phone in @phones %>
+<tr>
+	<td>
+<%
+     enabled = false
+     cost = ""
+     if @plan.phones.include?(phone)
+       enabled = true
+       @phone_from_join = @plan.phones[@plan.phones.index(phone)]
+       cost = @phone_from_join.handset_cost.to_s
+     end
+%>
+		<input type="checkbox" name="plan[plan_phones_handset_set][]" value="<%= phone.id.to_s + "|" + cost %>" id="handset<%= phone.id %>" onclick="handset_click(this, <%= phone.id %>)" <%if @plan.phones.include?(phone) %>checked="checked"<%end%> />
+<label for="plan[plan_phones_handset_set][]"><%= phone.name %></label></td>
+<td><%#= debug phone %>$
+<%=
+#        if @plan.phones.include?(phone)
+#          @phone_from_join = @plan.phones[@plan.phones.index(phone)]
+#          text_field_tag "plan[plan_phones_handset_set]['handset" + phone.id.to_s + "']", @phone_from_join.handset_cost, { :id => "handset_cost" + phone.id.to_s, :disabled => false }
+#        else
+#          text_field_tag "plan[plan_phones_handset_set]['handset" + phone.id.to_s + "']", '', { :id => "handset_cost" + phone.id.to_s, :disabled => true }
+#        end
+     text_field_tag "handset_cost" + phone.id.to_s, cost, { :id => "handset_cost" + phone.id.to_s, :disabled => !enabled, :onchange => "cost_change(this, " + phone.id.to_s + ")" }
+%>
+	</td>
+</tr>
+<% end %>
+</table>
+<input type="hidden" name="plan[plan_phones_handset_set][]" value="-1|-1" />
+</p>
 
 <p><label for="plan_offer">Offer</label><br/>
 <%= text_field 'plan', 'offer'  %></p>
 
-<p><label for="plan_contract">Contract (months)</label><br/>
-<%= text_field 'plan', 'contract'  %></p>
+<p><label for="plan_offer_price">Offer price</label><br/>
+$<%= text_field 'plan', 'offer_price'  %></p>
 
-<% for phone in @phones %>
+<!--<p><label for="plan_repayments">Monthly repayments</label><br />
+$<%= text_field_tag 'plan[repayments]', number_to_currency(@plan.repayments) %></p>-->
 
-<p>Phones included in this plan:</p>
+<p><label for="plan_repayments">Monthly repayments</label><br />
+$<%= text_field 'plan', 'repayments' %></p>
 
-<p><input type="checkbox" name="phone_ids[]" value="<%= phone.id %>" id="<%= phone.id %>" 
-    <%if @plan.phones.include? phone%>checked="checked"<%end%> />
-<label for="phone_id"><%= phone.name %></label></p>
+<p><label for="plan_discontinued">Discontinued</label><br /><%= select 'plan', 'discontinued', { 'No' => 'false', 'Yes' => 'true' }, :selected => @plan.discontinued.to_s %></p>
 
-<% end %>
+<p><label for="plan_charges">Charges</label><br /></p>
 
 <!--[eoform:plan]-->
-
