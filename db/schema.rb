@@ -2,33 +2,66 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 8) do
+ActiveRecord::Schema.define(:version => 18) do
 
   create_table "accessories", :force => true do |t|
-    t.column "name",         :text
+    t.column "name",         :string
     t.column "description",  :text
-    t.column "price",        :float
+    t.column "price",        :decimal,  :precision => 9, :scale => 2, :default => 0.0,          :null => false
     t.column "created_at",   :datetime
     t.column "updated_at",   :datetime
-    t.column "outofstock",   :boolean,  :default => false
+    t.column "outofstock",   :boolean,                                :default => false
+    t.column "discontinued", :boolean,                                :default => false
+    t.column "picture_name", :string
+    t.column "picture_type", :string,                                 :default => "image/jpeg"
+    t.column "picture_data", :binary
+    t.column "active",       :boolean,                                :default => true
+  end
+
+  create_table "charge_type_fields", :force => true do |t|
+    t.column "charge_type_id", :integer,  :limit => 24
+    t.column "name",           :string
+    t.column "description",    :text
+    t.column "created_at",     :datetime
+    t.column "updated_at",     :datetime
+    t.column "discontinued",   :boolean,                :default => false
+  end
+
+  create_table "charge_types", :force => true do |t|
+    t.column "name",         :string
+    t.column "description",  :text
+    t.column "created_at",   :datetime
+    t.column "updated_at",   :datetime
     t.column "discontinued", :boolean,  :default => false
+  end
+
+  create_table "charges", :force => true do |t|
+    t.column "plan_id",    :integer,  :limit => 24
+    t.column "field_id",   :integer,  :limit => 24
+    t.column "value",      :decimal,                :precision => 9, :scale => 2
+    t.column "created_at", :datetime
+    t.column "updated_at", :datetime
   end
 
   create_table "features", :force => true do |t|
-    t.column "name",        :text
+    t.column "name",        :string
     t.column "description", :text
     t.column "created_at",  :datetime
     t.column "updated_at",  :datetime
+    t.column "active",      :boolean,  :default => true
   end
 
   create_table "phones", :force => true do |t|
-    t.column "name",         :text
+    t.column "name",         :string
     t.column "description",  :text
-    t.column "outright",     :integer
+    t.column "outright",     :decimal,  :precision => 9, :scale => 2, :default => 0.0,          :null => false
     t.column "created_at",   :datetime
     t.column "updated_at",   :datetime
-    t.column "outofstock",   :boolean,  :default => false
-    t.column "discontinued", :boolean,  :default => false
+    t.column "outofstock",   :boolean,                                :default => false
+    t.column "discontinued", :boolean,                                :default => false
+    t.column "picture_name", :string
+    t.column "picture_type", :string,                                 :default => "image/jpeg"
+    t.column "picture_data", :binary
   end
 
   create_table "phones_accessories", :id => false, :force => true do |t|
@@ -46,25 +79,17 @@ ActiveRecord::Schema.define(:version => 8) do
   add_index "phones_features", ["phone_id", "feature_id"], :name => "index_phones_features_on_phone_id_and_feature_id"
 
   create_table "phones_plans", :id => false, :force => true do |t|
-    t.column "plan_id",     :integer,                :null => false
-    t.column "phone_id",    :integer,                :null => false
-    t.column "offer_price", :integer, :default => 0
+    t.column "plan_id",      :integer, :limit => 24,                               :default => 0
+    t.column "phone_id",     :integer, :limit => 24,                               :default => 0
+    t.column "handset_cost", :decimal,               :precision => 9, :scale => 2
   end
 
   add_index "phones_plans", ["phone_id", "plan_id"], :name => "index_phones_plans_on_phone_id_and_plan_id"
 
-  create_table "plans", :force => true do |t|
-    t.column "name",         :text
-    t.column "comments",     :text
-    t.column "price",        :integer
-    t.column "flexi_code",   :text
-    t.column "flexi_price",  :integer
-    t.column "base_etc",     :integer
-    t.column "offer",        :text
-    t.column "contract",     :integer
-    t.column "created_at",   :datetime
-    t.column "updated_at",   :datetime
-    t.column "discontinued", :boolean,  :default => false
-  end
+# Could not dump table "plan_groups" because of following StandardError
+#   Unknown type 'set('consumer','business','corporate')' for column 'categories'
+
+# Could not dump table "plans" because of following StandardError
+#   Unknown type 'set('consumer','business','corporate')' for column 'categories'
 
 end

@@ -47,7 +47,7 @@ function inputBlur(ref, defaultString) {
    <%= image_tag("leftCol_logo.gif" , :size => "157x96", :alt => "BM Tronics Admin" ) %>
 	<div id="menuArea">
       <%= 
-          if @action == "new"
+          if controller.action_name == "new"
             image = "tabs/tab_new_up.gif"
           else
             image = "tabs/tab_new_sh.gif"
@@ -61,34 +61,33 @@ function inputBlur(ref, defaultString) {
                     :id   => "tab1",
                     :border => 0 ),                  
                  { :action => "new" }) %>
-
-      <%= 
-          if @action == "new"
-            image = "tabs/tab_new_up.gif"
+	<%= 
+          if controller.action_name == "list"
+            image = "tabs/tab_view_up.gif"
           else
-            image = "tabs/tab_new_sh.gif"
+            image = "tabs/tab_view_sh.gif"
           end
           
           link_to(image_tag(image , 
                     :size => "76x26",
                     :onmouseout => "MM_swapImgRestore()",
-                    :onmouseover => "MM_swapImage('tab2','','/images/tabs/tab_new_up.gif',0)",
+                    :onmouseover => "MM_swapImage('tab2','','/images/tabs/tab_view_up.gif',0)",
                     :name => "tab2",
                     :id   => "tab2",
                     :border => 0 ),                  
                  { :action => "list" }) %>
 
       <%= 
-          if @action == "new"
-            image = "tabs/tab_new_up.gif"
+          if controller.action_name == "listarch"
+            image = "tabs/tab_archive_up.gif"
           else
-            image = "tabs/tab_new_sh.gif"
+            image = "tabs/tab_archive_sh.gif"
           end
           
           link_to(image_tag(image , 
                     :size => "76x26",
                     :onmouseout => "MM_swapImgRestore()",
-                    :onmouseover => "MM_swapImage('tab3','','/images/tabs/tab_new_up.gif',0)",
+                    :onmouseover => "MM_swapImage('tab3','','/images/tabs/tab_archive_up.gif',0)",
                     :name => "tab3",
                     :id   => "tab3",
                     :border => 0 ),                  

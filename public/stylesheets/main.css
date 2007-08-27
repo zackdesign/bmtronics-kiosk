@@ -103,9 +103,10 @@ form {
 	position:absolute;
 	right: 25px;
 	top:11px;
-	color:#BBBBBB;
+	color:#FFFFFF;
 	width:199px;
 	height: 50px;
+	font-weight: bold;
 }
 #caption a{ 
 	color:#666666;
