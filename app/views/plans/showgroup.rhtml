@@ -1,8 +1,79 @@
-<% for column in PlanGroup.content_columns %>
+<style>
+.label
+{
+	font-weight: bold;
+}
+
+.text
+{
+}
+
+.list
+{
+	width: 20em;
+	height: 10em;
+	overflow: scroll;
+}
+</style>
+
+<h1><%=h @plan_group.name %></h1>
+
+<!--<% for column in PlanGroup.content_columns %>
 <p>
   <b><%= column.human_name %>:</b> <%=h @plan_group.send(column.name) %>
 </p>
+<% end %>-->
+
+<div class="label">Categories:</div>
+<% unless @plan_group.categories.empty? %>
+<ul>
+<% for cat in @plan_group.categories.split(',') %>
+	<li><%= cat.capitalize %></li>
 <% end %>
+</ul>
+<% else %>
+<div>None</div>
+<% end %>
+
+<div class="label">Description:</div>
+<div class="text"><%=h @plan_group.description %></div>
+
+<div class="label">Discontinued:</div>
+<div class="text"><%= ((@plan_group.discontinued?) ? "Yes" : "No") %></div>
+
+<div class="label">Plans:</div>
+<div class="text"><%
+if @plan_group.plans.length > 0
+-%><table><tr><th>Name</th><!--<th>Comments</th>--><th>Categories</th><th>Codes</th><th>Contract Period</th><th>Handsets</th><!--<th>Plan Group</th>--><!--<th>Handset Cost</th><th>Offer</th><th>Offer Price</th><th>Monthly--><!-- Repayments</th>--><th>Discont.<!--inued--></th></tr><%
+  for plan in @plan_group.plans -%>
+<tr valign="top">
+  <td><!--<%=h plan.name %>--><%= link_to h(plan.name), :action => 'show', :id => plan.id %></td>
+  <td>
+    <ul>
+    <% for cat in plan.categories.split(',') %>
+      <li><%= cat.capitalize %></li>
+    <% end %>
+    </ul>
+  </td>
+  <td><%=h plan.code %></td>
+  <td><%=  plan.period %></td>
+  <td>
+    <ul>
+    <% for phone in plan.phones %>
+      <li><%= phone.name %></li>
+    <% end %>
+    </ul>
+  </td>
+  <!--<td><%=h plan.offer %></td>
+  <td><%=  number_to_currency plan.offer_price %></td>
+  <td><%=  number_to_currency plan.repayments %></td>-->
+  <td><%=  ((plan.discontinued?) ? "Yes" : "No") %></td></tr><%
+  end
+-%></table><%
+else
+-%>None<%
+end
+-%></div>
 
 <%= link_to 'Edit', :action => 'editgroup', :id => @plan_group %> |
 <%= link_to 'Back', :action => 'listgroups' %>

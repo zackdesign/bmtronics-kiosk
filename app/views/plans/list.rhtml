@@ -61,7 +61,7 @@ th
     <td><%=  number_to_currency plan.offer_price %></td>
     <td><%=  number_to_currency plan.repayments %></td>
     <td><%=  ((plan.discontinued?) ? "Yes" : "No") %></td>
-    <td><%= link_to 'Show', :action => 'show', :id => plan %><br /><%= link_to 'Edit', :action => 'edit', :id => plan %><br /><%= link_to 'Delete', { :action => 'destroy', :id => plan }, :confirm => 'Are you sure?', :method => :post %></td>
+    <td><%= link_to 'Show', :action => 'show', :id => plan %>&nbsp;<%= link_to 'Edit', :action => 'edit', :id => plan %>&nbsp;<%= link_to 'Delete', { :action => 'destroy', :id => plan }, :confirm => 'Are you sure?', :method => :post %></td>
   </tr>
 <% end %>
 </table>
