@@ -53,14 +53,22 @@ function inputBlur(ref, defaultString) {
             image = "tabs/tab_new_sh.gif"
           end
           
+          new_action = "new"
+          if controller.action_name == "listgroups" || controller.action_name == "newgroup" ||
+             controller.action_name == "showgroup" || controller.action_name == "creategroup" ||
+             controller.action_name == "editgroup" || controller.action_name == "updategroup" ||
+             controller.action_name == "destroygroup"
+            new_action = "newgroup"
+          end
+          
           link_to(image_tag(image , 
                     :size => "76x26",
                     :onmouseout => "MM_swapImgRestore()",
                     :onmouseover => "MM_swapImage('tab1','','/images/tabs/tab_new_up.gif',0)",
                     :name => "tab1",
                     :id   => "tab1",
-                    :border => 0 ),                  
-                 { :action => "new" }) %>
+                    :border => 0 ),
+                 { :action => new_action }) %>
 	<%= 
           if controller.action_name == "list"
             image = "tabs/tab_view_up.gif"

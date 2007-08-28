@@ -22,6 +22,7 @@ class PlansController < ApplicationController
 
   def listgroups
     @plan_groups_pages, @plan_groups = paginate :plan_groups, :per_page => 10
+#    @plan_pages, @plans = paginate :plans, { :per_page => 10, :conditions => 'plan_group IS NOT NULL' }
   end
 
   def show
@@ -42,6 +43,8 @@ class PlansController < ApplicationController
     @plan_group = PlanGroup.new
     @phones = Phone.find_all
 #    @action = 'new'   # This is not what I want - what I want is some way to know what the action is inside the layout
+#    @plans = Plan.find_all
+    @plans = Plan.find(:all, { :conditions => "plan_group IS NULL" })
   end
 
   def create
@@ -59,10 +62,10 @@ class PlansController < ApplicationController
     @plan = Plan.new(params[:plan])
     @plan.phones = Phone.find(@params[:phone_ids]) if @params[:phone_ids]
     if @plan.save
-      flash[:notice] = 'Plan was successfully created.'
-      redirect_to :action => 'list'
+      flash[:notice] = 'Plan group was successfully created.'
+      redirect_to :action => 'listgroups'
     else
-      render :action => 'new'
+      render :action => 'newgroup'
     end
   end
 
@@ -74,6 +77,8 @@ class PlansController < ApplicationController
   def editgroup
     @plan_group = PlanGroup.find(params[:id])
 #    @phones = Phone.find_all
+    @plans = Plan.find_all
+#    @plans = Plan.find(:all, { :conditions => "plan_group IS NULL" })
   end
 
   def update
@@ -117,5 +122,10 @@ class PlansController < ApplicationController
   def destroy
     Plan.find(params[:id]).destroy
     redirect_to :action => 'list'
+  end
+
+  def destroygroup
+    PlanGroup.find(params[:id]).destroy
+    redirect_to :action => 'listgroups'
   end
 end
