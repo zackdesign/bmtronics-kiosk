@@ -17,19 +17,11 @@
 </style>
 
 <h1><%=h @plan.name %></h1>
-<!--
-<% for column in Plan.content_columns %>
-<p>
-  <b><%= column.human_name %>:</b> <%=h @plan.send(column.name) %>
-</p>
-<% end %>
--->
 
 <div class="label">Categories:</div>
 <%
   unless @plan.categories.empty?
 %>
-<!--<div class="list">-->
 <ul>
 <%
     for cat in @plan.categories.split(',')
@@ -38,7 +30,6 @@
 <%
     end
 %>
-<!--</div>-->
 </ul>
 <%
   else
@@ -60,6 +51,7 @@
 <!-- Make phones and handset costs into table -->
 <div class="label">Phones included in this plan:</div>
 <!--<div class="text"><%=  @plan.period %></div>-->
+<% if @plan.phones.length > 0 %>
 <table>
 	<tr>
 		<th>Handset</th>
@@ -73,6 +65,9 @@
 	</tr>
 <%  end %>
 </table>
+<% else %>
+<div class="text">None</div>
+<% end %>
 
 <!--<div class="label">Handset cost:</div>
 <div class="text"><%=  number_to_currency @plan.handset_cost %></div>-->
@@ -90,8 +85,27 @@
 <div class="label">Discontinued:</div>
 <div class="text"><%= ((@plan.discontinued?) ? "Yes" : "No") %></div>
 
+<div class="label">Charges Type:</div>
+<div class="text"><%= (@plan.charge_type != nil) ? ChargeType.find(@plan.charge_type).name : "None" %></div>
+
 <div class="label">Charges:</div>
-<div class="text"><!--<%= ((@plan.discontinued?) ? "Yes" : "No") %>--></div>
+<% if @plan.charges.length > 0 %>
+<table>
+	<tr>
+		<th>Charge</th>
+		<th>Amount</th>
+	</tr>
+<%   for charge in @plan.charges %>
+	<tr>
+		<td><%=  ChargeTypeField.find(charge.charge_type_field).name %></td>
+		<!--<td><%=  number_to_currency @plan.handset_cost %></td>-->
+		<td><%=h number_to_currency charge.value %></td>
+	</tr>
+<%   end %>
+</table>
+<% else %>
+<div class="text">None</div>
+<% end %>
 
 <%= link_to 'Edit', :action => 'edit', :id => @plan %> |
 <%= link_to 'Back', :action => 'list' %>

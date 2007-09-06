@@ -4,8 +4,6 @@
 
 <%= javascript_tag "function handset_click(sender, id)
 {
-//	alert('handset_cost' + id);
-	
 	var cost = document.getElementById('handset_cost' + id);
 	if (cost)
 	{
@@ -20,12 +18,39 @@
 
 <%= javascript_tag "function cost_change(sender, id)
 {
-//	alert(sender.value);
-
 	var cbx = document.getElementById('handset' + id);
 	if (cbx)
 	{
 		cbx.value = '' + id + '|' + sender.value;
+	}
+}"
+%>
+
+<%= javascript_tag "function charge_change()
+{
+	if (!confirm('Changing the Charges Type will result in the loss of all charges currently associated with this plan. Continue ?'))
+	{
+		var current = document.getElementById('plan_charge_type');
+		var previous = document.getElementById('prev_charge_type');
+		if ((current) && (previous))
+		{
+			if (previous.value == '')
+			{
+				current.options[0].selected = true;
+			}
+			else
+			{
+				for (var i = 0 ; i < current.options.length ; i++)
+				{
+					if (current.options[i].value == previous.value)
+					{
+						current.options[i].selected = true;
+					}
+				}
+			}
+		}
+
+		return;
 	}
 }"
 %>
@@ -50,8 +75,6 @@
 
 <p>Phones included in this plan:</p>
 
-<p><%#= debug @plan.phones %></p>
-
 <p><table><tr><th>Handset</th><th>Handset Cost</th></tr>
 <% for phone in @phones %>
 <tr>
@@ -59,23 +82,16 @@
 <%
      enabled = false
      cost = ""
-     if @plan.phones.include?(phone)
+     @phone_plan = PhonesPlans.find_by_plan_id_and_phone_id(@plan.id, phone.id)
+     unless @phone_plan == nil
        enabled = true
-       @phone_from_join = @plan.phones[@plan.phones.index(phone)]
+       @phone_from_join = @phone_plan
        cost = @phone_from_join.handset_cost.to_s
      end
 %>
-		<input type="checkbox" name="plan[plan_phones_handset_set][]" value="<%= phone.id.to_s + "|" + cost %>" id="handset<%= phone.id %>" onclick="handset_click(this, <%= phone.id %>)" <%if @plan.phones.include?(phone) %>checked="checked"<%end%> />
+		<input type="checkbox" name="plan[plan_phones_handset_set][]" value="<%= phone.id.to_s + "|" + cost %>" id="handset<%= phone.id %>" onclick="handset_click(this, <%= phone.id %>)" <%unless @phone_plan == nil %>checked="checked"<%end%> />
 <label for="plan[plan_phones_handset_set][]"><%= phone.name %></label></td>
-<td><%#= debug phone %>$
-<%=
-#        if @plan.phones.include?(phone)
-#          @phone_from_join = @plan.phones[@plan.phones.index(phone)]
-#          text_field_tag "plan[plan_phones_handset_set]['handset" + phone.id.to_s + "']", @phone_from_join.handset_cost, { :id => "handset_cost" + phone.id.to_s, :disabled => false }
-#        else
-#          text_field_tag "plan[plan_phones_handset_set]['handset" + phone.id.to_s + "']", '', { :id => "handset_cost" + phone.id.to_s, :disabled => true }
-#        end
-     text_field_tag "handset_cost" + phone.id.to_s, cost, { :id => "handset_cost" + phone.id.to_s, :disabled => !enabled, :onchange => "cost_change(this, " + phone.id.to_s + ")" }
+<td>$<%= text_field_tag "handset_cost" + phone.id.to_s, cost, { :id => "handset_cost" + phone.id.to_s, :disabled => !enabled, :onchange => "cost_change(this, " + phone.id.to_s + ")" }
 %>
 	</td>
 </tr>
@@ -90,14 +106,30 @@
 <p><label for="plan_offer_price">Offer price</label><br/>
 $<%= text_field 'plan', 'offer_price'  %></p>
 
-<!--<p><label for="plan_repayments">Monthly repayments</label><br />
-$<%= text_field_tag 'plan[repayments]', number_to_currency(@plan.repayments) %></p>-->
-
 <p><label for="plan_repayments">Monthly repayments</label><br />
 $<%= text_field 'plan', 'repayments' %></p>
 
 <p><label for="plan_discontinued">Discontinued</label><br /><%= select 'plan', 'discontinued', { 'No' => 'false', 'Yes' => 'true' }, :selected => @plan.discontinued.to_s %></p>
 
-<p><label for="plan_charges">Charges</label><br /></p>
+<p><label for="plan_charges">Charges Type</label><br />
+<%= select('plan', 'charge_type', ChargeType.find(:all).collect { |c| [c.name, c.id] }, { :id => 'charge_type', :include_blank => true, :selected => (@plan.charge_type != nil) ? ChargeType.find(@plan.charge_type).id : '' }, { :onchange => "return charge_change();", :name => 'plan[plan_charge_type]' }) %><br />
+<input type="hidden" name="prev_charge_type" id="prev_charge_type" value="<%= (@plan.charge_type != nil) ? ChargeType.find(@plan.charge_type).id : '' %>" />
+<% if @plan.charges.length > 0 %>
+<table>
+	<tr>
+		<th>Charge</th>
+		<th>Amount</th>
+	</tr>
+<%   for @charge in @plan.charges %>
+	<tr>
+		<td><%=  ChargeTypeField.find(@charge.charge_type_field).name %></td>
+		<td>$<%=  text_field 'charge', 'value', { :name => 'plan[charges_values][]' } %></td>
+	</tr>
+<%   end %>
+</table>
+<% else %>
+<div class="text">None</div>
+<% end %>
+</p>
 
 <!--[eoform:plan]-->

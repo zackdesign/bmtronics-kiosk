@@ -83,15 +83,19 @@ class PlansController < ApplicationController
 
   def update
     @plan = Plan.find(params[:id])
-    
-    if @params[:phone_ids]
-      @plan.phones = Phone.find(@params[:phone_ids]) 
-    else
-      for phone in @plan.phones
-        @plan.remove_phones(phone)
-      end
-    end
-         
+
+#breakpoint
+
+#    if @params[:phone_ids]
+#      @plan.phones = Phone.find(@params[:phone_ids]) 
+#    else
+#      for phone in @plan.phones
+#        @plan.remove_phones(phone)
+#      end
+#    end
+
+#breakpoint
+
     if @plan.update_attributes(params[:plan])
       flash[:notice] = 'Plan was successfully updated.'
       redirect_to :action => 'show', :id => @plan
