@@ -48,30 +48,25 @@
 <div class="label">Contract Period (months):</div>
 <div class="text"><%=  @plan.period %></div>
 
-<!-- Make phones and handset costs into table -->
 <div class="label">Phones included in this plan:</div>
-<!--<div class="text"><%=  @plan.period %></div>-->
 <% if @plan.phones.length > 0 %>
 <table>
 	<tr>
 		<th>Handset</th>
 		<th>Handset Cost</th>
+		<th>MRO</th>
 	</tr>
 <%  for phone in @plan.phones %>
 	<tr>
 		<td><%=h phone.name %></td>
-		<!--<td><%=  number_to_currency @plan.handset_cost %></td>-->
 		<td><%=  number_to_currency phone.handset_cost %></td>
+		<td><%=h phone.mro %></td>
 	</tr>
 <%  end %>
 </table>
 <% else %>
 <div class="text">None</div>
 <% end %>
-
-<!--<div class="label">Handset cost:</div>
-<div class="text"><%=  number_to_currency @plan.handset_cost %></div>-->
-<!-- Make phones and handset costs into table -->
 
 <div class="label">Offer:</div>
 <div class="text"><%=h @plan.offer %></div>
@@ -98,7 +93,6 @@
 <%   for charge in @plan.charges %>
 	<tr>
 		<td><%=  ChargeTypeField.find(charge.charge_type_field).name %></td>
-		<!--<td><%=  number_to_currency @plan.handset_cost %></td>-->
 		<td><%=h number_to_currency charge.value %></td>
 	</tr>
 <%   end %>

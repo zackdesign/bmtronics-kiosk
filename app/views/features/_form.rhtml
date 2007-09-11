@@ -25,14 +25,14 @@
        else
          @first_time = false
        end -%>
-				<td><div style="width: 147px;"><label for="feature[phones_to_features][]"><%= check_box_tag 'feature[phones_to_features][]', phone.id, (@feature.phones.collect { |p| p.id }).include?(phone.id) -%><%= phone.name -%></label></div></td>
+				<td><div style="width: 147px;"><label for="feature[phones_to_features][<%= phone.id.to_s %>]"><%= check_box_tag 'feature[phones_to_features][]', phone.id, (@feature.phones.collect { |p| p.id }).include?(phone.id), { :id => 'feature[phones_to_features]['+phone.id.to_s+']' } -%><%= phone.name -%></label></div></td>
 <%   } -%>
 			</tr>
 		</table>
 	</div>
 <% end -%>
 </div>
-<label for="feature[phones_to_features][]"><%= check_box_tag 'feature[phones_to_features][]', -1, false -%>Remove feature from all phones</label></p>
+<label for="feature[phones_to_features][-1]"><%= check_box_tag 'feature[phones_to_features][]', -1, false, { :id => 'feature[phones_to_features][-1]' } -%>Remove feature from all phones</label></p>
 <% tabs = "Array('" << @letters.join("', '") << "')" %>
 <%= javascript_tag "initTabs('tab_view', " << tabs << ", 0, 600, '');" %>
 
