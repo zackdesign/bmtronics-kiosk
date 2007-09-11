@@ -28,9 +28,10 @@
 <%= javascript_tag "function cost_change(sender, id)
 {
 	var cbx = document.getElementById('handset' + id);
-	if (cbx)
+	var mro_tbx = document.getElementById('handset_mro' + id);
+	if ((cbx) && (mro_tbx))
 	{
-		cbx.value = '' + id + '|' + sender.value;
+		cbx.value = '' + id + '|' + sender.value + '~' + mro_tbx.value;
 	}
 }"
 %>
@@ -38,9 +39,10 @@
 <%= javascript_tag "function mro_change(sender, id)
 {
 	var cbx = document.getElementById('handset' + id);
-	if (cbx)
+	var cost_tbx = document.getElementById('handset_cost' + id);
+	if ((cbx) && (cost_tbx))
 	{
-		cbx.value = '' + id + '|' + sender.value;
+		cbx.value = '' + id + '|' + cost_tbx.value + '~' + sender.value;
 	}
 }"
 %>
@@ -107,10 +109,11 @@
        enabled = true
        @phone_from_join = @phone_plan
        cost = @phone_from_join.handset_cost.to_s
-	   mro = @phone_from_join.handset_mro.to_s
+#	   mro = @phone_from_join.handset_mro.to_s
+	   mro = @phone_from_join.mro.to_s
      end
 %>
-		<input type="checkbox" name="plan[plan_phones_handset_set][]" value="<%= phone.id.to_s + "|" + cost %>" id="handset<%= phone.id %>" onclick="handset_click(this, <%= phone.id %>)" <%unless @phone_plan == nil %>checked="checked"<%end%> />
+		<input type="checkbox" name="plan[plan_phones_handset_set][]" value="<%= phone.id.to_s + "|" + cost + "~" + mro %>" id="handset<%= phone.id %>" onclick="handset_click(this, <%= phone.id %>)" <%unless @phone_plan == nil %>checked="checked"<%end%> />
 <label for="plan[plan_phones_handset_set][]"><%= phone.name %></label></td>
 <td>$<%= text_field_tag "handset_cost" + phone.id.to_s, cost, { :id => "handset_cost" + phone.id.to_s, :disabled => !enabled, :onchange => "cost_change(this, " + phone.id.to_s + ")" }
 %>

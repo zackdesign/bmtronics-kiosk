@@ -39,11 +39,6 @@ $<%= text_field 'accessory', 'corp_price'  %></p>
 <p><label for="accessory_discontinued">Discontinued</label><br/>
 <%= select 'accessory', 'discontinued', { 'No' => 'false', 'Yes' => 'true' }, :selected => @accessory.discontinued.to_s %></p>
 
-<!--
-<p><label for="accessory_phones">Phones that can use this accessory</label><br/>
-<%= select_tag('accessory[phones_to_accessories][]', options_for_select(@phones.collect { |phone| [phone.name, phone.id] }, @accessory.phones.collect { |phone| phone.id }), { :multiple => true }) %></p>
--->
-
 <p><label for="accessory_phones">Phones that can use this accessory</label>
 <div id="tab_view">
 <% for @tab in @tabs -%>
@@ -62,14 +57,14 @@ $<%= text_field 'accessory', 'corp_price'  %></p>
        else
          @first_time = false
        end -%>
-				<td><div style="width: 147px;"><label for="accessory[phones_to_accessories][]"><%= check_box_tag 'accessory[phones_to_accessories][]', phone.id, (@accessory.phones.collect { |p| p.id }).include?(phone.id) -%><%= phone.name -%></label></div></td>
+				<td><div style="width: 147px;"><label for="accessory[phones_to_accessories][<%= phone.id.to_s %>]"><%= check_box_tag 'accessory[phones_to_accessories][]', phone.id, (@accessory.phones.collect { |p| p.id }).include?(phone.id), { :id => 'accessory[phones_to_accessories]['+phone.id.to_s+']' } -%><%= phone.name -%></label></div></td>
 <%   } -%>
 			</tr>
 		</table>
 	</div>
 <% end -%>
 </div>
-<label for="accessory[phones_to_accessories][]"><%= check_box_tag 'accessory[phones_to_accessories][]', -1, false -%>Remove accessory from all phones</label></p>
+<label for="accessory[phones_to_accessories][-1]"><%= check_box_tag 'accessory[phones_to_accessories][]', -1, false, { :id => 'accessory[phones_to_accessories][-1]' } -%>Remove accessory from all phones</label></p>
 <% tabs = "Array('" << @letters.join("', '") << "')" %>
 <%= javascript_tag "initTabs('tab_view', " << tabs << ", 0, 600, '');" %>
 
