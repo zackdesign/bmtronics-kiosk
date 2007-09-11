@@ -1,0 +1,40 @@
+<%= error_messages_for 'option' %>
+
+<!--[form:option]-->
+<p><label for="option_name">Name</label><br />
+<%= text_field 'option', 'name'  %></p>
+
+<p><label for="option_description">Description</label><br />
+<%= text_area 'option', 'description'  %></p>
+
+<p><label for="option_plans">plans with this option</label>
+<div id="tab_view">
+
+<% for @tab in @tabs -%>
+	<div class="dhtmlgoodies_aTab">
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+<%   @first_time = true
+     @count = 0
+     @tab.each_index { |pindex|
+       plan = @tab[pindex]
+       unless @first_time
+         if pindex % 4 == 0 -%>
+            </tr>
+			<tr>
+<%       end
+       else
+         @first_time = false
+       end -%>
+				<td><div style="width: 147px;"><label for="option[plans_to_options][]"><%= check_box_tag 'option[plans_to_options][]', plan.id, (@option.plans.collect { |p| p.id }).include?(plan.id) -%><%= plan.name -%></label></div></td>
+<%   } -%>
+			</tr>
+		</table>
+	</div>
+<% end -%>
+</div>
+<label for="option[plans_to_options][]"><%= check_box_tag 'option[plans_to_options][]', -1, false -%>Remove option from all plans</label></p>
+<% tabs = "Array('" << @letters.join("', '") << "')" %>
+<%= javascript_tag "initTabs('tab_view', " << tabs << ", 0, 600, '');" %>
+
+<!--[eoform:option]-->

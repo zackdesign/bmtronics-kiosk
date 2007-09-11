@@ -18,8 +18,20 @@ None
 <p><label for="accessory_description">Description</label><br/>
 <%= text_area 'accessory', 'description' %></p>
 
-<p><label for="accessory_price">Price</label><br/>
+<p><label for="accessory_price">RRP</label><br/>
 $<%= text_field 'accessory', 'price' %></p>
+
+<p><label for="accessory_buy_price">Buy Price</label><br/>
+$<%= text_field 'accessory', 'buy_price'  %></p>
+
+<p><label for="accessory_corp_price">Corporate Price</label><br/>
+$<%= text_field 'accessory', 'corp_price'  %></p>
+
+<p><label for="accessory_supplier">Supplier</label><br/>
+<%= text_field 'accessory', 'supplier'  %></p>
+
+<p><label for="accessory_partnum">Part #</label><br/>
+<%= text_field 'accessory', 'partnum'  %></p>
 
 <p><label for="accessory_outofstock">Stock</label><br/>
 <%= select 'accessory', 'outofstock', { 'Available' => 'false', 'Sold Out' => 'true' }, :selected => @accessory.outofstock.to_s %></p>

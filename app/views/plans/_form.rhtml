@@ -5,6 +5,7 @@
 <%= javascript_tag "function handset_click(sender, id)
 {
 	var cost = document.getElementById('handset_cost' + id);
+	var mro = document.getElementById('handset_mro' + id);
 	if (cost)
 	{
 		if (!sender.checked)
@@ -13,10 +14,28 @@
 		}
 		cost.disabled = !sender.checked;
 	}
+	if (mro)
+	{
+		if (!sender.checked)
+		{
+			mro.value = '';
+		}
+		mro.disabled = !sender.checked;
+	}
 }"
 %>
 
 <%= javascript_tag "function cost_change(sender, id)
+{
+	var cbx = document.getElementById('handset' + id);
+	if (cbx)
+	{
+		cbx.value = '' + id + '|' + sender.value;
+	}
+}"
+%>
+
+<%= javascript_tag "function mro_change(sender, id)
 {
 	var cbx = document.getElementById('handset' + id);
 	if (cbx)
@@ -75,18 +94,20 @@
 
 <p>Phones included in this plan:</p>
 
-<p><table><tr><th>Handset</th><th>Handset Cost</th></tr>
+<p><table><tr><th>Handset</th><th>Handset Cost</th><th>MRO</th></tr>
 <% for phone in @phones %>
 <tr>
 	<td>
 <%
      enabled = false
      cost = ""
+	 mro = ""
      @phone_plan = PhonesPlans.find_by_plan_id_and_phone_id(@plan.id, phone.id)
      unless @phone_plan == nil
        enabled = true
        @phone_from_join = @phone_plan
        cost = @phone_from_join.handset_cost.to_s
+	   mro = @phone_from_join.handset_mro.to_s
      end
 %>
 		<input type="checkbox" name="plan[plan_phones_handset_set][]" value="<%= phone.id.to_s + "|" + cost %>" id="handset<%= phone.id %>" onclick="handset_click(this, <%= phone.id %>)" <%unless @phone_plan == nil %>checked="checked"<%end%> />
@@ -94,11 +115,43 @@
 <td>$<%= text_field_tag "handset_cost" + phone.id.to_s, cost, { :id => "handset_cost" + phone.id.to_s, :disabled => !enabled, :onchange => "cost_change(this, " + phone.id.to_s + ")" }
 %>
 	</td>
+	<td><%= text_field_tag "handset_mro" + phone.id.to_s, mro, { :id => "handset_mro" + phone.id.to_s, :disabled => !enabled, :onchange => "mro_change(this, " + phone.id.to_s + ")" }
+%>
+	</td>
 </tr>
 <% end %>
 </table>
 <input type="hidden" name="plan[plan_phones_handset_set][]" value="-1|-1" />
 </p>
+
+<p><label for="plan_options">options</label>
+<div id="tab_view_options">
+<% for @tab in @option_tabs -%>
+	<div class="dhtmlgoodies_aTab">
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+<%   @first_time = true
+     @count = 0
+     @tab.each_index { |findex|
+       option = @tab[findex]
+       unless @first_time
+         if findex % 4 == 0 -%>
+            </tr>
+			<tr>
+<%       end
+       else
+         @first_time = false
+       end -%>
+				<td><div style="width: 147px;"><label for="plan[options_to_plans][]"><%= check_box_tag 'plan[options_to_plans][]', option.id, (@plan.options.collect { |f| f.id }).include?(option.id) -%><%= option.name -%></label></div></td>
+<%   } -%>
+			</tr>
+		</table>
+	</div>
+<% end -%>
+</div>
+<label for="plan[options_to_plans][]"><%= check_box_tag 'plan[options_to_plans][]', -1, false -%>Remove all options from plan</label></p>
+<% option_tabs = "Array('" << @option_letters.join("', '") << "')" %>
+<%= javascript_tag "initTabs('tab_view_options', " << option_tabs << ", 0, 600, '');" %>
 
 <p><label for="plan_offer">Offer</label><br/>
 <%= text_field 'plan', 'offer'  %></p>

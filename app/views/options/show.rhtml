@@ -1,0 +1,53 @@
+<style>
+.label
+{
+	font-weight: bold;
+}
+
+.text
+{
+}
+
+.list
+{
+	width: 20em;
+	height: 10em;
+	overflow: scroll;
+}
+</style>
+
+<h1><%=h @option.name %></h1>
+
+<div class="label">Description:</div>
+<div class="text"><%=h @option.description %></div>
+
+<div class="label">plans with this option:</div>
+<%
+  unless @option.plans.empty?
+%>
+<div class="list">
+<%
+    for plan in @option.plans
+%>
+<%= plan.name %><br />
+<%
+    end
+%>
+</div>
+Number of plans: <%=  @option.plans.count %>
+<%
+  else
+%>
+    <div>None</div>
+<%
+  end
+%>
+
+<div class="label">Created:</div>
+<div class="text"><%=  @option.created_at.strftime("%b %d %Y at %H:%M:%S") %></div>
+
+<div class="label">Updated:</div>
+<div class="text"><%=  @option.updated_at.strftime("%b %d %Y at %H:%M:%S") %></div>
+
+<%= link_to 'Edit', :action => 'edit', :id => @option %> |
+<%= link_to 'Back', :action => 'list' %>
