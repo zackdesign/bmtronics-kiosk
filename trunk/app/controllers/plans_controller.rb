@@ -36,7 +36,40 @@ class PlansController < ApplicationController
   def new
     @plan = Plan.new
     @phones = Phone.find_all
-#    @action = 'new'   # This is not what I want - what I want is some way to know what the action is inside the layout
+	@options = Option.find(:all, :order => 'name ASC')
+	
+    # Create the Bonus Option tabs
+    @current_letter = ''
+    @option_letters = Array.new
+    @option_tabs = Array.new
+    @tab = Array.new
+    @first_time = true
+
+    @options.each { |option|
+      if @first_time
+        @tab << option
+      end
+
+      first_letter = option.name[0,1].upcase
+      unless (first_letter == @current_letter)
+        @option_letters.push(first_letter)
+        @current_letter = first_letter
+        unless @first_time
+          @option_tabs << @tab
+          @tab = Array.new(1, option)
+        end
+      else
+        @tab << option
+      end
+
+      if @first_time
+        @first_time = false
+      end
+    }
+
+    unless @tab.empty?
+      @option_tabs << @tab
+    end
   end
 
   def newgroup
@@ -72,6 +105,40 @@ class PlansController < ApplicationController
   def edit
     @plan = Plan.find(params[:id])
     @phones = Phone.find_all
+	@options = Option.find(:all, :order => 'name ASC')
+	
+    # Create the Bonus Option tabs
+    @current_letter = ''
+    @option_letters = Array.new
+    @option_tabs = Array.new
+    @tab = Array.new
+    @first_time = true
+
+    @options.each { |option|
+      if @first_time
+        @tab << option
+      end
+
+      first_letter = option.name[0,1].upcase
+      unless (first_letter == @current_letter)
+        @option_letters.push(first_letter)
+        @current_letter = first_letter
+        unless @first_time
+          @option_tabs << @tab
+          @tab = Array.new(1, option)
+        end
+      else
+        @tab << option
+      end
+
+      if @first_time
+        @first_time = false
+      end
+    }
+
+    unless @tab.empty?
+      @option_tabs << @tab
+    end
   end
 
   def editgroup
