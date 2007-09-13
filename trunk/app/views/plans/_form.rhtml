@@ -127,9 +127,20 @@
 <input type="hidden" name="plan[plan_phones_handset_set][]" value="-1|-1" />
 </p>
 
-<p><label for="plan_options">options</label>
-<div id="tab_view_options">
+<p><label for="plan_options">Bonus Options</label>
 <% for @tab in @option_tabs -%>
+    <% if @tab %>
+	    <% go = true %>
+	<% end %>
+<% end %>
+
+<% if go %>
+<div id="tab_view_options">
+<% else %>
+ - No bonus options found.
+<% end %>
+<% for @tab in @option_tabs -%>
+<% if @tab %>
 	<div class="dhtmlgoodies_aTab">
 		<table border="0" cellpadding="0" cellspacing="0">
 			<tr>
@@ -150,11 +161,18 @@
 			</tr>
 		</table>
 	</div>
-<% end -%>
+	
+<% end %>
+<% end %>
+<% if go %>
 </div>
+
+
 <label for="plan[options_to_plans][]"><%= check_box_tag 'plan[options_to_plans][]', -1, false -%>Remove all options from plan</label></p>
 <% option_tabs = "Array('" << @option_letters.join("', '") << "')" %>
 <%= javascript_tag "initTabs('tab_view_options', " << option_tabs << ", 0, 600, '');" %>
+<% end %>
+
 
 <p><label for="plan_offer">Offer</label><br/>
 <%= text_field 'plan', 'offer'  %></p>
