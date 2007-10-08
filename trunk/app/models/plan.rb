@@ -1,3 +1,26 @@
+# == Schema Information
+# Schema version: 26
+#
+# Table name: plans
+#
+#  id           :integer(24)   not null, primary key
+#  name         :string(255)   
+#  categories   :(0)           default("consumer"), not null
+#  comments     :text          
+#  handset_cost :decimal(9, 2) 
+#  code         :text          
+#  offer_price  :decimal(9, 2) 
+#  offer        :string(255)   
+#  period       :integer(11)   
+#  created_at   :datetime      
+#  updated_at   :datetime      
+#  discontinued :boolean(1)    
+#  handset      :integer(24)   
+#  plan_group   :integer(24)   
+#  repayments   :decimal(9, 2) 
+#  charge_type  :integer(11)   
+#
+
 class Plan < ActiveRecord::Base
 
   has_and_belongs_to_many :phones
