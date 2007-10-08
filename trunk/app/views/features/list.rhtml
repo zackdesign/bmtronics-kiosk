@@ -19,12 +19,14 @@
 	<tr class="<%= cycle("even", "odd") %>">
 	  <td><%=h feature.name %></td>
 	  <td><%=h feature.description %></td>
-	  <td><%=  feature.phones.count %></td>
+	  <td><%= link_to_feature_phones(feature) %></td>
 	  <td><%= link_to 'Show', :action => 'show', :id => feature %>&nbsp;<%= link_to 'Edit', :action => 'edit', :id => feature %>&nbsp;<%= link_to_archive_action(feature) %>&nbsp;<%= link_to_delete(feature) %></td>
 	</tr>
 	<% end %>
 	</tbody>
 </table>
+
+<%= control_modal_setup %>
 
 <%= link_to 'Previous page', { :page => @feature_pages.current.previous } if @feature_pages.current.previous %>
 <%= link_to 'Next page', { :page => @feature_pages.current.next } if @feature_pages.current.next %> 

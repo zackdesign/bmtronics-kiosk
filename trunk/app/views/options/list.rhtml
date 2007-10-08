@@ -17,7 +17,7 @@
     <td><%=h option.name %></td>
     <td><%=h option.description %></td>
     <td><%=  option.plans.count %></td>
-    <td><%= link_to 'Show', :action => 'show', :id => option %>&nbsp;<%= link_to 'Edit', :action => 'edit', :id => option %>&nbsp;<% if params[:action] == 'listarch' -%><%= link_to 'Unarchive', { :action => 'unarchive', :id => option }, :confirm => "Unarchive this option ?", :method => :post %><% else -%><%= link_to 'Archive', { :action => 'archive', :id => option }, :confirm => ((option.plans.empty?) ? "Archive this option ?" : "WARNING: This option is still used by #{option.plans.count} plan(s).\n\nArchive this option ?"), :method => :post %><% end -%>&nbsp;<% if params[:action] == 'listarch' -%><%= link_to 'Delete', { :action => 'deletearch', :id => option }, :confirm => ((option.plans.empty?) ? "Permanently delete this option ?" : "WARNING: Deleting this option will also delete it from #{option.plans.count} plan(s).\n\nPermanently delete this option ?"), :method => :post %><% else -%><%= link_to 'Delete', { :action => 'delete', :id => option }, :confirm => ((option.plans.empty?) ? "Permanently delete this option ?" : "WARNING: Deleting this option will also delete it from #{option.plans.count} plan(s).\n\nPermanently delete this option ?"), :method => :post %><% end -%></td>
+    <td><%= link_to 'Show', :action => 'show', :id => option %>&nbsp;<%= link_to 'Edit', :action => 'edit', :id => option %>&nbsp;<%= link_to_archive_action(option) %>&nbsp;<%= link_to_delete(option) %></td>
   </tr>
 <% end %>
 </table>
