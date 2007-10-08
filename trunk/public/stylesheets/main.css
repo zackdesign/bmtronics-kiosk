@@ -142,68 +142,6 @@ form {
 .caseStudy a:hover{
 	background-color: transparent; 
 }
-/**************/
-/* NAVIGATION */
-/**************/
-
-#navcontainer ul
-{
-	margin: 0;
-	margin-top:30px;
-	padding: 0;
-	list-style-type: none;
-	font-size: 11px;	
-
-	border-top: 1px solid #e5e5e5;
-}
-
-#navcontainer li { margin: 0 0 0 0; 
-	border-bottom: 1px solid #e5e5e5;
-}
-
-#navcontainer a
-{
-	display: block;
-	font-weight:normal;	
-	color: #555555;
-	background-color: #f8f8f8;
-	width: 104px;
-	padding: 10px 23px;
-	text-decoration: none;
-
-	border-right: 6px solid #f1f1f1;		
-}
-
-#navcontainer a:hover
-{
-	background-color: #000000;
-	border-right: 6px solid #000000;	
-	color: #ffffff;
-}
-#active a
-{
-	display: block;
-	color: #000000;
-	background-color: #efefef;
-	width: 104px;
-	padding: 10px 23px;
-	text-decoration: none;
-	font-weight:normal;
-	border-right: 6px solid #e9e9e9;	
-	
-}
-
-#highFooter {
-	position:absolute;
-	left: 529px;
-	width:380px;
-	top:446px;
-	font-size:10px;
-	color:#aaaaaa;
-
-}
-
-
 
 /**************/
 /* STYLING    */

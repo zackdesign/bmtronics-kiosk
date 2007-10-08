@@ -1,9 +1,6 @@
 class PhonesController < ApplicationController
-
   require 'RMagick'
   include Magick
-
-  layout "main"
 
   def index
     list

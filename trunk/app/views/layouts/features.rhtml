@@ -4,14 +4,46 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>Features: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold' %>
+  <title><%= controller.controller_name %>: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag "main" , :media => "all" %>
+  <%= stylesheet_link_tag "tab-view" , :media => "all" %>
+  <%= stylesheet_link_tag "base" , :media => "all" %>
+  <%= javascript_include_tag "ajax" %>
+  <%= javascript_include_tag "tab-view" %>
 </head>
 <body>
 
-<p style="color: green"><%= flash[:notice] %></p>
+<div id="headerArea">
+   <%= image_tag("leftCol_logo.gif" , :size => "157x96", :alt => "BM Tronics Admin" ) %>
+</div>
+<div id="sideArea">
+	<div id="navcontainer">
+	  <ul id="navlist">
 
-<%= yield  %>
+		
+		<li><a href="/plans">Plans</a></li>
+		<li><a href="/options">Bonus Options</a></li>
+		<li><a href="/phones">Phones</a></li>
+		<li><a href="/accessories">Accessories</a></li>
+		<li id="active"><a href="/features">Features</a></li>
+			<ul>
+				<li><%= link_to_new %></li>
+				<li><%= link_to "view", :action => "new" %></li>
+				<li><%= link_to "archive", :action => "new" %></li>
+			</ul>		
+
+	  </ul>
+  </div>
+  
+</div>
+<div id="leftColumn">
+    <%= yield  %>
+</div>
+
+<div id="caption">
+	<div align="right"><%= flash[:notice] %></div>
+</div>
+
 
 </body>
 </html>
