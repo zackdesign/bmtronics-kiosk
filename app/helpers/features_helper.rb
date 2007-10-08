@@ -11,10 +11,22 @@ module FeaturesHelper
   
   def link_to_delete(feature)
     confirm_message = feature.phones.empty? ? "Permanently delete this feature ?" : "WARNING: Deleting this feature will also delete it from #{feature.phones.count} phone(s).\n\nPermanently delete this feature ?"
-    if params[:action] == 'listarch'
-      link_to('Delete', { :action => 'deletearch', :id => feature }, :confirm => confirm_message, :method => :post)
+    action_name = params[:action] == 'listarch' ? 'deletearch' : 'delete'
+    link_to('Delete', { :action => action_name, :id => feature }, :confirm => confirm_message, :method => :post)
+  end
+  
+  def link_to_feature_phones(feature)
+    if feature.phones.count > 0
+      link_to(feature.phones.count, "#feature#{feature.id}_phones", :class => "modal") + list_related_phones(feature)
     else
-      link_to('Delete', { :action => 'delete', :id => feature }, :confirm => confirm_message, :method => :post)
+      content_tag(:span, feature.phones.count)
     end
+  end
+  
+  private
+  def list_related_phones(feature)
+    result = ""
+    feature.phones.each{|p| result << content_tag(:li, p.name)}
+    content_tag(:div, content_tag(:ul, result), :id => "feature#{feature.id}_phones")
   end
 end

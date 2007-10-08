@@ -25,4 +25,19 @@ module AccessoriesHelper
       link_to'Delete', { :action => 'delete', :id => accessory }, :confirm => confirm_message, :method => :post
     end
   end
+  
+  def link_to_accessory_phones(accessory)
+    if accessory.phones.count > 0
+      link_to(accessory.phones.count, "#accessory#{accessory.id}_phones", :class => "modal") + list_related_phones(accessory)
+    else
+      content_tag(:span, accessory.phones.count)
+    end
+  end
+  
+  private
+  def list_related_phones(accessory)
+    result = ""
+    accessory.phones.each{|p| result << content_tag(:li, p.name)}
+    content_tag(:div, content_tag(:ul, result), :id => "accessory#{accessory.id}_phones")
+  end
 end
