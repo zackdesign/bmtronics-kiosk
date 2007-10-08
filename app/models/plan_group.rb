@@ -1,3 +1,18 @@
+# == Schema Information
+# Schema version: 26
+#
+# Table name: plan_groups
+#
+#  id           :integer(11)   not null, primary key
+#  name         :string(255)   
+#  description  :text          
+#  categories   :(0)           default("consumer"), not null
+#  created_at   :datetime      
+#  updated_at   :datetime      
+#  discontinued :boolean(1)    
+#  active       :boolean(1)    default(TRUE)
+#
+
 class PlanGroup < ActiveRecord::Base
   validates_presence_of :name
   validates_uniqueness_of :name

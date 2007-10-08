@@ -1,3 +1,15 @@
+# == Schema Information
+# Schema version: 26
+#
+# Table name: options
+#
+#  id          :integer(24)   not null, primary key
+#  name        :text          
+#  description :text          
+#  created_at  :datetime      
+#  updated_at  :datetime      
+#
+
 class Option < ActiveRecord::Base
   validates_presence_of :name
   validates_uniqueness_of :name

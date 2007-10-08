@@ -1,3 +1,16 @@
+# == Schema Information
+# Schema version: 26
+#
+# Table name: features
+#
+#  id          :integer(11)   not null, primary key
+#  name        :string(255)   
+#  description :text          
+#  created_at  :datetime      
+#  updated_at  :datetime      
+#  active      :boolean(1)    default(TRUE)
+#
+
 class Feature < ActiveRecord::Base
   validates_presence_of :name
   validates_uniqueness_of :name
