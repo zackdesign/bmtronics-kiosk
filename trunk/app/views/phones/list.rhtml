@@ -1,33 +1,36 @@
 <h1>Phones</h1>
 
 <table>
-  <tr>
-    <th>Picture</th>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Outright</th>
-    <th>Stock</th>
-    <th>Discontinued</th>
-    <th>Features</th>
-    <th>Accessories</th>
-    <th colspan="3">Actions</th>
-  </tr>
-  
-<% for phone in @phones %>
-  <tr>
-    <td><% unless phone.picture_name.blank? %><%= image_tag(url_for({ :action => 'thumbnail', :id => phone.id }), :alt => phone.picture_name) %><% else %>None<% end %></td>
-    <td><%=h phone.name %></td>
-    <td><%=h phone.description %></td>
-    <td><%=  number_to_currency phone.outright %></td>
-    <td><%=  ((phone.outofstock?) ? "Sold Out" : "Available") %></td>
-    <td><%=  ((phone.discontinued?) ? "Yes" : "No") %></td>
-    <td><%=  phone.features.count %></td>
-    <td><%=  phone.accessories.count %></td>
-    <td><%= link_to 'Show', :action => 'show', :id => phone %></td>
-    <td><%= link_to 'Edit', :action => 'edit', :id => phone %></td>
-    <td><%= link_to 'Delete', { :action => 'destroy', :id => phone }, :confirm => 'Permanently delete this phone ?', :method => :post %></td>
-  </tr>
-<% end %>
+	<thead>	
+	  <tr>
+	    <th>Picture</th>
+	    <th>Name</th>
+	    <th>Description</th>
+	    <th>Outright</th>
+	    <th>Stock</th>
+	    <th>Discontinued</th>
+	    <th>Features</th>
+	    <th>Accessories</th>
+	    <th colspan="3">Actions</th>
+	  </tr>
+	</thead>  
+	<tbody>
+	<% for phone in @phones %>
+	  <tr class="<%= cycle("even", "odd") %>">
+	    <td><% unless phone.picture_name.blank? %><%= image_tag(url_for({ :action => 'thumbnail', :id => phone.id }), :alt => phone.picture_name) %><% else %>None<% end %></td>
+	    <td><%=h phone.name %></td>
+	    <td><%=h phone.description %></td>
+	    <td><%=  number_to_currency phone.outright %></td>
+	    <td><%=  ((phone.outofstock?) ? "Sold Out" : "Available") %></td>
+	    <td><%=  ((phone.discontinued?) ? "Yes" : "No") %></td>
+	    <td><%=  phone.features.count %></td>
+	    <td><%=  phone.accessories.count %></td>
+	    <td><%= link_to 'Show', :action => 'show', :id => phone %></td>
+	    <td><%= link_to 'Edit', :action => 'edit', :id => phone %></td>
+	    <td><%= link_to 'Delete', { :action => 'destroy', :id => phone }, :confirm => 'Permanently delete this phone ?', :method => :post %></td>
+	  </tr>
+	<% end %>
+	</tbody>
 </table>
 
 <%= link_to 'Previous page', { :page => @phone_pages.current.previous } if @phone_pages.current.previous %>

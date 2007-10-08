@@ -5,21 +5,25 @@
 <% end -%>
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Phones</th>
-    <th>Actions</th>
-  </tr>
-  
-<% for feature in @features %>
-  <tr>
-    <td><%=h feature.name %></td>
-    <td><%=h feature.description %></td>
-    <td><%=  feature.phones.count %></td>
-    <td><%= link_to 'Show', :action => 'show', :id => feature %>&nbsp;<%= link_to 'Edit', :action => 'edit', :id => feature %>&nbsp;<% if params[:action] == 'listarch' -%><%= link_to 'Unarchive', { :action => 'unarchive', :id => feature }, :confirm => "Unarchive this feature ?", :method => :post %><% else -%><%= link_to 'Archive', { :action => 'archive', :id => feature }, :confirm => ((feature.phones.empty?) ? "Archive this feature ?" : "WARNING: This feature is still used by #{feature.phones.count} phone(s).\n\nArchive this feature ?"), :method => :post %><% end -%>&nbsp;<% if params[:action] == 'listarch' -%><%= link_to 'Delete', { :action => 'deletearch', :id => feature }, :confirm => ((feature.phones.empty?) ? "Permanently delete this feature ?" : "WARNING: Deleting this feature will also delete it from #{feature.phones.count} phone(s).\n\nPermanently delete this feature ?"), :method => :post %><% else -%><%= link_to 'Delete', { :action => 'delete', :id => feature }, :confirm => ((feature.phones.empty?) ? "Permanently delete this feature ?" : "WARNING: Deleting this feature will also delete it from #{feature.phones.count} phone(s).\n\nPermanently delete this feature ?"), :method => :post %><% end -%></td>
-  </tr>
-<% end %>
+	<thead>
+		<tr>
+		  <th>Name</th>
+		  <th>Description</th>
+		  <th>Phones</th>
+		  <th>Actions</th>
+		</tr>
+  	</thead>
+	
+	<tbody>
+	<% for feature in @features %>
+	<tr class="<%= cycle("even", "odd") %>">
+	  <td><%=h feature.name %></td>
+	  <td><%=h feature.description %></td>
+	  <td><%=  feature.phones.count %></td>
+	  <td><%= link_to 'Show', :action => 'show', :id => feature %>&nbsp;<%= link_to 'Edit', :action => 'edit', :id => feature %>&nbsp;<%= link_to_archive_action(feature) %>&nbsp;<%= link_to_delete(feature) %></td>
+	</tr>
+	<% end %>
+	</tbody>
 </table>
 
 <%= link_to 'Previous page', { :page => @feature_pages.current.previous } if @feature_pages.current.previous %>
