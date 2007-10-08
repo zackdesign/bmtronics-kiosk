@@ -86,8 +86,11 @@ table td.currency{
  		END OF base table layout
 ****************************/
 
+
+
+
 /****************************
- 		headings style
+ 		headings styles
 
 */
 h1{
@@ -96,4 +99,74 @@ h1{
 }
 /*
  		END OF headings style
+****************************/
+
+
+
+/****************************
+ 		left navigation style
+
+*/
+#navcontainer { 
+	margin-top: 30px;
+	margin-left: 0px; 
+}
+
+#navcontainer ul
+{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	font-family: verdana, arial, Helvetica, sans-serif;
+}
+
+#navcontainer li { margin: 0 0 1px 0; }
+
+#navcontainer a
+{
+	display: block;
+	padding: 5px 10px;
+	width: 130px;
+	color: #fff;
+	background-color: #036;
+	text-decoration: none;
+}
+
+#navcontainer a:hover
+{
+	color: #fff;
+	background-color: #69C;
+	text-decoration: none;
+}
+
+li#active a
+{
+	color: #FFFFFF;
+	background-color: #369;
+	border-right: 6px solid #f60;		
+}
+
+#navcontainer ul ul li { margin: 0 0 1px 0; }
+
+#navcontainer ul ul a
+{
+	display: block;
+	padding: 5px 5px 5px 30px;
+	width: 115px;
+	color: #fff;
+	background-color: #369;
+	text-decoration: none;
+	border-right: 0;
+}
+
+#navcontainer ul ul a:hover
+{
+	color: #fff;
+	background-color: #69C;
+	text-decoration: none;
+}
+
+
+/*
+ 		END OF left navigation style		
 ****************************/

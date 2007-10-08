@@ -1,6 +1,4 @@
 class FeaturesController < ApplicationController
-
-  layout "main"
   
   def index
     list

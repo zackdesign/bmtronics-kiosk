@@ -1,7 +1,5 @@
 class OptionsController < ApplicationController
 
-  layout "main"
-  
   def index
     list
     render :action => 'list'

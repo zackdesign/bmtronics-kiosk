@@ -1,9 +1,6 @@
 class AccessoriesController < ApplicationController
-
   require 'RMagick'
   include Magick
-
-  layout "main"
 
   def index
     list
