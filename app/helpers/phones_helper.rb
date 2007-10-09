@@ -1,5 +1,13 @@
 module PhonesHelper
   
+  def show_picture_if_available(phone)
+    unless phone.picture_data.blank?
+      link_to(image_tag(url_for({:action => 'picture', :id => phone.id }), { :alt => phone.picture_name, :border => 0 }), url_for({ :action => 'actual', :id => phone.id }), :popup => true)
+    else
+      content_tag(:span, "None")
+    end  
+  end
+  
   def link_to_phone_features(phone)
     if phone.features.count > 0
       link_to(phone.features.count, "#phone#{phone.id}_features", :class => "modal") + list_related_features(phone)

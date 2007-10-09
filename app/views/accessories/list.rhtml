@@ -20,7 +20,7 @@
 	<tbody>
 	<% for accessory in @accessories %>
 	  <tr class="<%= cycle("even", "odd") %>">
-	    <td><%= show_picture_if_available(accessory) %></td>
+	    <td><%= show_thumbnail_if_available(accessory) %></td>
 	    <td><%=h accessory.name %></td>
 	    <td><%=h accessory.description %></td>
 	    <td class="currency"><%=  number_to_currency accessory.price %></td>

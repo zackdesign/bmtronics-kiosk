@@ -1,6 +1,18 @@
 module AccessoriesHelper
   
+  ##
+  # used in accessories/show.rhtml
   def show_picture_if_available(accessory)
+    unless accessory.picture_data.blank?
+      link_to(image_tag(url_for({ :action => 'picture', :id => accessory.id }), { :alt => accessory.picture_name, :border => 0 }), url_for({ :action => 'actual', :id => accessory.id }), :popup => true)
+    else
+      content_tag(:span, "None")
+    end
+  end
+  
+  ##
+  # used in accessories/list.rhtml
+  def show_thumbnail_if_available(accessory)
     unless accessory.picture_name.blank?
       image_tag(url_for({ :action => 'thumbnail', :id => accessory.id }), :alt => accessory.picture_name)
     else

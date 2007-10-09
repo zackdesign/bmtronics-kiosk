@@ -12,14 +12,7 @@
 	<tbody>
 		<% for plan_group in @plan_groups %>
 		  <tr valign="top" class="<%= cycle("even", "odd") %>">
-			  <td>
-		      <ul class="categories">
-		      <% for cat in plan_group.categories.split(',') %>
-		        <li class="<%= cat.downcase %>"><%= cat.capitalize %></li>
-		      <% end %>
-		      </ul>
-		    </td>
-  
+			  <td><%= list_categories(plan_group) %></td>  
 		    <td><%=h plan_group.name %></td>
 		    <td><%=  ((plan_group.discontinued?) ? "Yes" : "No") %></td>
 		    <td><%= link_to 'Show', :action => 'showgroup', :id => plan_group %>&nbsp;<%= link_to 'Edit', :action => 'editgroup', :id => plan_group %>&nbsp;<%= link_to 'Destroy', { :action => 'destroygroup', :id => plan_group }, :confirm => 'Are you sure?', :method => :post %></td>

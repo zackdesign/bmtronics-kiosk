@@ -1,69 +1,35 @@
-<style>
-.label
-{
-	font-weight: bold;
-}
-
-.text
-{
-}
-
-.list
-{
-	width: 20em;
-	height: 10em;
-	overflow: scroll;
-}
-</style>
-
 <h1><%=h @accessory.name %></h1>
 
-<p><div class="label">Picture:</div>
-<% unless @accessory.picture_data.blank? %>
-<%=  link_to(image_tag(url_for({ :action => 'picture', :id => @accessory.id }), { :alt => @accessory.picture_name, :border => 0 }), url_for({ :action => 'actual', :id => @accessory.id }), :popup => true) %>
-<% else %>
-None
-<% end %></p>
+<p><div class="label">Picture:</div><%= show_picture_if_available(@accessory) %></p>
 
-<div class="label">Description:</div>
-<div class="text"><%=h @accessory.description %></div>
-
-<div class="label">Price:</div>
-<div class="text"><%= number_to_currency @accessory.price %></div>
-
-<div class="label">Stock:</div>
-<div class="text"><%= ((@accessory.outofstock?) ? "Sold Out" : "Available") %></div>
-
-<div class="label">Discontinued:</div>
-<div class="text"><%= ((@accessory.discontinued?) ? "Yes" : "No") %></div>
-
-<div class="label">Phones with this accessory:</div>
-<%
-  unless @accessory.phones.empty?
-%>
-<div class="list">
-<%
-    for phone in @accessory.phones
-%>
-<%= phone.name %><br />
-<%
-    end
-%>
+<div class="row_container">
+	<div class="row"><span class="label">Description:</span><span class="text"><%=h @accessory.description %></span></div>
+	<div class="row"><span class="label">Price:</span><span class="text"><%= number_to_currency @accessory.price %></span></div>
+	<div class="row"><span class="label">Stock:</span><span class="text"><%= @accessory.outofstock? ? "Sold Out" : "Available" %></span></div>
+	<div class="row"><span class="label">Discontinued:</span><span class="text"><%= @accessory.discontinued? ? "Yes" : "No" %></span></div>		
 </div>
-Number of phones: <%=  @accessory.phones.count %>
-<%
-  else
-%>
-    <div>None</div>
-<%
-  end
-%>
 
-<div class="label">Created:</div>
-<div class="text"><%=  @accessory.created_at.strftime("%b %d %Y at %H:%M:%S") %></div>
+<%# display phone accessories %>
+<div class="row_container">
+	<div class="row"><span class="label">Phones with this accessory:</span>		
+<% unless @accessory.phones.empty? %>
+	<span class="text"><%= @accessory.phones.count %> <a href="#" onclick="Effect.toggle('phones', 'blind');">show/hide phones</a>
+	<div id="phones" style="display: none;">
+		<ul>
+			<% for phone in @accessory.phones %>
+				<li><%= phone.name %></li>
+			<% end %>
+		</ul>
+	</div></span></div>
+<% else %>
+	<span class="text">None</span></div>
+<% end %>
+</div>
 
-<div class="label">Updated:</div>
-<div class="text"><%=  @accessory.updated_at.strftime("%b %d %Y at %H:%M:%S") %></div>
+<div class="row_container">
+		<div class="row"><span class="label">Created:</span><span class="text"><%= @accessory.created_at.strftime("%b %d %Y at %H:%M:%S") %></span></div>
+		<div class="row"><span class="label">Updated:</span><span class="text"><%= @accessory.updated_at.strftime("%b %d %Y at %H:%M:%S") %></span></div>
+</div>
 
-<%= link_to 'Edit', :action => 'edit', :id => @accessory %> |
-<%= link_to 'Back', :action => 'list' %>
+
+<div class="links_bar"><%= link_to 'Edit', :action => 'edit', :id => @accessory %> | <%= link_to 'Back', :action => 'list' %></div>

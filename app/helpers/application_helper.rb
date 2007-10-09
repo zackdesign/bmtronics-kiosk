@@ -17,6 +17,19 @@ module ApplicationHelper
   end
   
   ##
+  # create an ul with the categories associted with variable
+  # used in plans/list*.rhtml and plans/show*.rhtml
+  def list_categories(variable)
+    if !variable.categories.empty?
+      cat_list = ""
+      variable.categories.split(',').each{|cat| cat_list << content_tag(:li, cat.capitalize, :class => cat.downcase)}
+      content_tag(:ul, cat_list, :class => "categories")
+    else
+      content_tag(:span, "None")
+    end
+  end
+  
+  ##
   # needed to setup modal window
   def control_modal_setup
     js = <<END_OF_STATEMENT
