@@ -24,7 +24,6 @@
 class Accessory < ActiveRecord::Base
   validates_presence_of :name
   validates_uniqueness_of :name
-  validates_presence_of :description
   validates_numericality_of :price
   validates_format_of :picture_type,
                       :with => /\Aimage\/jpeg\Z|\Aimage\/pjpeg\Z|\Aimage\/gif\Z|\Aimage\/png\Z|\Aimage\/x-png\Z/,
