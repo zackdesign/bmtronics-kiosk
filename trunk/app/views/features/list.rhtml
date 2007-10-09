@@ -19,7 +19,7 @@
 	<tr class="<%= cycle("even", "odd") %>">
 	  <td><%=h feature.name %></td>
 	  <td><%=h feature.description %></td>
-	  <td><%= link_to_feature_phones(feature) %></td>
+	  <td class="centered"><%= link_to_feature_phones(feature) %></td>
 	  <td><%= link_to 'Show', :action => 'show', :id => feature %>&nbsp;<%= link_to 'Edit', :action => 'edit', :id => feature %>&nbsp;<%= link_to_archive_action(feature) %>&nbsp;<%= link_to_delete(feature) %></td>
 	</tr>
 	<% end %>

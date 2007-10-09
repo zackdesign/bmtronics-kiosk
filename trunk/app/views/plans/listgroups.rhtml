@@ -1,42 +1,31 @@
 <h1>Plan Groups</h1>
 
 <table>
-  <tr>
-<!--  <% for column in PlanGroup.content_columns %>
-    <th><%= column.human_name %></th>
-  <% end %> -->
-    <th>Name</th>
-    <!--<th>Description</th>-->
-    <th>Categories</th>
-    <th>Discont.</th>
-    <th>Actions</th>
-  </tr>
+	<thead>	
+	  <tr>
+	    <th>Categories</th>	
+	    <th>Name</th>
+	    <th>Discont.</th>
+	    <th>Actions</th>
+	  </tr>
+	</thead>  
+	<tbody>
+		<% for plan_group in @plan_groups %>
+		  <tr valign="top" class="<%= cycle("even", "odd") %>">
+			  <td>
+		      <ul class="categories">
+		      <% for cat in plan_group.categories.split(',') %>
+		        <li class="<%= cat.downcase %>"><%= cat.capitalize %></li>
+		      <% end %>
+		      </ul>
+		    </td>
   
-<% for plan_group in @plan_groups %>
-  <tr valign="top">
-<!--  <% for column in PlanGroup.content_columns %>
-    <td><%=h plan_group.send(column.name) %></td>
-  <% end %>
-    <td>
-      <%# for phone in plan.phones %>
-        <%#= phone.name %>
-      <%# end %>
-    </td> -->
-    <td><%=h plan_group.name %></td>
-    <!--<td><%=h plan_group.description %></td>-->
-    <td><!--<%=  plan_group.categories %>-->
-      <ul>
-      <% for cat in plan_group.categories.split(',') %>
-        <li><%= cat.capitalize %></li>
-      <% end %>
-      </ul>
-    </td>
-    <td><%=  ((plan_group.discontinued?) ? "Yes" : "No") %></td>
-    <td><%= link_to 'Show', :action => 'showgroup', :id => plan_group %>&nbsp;<!--</td>
-    <td>--><%= link_to 'Edit', :action => 'editgroup', :id => plan_group %>&nbsp;<!--</td>
-    <td>--><%= link_to 'Destroy', { :action => 'destroygroup', :id => plan_group }, :confirm => 'Are you sure?', :method => :post %></td>
-  </tr>
-<% end %>
+		    <td><%=h plan_group.name %></td>
+		    <td><%=  ((plan_group.discontinued?) ? "Yes" : "No") %></td>
+		    <td><%= link_to 'Show', :action => 'showgroup', :id => plan_group %>&nbsp;<%= link_to 'Edit', :action => 'editgroup', :id => plan_group %>&nbsp;<%= link_to 'Destroy', { :action => 'destroygroup', :id => plan_group }, :confirm => 'Are you sure?', :method => :post %></td>
+		  </tr>
+		<% end %>
+	</tbody>
 </table>
 
 <%= link_to 'Previous page', { :page => @plan_groups_pages.current.previous } if @plan_groups_pages.current.previous %>

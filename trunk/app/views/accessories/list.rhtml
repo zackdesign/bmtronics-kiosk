@@ -26,7 +26,7 @@
 	    <td class="currency"><%=  number_to_currency accessory.price %></td>
 	    <td><%=  ((accessory.outofstock?) ? "Sold Out" : "Available") %></td>
 	    <td><%=  ((accessory.discontinued?) ? "Yes" : "No") %></td>
-	    <td><%=  link_to_accessory_phones(accessory) %></td>
+	    <td class="centered"><%=  link_to_accessory_phones(accessory) %></td>
 	    <td><%= link_to 'Show', :action => 'show', :id => accessory %>&nbsp;<%= link_to 'Edit', :action => 'edit', :id => accessory %>&nbsp;<%= link_to_archive_action(accessory) %>&nbsp;<%= link_to_delete(accessory) %></td>
 	  </tr>
 	<% end %>
