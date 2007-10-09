@@ -196,14 +196,17 @@ li#active a
 	color:#333;  
 	text-align:left;  
 } 
-
-/*#modal_overlay {  
-	background-color:#000;  
-}*/
 /*
  		END OF modal window layout
 ****************************/
 
+
+
+/****************************
+ 		style for rows
+		used in show.rhtml
+
+*/
 div.row_container{
 	width: 600px;
 }
@@ -237,10 +240,14 @@ div.row table{
 table.wide{
   width: 600px;	
 }
+/*
+ 		END OF style for rows
+****************************/
+
+
 
 /****************************
  		style for categories
-
 */
 ul.categories li{
 	font-size: 12px;
@@ -259,6 +266,12 @@ ul.categories li{
  		END OF modal window layout
 ****************************/
 
+
+
+/****************************
+ 		style for attributes assigned in show.rhtml
+		used in show.rhthml
+*/
 dl, #phones ul{
 	margin: 0;
 	margin-bottom: 5px;	
@@ -275,6 +288,35 @@ dt{
 	font-weight: bold;
 	color: #761418;
 }
+/*
+ 		END OF style for attributes assigned in show.rhtml
+****************************/
+
+
+
+/****************************
+ 		style for images
+		used in show.rhthml list.rhtml
+*/
+img.medium, img.thumb{
+	padding: 5px;
+	padding-bottom: 30px;
+	background-color: #fff;
+	border: 1px solid #ccc;	
+	border-top-color: #eee;
+	border-right-color: #ddd;
+	border-bottom-color: #bbb;
+}
+
+img.thumb{
+	padding: 4px 4px 9px 4px;
+}
+/*
+ 		END OF style for images
+****************************/
+
+
+
 div.links_bar{
 	border-top: 2px solid #369;
 	width: 600px;
