@@ -1,8 +1,20 @@
 module PhonesHelper
   
+  ##
+  # used in phones/show.rhtml
+  def show_thumbnail_if_available(phone)
+    unless phone.picture_name.blank?
+      image_tag(url_for({ :action => 'thumbnail', :id => phone.id }), :alt => phone.picture_name, :class => "thumb")
+    else
+      content_tag(:span, "None")
+    end
+  end
+  
+  ##
+  # used in phones/list.rhtml
   def show_picture_if_available(phone)
     unless phone.picture_data.blank?
-      link_to(image_tag(url_for({:action => 'picture', :id => phone.id }), { :alt => phone.picture_name, :border => 0 }), url_for({ :action => 'actual', :id => phone.id }), :popup => true)
+      link_to(image_tag(url_for({:action => 'picture', :id => phone.id }), { :alt => phone.picture_name, :border => 0, :class => "medium" }), url_for({ :action => 'actual', :id => phone.id }), :popup => true)
     else
       content_tag(:span, "None")
     end  

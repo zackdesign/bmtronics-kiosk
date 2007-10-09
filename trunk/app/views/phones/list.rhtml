@@ -17,7 +17,7 @@
 	<tbody>
 	<% for phone in @phones %>
 	  <tr class="<%= cycle("even", "odd") %>">
-	    <td><% unless phone.picture_name.blank? %><%= image_tag(url_for({ :action => 'thumbnail', :id => phone.id }), :alt => phone.picture_name) %><% else %>None<% end %></td>
+	    <td class="centered"><%= show_thumbnail_if_available(phone) %></td>
 	    <td><%=h phone.name %></td>
 	    <td><%=h phone.description %></td>
 	    <td><%=  number_to_currency phone.outright %></td>
