@@ -13,4 +13,7 @@
 #
 
 class ChargeTypeField < ActiveRecord::Base
+
+  belongs_to :charge_types
+
 end
