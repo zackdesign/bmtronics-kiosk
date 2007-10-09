@@ -14,7 +14,6 @@
 class Feature < ActiveRecord::Base
   validates_presence_of :name
   validates_uniqueness_of :name
-  validates_presence_of :description
 
   has_and_belongs_to_many :phones, :join_table => "phones_features"
 

@@ -3,13 +3,22 @@ module ApplicationHelper
   
   def link_to_new
     action_name = "new"
-    action_name = "newgroup" if ["listgroups", "newgroup", "showgroup", "creategroup", "editgroup", "updategroup", "destroygroup"].include?(controller.action_name)
        
     link_to("new", :action => action_name)
   end
   
+  def link_to_newgroup
+    action_name = "newgroup"
+    
+    link_to("new group", :action => action_name)
+  end
+  
   def link_to_view
     link_to("view", :action => "list")
+  end
+  
+  def link_to_viewgroup
+    link_to("view group", :action => "listgroups")
   end
   
   def link_to_archive
