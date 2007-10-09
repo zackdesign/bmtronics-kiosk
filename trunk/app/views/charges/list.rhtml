@@ -6,7 +6,7 @@
 	    <th>Name</th>
 	    <th>Description</th>
 	    <th>Discontinued</th>
-	    <th colspan="3">Actions</th>
+	    <th colspan="4">Actions</th>
 	  </tr>
 	</thead>  
 	<tbody>
@@ -15,8 +15,9 @@
 	    <td><%=h charge.name %></td>
 	    <td><%=h charge.description %></td>
 	    <td><%=  ((charge.discontinued?) ? "Yes" : "No") %></td>	
-	    <td><%= link_to 'Show', :action => 'show', :id => charge %></td>
-	    <td><%= link_to 'Edit', :action => 'edit', :id => charge %></td>
+	    <td><%= link_to 'Show', :action => 'show', :id => charge %></td><!--
+	    <td><%= link_to 'Modify Fields', :controller => 'cfields', :action => 'modify', :id => charge %></td>
+	    --><td><%= link_to 'Edit', :action => 'edit', :id => charge %></td>
 	    <td><%= link_to 'Delete', { :action => 'destroy', :id => charge }, :confirm => 'Permanently delete this charge ?', :method => :post %></td>
 	  </tr>
 	<% end %>
