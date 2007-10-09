@@ -3,20 +3,17 @@
 <!--[form:phone]-->
 <p>Current picture<br/>
 <% unless @phone.picture_data.blank? %>
-<%=  image_tag(url_for({ :action => 'picture', :id => @phone.id }), :alt => @phone.picture_name) %><br />
-<%=  check_box_tag 'remove_picture' %><label for="remove_picture">Remove picture</label>
+	<%=  image_tag(url_for({ :action => 'picture', :id => @phone.id }), :alt => @phone.picture_name, :class => 'medium') %><br />
+	<%=  check_box_tag 'remove_picture' %><label for="remove_picture">Remove picture</label>
 <% else %>
-None
+	None
 <% end %></p>
 
-<p><label for="phone_picture_data">New picture</label><br/>
-<%= file_field 'phone', 'picture' %></p>
-
-<p><label for="phone_name">Name</label><br/>
-<%= text_field 'phone', 'name'  %></p>
-
-<p><label for="phone_description">Description</label><br/>
-<%= text_area 'phone', 'description'  %></p>
+<div class="row_container">
+	<div class="row"><span class="label">New picture:</span><span class="text"><%= file_field 'phone', 'picture'  %></span></div>
+	<div class="row"><span class="label">Name:</span><span class="text"><%= text_field 'phone', 'name'  %></span></div>
+	<div class="row"><span class="label">Description:</span><span class="text"><%= text_field 'phone', 'description'  %></span></div>	
+</div>
 
 <p><label for="phone_features">Features</label>
 <div id="tab_view_features">
@@ -47,27 +44,16 @@ None
 <% feature_tabs = "Array('" << @feature_letters.join("', '") << "')" %>
 <%= javascript_tag "initTabs('tab_view_features', " << feature_tabs << ", 0, 600, '');" %>
 
-<p><label for="phone_outright">RRP</label><br/>
-$<%= text_field 'phone', 'outright'  %></p>
+<div class="row_container">
+	<div class="row"><span class="label">RRP:</span><span class="text"><%= text_field 'phone', 'outright'  %></span></div>
+	<div class="row"><span class="label">Buy Price:</span><span class="text"><%= text_field 'phone', 'buy_price'  %></span></div>
+	<div class="row"><span class="label">Corporate Price:</span><span class="text"><%= text_field 'phone', 'corp_price'  %></span></div>	
+	<div class="row"><span class="label">Supplier:</span><span class="text"><%= text_field 'phone', 'supplier'  %></span></div>	
+	<div class="row"><span class="label">Part #:</span><span class="text"><%= text_field 'phone', 'partnum'  %></span></div>		
+	<div class="row"><span class="label">Stock:</span><span class="text"><%= select 'phone', 'outofstock', { 'Available' => 'false', 'Sold Out' => 'true' }, :selected => @phone.outofstock.to_s %></span></div>
+	<div class="row"><span class="label">Discontinued:</span><span class="text"><%= select 'phone', 'discontinued', { 'No' => 'false', 'Yes' => 'true' }, :selected => @phone.discontinued.to_s %></span></div>				
+</div>
 
-<p><label for="phone_buy_price">Buy Price</label><br/>
-$<%= text_field 'phone', 'buy_price'  %></p>
-
-<p><label for="phone_corp_price">Corporate Price</label><br/>
-$<%= text_field 'phone', 'corp_price'  %></p>
-
-<p><label for="phone_supplier">Supplier</label><br/>
-<%= text_field 'phone', 'supplier'  %></p>
-
-<p><label for="phone_partnum">Part #</label><br/>
-<%= text_field 'phone', 'partnum'  %></p>
-
-<p><label for="phone_outofstock">Stock</label><br/>
-<!-- <select id="phone_outofstock" name="phone[outofstock]"><option value="false" selected>False</option><option value="true">True</option></select></p> -->
-<%= select 'phone', 'outofstock', { 'Available' => 'false', 'Sold Out' => 'true' }, :selected => @phone.outofstock.to_s %></p>
-
-<p><label for="phone_discontinued">Discontinued</label><br/>
-<%= select 'phone', 'discontinued', { 'No' => 'false', 'Yes' => 'true' }, :selected => @phone.discontinued.to_s %></p>
 
 <p><label for="phone_accessories">Accessories</label>
 <div id="tab_view_accessories">

@@ -2,13 +2,9 @@
 
 <!--[form:charge]-->
 
-<p><label for="charge_name">Name</label><br/>
-<%= text_field 'charge', 'name'  %></p>
-
-<p><label for="charge_description">Description</label><br/>
-<%= text_area 'charge', 'description'  %></p>
-
-<p><label for="charge_discontinued">Discontinued</label><br/>
-<%= select 'charge', 'discontinued', { 'No' => 'false', 'Yes' => 'true' }, :selected => @charge.discontinued.to_s %></p>
-
+<div class="row_container">
+	<div class="row"><span class="label">Name:</span><span class="text"><%= text_field 'charge', 'name'  %></span></div>
+	<div class="row"><span class="label">Description:</span><span class="text"><%= text_area 'charge', 'description'  %></span></div>	
+	<div class="row"><span class="label">Discontinued:</span><span class="text"><%= select 'charge', 'discontinued', { 'No' => 'false', 'Yes' => 'true' }, :selected => @charge.discontinued.to_s %></span></div>	
+</div>
 <!--[eoform:charge]-->

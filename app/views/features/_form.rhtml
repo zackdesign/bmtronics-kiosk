@@ -1,11 +1,11 @@
 <%= error_messages_for 'feature' %>
 
 <!--[form:feature]-->
-<p><label for="feature_name">Name</label><br />
-<%= text_field 'feature', 'name'  %></p>
 
-<p><label for="feature_description">Description</label><br />
-<%= text_area 'feature', 'description'  %></p>
+<div class="row_container">
+	<div class="row"><span class="label">Name:</span><span class="text"><%= text_field 'feature', 'name'  %></span></div>
+	<div class="row"><span class="label">Description:</span><span class="text"><%= text_field 'feature', 'description'  %></span></div>
+</div>
 
 <p><label for="feature_phones">Phones with this feature</label>
 <div id="tab_view">
