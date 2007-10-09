@@ -5,22 +5,27 @@
 <% end -%>
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Plans</th>
-    <th>Actions</th>
-  </tr>
-  
-<% for option in @options %>
-  <tr>
-    <td><%=h option.name %></td>
-    <td><%=h option.description %></td>
-    <td><%=  option.plans.count %></td>
-    <td><%= link_to 'Show', :action => 'show', :id => option %>&nbsp;<%= link_to 'Edit', :action => 'edit', :id => option %>&nbsp;<%= link_to_archive_action(option) %>&nbsp;<%= link_to_delete(option) %></td>
-  </tr>
-<% end %>
+	<thead>
+		<tr>
+	    <th>Name</th>
+	    <th>Description</th>
+	    <th>Plans</th>
+	    <th>Actions</th>
+	  </tr>
+	</thead>  
+	<tbody>
+	<% for option in @options %>
+	  <tr class="<%= cycle("even", "odd") %>">
+	    <td><%=h option.name %></td>
+	    <td><%=h option.description %></td>
+	    <td class="centered"><%=  link_to_option_plans(option) %></td>
+	    <td><%= link_to 'Show', :action => 'show', :id => option %>&nbsp;<%= link_to 'Edit', :action => 'edit', :id => option %>&nbsp;<%= link_to_archive_action(option) %>&nbsp;<%= link_to_delete(option) %></td>
+	  </tr>
+	<% end %>
+	</tbody>
 </table>
+
+<%= control_modal_setup %>
 
 <%= link_to 'Previous page', { :page => @option_pages.current.previous } if @option_pages.current.previous %>
 <%= link_to 'Next page', { :page => @option_pages.current.next } if @option_pages.current.next %> 

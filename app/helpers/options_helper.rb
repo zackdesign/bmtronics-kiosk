@@ -14,4 +14,19 @@ module OptionsHelper
     action_name = params[:action] == 'listarch' ? 'deletearch' : 'delete'
     link_to('Delete', { :action => action_name, :id => option }, :confirm => confirm_message, :method => :post)
   end
+  
+  def link_to_option_plans(option)
+    if option.plans.count > 0
+      link_to(option.plans.count, "#option#{option.id}_plans", :class => "modal") + list_related_plans(option)
+    else
+      content_tag(:span, option.plans.count)
+    end
+  end
+  
+  private
+  def list_related_plans(option)
+    result = ""
+    option.plans.each{|p| result << content_tag(:li, p.name)}
+    content_tag(:div, content_tag(:ul, result), :id => "option#{option.id}_plans")
+  end    
 end

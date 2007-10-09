@@ -76,26 +76,22 @@
 }"
 %>
 
-<p><label for="plan_name">Name</label><br/>
-<%= text_field 'plan', 'name'  %></p>
+<div class="row_container">
+	<div class="row"><span class="label">Name:</span><span class="text"><%= text_field 'plan', 'name'  %></span></div>
+	<div class="row"><span class="label">Categories:</span><span class="text">
+		<ul>
+			<li class="consumer"><input type="checkbox" name="plan[plan_category_set][]" value="consumer" id="plan[plan_category_set][]" <%if @plan.categories.include?("consumer")%>checked="checked"<%end%> /><label for="plan[plan_category_set][]">Consumer</label></li>
+			<li class="business"><input type="checkbox" name="plan[plan_category_set][]" value="business" id="plan[plan_category_set][]" <%if @plan.categories.include?("business")%>checked="checked"<%end%> /><label for="plan[plan_category_set][]">Business</label></li>
+			<li class="corporate"><input type="checkbox" name="plan[plan_category_set][]" value="corporate" id="plan[plan_category_set][]" <%if @plan.categories.include?("corporate")%>checked="checked"<%end%> /><label for="plan[plan_category_set][]">Corporate</label></li>
+		</ul>
+	</span></div>
+	<div class="row"><span class="label">Comments:</span><span class="text"><%= text_area 'plan', 'comments'  %></span></div>
+	<div class="row"><span class="label">Codes:</span><span class="text"><%= text_field 'plan', 'code'  %></span></div>
+	<div class="row"><span class="label">Contract Period (months):</span><span class="text"><%= text_field 'plan', 'period'  %></span></div>
+</div>
 
-<p>
-<input type="checkbox" name="plan[plan_category_set][]" value="consumer" id="plan[plan_category_set][]" <%if @plan.categories.include?("consumer")%>checked="checked"<%end%> /><label for="plan[plan_category_set][]">Consumer</label>
-<input type="checkbox" name="plan[plan_category_set][]" value="business" id="plan[plan_category_set][]" <%if @plan.categories.include?("business")%>checked="checked"<%end%> /><label for="plan[plan_category_set][]">Business</label>
-<input type="checkbox" name="plan[plan_category_set][]" value="corporate" id="plan[plan_category_set][]" <%if @plan.categories.include?("corporate")%>checked="checked"<%end%> /><label for="plan[plan_category_set][]">Corporate</label>
-</p>
-
-<p><label for="plan_comments">Comments</label><br/>
-<%= text_area 'plan', 'comments'  %></p>
-
-<p><label for="plan_code">Codes</label><br/>
-<%= text_field 'plan', 'code'  %></p>
-
-<p><label for="plan_period">Contract Period (months)</label><br/>
-<%= text_field 'plan', 'period'  %></p>
-
+<%# *** phones includes in this plan %>
 <p>Phones included in this plan:</p>
-
 <p><table><tr><th>Handset</th><th>Handset Cost</th><th>MRO</th></tr>
 <% for phone in @phones %>
 <tr>
@@ -127,6 +123,7 @@
 <input type="hidden" name="plan[plan_phones_handset_set][]" value="-1|-1" />
 </p>
 
+<%# *** bonus options %>
 <p><label for="plan_options">Bonus Options</label>
 <% for @tab in @option_tabs -%>
     <% if @tab %>
@@ -166,28 +163,21 @@
 <% end %>
 <% if go %>
 </div>
-
-
 <label for="plan[options_to_plans][]"><%= check_box_tag 'plan[options_to_plans][]', -1, false -%>Remove all options from plan</label></p>
 <% option_tabs = "Array('" << @option_letters.join("', '") << "')" %>
 <%= javascript_tag "initTabs('tab_view_options', " << option_tabs << ", 0, 600, '');" %>
 <% end %>
 
 
-<p><label for="plan_offer">Offer</label><br/>
-<%= text_field 'plan', 'offer'  %></p>
+<div class="row_container">
+	<div class="row"><span class="label">Offer:</span><span class="text"><%= text_field 'plan', 'offer'  %></span></div>
+	<div class="row"><span class="label">Offer price:</span><span class="text"><%= text_field 'plan', 'offer_price'  %></span></div>
+	<div class="row"><span class="label">Monthly repayments:</span><span class="text">$<%= text_field 'plan', 'repayments'  %></span></div>	
+	<div class="row"><span class="label">Discontinued:</span><span class="text"><%= select 'plan', 'discontinued', { 'No' => 'false', 'Yes' => 'true' }, :selected => @plan.discontinued.to_s %></span></div>	
+	<div class="row"><span class="label">Charges Type:</span><span class="text"><%= select('plan', 'charge_type', ChargeType.find(:all).collect { |c| [c.name, c.id] }, { :id => 'charge_type', :include_blank => true, :selected => (@plan.charge_type != nil) ? ChargeType.find(@plan.charge_type).id : '' }, { :onchange => "return charge_change();", :name => 'plan[plan_charge_type]' }) %><input type="hidden" name="prev_charge_type" id="prev_charge_type" value="<%= (@plan.charge_type != nil) ? ChargeType.find(@plan.charge_type).id : '' %>" /></span></div>		
+</div>
 
-<p><label for="plan_offer_price">Offer price</label><br/>
-$<%= text_field 'plan', 'offer_price'  %></p>
 
-<p><label for="plan_repayments">Monthly repayments</label><br />
-$<%= text_field 'plan', 'repayments' %></p>
-
-<p><label for="plan_discontinued">Discontinued</label><br /><%= select 'plan', 'discontinued', { 'No' => 'false', 'Yes' => 'true' }, :selected => @plan.discontinued.to_s %></p>
-
-<p><label for="plan_charges">Charges Type</label><br />
-<%= select('plan', 'charge_type', ChargeType.find(:all).collect { |c| [c.name, c.id] }, { :id => 'charge_type', :include_blank => true, :selected => (@plan.charge_type != nil) ? ChargeType.find(@plan.charge_type).id : '' }, { :onchange => "return charge_change();", :name => 'plan[plan_charge_type]' }) %><br />
-<input type="hidden" name="prev_charge_type" id="prev_charge_type" value="<%= (@plan.charge_type != nil) ? ChargeType.find(@plan.charge_type).id : '' %>" />
 <% if @plan.charges.length > 0 %>
 <table>
 	<tr>

@@ -237,6 +237,14 @@ div.row table{
 	margin-top: 5px;
 }
 
+form div.row{
+	border: 0;
+}
+
+form div.row input, form div.row textarea{
+	border: 1px solid #DDD;
+}
+
 table.wide{
   width: 600px;	
 }
@@ -272,7 +280,7 @@ ul.categories li{
  		style for attributes assigned in show.rhtml
 		used in show.rhthml
 */
-dl, #phones ul{
+dl, #phones ul, #options ul{
 	margin: 0;
 	margin-bottom: 5px;	
 	border: 1px solid #963;
@@ -315,6 +323,25 @@ img.thumb{
  		END OF style for images
 ****************************/
 
+/****************************
+ 		flash messages
+		used in all layouts
+*/
+#alert, #notice{
+	border-top: 3px solid #800E0E;
+	color: #800E0E;
+	background-color: #FBFF7A;
+	padding: 10px;
+}
+
+#notice{
+	border-top-color: #083700;
+	color: #083700;
+	background-color: #84F211;
+}
+/*
+ 		END OF flash messages
+****************************/
 
 
 div.links_bar{

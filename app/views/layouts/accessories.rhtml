@@ -40,13 +40,12 @@
   
 </div>
 <div id="leftColumn">
-    <%= yield  %>
+	<% flash.each do |key, msg| %>
+		<%= content_tag :div, msg, :id => key %>
+	<% end %>
+	
+  <%= yield  %>
 </div>
-
-<div id="caption">
-	<div align="right"><%= flash[:notice] %></div>
-</div>
-
 
 </body>
 </html>
