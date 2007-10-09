@@ -10,9 +10,6 @@
 <p><label for="plan_group_categories">Categories</label><br/>
 <label for="plan_group[categories_chk][]"><%= check_box_tag 'plan_group[categories_chk][]', "consumer", (@plan_group.categories.include?('consumer')) %>Consumer</label>&nbsp;<label for="plan_group[categories_chk][]"><%= check_box_tag 'plan_group[categories_chk][]', "business", (@plan_group.categories.include?('business')) %>Business</label>&nbsp;<label for="plan_group[categories_chk][]"><%= check_box_tag 'plan_group[categories_chk][]', "corporate", (@plan_group.categories.include?('corporate')) %>Corporate</label></p>
 
-<!--<p><label for="plan_group_discontinued">Discontinued</label><br/>
-<%= check_box 'plan_group', 'discontinued' %></p>-->
-
 <p><label for="plan_group_discontinued">Discontinued</label><br /><%= select 'plan_group', 'discontinued', { 'No' => 'false', 'Yes' => 'true' }, :selected => @plan_group.discontinued.to_s %></p>
 
 <p><label for="plan_group_plans">Plans</label><br/>

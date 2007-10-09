@@ -2,15 +2,11 @@
 module ApplicationHelper
   
   def link_to_new
-    action_name = "new"
-       
-    link_to("new", :action => action_name)
+    link_to("new", :action => "new")
   end
   
   def link_to_newgroup
-    action_name = "newgroup"
-    
-    link_to("new group", :action => action_name)
+    link_to("new group", :controller => 'plan_groups', :action => "new")
   end
   
   def link_to_view
@@ -18,7 +14,7 @@ module ApplicationHelper
   end
   
   def link_to_viewgroup
-    link_to("view group", :action => "listgroups")
+    link_to("view group", :controller => 'plan_groups', :action => "list")
   end
   
   def link_to_archive

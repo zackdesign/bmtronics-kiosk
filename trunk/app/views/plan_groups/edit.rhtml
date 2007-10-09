@@ -1,0 +1,10 @@
+<h1>Edit Plan Group</h1>
+
+<% form_tag :action => 'update', :id => @plan_group do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Update' %>
+  <input type="reset" value="Undo" />
+<% end %>
+
+<%= link_to 'Show', :action => 'show', :id => @plan_group %> |
+<%= link_to 'Back', :action => 'list' %>
