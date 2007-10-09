@@ -1,17 +1,21 @@
 <%= error_messages_for 'plan_group' %>
 
 <!--[form:plan_group]-->
-<p><label for="plan_group_name">Name</label><br/>
-<%= text_field 'plan_group', 'name'  %></p>
+<div class="row_container">
+	<div class="row"><span class="label">Name:</span><span class="text"><%= text_field 'plan_group', 'name'  %></span></div>
+	<div class="row"><span class="label">Description:</span><span class="text"><%= text_field 'plan_group', 'description'  %></span></div>	
+</div>
 
-<p><label for="plan_group_description">Description</label><br/>
-<%= text_area 'plan_group', 'description'  %></p>
-
-<p><label for="plan_group_categories">Categories</label><br/>
-<label for="plan_group[categories_chk][]"><%= check_box_tag 'plan_group[categories_chk][]', "consumer", (@plan_group.categories.include?('consumer')) %>Consumer</label>&nbsp;<label for="plan_group[categories_chk][]"><%= check_box_tag 'plan_group[categories_chk][]', "business", (@plan_group.categories.include?('business')) %>Business</label>&nbsp;<label for="plan_group[categories_chk][]"><%= check_box_tag 'plan_group[categories_chk][]', "corporate", (@plan_group.categories.include?('corporate')) %>Corporate</label></p>
-
-<p><label for="plan_group_discontinued">Discontinued</label><br /><%= select 'plan_group', 'discontinued', { 'No' => 'false', 'Yes' => 'true' }, :selected => @plan_group.discontinued.to_s %></p>
-
+<div class="row_container">
+	<div class="row"><span class="label">Categories:</span><span class="text">
+		<ul>
+			<li class="consumer"><label for="plan_group[categories_chk][]"><%= check_box_tag 'plan_group[categories_chk][]', "consumer", (@plan_group.categories.include?('consumer')) %>Consumer</label></li>
+			<li class="business"><label for="plan_group[categories_chk][]"><%= check_box_tag 'plan_group[categories_chk][]', "business", (@plan_group.categories.include?('business')) %>Business</label></li>
+			<li class="corporate"><label for="plan_group[categories_chk][]"><%= check_box_tag 'plan_group[categories_chk][]', "corporate", (@plan_group.categories.include?('corporate')) %>Corporate</label></li>
+		</ul>		
+	</span></div>
+	<div class="row"><span class="label">Discontinued:</span><span class="text"><%= select 'plan_group', 'discontinued', { 'No' => 'false', 'Yes' => 'true' }, :selected => @plan_group.discontinued.to_s %></span></div>
+</div>
 <p><label for="plan_group_plans">Plans</label><br/>
 <% if @plans
      for plan in @plans %>

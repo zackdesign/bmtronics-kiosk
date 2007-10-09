@@ -1,11 +1,10 @@
 <%= error_messages_for 'option' %>
 
 <!--[form:option]-->
-<p><label for="option_name">Name</label><br />
-<%= text_field 'option', 'name'  %></p>
-
-<p><label for="option_description">Description</label><br />
-<%= text_area 'option', 'description'  %></p>
+<div class="row_container">
+	<div class="row"><span class="label">Name:</span><span class="text"><%= text_field 'option', 'name'  %></span></div>
+	<div class="row"><span class="label">Description:</span><span class="text"><%= text_field 'option', 'description'  %></span></div>
+</div>
 
 <p><label for="option_plans">plans with this option</label>
 <div id="tab_view">
