@@ -8,6 +8,8 @@
   <%= stylesheet_link_tag "main" , :media => "all" %>
   <%= stylesheet_link_tag "tab-view" , :media => "all" %>
   <%= stylesheet_link_tag "base" , :media => "all" %>
+	<%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag "controlModal" %>
   <%= javascript_include_tag "ajax" %>
   <%= javascript_include_tag "tab-view" %>
 </head>
@@ -38,13 +40,12 @@
   
 </div>
 <div id="leftColumn">
-    <%= yield  %>
-</div>
+	<% flash.each do |key, msg| %>
+		<%= content_tag :div, msg, :id => key %>
+	<% end %>
 
-<div id="caption">
-	<div align="right"><%= flash[:notice] %></div>
+  <%= yield  %>
 </div>
-
 
 </body>
 </html>

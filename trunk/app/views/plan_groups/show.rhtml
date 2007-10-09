@@ -21,7 +21,7 @@
 			</tr>
 			<% for plan in @plan_group.plans -%>
 			<tr valign="top">
-			  <td><%= link_to h(plan.name), :controller => 'plan', :action => 'show', :id => plan.id %></td>
+			  <td><%= link_to h(plan.name), :controller => 'plans', :action => 'show', :id => plan.id %></td>
 			  <td><%= list_categories(plan) %></td>
 			  <td><%=h plan.code %></td>
 			  <td><%=  plan.period %></td>

@@ -27,7 +27,7 @@ class Plan < ActiveRecord::Base
   belongs_to :plan_group
   has_many :charges
   has_and_belongs_to_many :options, :join_table => "plans_options"
-
+  
   def plan_category_set=(new_categories)
     @local_new_categories = new_categories
     categories = @local_new_categories.join(",")
