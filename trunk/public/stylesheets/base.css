@@ -234,6 +234,10 @@ div.row table{
 	margin-top: 5px;
 }
 
+table.wide{
+  width: 600px;	
+}
+
 /****************************
  		style for categories
 
@@ -255,6 +259,22 @@ ul.categories li{
  		END OF modal window layout
 ****************************/
 
+dl, #phones ul{
+	margin: 0;
+	margin-bottom: 5px;	
+	border: 1px solid #963;
+	border-top: 0;
+	background-color: #FFF9CF;
+}
+
+dl{
+	padding: 5px;
+}
+
+dt{
+	font-weight: bold;
+	color: #761418;
+}
 div.links_bar{
 	border-top: 2px solid #369;
 	width: 600px;

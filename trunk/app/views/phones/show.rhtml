@@ -1,97 +1,54 @@
-<style>
-.label
-{
-	font-weight: bold;
-}
-
-.text
-{
-}
-
-.list
-{
-	width: 50em;
-	height: 20em;
-	overflow: scroll;
-}
-
-.name
-{
-	font-weight: bold;
-}
-
-</style>
-
 <h1><%=h @phone.name %></h1>
 
-<p><div class="label">Picture:</div>
-<% unless @phone.picture_data.blank? %>
-<%=  link_to(image_tag(url_for({ :action => 'picture', :id => @phone.id }), { :alt => @phone.picture_name, :border => 0 }), url_for({ :action => 'actual', :id => @phone.id }), :popup => true) %>
+<p><div class="label">Picture:</div><%= show_picture_if_available(@phone) %></p>
+
+<div class="row_container">
+	<div class="row"><span class="label">Description:</span><span class="text"><%=h @phone.description %></span></div>
+	<div class="row"><span class="label">Buy Outright Cost:</span><span class="text"><%= number_to_currency @phone.outright %></span></div>
+	<div class="row"><span class="label">Stock:</span><span class="text"><%= @phone.outofstock? ? "Sold Out" : "Available" %></span></div>
+	<div class="row"><span class="label">Discontinued:</span><span class="text"><%= @phone.discontinued? ? "Yes" : "No" %></span></div>
+</div>
+
+<%# display phone features %>
+<div class="row_container">
+	<div class="row"><span class="label">Features:</span>
+<% unless @phone.features.empty? %>
+	<span class="text"><%= @phone.features.count %> <a href="#" onclick="Effect.toggle('features', 'blind');">show/hide features</a></span></div>
+	<div id="features" style="display: none;">
+		<dl>
+			<% for feature in @phone.features %>
+				<dt><%= feature.name %></dt>
+				<dd><%= feature.description %></dd>
+			<% end %>
+		</dl>
+	</div>
 <% else %>
-None
-<% end %></p>
-
-<div class="label">Description:</div>
-<div class="text"><%=h @phone.description %></div>
-
-<div class="label">Features:</div>
-<%
-  unless @phone.features.empty?
-%>
-<div class="list">
-<%
-    for feature in @phone.features
-%>
-<span class="name"><%= feature.name %></span> - <%= feature.description %><br />
-<%
-    end
-%>
+	<span class="text">None</span></div>
+<% end %>
 </div>
-Number of features: <%=  @phone.features.count %>
-<%
-  else
-%>
-    <div>None</div>
-<%
-  end
-%>
 
-<div class="label">Buy Outright Cost:</div>
-<div class="text"><%= number_to_currency @phone.outright %></div>
-
-<div class="label">Stock:</div>
-<div class="text"><%= ((@phone.outofstock?) ? "Sold Out" : "Available") %></div>
-
-<div class="label">Discontinued:</div>
-<div class="text"><%= ((@phone.discontinued?) ? "Yes" : "No") %></div>
-
-<div class="label">Accessories:</div>
-<%
-  unless @phone.accessories.empty?
-%>
-<div class="list">
-<%
-    for accessory in @phone.accessories
-%>
-<span class="name"><%= accessory.name %></span> - <%= accessory.description %><br />
-<%
-    end
-%>
+<%# display phone accessories %>
+<div class="row_container">
+	<div class="row"><span class="label">Accessories:</span>		
+<% unless @phone.accessories.empty? %>
+	<span class="text"><%= @phone.accessories.count %> <a href="#" onclick="Effect.toggle('accessories', 'blind');">show/hide accessories</a></span></div>
+	<div id="accessories" style="display: none;">
+		<dl>
+			<% for accessory in @phone.accessories %>
+				<dt><%= accessory.name %></dt>
+				<dd><%= accessory.description %></dd>
+			<% end %>
+		</dl>
+	</div>
+<% else %>
+	<span class="text">None</span></div>
+<% end %>
 </div>
-Number of accessories: <%=  @phone.accessories.count %>
-<%
-  else
-%>
-    <div>None</div>
-<%
-  end
-%>
 
-<div class="label">Created:</div>
-<div class="text"><%=  @phone.created_at.strftime("%b %d %Y at %H:%M:%S") %></div>
+<div class="row_container">
+		<div class="row"><span class="label">Created:</span><span class="text"><%= @phone.created_at.strftime("%b %d %Y at %H:%M:%S") %></span></div>
+		<div class="row"><span class="label">Updated:</span><span class="text"><%= @phone.updated_at.strftime("%b %d %Y at %H:%M:%S") %></span></div>
+</div>
 
-<div class="label">Updated:</div>
-<div class="text"><%=  @phone.updated_at.strftime("%b %d %Y at %H:%M:%S") %></div>
 
-<%= link_to 'Edit', :action => 'edit', :id => @phone %> |
-<%= link_to 'Back', :action => 'list' %>
+<div class="links_bar"><%= link_to 'Edit', :action => 'edit', :id => @phone %> | <%= link_to 'Back', :action => 'list' %></div>

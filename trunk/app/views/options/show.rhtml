@@ -1,53 +1,29 @@
-<style>
-.label
-{
-	font-weight: bold;
-}
-
-.text
-{
-}
-
-.list
-{
-	width: 20em;
-	height: 10em;
-	overflow: scroll;
-}
-</style>
-
 <h1><%=h @option.name %></h1>
 
-<div class="label">Description:</div>
-<div class="text"><%=h @option.description %></div>
+<div class="row_container">
+	<div class="row"><span class="label">Description:</span><span class="text"><%=h @option.description %></span></div>
 
-<div class="label">plans with this option:</div>
-<%
-  unless @option.plans.empty?
-%>
-<div class="list">
-<%
-    for plan in @option.plans
-%>
-<%= plan.name %><br />
-<%
-    end
-%>
+	<%# display plans options features %>
+	<div class="row_container">
+		<div class="row"><span class="label">plans with this option:</span>
+	<% unless @option.plans.empty? %>
+		<span class="text"><%= @option.plans.count %> <a href="#" onclick="Effect.toggle('options', 'blind');">show/hide features</a></span></div>
+		<div id="options" style="display: none;">
+			<ul>
+				<% for plan in @option.plans %>
+					<li><%= plan.name %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% else %>
+		<span class="text">None</span></div>
+	<% end %>
+	</div>
+	
+<div class="row_container">
+		<div class="row"><span class="label">Created:</span><span class="text"><%= @option.created_at.strftime("%b %d %Y at %H:%M:%S") %></span></div>
+		<div class="row"><span class="label">Updated:</span><span class="text"><%= @option.updated_at.strftime("%b %d %Y at %H:%M:%S") %></span></div>
 </div>
-Number of plans: <%=  @option.plans.count %>
-<%
-  else
-%>
-    <div>None</div>
-<%
-  end
-%>
 
-<div class="label">Created:</div>
-<div class="text"><%=  @option.created_at.strftime("%b %d %Y at %H:%M:%S") %></div>
-
-<div class="label">Updated:</div>
-<div class="text"><%=  @option.updated_at.strftime("%b %d %Y at %H:%M:%S") %></div>
-
-<%= link_to 'Edit', :action => 'edit', :id => @option %> |
-<%= link_to 'Back', :action => 'list' %>
+	
+<div class="links_bar"><%= link_to 'Edit', :action => 'edit', :id => @option %> | <%= link_to 'Back', :action => 'list' %></div>

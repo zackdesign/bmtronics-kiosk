@@ -18,13 +18,7 @@
 	<tbody>
 	<% for plan in @plans %>
 	  <tr class="<%= cycle("even", "odd") %>">
-	    <td>
-	      <ul class="categories">
-	      <% for cat in plan.categories.split(',') %>
-	        <li class="<%= cat.downcase %>"><%= cat.capitalize %></li>
-	      <% end %>
-	      </ul>
-	    </td>
+	    <td><%= list_categories(plan) %></td>
 	    <td><%=h plan.name %></td>
 	    <td><%=h plan.code %></td>
 	    <td><%=  plan.period %></td>
@@ -44,5 +38,4 @@
 <%= link_to 'Previous page', { :page => @plan_pages.current.previous } if @plan_pages.current.previous %>
 <%= link_to 'Next page', { :page => @plan_pages.current.next } if @plan_pages.current.next %> 
 
-<br />
-<%= link_to 'Plan Groups', { :action => "listgroups" } %>
+<div class="links_bar"><%= link_to 'Plan Groups', { :action => "listgroups" } %></div>
