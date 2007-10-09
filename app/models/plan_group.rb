@@ -16,7 +16,6 @@
 class PlanGroup < ActiveRecord::Base
   validates_presence_of :name
   validates_uniqueness_of :name
-  validates_presence_of :description
 
   has_many :plans, :foreign_key => "plan_group"
 

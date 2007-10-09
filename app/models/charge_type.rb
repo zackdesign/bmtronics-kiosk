@@ -12,4 +12,7 @@
 #
 
 class ChargeType < ActiveRecord::Base
+
+  belongs_to :charges
+
 end
