@@ -75,7 +75,7 @@ class AccessoriesController < ApplicationController
         @accessory.picture_type = nil
         @accessory.picture_data = nil
       end
-      render :action => 'new'
+      redirect_to :action => 'new'
     end
   end
 
