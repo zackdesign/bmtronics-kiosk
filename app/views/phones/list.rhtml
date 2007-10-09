@@ -23,8 +23,8 @@
 	    <td><%=  number_to_currency phone.outright %></td>
 	    <td><%=  ((phone.outofstock?) ? "Sold Out" : "Available") %></td>
 	    <td><%=  ((phone.discontinued?) ? "Yes" : "No") %></td>
-	    <td><%=  link_to_phone_features(phone) %></td>
-	    <td><%=  link_to_phone_accessories(phone) %></td>	
+	    <td class="centered"><%=  link_to_phone_features(phone) %></td>
+	    <td class="centered"><%=  link_to_phone_accessories(phone) %></td>	
 	    <td><%= link_to 'Show', :action => 'show', :id => phone %></td>
 	    <td><%= link_to 'Edit', :action => 'edit', :id => phone %></td>
 	    <td><%= link_to 'Delete', { :action => 'destroy', :id => phone }, :confirm => 'Permanently delete this phone ?', :method => :post %></td>

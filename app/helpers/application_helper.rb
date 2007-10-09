@@ -8,6 +8,14 @@ module ApplicationHelper
     link_to("new", :action => action_name)
   end
   
+  def link_to_view
+    link_to("view", :action => "list")
+  end
+  
+  def link_to_archive
+    link_to("archive", :action => "listarch")
+  end
+  
   ##
   # needed to setup modal window
   def control_modal_setup

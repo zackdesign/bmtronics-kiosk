@@ -81,6 +81,15 @@ table tr.odd th, table tr.odd td {
 table td.currency{
 	text-align: right;
 }
+
+table thead th.offer{
+	width: 10%;
+}
+
+td.centered{
+	text-align: center;
+}
+
 /*
  		END OF base table layout
 ****************************/
@@ -194,3 +203,61 @@ li#active a
 /*
  		END OF modal window layout
 ****************************/
+
+div.row_container{
+	width: 600px;
+}
+
+div.row {
+  clear: both;
+  padding-top: 10px;
+	border-bottom: 1px solid #DCDCDC;
+}
+
+div.row span.label {
+  width: 200px;	
+  float: left;
+  text-align: right;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+div.row span.text, div.row table {
+  float: right;
+	padding-left: 10px;
+  width: 390px;
+  text-align: left;
+}
+
+div.row table{
+  width: 350px;	
+	margin-top: 5px;
+}
+
+/****************************
+ 		style for categories
+
+*/
+ul.categories li{
+	font-size: 12px;
+	font-weight: bold;
+}
+.consumer{
+	color: #006C22;
+}
+.corporate{
+	color:#4800B1;
+}
+.business{
+	color: #353535;
+}
+/*
+ 		END OF modal window layout
+****************************/
+
+div.links_bar{
+	border-top: 2px solid #369;
+	width: 600px;
+	margin-top: 30px;
+	padding: 5px;
+}

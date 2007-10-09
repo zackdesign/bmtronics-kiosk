@@ -1,105 +1,65 @@
-<style>
-.label
-{
-	font-weight: bold;
-}
-
-.text
-{
-}
-
-.list
-{
-	width: 20em;
-	height: 10em;
-	overflow: scroll;
-}
-</style>
-
 <h1><%=h @plan.name %></h1>
 
-<div class="label">Categories:</div>
-<%
-  unless @plan.categories.empty?
-%>
-<ul>
-<%
-    for cat in @plan.categories.split(',')
-%>
-<li><%= cat.capitalize %></li>
-<%
-    end
-%>
-</ul>
-<%
-  else
-%>
-    <div>None</div>
-<%
-  end
-%>
+<div class="row_container">
+	<div class="row"><span class="label">Categories:</span><span class="text">
+	<% unless @plan.categories.empty? %>
+		<ul class="categories">
+		<% for cat in @plan.categories.split(',') %>
+			<li class="<%= cat.downcase %>"><%= cat.capitalize %></li>
+		<% end %>
+		</ul>
+	<% else %>
+		<div>None</div>
+	<% end %>
+</span></div>
 
-<div class="label">Comments:</div>
-<div class="text"><%=h @plan.comments %></div>
+	<div class="row"><span class="label">Comments:</span><span class="text"><%=h @plan.comments %></span></div>
+	<div class="row"><span class="label">Codes:</span><span class="text"><%=h @plan.code %></span></div>
+	<div class="row"><span class="label">Contract Period (months):</span><span class="text"><%=  @plan.period %></span></div>
+	<div class="row"><span class="label">Phones included in this plan:</span><span class="text">
+	<% if @plan.phones.length > 0 %>
+		<table>
+			<tr>
+				<th>Handset</th>
+				<th>Handset Cost</th>
+				<th>MRO</th>
+			</tr>
+		<%  for phone in @plan.phones %>
+			<tr>
+				<td><%=h phone.name %></td>
+				<td><%=  number_to_currency phone.handset_cost %></td>
+				<td><%=h phone.mro %></td>
+			</tr>
+		<%  end %>
+		</table>
+	<% else %>
+		<div>None</div>
+	<% end %>
+	</span></div>
 
-<div class="label">Codes:</div>
-<div class="text"><%=h @plan.code %></div>
+	<div class="row"><span class="label">Offer:</span><span class="text"><%=h @plan.offer %></span></div>
+	<div class="row"><span class="label">Offer Price:</span><span class="text"><%=  number_to_currency @plan.offer_price %></span></div>
+	<div class="row"><span class="label">Monthly repayments:</span><span class="text"><%=  number_to_currency @plan.repayments %></span></div>
+	<div class="row"><span class="label">Discontinued:</span><span class="text"><%= @plan.discontinued? ? "Yes" : "No" %></span></div>
+	<div class="row"><span class="label">Charges Type:</span><span class="text"><%= charge_type(@plan) %></span></div>
+	<div class="row"><span class="label">Charges:</span><span class="text">
+	<% if @plan.charges.length > 0 %>
+		<table>
+			<tr>
+				<th>Charge</th>
+				<th>Amount</th>
+			</tr>
+		<% for charge in @plan.charges %>
+			<tr>
+				<td><%=  ChargeTypeField.find(charge.charge_type_field).name %></td>
+				<td><%=h number_to_currency charge.value %></td>
+			</tr>
+		<%   end %>
+		</table>
+	<% else %>
+		<div>None</div>
+	<% end %>
+	</span></div>
+</div>
 
-<div class="label">Contract Period (months):</div>
-<div class="text"><%=  @plan.period %></div>
-
-<div class="label">Phones included in this plan:</div>
-<% if @plan.phones.length > 0 %>
-<table>
-	<tr>
-		<th>Handset</th>
-		<th>Handset Cost</th>
-		<th>MRO</th>
-	</tr>
-<%  for phone in @plan.phones %>
-	<tr>
-		<td><%=h phone.name %></td>
-		<td><%=  number_to_currency phone.handset_cost %></td>
-		<td><%=h phone.mro %></td>
-	</tr>
-<%  end %>
-</table>
-<% else %>
-<div class="text">None</div>
-<% end %>
-
-<div class="label">Offer:</div>
-<div class="text"><%=h @plan.offer %></div>
-
-<div class="label">Offer Price:</div>
-<div class="text"><%=  number_to_currency @plan.offer_price %></div>
-
-<div class="label">Monthly repayments:</div>
-<div class="text"><%=  number_to_currency @plan.repayments %></div>
-
-<div class="label">Discontinued:</div>
-<div class="text"><%= ((@plan.discontinued?) ? "Yes" : "No") %></div>
-
-<div class="label">Charges Type:</div>
-<div class="text"><%= (@plan.charge_type != nil) ? ChargeType.find(@plan.charge_type).name : "None" %></div>
-
-<div class="label">Charges:</div>
-<% if @plan.charges.length > 0 %>
-<table>
-	<tr>
-		<th>Charge</th>
-		<th>Amount</th>
-	</tr>
-<%   for charge in @plan.charges %>
-	<tr>
-		<td><%=  ChargeTypeField.find(charge.charge_type_field).name %></td>
-		<td><%=h number_to_currency charge.value %></td>
-	</tr>
-<%   end %>
-</table>
-<% else %>
-<div class="text">None</div>
-<% end %>
-
-<%= link_to 'Edit', :action => 'edit', :id => @plan %> |
-<%= link_to 'Back', :action => 'list' %>
+<div class="links_bar"><%= link_to 'Edit', :action => 'edit', :id => @plan %> | <%= link_to 'Back', :action => 'list' %></div>
