@@ -1,0 +1,31 @@
+<h1>Charges</h1>
+
+<table>
+	<thead>	
+	  <tr>
+	    <th>Name</th>
+	    <th>Description</th>
+	    <th>Discontinued</th>
+	    <th colspan="3">Actions</th>
+	  </tr>
+	</thead>  
+	<tbody>
+	<% for charge in @charges %>
+	  <tr class="<%= cycle("even", "odd") %>">
+	    <td><%=h charge.name %></td>
+	    <td><%=h charge.description %></td>
+	    <td><%=  ((charge.discontinued?) ? "Yes" : "No") %></td>	
+	    <td><%= link_to 'Show', :action => 'show', :id => charge %></td>
+	    <td><%= link_to 'Edit', :action => 'edit', :id => charge %></td>
+	    <td><%= link_to 'Delete', { :action => 'destroy', :id => charge }, :confirm => 'Permanently delete this charge ?', :method => :post %></td>
+	  </tr>
+	<% end %>
+	</tbody>
+</table>
+
+<%= control_modal_setup %>
+
+<%= link_to 'Previous page', { :page => @charge_pages.current.previous } if @charge_pages.current.previous %>
+<%= link_to 'Next page', { :page => @charge_pages.current.next } if @charge_pages.current.next %> 
+
+<br />
