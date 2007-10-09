@@ -1,0 +1,10 @@
+<h1>Edit Charge Type</h1>
+
+<% form_tag({ :action => 'update', :id => @charge }, :multipart => true) do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Update' %>
+  <input type="reset" value="Undo" />
+<% end %>
+
+<%= link_to 'Show', :action => 'show', :id => @charge %> |
+<%= link_to 'Back', :action => 'list' %>
