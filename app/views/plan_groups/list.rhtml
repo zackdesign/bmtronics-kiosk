@@ -15,7 +15,7 @@
 			  <td><%= list_categories(plan_group) %></td>  
 		    <td><%=h plan_group.name %></td>
 		    <td><%=  ((plan_group.discontinued?) ? "Yes" : "No") %></td>
-		    <td><%= link_to 'Show', :action => 'showgroup', :id => plan_group %>&nbsp;<%= link_to 'Edit', :action => 'editgroup', :id => plan_group %>&nbsp;<%= link_to 'Destroy', { :action => 'destroygroup', :id => plan_group }, :confirm => 'Are you sure?', :method => :post %></td>
+		    <td><%= link_to 'Show', :action => 'show', :id => plan_group %>&nbsp;<%= link_to 'Edit', :action => 'edit', :id => plan_group %>&nbsp;<%= link_to 'Destroy', { :action => 'destroy', :id => plan_group }, :confirm => 'Are you sure?', :method => :post %></td>
 		  </tr>
 		<% end %>
 	</tbody>
@@ -25,4 +25,4 @@
 <%= link_to 'Next page', { :page => @plan_groups_pages.current.next } if @plan_groups_pages.current.next %> 
 
 <br />
-<%= link_to 'Plans', { :action => "list" } %>
+<%= link_to 'Plans', { :controller => "plans", :action => "list" } %>
