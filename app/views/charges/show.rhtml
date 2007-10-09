@@ -1,0 +1,15 @@
+<h1><%=h @charge.name %></h1>
+
+<div class="row_container">
+	<div class="row"><span class="label">Description:</span><span class="text"><%=h @charge.description %></span></div>
+   <div class="row"><span class="label">Discontinued:</span><span class="text"><%= @charge.discontinued? ? "Yes" : "No" %></span></div>
+</div>
+
+
+<div class="row_container">
+		<div class="row"><span class="label">Created:</span><span class="text"><%= @charge.created_at.strftime("%b %d %Y at %H:%M:%S") %></span></div>
+		<div class="row"><span class="label">Updated:</span><span class="text"><%= @charge.updated_at.strftime("%b %d %Y at %H:%M:%S") %></span></div>
+</div>
+
+
+<div class="links_bar"><%= link_to 'Edit', :action => 'edit', :id => @charge %> | <%= link_to 'Back', :action => 'list' %></div>
