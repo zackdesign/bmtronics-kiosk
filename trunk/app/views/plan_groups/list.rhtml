@@ -6,6 +6,7 @@
 	    <th>Categories</th>	
 	    <th>Name</th>
 	    <th>Discont.</th>
+			<th>Plans</th>
 	    <th>Actions</th>
 	  </tr>
 	</thead>  
@@ -15,11 +16,14 @@
 			  <td><%= list_categories(plan_group) %></td>  
 		    <td><%=h plan_group.name %></td>
 		    <td><%=  ((plan_group.discontinued?) ? "Yes" : "No") %></td>
+				<td class="centered"><%=  link_to_group_plans(plan_group) %></td>
 		    <td><%= link_to 'Show', :action => 'show', :id => plan_group %>&nbsp;<%= link_to 'Edit', :action => 'edit', :id => plan_group %>&nbsp;<%= link_to 'Destroy', { :action => 'destroy', :id => plan_group }, :confirm => 'Are you sure?', :method => :post %></td>
 		  </tr>
 		<% end %>
 	</tbody>
 </table>
+
+<%= control_modal_setup %>
 
 <%= link_to 'Previous page', { :page => @plan_groups_pages.current.previous } if @plan_groups_pages.current.previous %>
 <%= link_to 'Next page', { :page => @plan_groups_pages.current.next } if @plan_groups_pages.current.next %> 
