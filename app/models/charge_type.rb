@@ -14,5 +14,6 @@
 class ChargeType < ActiveRecord::Base
 
   belongs_to :charges
+  has_many :charge_type_fields
 
 end
