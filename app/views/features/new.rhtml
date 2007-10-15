@@ -2,8 +2,12 @@
 
 <% form_tag :action => 'create' do %>
   <%= render :partial => 'form' %>
-  <%= submit_tag "Create" %>
-  <input type="reset" value="Undo" />
-<% end %>
 
-<%= link_to 'Back', :action => 'list' %>
+	<div class="links_bar">
+	  <div class='buttons'>
+			<%= form_button('Create') %>
+			<%= form_button('Undo', 'reset', '') %>
+			<%= link_to 'Back', :action => 'list' %>
+		</div>
+	</div>
+<% end %>

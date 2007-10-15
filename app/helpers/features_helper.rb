@@ -12,7 +12,7 @@ module FeaturesHelper
   def link_to_delete(feature)
     confirm_message = feature.phones.empty? ? "Permanently delete this feature ?" : "WARNING: Deleting this feature will also delete it from #{feature.phones.count} phone(s).\n\nPermanently delete this feature ?"
     action_name = params[:action] == 'listarch' ? 'deletearch' : 'delete'
-    link_to('Delete', { :action => action_name, :id => feature }, :confirm => confirm_message, :method => :post)
+    link_to(image_tag('delete', :alt => 'delete'), { :action => action_name, :id => feature }, :confirm => confirm_message, :class => 'icon', :title => 'delete', :method => :post)
   end
   
   def link_to_feature_phones(feature)

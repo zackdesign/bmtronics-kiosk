@@ -15,13 +15,16 @@
 	    <td><%=h charge.name %></td>
 	    <td><%=h charge.description %></td>
 	    <td><%=  ((charge.discontinued?) ? "Yes" : "No") %></td>	
-	    <td><%= link_to 'Show', :action => 'show', :id => charge %> | <%= link_to 'Modify Fields', :controller => 'cfields', :action => 'modify', :id => charge %> | <%= link_to 'Edit', :action => 'edit', :id => charge %> | <%= link_to 'Delete', { :action => 'destroy', :id => charge }, :confirm => 'Permanently delete this charge ?', :method => :post %></td>
+	    <td><%= link_to_show(charge) %>&nbsp;<%= link_to_edit(charge) %>&nbsp;<%= link_to_delete(charge, 'Permanently delete this charge ?') %>&nbsp;<%= link_to 'Modify Fields', :controller => 'cfields', :action => 'modify', :id => charge %></td>
 	  </tr>
 	<% end %>
 	</tbody>
 </table>
 
-<%= link_to 'Previous page', { :page => @charge_pages.current.previous } if @charge_pages.current.previous %>
-<%= link_to 'Next page', { :page => @charge_pages.current.next } if @charge_pages.current.next %> 
+<div class="links_bar">
+	<div class='buttons'>
+		<%= link_to 'Previous page', { :page => @charge_pages.current.previous } if @charge_pages.current.previous %> <%= link_to 'Next page', { :page => @charge_pages.current.next } if @charge_pages.current.next %>
+	</div>
+</div>
 
 <br />

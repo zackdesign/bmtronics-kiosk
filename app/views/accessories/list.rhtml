@@ -27,7 +27,7 @@
 	    <td><%=  ((accessory.outofstock?) ? "Sold Out" : "Available") %></td>
 	    <td><%=  ((accessory.discontinued?) ? "Yes" : "No") %></td>
 	    <td class="centered"><%=  link_to_accessory_phones(accessory) %></td>
-	    <td><%= link_to 'Show', :action => 'show', :id => accessory %>&nbsp;<%= link_to 'Edit', :action => 'edit', :id => accessory %>&nbsp;<%= link_to_archive_action(accessory) %>&nbsp;<%= link_to_delete(accessory) %></td>
+	    <td><%= link_to_show(accessory) %>&nbsp;<%= link_to_edit(accessory) %>&nbsp;<%= link_to_delete(accessory) %>&nbsp;<%= link_to_archive_action(accessory) %></td>
 	  </tr>
 	<% end %>
 	</tbody>
@@ -35,5 +35,9 @@
 
 <%= control_modal_setup %>
 
-<%= link_to 'Previous page', { :page => @accessory_pages.current.previous } if @accessory_pages.current.previous %>
-<%= link_to 'Next page', { :page => @accessory_pages.current.next } if @accessory_pages.current.next %> 
+<div class="links_bar">
+  <div class='buttons'>
+		<%= link_to 'Previous page', { :page => @accessory_pages.current.previous } if @accessory_pages.current.previous %>
+		<%= link_to 'Next page', { :page => @accessory_pages.current.next } if @accessory_pages.current.next %> 
+	</div>
+</div>

@@ -20,7 +20,7 @@
 	  <td><%=h feature.name %></td>
 	  <td><%=h feature.description %></td>
 	  <td class="centered"><%= link_to_feature_phones(feature) %></td>
-	  <td><%= link_to 'Show', :action => 'show', :id => feature %>&nbsp;<%= link_to 'Edit', :action => 'edit', :id => feature %>&nbsp;<%= link_to_archive_action(feature) %>&nbsp;<%= link_to_delete(feature) %></td>
+	  <td><%= link_to_show(feature) %>&nbsp;<%= link_to_edit(feature) %>&nbsp;<%= link_to_delete(feature) %>&nbsp;<%= link_to_archive_action(feature) %></td>
 	</tr>
 	<% end %>
 	</tbody>
@@ -28,5 +28,9 @@
 
 <%= control_modal_setup %>
 
-<%= link_to 'Previous page', { :page => @feature_pages.current.previous } if @feature_pages.current.previous %>
-<%= link_to 'Next page', { :page => @feature_pages.current.next } if @feature_pages.current.next %> 
+<div class="links_bar">
+  <div class='buttons'>
+		<%= link_to 'Previous page', { :page => @feature_pages.current.previous } if @feature_pages.current.previous %>
+		<%= link_to 'Next page', { :page => @feature_pages.current.next } if @feature_pages.current.next %> 
+	</div>
+</div>

@@ -17,7 +17,7 @@
 		    <td><%=h plan_group.name %></td>
 		    <td><%=  ((plan_group.discontinued?) ? "Yes" : "No") %></td>
 				<td class="centered"><%=  link_to_group_plans(plan_group) %></td>
-		    <td><%= link_to 'Show', :action => 'show', :id => plan_group %>&nbsp;<%= link_to 'Edit', :action => 'edit', :id => plan_group %>&nbsp;<%= link_to 'Destroy', { :action => 'destroy', :id => plan_group }, :confirm => 'Are you sure?', :method => :post %></td>
+		    <td><%= link_to_show(plan_group) %>&nbsp;<%= link_to_edit(plan_group) %>&nbsp;<%= link_to_delete(plan_group) %></td>
 		  </tr>
 		<% end %>
 	</tbody>
@@ -25,8 +25,10 @@
 
 <%= control_modal_setup %>
 
-<%= link_to 'Previous page', { :page => @plan_groups_pages.current.previous } if @plan_groups_pages.current.previous %>
-<%= link_to 'Next page', { :page => @plan_groups_pages.current.next } if @plan_groups_pages.current.next %> 
-
-<br />
-<%= link_to 'Plans', { :controller => "plans", :action => "list" } %>
+<div class="links_bar">
+  <div class='buttons'>
+		<%= link_to 'Previous page', { :page => @plan_groups_pages.current.previous } if @plan_groups_pages.current.previous %>
+		<%= link_to 'Next page', { :page => @plan_groups_pages.current.next } if @plan_groups_pages.current.next %> 
+		<%= link_to 'Plans', { :controller => "plans", :action => "list" } %>
+	</div>
+</div>

@@ -25,5 +25,8 @@
 		<div class="row"><span class="label">Updated:</span><span class="text"><%= @option.updated_at.strftime("%b %d %Y at %H:%M:%S") %></span></div>
 </div>
 
-	
-<div class="links_bar"><%= link_to 'Edit', :action => 'edit', :id => @option %> | <%= link_to 'Back', :action => 'list' %></div>
+<div class="links_bar">
+  <div class='buttons'>	
+		<%= link_to 'Edit', :action => 'edit', :id => @option %> <%= link_to 'Back', :action => 'list' %>
+	</div>
+</div>

@@ -19,7 +19,7 @@
 	    <td><%=h option.name %></td>
 	    <td><%=h option.description %></td>
 	    <td class="centered"><%=  link_to_option_plans(option) %></td>
-	    <td><%= link_to 'Show', :action => 'show', :id => option %>&nbsp;<%= link_to 'Edit', :action => 'edit', :id => option %>&nbsp;<%= link_to_archive_action(option) %>&nbsp;<%= link_to_delete(option) %></td>
+	    <td><%= link_to_show(option) %>&nbsp;<%= link_to_edit(option) %>&nbsp;<%= link_to_delete(option) %>&nbsp;<%= link_to_archive_action(option) %></td>
 	  </tr>
 	<% end %>
 	</tbody>
@@ -27,5 +27,9 @@
 
 <%= control_modal_setup %>
 
-<%= link_to 'Previous page', { :page => @option_pages.current.previous } if @option_pages.current.previous %>
-<%= link_to 'Next page', { :page => @option_pages.current.next } if @option_pages.current.next %> 
+<div class="links_bar">
+  <div class='buttons'>
+		<%= link_to 'Previous page', { :page => @option_pages.current.previous } if @option_pages.current.previous %>
+		<%= link_to 'Next page', { :page => @option_pages.current.next } if @option_pages.current.next %> 
+	</div>
+</div>

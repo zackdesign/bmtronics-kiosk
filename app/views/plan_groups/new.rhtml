@@ -2,7 +2,11 @@
 
 <% form_tag :action => 'create' do %>
   <%= render :partial => 'form' %>
-  <%= submit_tag "Create" %>
-<% end %>
 
-<%= link_to 'Back', :action => 'list' %>
+	<div class="links_bar">
+	  <div class='buttons'>
+			<%= form_button('Create') %>
+			<%= link_to 'Back', :action => 'list' %>
+		</div>
+	</div>
+<% end %>

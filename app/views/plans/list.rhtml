@@ -12,7 +12,7 @@
 	    <th>Offer Price</th>
 	    <th>Monthly</th>
 	    <th>Discont</th>
-	    <th>Actions</th>
+	    <th class="actions">Actions</th>
 	  </tr>
 	</thead>
 	<tbody>
@@ -27,7 +27,7 @@
 	    <td class="currency"><%=  number_to_currency plan.offer_price %></td>
 	    <td class="currency"><%=  number_to_currency plan.repayments %></td>
 	    <td><%=  ((plan.discontinued?) ? "Yes" : "No") %></td>
-	    <td><%= link_to 'Show', :action => 'show', :id => plan %>&nbsp;<%= link_to 'Edit', :action => 'edit', :id => plan %>&nbsp;<%= link_to 'Delete', { :action => 'destroy', :id => plan }, :confirm => 'Are you sure?', :method => :post %></td>
+	    <td><%= link_to_show(plan) %>&nbsp;<%= link_to_edit(plan) %>&nbsp;<%= link_to_delete(plan) %></td>
 	  </tr>
 	<% end %>
 	</tbody>
@@ -35,6 +35,9 @@
 
 <%= control_modal_setup %>
 
-<%= link_to 'Previous page', { :page => @plan_pages.current.previous } if @plan_pages.current.previous %>
-<%= link_to 'Next page', { :page => @plan_pages.current.next } if @plan_pages.current.next %> 
-
+<div class="links_bar">
+  <div class='buttons'>
+		<%= link_to 'Previous page', { :page => @plan_pages.current.previous } if @plan_pages.current.previous %>
+		<%= link_to 'Next page', { :page => @plan_pages.current.next } if @plan_pages.current.next %> 
+	</div>
+</div>

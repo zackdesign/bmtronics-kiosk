@@ -31,11 +31,8 @@ module AccessoriesHelper
   
   def link_to_delete(accessory)
     confirm_message = accessory.phones.empty? ? "Permanently delete this accessory ?" : "WARNING: Deleting this accessory will also delete it from #{accessory.phones.count} phone(s).\n\nPermanently delete this accessory ?"
-    if params[:action] == 'listarch'
-      link_to 'Delete', { :action => 'deletearch', :id => accessory }, :confirm => confirm_message, :method => :post
-    else
-      link_to'Delete', { :action => 'delete', :id => accessory }, :confirm => confirm_message, :method => :post
-    end
+    action_name = params[:action] == 'listarch' ? 'deletearch' : 'delete'
+    link_to image_tag('delete', :alt => 'delete'), { :action => action_name, :id => accessory }, :confirm => confirm_message, :class => 'icon', :title => 'delete', :method => :post
   end
   
   def link_to_accessory_phones(accessory)
