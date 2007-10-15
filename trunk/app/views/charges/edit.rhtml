@@ -2,9 +2,12 @@
 
 <% form_tag({ :action => 'update', :id => @charge }, :multipart => true) do %>
   <%= render :partial => 'form' %>
-  <%= submit_tag 'Update' %>
-  <input type="reset" value="Undo" />
-<% end %>
 
-<%= link_to 'Show', :action => 'show', :id => @charge %> |
-<%= link_to 'Back', :action => 'list' %>
+	<div class="links_bar">
+	  <div class='buttons'>
+			<%= form_button('Update') %>
+			<%= form_button('Undo', 'reset', '') %>
+			<%= link_to 'Show', :action => 'show', :id => @charge %>
+		</div>
+	</div>
+<% end %>

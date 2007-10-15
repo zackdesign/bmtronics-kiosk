@@ -12,4 +12,6 @@
 </div>
 
 
-<div class="links_bar"><%= link_to 'Edit', :action => 'edit', :id => @charge %> | <%= link_to 'Back', :action => 'list' %></div>
+<div class="links_bar">
+	<div class='buttons'><%= link_to('Edit', {:action => 'edit', :id => @charge}) %> <%= link_to('Back', :action => 'list') %></div>
+</div>

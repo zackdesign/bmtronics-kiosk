@@ -11,7 +11,7 @@
 	    <th>Discontinued</th>
 	    <th>Features</th>
 	    <th>Accessories</th>
-	    <th colspan="3">Actions</th>
+	    <th>Actions</th>
 	  </tr>
 	</thead>  
 	<tbody>
@@ -25,9 +25,7 @@
 	    <td><%=  ((phone.discontinued?) ? "Yes" : "No") %></td>
 	    <td class="centered"><%=  link_to_phone_features(phone) %></td>
 	    <td class="centered"><%=  link_to_phone_accessories(phone) %></td>	
-	    <td><%= link_to 'Show', :action => 'show', :id => phone %></td>
-	    <td><%= link_to 'Edit', :action => 'edit', :id => phone %></td>
-	    <td><%= link_to 'Delete', { :action => 'destroy', :id => phone }, :confirm => 'Permanently delete this phone ?', :method => :post %></td>
+	    <td><%= link_to_show(phone) %>&nbsp;<%= link_to_edit(phone) %>&nbsp;<%= link_to_delete(phone, "Permanently delete this phone ?") %></td>
 	  </tr>
 	<% end %>
 	</tbody>
@@ -35,7 +33,11 @@
 
 <%= control_modal_setup %>
 
-<%= link_to 'Previous page', { :page => @phone_pages.current.previous } if @phone_pages.current.previous %>
-<%= link_to 'Next page', { :page => @phone_pages.current.next } if @phone_pages.current.next %> 
+<div class="links_bar">
+  <div class='buttons'>
+		<%= link_to 'Previous page', { :page => @phone_pages.current.previous } if @phone_pages.current.previous %>
+		<%= link_to 'Next page', { :page => @phone_pages.current.next } if @phone_pages.current.next %> 
+	</div>
+</div>
 
 <br />

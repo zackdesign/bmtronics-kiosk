@@ -78,4 +78,25 @@ END_OF_STATEMENT
 END_OF_STATEMENT
     javascript_tag(js)
   end
+  
+  ##
+  # links with images for basic functions
+  # used in list.rhtml 
+  def link_to_show(roo)
+    link_to(image_tag('show', :alt => 'show'), {:action => 'show', :id => roo}, :class => 'icon', :title => 'show')
+  end
+
+  def link_to_edit(roo)
+    link_to(image_tag('edit', :alt => 'edit'), {:action => 'edit', :id => roo}, :class => 'icon', :title => 'edit')
+  end
+  
+  def link_to_delete(roo, confirm = "Are you sure?")
+    link_to(image_tag('delete', :alt => 'delete'), { :action => 'destroy', :id => roo }, :confirm => confirm, :class => 'icon', :title => 'delete', :method => :post)
+  end
+  
+  ##
+  # submit button
+  def form_button(text, type = 'submit', image='tick', css_class = 'positive')
+    content_tag(:button, image_tag(image) + text, :type => type, :class => css_class)
+  end
 end

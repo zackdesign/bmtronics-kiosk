@@ -12,7 +12,7 @@ module OptionsHelper
   def link_to_delete(option)
     confirm_message = option.plans.empty? ? "Permanently delete this option ?" : "WARNING: Deleting this option will also delete it from #{option.plans.count} plan(s).\n\nPermanently delete this option ?"
     action_name = params[:action] == 'listarch' ? 'deletearch' : 'delete'
-    link_to('Delete', { :action => action_name, :id => option }, :confirm => confirm_message, :method => :post)
+    link_to(image_tag('delete', :alt => 'delete'), { :action => action_name, :id => option }, :confirm => confirm_message, :class => 'icon', :title => 'delete', :method => :post)
   end
   
   def link_to_option_plans(option)
