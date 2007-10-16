@@ -1,0 +1,19 @@
+<h1>Charge Fields</h1>
+
+<table>
+   <thead><tr><th>Names</th><th>Values</th><th>Actions</th></tr></thead>
+	<tbody>
+	<% for field in @fields %>
+	<tr class="<%= cycle("even", "odd") %>">
+	    <th><%=h field.rname %></th>
+	    <th><%=h field.rvalue %></th>
+	    <th></th>
+	  </tr>
+	  <tr class="<%= cycle("even", "odd") %>">
+	    <td><%=h field.cname %></td>
+	    <td><%=h field.cvalue %></td>
+	    <td><%= link_to_show(field) %>&nbsp;<%= link_to_edit(field) %>&nbsp;<%= link_to_delete(field, "Permanently delete this field ?") %></td>
+	  </tr>
+	<% end %>
+	</tbody>
+</table>
