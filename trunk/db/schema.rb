@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 29) do
+ActiveRecord::Schema.define(:version => 30) do
 
   create_table "accessories", :force => true do |t|
     t.column "name",         :string
@@ -22,29 +22,28 @@ ActiveRecord::Schema.define(:version => 29) do
     t.column "corp_price",   :decimal,  :precision => 9, :scale => 2
   end
 
-  create_table "charge_type_fields", :force => true do |t|
-    t.column "charge_type_id", :integer,  :limit => 24
-    t.column "name",           :string
-    t.column "description",    :text
-    t.column "created_at",     :datetime
-    t.column "updated_at",     :datetime
-    t.column "discontinued",   :boolean,                :default => false
+  create_table "charge_columns", :force => true do |t|
+    t.column "charge_row_id", :integer,  :limit => 24
+    t.column "name",          :text
+    t.column "value",         :text
+    t.column "created_at",    :datetime
+    t.column "updated_at",    :datetime
   end
 
-  create_table "charge_types", :force => true do |t|
-    t.column "name",         :string
-    t.column "description",  :text
-    t.column "created_at",   :datetime
-    t.column "updated_at",   :datetime
-    t.column "discontinued", :boolean,  :default => false
+  create_table "charge_rows", :force => true do |t|
+    t.column "charges_id", :integer,  :limit => 24
+    t.column "name",       :text
+    t.column "value",      :text
+    t.column "created_at", :datetime
+    t.column "updated_at", :datetime
   end
 
   create_table "charges", :force => true do |t|
-    t.column "plan_id",           :integer,  :limit => 24
-    t.column "charge_type_field", :integer,  :limit => 24
-    t.column "value",             :decimal,                :precision => 9, :scale => 2
-    t.column "created_at",        :datetime
-    t.column "updated_at",        :datetime
+    t.column "name",         :string
+    t.column "discontinued", :boolean,  :default => false
+    t.column "description",  :text
+    t.column "created_at",   :datetime
+    t.column "updated_at",   :datetime
   end
 
   create_table "features", :force => true do |t|
