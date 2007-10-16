@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 26) do
+ActiveRecord::Schema.define(:version => 29) do
 
   create_table "accessories", :force => true do |t|
     t.column "name",         :string
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(:version => 26) do
     t.column "supplier",     :text
     t.column "partnum",      :string
     t.column "corp_price",   :decimal,  :precision => 9, :scale => 2
+    t.column "gov_price",    :decimal,  :precision => 9, :scale => 2
   end
 
   create_table "phones_accessories", :id => false, :force => true do |t|
@@ -103,10 +104,10 @@ ActiveRecord::Schema.define(:version => 26) do
   add_index "phones_plans", ["phone_id", "plan_id"], :name => "index_phones_plans_on_phone_id_and_plan_id"
 
 # Could not dump table "plan_groups" because of following StandardError
-#   Unknown type 'set('consumer','business','corporate')' for column 'categories'
+#   Unknown type 'set('consumer','business','corporate','government')' for column 'categories'
 
 # Could not dump table "plans" because of following StandardError
-#   Unknown type 'set('consumer','business','corporate')' for column 'categories'
+#   Unknown type 'set('consumer','business','corporate','government')' for column 'categories'
 
   create_table "plans_options", :id => false, :force => true do |t|
     t.column "plan_id",   :integer, :null => false

@@ -1,6 +1,6 @@
 <%= error_messages_for 'accessory' %>
 
-<!--[form:accessory]-->
+
 <p>Current picture<br/>
 <% unless @accessory.picture_data.blank? %>
 	<%=  image_tag(url_for({ :action => 'picture', :id => @accessory.id }), :alt => @accessory.picture_name) %><br />
@@ -52,4 +52,3 @@
 <% tabs = "Array('" << @letters.join("', '") << "')" %>
 <%= javascript_tag "initTabs('tab_view', " << tabs << ", 0, 600, '');" %>
 
-<!--[eoform:accessory]-->

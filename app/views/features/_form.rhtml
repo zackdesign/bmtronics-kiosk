@@ -1,6 +1,6 @@
 <%= error_messages_for 'feature' %>
 
-<!--[form:feature]-->
+
 
 <div class="row_container">
 	<div class="row"><span class="label">Name:</span><span class="text"><%= text_field 'feature', 'name'  %></span></div>
@@ -36,4 +36,3 @@
 <% tabs = "Array('" << @letters.join("', '") << "')" %>
 <%= javascript_tag "initTabs('tab_view', " << tabs << ", 0, 600, '');" %>
 
-<!--[eoform:feature]-->
