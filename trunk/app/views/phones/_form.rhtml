@@ -1,6 +1,6 @@
 <%= error_messages_for 'phone' %>
 
-<!--[form:phone]-->
+
 <p>Current picture<br/>
 <% unless @phone.picture_data.blank? %>
 	<%=  image_tag(url_for({ :action => 'picture', :id => @phone.id }), :alt => @phone.picture_name, :class => 'medium') %><br />
@@ -15,7 +15,7 @@
 	<div class="row"><span class="label">Description:</span><span class="text"><%= text_field 'phone', 'description'  %></span></div>	
 </div>
 
-<p><label for="phone_features">Features</label>
+<label for="phone_features">Features</label>
 <div id="tab_view_features">
 <% for @tab in @feature_tabs -%>
 	<div class="dhtmlgoodies_aTab">
@@ -40,7 +40,7 @@
 	</div>
 <% end -%>
 </div>
-<label for="phone[features_to_phones][]"><%= check_box_tag 'phone[features_to_phones][]', -1, false -%>Remove all features from phone</label></p>
+<label for="phone[features_to_phones][]"><%= check_box_tag 'phone[features_to_phones][]', -1, false -%>Remove all features from phone</label>
 <% feature_tabs = "Array('" << @feature_letters.join("', '") << "')" %>
 <%= javascript_tag "initTabs('tab_view_features', " << feature_tabs << ", 0, 600, '');" %>
 
@@ -48,6 +48,7 @@
 	<div class="row"><span class="label">RRP:</span><span class="text"><%= text_field 'phone', 'outright'  %></span></div>
 	<div class="row"><span class="label">Buy Price:</span><span class="text"><%= text_field 'phone', 'buy_price'  %></span></div>
 	<div class="row"><span class="label">Corporate Price:</span><span class="text"><%= text_field 'phone', 'corp_price'  %></span></div>	
+	<div class="row"><span class="label">Government Price:</span><span class="text"><%= text_field 'phone', 'gov_price'  %></span></div>
 	<div class="row"><span class="label">Supplier:</span><span class="text"><%= text_field 'phone', 'supplier'  %></span></div>	
 	<div class="row"><span class="label">Part #:</span><span class="text"><%= text_field 'phone', 'partnum'  %></span></div>		
 	<div class="row"><span class="label">Stock:</span><span class="text"><%= select 'phone', 'outofstock', { 'Available' => 'false', 'Sold Out' => 'true' }, :selected => @phone.outofstock.to_s %></span></div>
@@ -84,4 +85,3 @@
 <% accessory_tabs = "Array('" << @accessory_letters.join("', '") << "')" %>
 <%= javascript_tag "initTabs('tab_view_accessories', " << accessory_tabs << ", 0, 600, '');" %>
 
-<!--[eoform:phone]-->
