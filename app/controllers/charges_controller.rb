@@ -6,15 +6,15 @@ class ChargesController < ApplicationController
   end
   
   def list
-    @charge_pages, @charges = paginate :charge_types, :per_page => 20
+    @charge_pages, @charges = paginate :charges, :per_page => 20
   end
   
   def edit 
-    @charge = ChargeType.find(params[:id])
+    @charge = Charge.find(params[:id])
   end
   
   def update
-    @charge = ChargeType.find(params[:id])
+    @charge = Charge.find(params[:id])
 
     if @charge.update_attributes(params[:charge])
       flash[:notice] = 'Charge type was successfully updated.'
@@ -25,11 +25,11 @@ class ChargesController < ApplicationController
   end
   
   def new 
-    @charge = ChargeType.new
+    @charge = Charge.new
   end
   
   def create
-    @charge = ChargeType.new(params[:charge])
+    @charge = Charge.new(params[:charge])
     if @charge.save
       flash[:notice] = 'Charge type was successfully created.'
       redirect_to :action => 'list'
@@ -39,12 +39,12 @@ class ChargesController < ApplicationController
   end
   
   def destroy
-    ChargeType.find(params[:id]).destroy
+    Charge.find(params[:id]).destroy
     redirect_to :action => 'list'
   end
   
   def show
-    @charge = ChargeType.find(params[:id])
+    @charge = Charge.find(params[:id])
   end
 
 end
