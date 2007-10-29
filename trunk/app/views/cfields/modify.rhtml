@@ -18,8 +18,7 @@
          <tr class="<%= cycle("even", "odd") %>">
 	    <th><%=h field.rname %></th>
 	    <th><%=h field.rvalue %></th>
-	    <th><%= link_to(image_tag('show', :alt => 'show'), {:action => 'showr', :id => field.rid}, :class => 'icon', :title => 'show') %>
-	    <%= link_to(image_tag('edit', :alt => 'edit'), {:action => 'editr', :id => field.rid}, :class => 'icon', :title => 'edit') %>
+	    <th><%= link_to(image_tag('edit', :alt => 'edit'), {:action => 'editr', :id => field.rid}, :class => 'icon', :title => 'edit') %>
 	    <%= link_to(image_tag('delete', :alt => 'delete'), { :action => 'destroyr', :id => field.rid }, :confirm => "Permanently delete this field?", :class => 'icon', :title => 'delete', :method => :post) %></th>
 	  </tr>
 	
@@ -28,7 +27,7 @@
 	  <tr class="<%= cycle("even", "odd") %>">
 	    <td><%=h field.cname %></td>
 	    <td><%=h field.cvalue %></td>
-	    <td><%= link_to_show(field.cid) %>&nbsp;<%= link_to_edit(field.cid) %>&nbsp;<%= link_to_delete(field.cid, "Permanently delete this field ?") %></td>
+	    <td><%= link_to_edit(field.cid) %>&nbsp;<%= link_to_delete(field.cid, "Permanently delete this field ?") %></td>
 	  </tr>
 	<% end %>
 	</tbody>

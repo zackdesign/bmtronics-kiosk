@@ -21,5 +21,29 @@ class CfieldsController < ApplicationController
     
     @name = params[:name]
   end
+  
+  def newc
+  
+  end
+  
+  def newr
+  
+  end
+  
+  def edit
+  
+  end
+  
+  def editr
+  
+  end
+  
+  def destroy
+  
+  end
+  
+  def destroyr
+  
+  end
 
 end
