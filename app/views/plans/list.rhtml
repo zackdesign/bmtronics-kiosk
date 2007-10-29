@@ -1,33 +1,31 @@
-<h1>Plans</h1>
+<h1>Phones</h1>
 
 <table>
-	<thead>
-		<tr>
-	    <th>Categories</th>	
+	<thead>	
+	  <tr>
+	    <th>Picture</th>
 	    <th>Name</th>
-	    <th>Codes</th>
-	    <th>Contract Period</th>
-	    <th class="handsets">Handsets</th>
-	    <th class="offer" width= 100px;>Offer</th>
-	    <th>Offer Price</th>
-	    <th>Monthly</th>
-	    <th>Discont</th>
-	    <th class="actions">Actions</th>
+	    <th>Description</th>
+	    <th>Outright</th>
+	    <th>Stock</th>
+	    <th>Discontinued</th>
+	    <th>Features</th>
+	    <th>Accessories</th>
+	    <th>Actions</th>
 	  </tr>
-	</thead>
+	</thead>  
 	<tbody>
-	<% for plan in @plans %>
+	<% for phone in @phones %>
 	  <tr class="<%= cycle("even", "odd") %>">
-	    <td><%= list_categories(plan) %></td>
-	    <td><%=h plan.name %></td>
-	    <td><%=h plan.code %></td>
-	    <td><%=  plan.period %></td>
-	    <td class="centered"><%= link_to_plan_phones(plan) %></td>
-	    <td><%=h plan.offer %></td>
-	    <td class="currency"><%=  number_to_currency plan.offer_price %></td>
-	    <td class="currency"><%=  number_to_currency plan.repayments %></td>
-	    <td><%=  ((plan.discontinued?) ? "Yes" : "No") %></td>
-	    <td><%= link_to_show(plan) %>&nbsp;<%= link_to_edit(plan) %>&nbsp;<%= link_to_delete(plan) %></td>
+	    <td class="centered"><%= show_thumbnail_if_available(phone) %></td>
+	    <td><%=h phone.name %></td>
+	    <td><%=h phone.description %></td>
+	    <td><%=  number_to_currency phone.outright %></td>
+	    <td><%=  ((phone.outofstock?) ? "Sold Out" : "Available") %></td>
+	    <td><%=  ((phone.discontinued?) ? "Yes" : "No") %></td>
+	    <td class="centered"><%=  link_to_phone_features(phone) %></td>
+	    <td class="centered"><%=  link_to_phone_accessories(phone) %></td>	
+	    <td><%= link_to_show(phone) %>&nbsp;<%= link_to_edit(phone) %>&nbsp;<%= link_to_delete(phone, "Permanently delete this phone ?") %></td>
 	  </tr>
 	<% end %>
 	</tbody>
@@ -37,7 +35,9 @@
 
 <div class="links_bar">
   <div class='buttons'>
-		<%= link_to 'Previous page', { :page => @plan_pages.current.previous } if @plan_pages.current.previous %>
-		<%= link_to 'Next page', { :page => @plan_pages.current.next } if @plan_pages.current.next %> 
+		<%= link_to 'Previous page', { :page => @phone_pages.current.previous } if @phone_pages.current.previous %>
+		<%= link_to 'Next page', { :page => @phone_pages.current.next } if @phone_pages.current.next %> 
 	</div>
 </div>
+
+<br />
