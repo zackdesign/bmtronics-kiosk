@@ -1,18 +1,34 @@
-<h1>Charge Fields</h1>
+<h1>Modifying <%= @name %></h1>
 
 <table>
    <thead><tr><th>Names</th><th>Values</th><th>Actions</th></tr></thead>
 	<tbody>
-	<% for field in @fields %>
-	<tr class="<%= cycle("even", "odd") %>">
+	<% 
+	
+	prevn = ''
+	prevv = ''
+	
+	for field in @fields 
+	
+	  if prevn != field.rname
+	  
+	    prevn = field.rname
+	    prevv = field.rvalue
+        %>
+         <tr class="<%= cycle("even", "odd") %>">
 	    <th><%=h field.rname %></th>
 	    <th><%=h field.rvalue %></th>
-	    <th></th>
+	    <th><%= link_to(image_tag('show', :alt => 'show'), {:action => 'showr', :id => field.rid}, :class => 'icon', :title => 'show') %>
+	    <%= link_to(image_tag('edit', :alt => 'edit'), {:action => 'editr', :id => field.rid}, :class => 'icon', :title => 'edit') %>
+	    <%= link_to(image_tag('delete', :alt => 'delete'), { :action => 'destroyr', :id => field.rid }, :confirm => "Permanently delete this field?", :class => 'icon', :title => 'delete', :method => :post) %></th>
 	  </tr>
+	
+	<% end %>
+
 	  <tr class="<%= cycle("even", "odd") %>">
 	    <td><%=h field.cname %></td>
 	    <td><%=h field.cvalue %></td>
-	    <td><%= link_to_show(field) %>&nbsp;<%= link_to_edit(field) %>&nbsp;<%= link_to_delete(field, "Permanently delete this field ?") %></td>
+	    <td><%= link_to_show(field.cid) %>&nbsp;<%= link_to_edit(field.cid) %>&nbsp;<%= link_to_delete(field.cid, "Permanently delete this field ?") %></td>
 	  </tr>
 	<% end %>
 	</tbody>

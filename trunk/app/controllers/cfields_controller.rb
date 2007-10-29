@@ -18,6 +18,8 @@ class CfieldsController < ApplicationController
     :conditions => ["charges_id = ?", params[:id]],
     :joins => "JOIN charge_columns ON charge_rows.id = charge_columns.charge_row_id",
     :order =>"charge_rows.name ASC")
+    
+    @name = params[:name]
   end
 
 end
