@@ -44,7 +44,6 @@ class Plan < ActiveRecord::Base
 #    @costs = @local_new_handsets.collect { |hand| hand.split('|').last.to_f }
     @fields = @local_new_handsets.collect { |hand| hand.split('|').last }
     @costs = @fields.collect { |f| f.split('~').first.to_f }
-    @mros = @fields.collect { |f| f.split('~').last.to_s }
 
     # Remove entries in the Phones Plans join table
     self.phones.each { |phone|
@@ -65,7 +64,6 @@ class Plan < ActiveRecord::Base
     # given by the user i.e. handset cost, MRO, etc.
     for pp in 0..(@new_phones_plans.length - 1)
       @new_phones_plans[pp].handset_cost = @costs[pp]
-      @new_phones_plans[pp].mro = @mros[pp]
       @new_phones_plans[pp].save
     end
   end
