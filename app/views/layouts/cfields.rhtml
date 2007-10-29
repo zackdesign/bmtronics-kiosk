@@ -25,8 +25,15 @@
 			<li><a href="/plans">Plans</a></li>
 			<li id="active"><a href="/charges">Plan Charges</a></li>
 				<ul>
-					<li><%= link_to_new %></li>
-					<li><%= link_to_view %></li>
+					<li><%= link_to("new", :controller => "charges", :action => "new") %></li>
+					<li><%= link_to("view", :controller => "charges", :action => "list") %></li>
+
+				</ul>
+		        <li id="active"><a href="">Charge Modifications</a></li>
+				<ul>
+					<li><%= link_to("new column", :action => "newc") %></li>
+					<li><%= link_to("new row", :action => "newr") %></li>
+					<li><%= link_to("view", :action => "modify") %></li>
 				</ul>
 			<li><a href="/options">Bonus Options</a></li>
 			<li><a href="/phones">Phones</a></li>
