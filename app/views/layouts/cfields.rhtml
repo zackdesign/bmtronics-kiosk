@@ -31,8 +31,8 @@
 				</ul>
 		        <li id="active"><a href="">Charge Modifications</a></li>
 				<ul>
-					<li><%= link_to("new column", :action => "newc") %></li>
 					<li><%= link_to("new row", :action => "newr") %></li>
+					<li><%= link_to("new column", :action => "new") %></li>
 					<li><%= link_to("view", :action => "modify") %></li>
 				</ul>
 			<li><a href="/options">Bonus Options</a></li>
@@ -49,6 +49,12 @@
 	<% end %>
 	
   <%= yield  %>
+  <br />
+  <p>Terminology: An example of a Row would be the 'Minimum Monthly Spend Amount'. An example of a column would be the charges associated with that main 
+  charge - Monthly Included Value, Call Rates per 30 sec, etc.</p>
+  <p>To continue the example, you would create a new row for each Mimimum Monthly Spend Amount (e.g. 20, 30, 40...) and add a column for each of the charges
+  associated with them.</p>
+  <p>While the output above may look a little different it is still essentially the same.</p>
 </div>
 
 </body>
