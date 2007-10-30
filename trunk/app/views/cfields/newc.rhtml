@@ -1,0 +1,13 @@
+<h1>Add Column to Plan Charge Row</h1>
+
+<% form_tag( :action => 'createc' ) do %>
+  <%= render :partial => 'form_column' %>
+
+	<div class="links_bar">
+		<div class='buttons'>
+			<%= form_button('Create', 'submit', 'tick') %>
+			<%= form_button('Undo', 'reset', 'undo') %>
+			<%= link_to 'Back', :action => 'list' %>
+		</div>
+	</div>
+<% end %>

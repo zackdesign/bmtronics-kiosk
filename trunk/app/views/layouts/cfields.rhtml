@@ -29,11 +29,11 @@
 					<li><%= link_to("view", :controller => "charges", :action => "list") %></li>
 
 				</ul>
-		        <li id="active"><a href="">Charge Modifications</a></li>
+		        <li id="active"><%= link_to("Charge Modifications", { :action => "modify", :id => params[:id], :name => params[:name] }) %></li>
 				<ul>
-					<li><%= link_to("new row", :action => "newr") %></li>
-					<li><%= link_to("new column", :action => "new") %></li>
-					<li><%= link_to("view", :action => "modify") %></li>
+					<li><%= link_to("new row", { :action => "newr", :id => params[:id], :name => params[:name] }) %></li>
+					<li><%= link_to("new column", { :action => "newc", :id => params[:id], :name => params[:name] }) %></li>
+					<li><%= link_to("view", { :action => "modify", :id => params[:id], :name => params[:name] }) %></li>
 				</ul>
 			<li><a href="/options">Bonus Options</a></li>
 			<li><a href="/phones">Phones</a></li>
