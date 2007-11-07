@@ -1,13 +1,13 @@
-<h1>Edit Phone</h1>
+<h1>Edit Plan</h1>
 
-<% form_tag({ :action => 'update', :id => @phone }, :multipart => true) do %>
+<% form_tag :action => 'update', :id => @plan do %>
   <%= render :partial => 'form' %>
 
 	<div class="links_bar">
 	  <div class='buttons'>
 			<%= form_button('Update') %>
 			<%= form_button('Undo', 'reset', 'undo') %>
-			<%= link_to 'Show', :action => 'show', :id => @phone %>
+			<%= link_to 'Show', :action => 'show', :id => @plan %>
 			<%= link_to 'Back', :action => 'list' %>
 		</div>
 	</div>
