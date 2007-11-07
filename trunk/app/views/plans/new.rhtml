@@ -1,12 +1,11 @@
-<h1>New Phone</h1>
+<h1>New Plan</h1>
 
-<% form_tag({ :action => 'create' }, :multipart => true) do %>
+<% form_tag :action => 'create' do %>
   <%= render :partial => 'form' %>
-
+	
 	<div class="links_bar">
 	  <div class='buttons'>
 			<%= form_button('Create') %>
-			<%= form_button('Undo', 'reset', 'undo') %>
 			<%= link_to 'Back', :action => 'list' %>
 		</div>
 	</div>

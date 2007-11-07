@@ -1,32 +1,144 @@
-<%= error_messages_for 'phone' %>
 
 
-<p>Current picture<br/>
-<% unless @phone.picture_data.blank? %>
-	<%=  image_tag(url_for({ :action => 'picture', :id => @phone.id }), :alt => @phone.picture_name, :class => 'medium') %><br />
-	<%=  check_box_tag 'remove_picture' %><label for="remove_picture">Remove picture</label>
-<% else %>
-	None
-<% end %></p>
+<%= javascript_tag "function handset_click(sender, id)
+{
+	var cost = document.getElementById('handset_cost' + id);
+	var mro = document.getElementById('handset_mro' + id);
+	if (cost)
+	{
+		if (!sender.checked)
+		{
+			cost.value = '';
+		}
+		cost.disabled = !sender.checked;
+	}
+	if (mro)
+	{
+		if (!sender.checked)
+		{
+			mro.value = '';
+		}
+		mro.disabled = !sender.checked;
+	}
+}"
+%>
+
+<%= javascript_tag "function cost_change(sender, id)
+{
+	var cbx = document.getElementById('handset' + id);
+	var mro_tbx = document.getElementById('handset_mro' + id);
+	if ((cbx) && (mro_tbx))
+	{
+		cbx.value = '' + id + '|' + sender.value + '~' + mro_tbx.value;
+	}
+}"
+%>
+
+<%= javascript_tag "function mro_change(sender, id)
+{
+	var cbx = document.getElementById('handset' + id);
+	var cost_tbx = document.getElementById('handset_cost' + id);
+	if ((cbx) && (cost_tbx))
+	{
+		cbx.value = '' + id + '|' + cost_tbx.value + '~' + sender.value;
+	}
+}"
+%>
+
+<%= javascript_tag "function charge_change()
+{
+	if (!confirm('Changing the Charges Type will result in the loss of all charges currently associated with this plan. Continue ?'))
+	{
+		var current = document.getElementById('plan_charge_type');
+		var previous = document.getElementById('prev_charge_type');
+		if ((current) && (previous))
+		{
+			if (previous.value == '')
+			{
+				current.options[0].selected = true;
+			}
+			else
+			{
+				for (var i = 0 ; i < current.options.length ; i++)
+				{
+					if (current.options[i].value == previous.value)
+					{
+						current.options[i].selected = true;
+					}
+				}
+			}
+		}
+
+		return;
+	}
+}"
+%>
 
 <div class="row_container">
-	<div class="row"><span class="label">New picture:</span><span class="text"><%= file_field 'phone', 'picture'  %></span></div>
-	<div class="row"><span class="label">Name:</span><span class="text"><%= text_field 'phone', 'name'  %></span></div>
-	<div class="row"><span class="label">Brand:</span><span class="text"><%= text_field 'phone', 'brand'  %></span></div>
-	<div class="row"><span class="label">Network (Next G, GSM):</span><span class="text"><%= text_field 'phone', 'network'  %></span></div>
-	<div class="row"><span class="label">Description:</span><span class="text"><%= text_field 'phone', 'description'  %></span></div>	
+	<div class="row"><span class="label">Name:</span><span class="text"><%= text_field 'plan', 'name'  %></span></div>
+	<div class="row"><span class="label">Categories:</span><span class="text">
+		<ul>
+			<li class="consumer"><input type="checkbox" name="plan[plan_category_set][]" value="consumer" id="plan[plan_category_set][]" <%if @plan.categories.include?("consumer")%>checked="checked"<%end%> /><label for="plan[plan_category_set][]">Consumer</label></li>
+			<li class="business"><input type="checkbox" name="plan[plan_category_set][]" value="business" id="plan[plan_category_set][]" <%if @plan.categories.include?("business")%>checked="checked"<%end%> /><label for="plan[plan_category_set][]">Business</label></li>
+			<li class="corporate"><input type="checkbox" name="plan[plan_category_set][]" value="corporate" id="plan[plan_category_set][]" <%if @plan.categories.include?("corporate")%>checked="checked"<%end%> /><label for="plan[plan_category_set][]">Corporate</label></li>
+			<li class="government"><input type="checkbox" name="plan[plan_category_set][]" value="government" id="plan[plan_category_set][]" <%if @plan.categories.include?("government")%>checked="checked"<%end%> /><label for="plan[plan_category_set][]">Government</label></li>
+		</ul>
+	</span></div>
+	<div class="row"><span class="label">Comments:</span><span class="text"><%= text_area 'plan', 'comments'  %></span></div>
+	<div class="row"><span class="label">Codes:</span><span class="text"><%= text_field 'plan', 'code'  %></span></div>
+	<div class="row"><span class="label">Contract Period (e.g. 12,18,24):</span><span class="text"><%= text_field 'plan', 'period'  %></span></div>
 </div>
 
-<label for="phone_features">Features</label>
-<div id="tab_view_features">
-<% for @tab in @feature_tabs -%>
+<%# *** phones includes in this plan %>
+<p>Phones included in this plan:</p>
+<p><table><tr><th>Handset</th><th>Handset Cost</th></tr>
+<% for phone in @phones %>
+<tr>
+	<td>
+<%
+     enabled = false
+     cost = ""
+     @phone_plan = PhonesPlans.find_by_plan_id_and_phone_id(@plan.id, phone.id)
+     unless @phone_plan == nil
+       enabled = true
+       @phone_from_join = @phone_plan
+       cost = @phone_from_join.handset_cost.to_s
+     end
+%>
+		<input type="checkbox" name="plan[plan_phones_handset_set][]" value="<%= phone.id.to_s + "|" + cost  %>" id="handset<%= phone.id %>" onclick="handset_click(this, <%= phone.id %>)" <%unless @phone_plan == nil %>checked="checked"<%end%> />
+<label for="plan[plan_phones_handset_set][]"><%= phone.name %></label></td>
+<td>$<%= text_field_tag "handset_cost" + phone.id.to_s, cost, { :id => "handset_cost" + phone.id.to_s, :disabled => !enabled, :onchange => "cost_change(this, " + phone.id.to_s + ")" }
+%>
+	</td>
+
+</tr>
+<% end %>
+</table>
+<input type="hidden" name="plan[plan_phones_handset_set][]" value="-1|-1" />
+</p>
+
+<%# *** bonus options %>
+<p><label for="plan_options">Bonus Options</label>
+<% for @tab in @option_tabs -%>
+    <% if @tab %>
+	    <% go = true %>
+	<% end %>
+<% end %>
+
+<% if go %>
+<div id="tab_view_options">
+<% else %>
+ - No bonus options found.
+<% end %>
+<% for @tab in @option_tabs -%>
+<% if @tab %>
 	<div class="dhtmlgoodies_aTab">
 		<table border="0" cellpadding="0" cellspacing="0">
 			<tr>
 <%   @first_time = true
      @count = 0
      @tab.each_index { |findex|
-       feature = @tab[findex]
+       option = @tab[findex]
        unless @first_time
          if findex % 4 == 0 -%>
             </tr>
@@ -35,56 +147,46 @@
        else
          @first_time = false
        end -%>
-				<td><div style="width: 147px;"><label for="phone[features_to_phones][]"><%= check_box_tag 'phone[features_to_phones][]', feature.id, (@phone.features.collect { |f| f.id }).include?(feature.id) -%><%= feature.name -%></label></div></td>
+				<td><div style="width: 147px;"><label for="plan[options_to_plans][]"><%= check_box_tag 'plan[options_to_plans][]', option.id, (@plan.options.collect { |f| f.id }).include?(option.id) -%><%= option.name -%></label></div></td>
 <%   } -%>
 			</tr>
 		</table>
 	</div>
-<% end -%>
+	
+<% end %>
+<% end %>
+<% if go %>
 </div>
-<label for="phone[features_to_phones][]"><%= check_box_tag 'phone[features_to_phones][]', -1, false -%>Remove all features from phone</label>
-<% feature_tabs = "Array('" << @feature_letters.join("', '") << "')" %>
-<%= javascript_tag "initTabs('tab_view_features', " << feature_tabs << ", 0, 600, '');" %>
+<label for="plan[options_to_plans][]"><%= check_box_tag 'plan[options_to_plans][]', -1, false -%>Remove all options from plan</label></p>
+<% option_tabs = "Array('" << @option_letters.join("', '") << "')" %>
+<%= javascript_tag "initTabs('tab_view_options', " << option_tabs << ", 0, 600, '');" %>
+<% end %>
+
 
 <div class="row_container">
-	<div class="row"><span class="label">RRP:</span><span class="text"><%= text_field 'phone', 'outright'  %></span></div>
-	<div class="row"><span class="label">Buy Price:</span><span class="text"><%= text_field 'phone', 'buy_price'  %></span></div>
-	<div class="row"><span class="label">Corporate Price:</span><span class="text"><%= text_field 'phone', 'corp_price'  %></span></div>	
-	<div class="row"><span class="label">Government Price:</span><span class="text"><%= text_field 'phone', 'gov_price'  %></span></div>	
-	<div class="row"><span class="label">Prepaid (Price):</span><span class="text"><%= text_field 'phone', 'prepaid'  %></span></div>
-	<div class="row"><span class="label">Supplier:</span><span class="text"><%= text_field 'phone', 'supplier'  %></span></div>	
-	<div class="row"><span class="label">Part #:</span><span class="text"><%= text_field 'phone', 'partnum'  %></span></div>		
-	<div class="row"><span class="label">Stock:</span><span class="text"><%= select 'phone', 'outofstock', { 'Available' => 'false', 'Sold Out' => 'true' }, :selected => @phone.outofstock.to_s %></span></div>
-	<div class="row"><span class="label">Discontinued:</span><span class="text"><%= select 'phone', 'discontinued', { 'No' => 'false', 'Yes' => 'true' }, :selected => @phone.discontinued.to_s %></span></div>				
+	<div class="row"><span class="label">Offer:</span><span class="text"><%= text_field 'plan', 'offer'  %></span></div>
+	<div class="row"><span class="label">Offer price:</span><span class="text"><%= text_field 'plan', 'offer_price'  %></span></div>
+	<div class="row"><span class="label">Monthly repayments:</span><span class="text">$<%= text_field 'plan', 'repayments'  %></span></div>	
+	<div class="row"><span class="label">Discontinued:</span><span class="text"><%= select 'plan', 'discontinued', { 'No' => 'false', 'Yes' => 'true' }, :selected => @plan.discontinued.to_s %></span></div>	
+	<div class="row"><span class="label">Charges Type:</span><span class="text"><%= select('plan', 'charge_type', Charge.find(:all).collect { |c| [c.name, c.id] }, { :id => 'charge_type', :include_blank => true, :selected => (@plan.charge_type != nil) ? ChargeType.find(@plan.charge_type).id : '' }, { :onchange => "return charge_change();", :name => 'plan[plan_charge_type]' }) %><input type="hidden" name="prev_charge_type" id="prev_charge_type" value="<%= (@plan.charge_type != nil) ? ChargeType.find(@plan.charge_type).id : '' %>" /></span></div>		
 </div>
 
 
-<p><label for="phone_accessories">Accessories</label>
-<div id="tab_view_accessories">
-<% for @tab in @accessory_tabs -%>
-	<div class="dhtmlgoodies_aTab">
-		<table border="0" cellpadding="0" cellspacing="0">
-			<tr>
-<%   @first_time = true
-     @count = 0
-     @tab.each_index { |aindex|
-       accessory = @tab[aindex]
-       unless @first_time
-         if aindex % 4 == 0 -%>
-            </tr>
-			<tr>
-<%       end
-       else
-         @first_time = false
-       end -%>
-				<td><div style="width: 147px;"><label for="phone[accessories_to_phones][]"><%= check_box_tag 'phone[accessories_to_phones][]', accessory.id, (@phone.accessories.collect { |a| a.id }).include?(accessory.id) -%><%= accessory.name -%></label></div></td>
-<%   } -%>
-			</tr>
-		</table>
-	</div>
-<% end -%>
-</div>
-<label for="phone[accessories_to_phones][]"><%= check_box_tag 'phone[accessories_to_phones][]', -1, false -%>Remove all accessories from phone</label></p>
-<% accessory_tabs = "Array('" << @accessory_letters.join("', '") << "')" %>
-<%= javascript_tag "initTabs('tab_view_accessories', " << accessory_tabs << ", 0, 600, '');" %>
+<% if @plan.charges.length > 0 %>
+<table>
+	<tr>
+		<th>Charge</th>
+		<th>Amount</th>
+	</tr>
+<%   for @charge in @plan.charges %>
+	<tr>
+		<td><%=  ChargeTypeField.find(@charge.charge_type_field).name %></td>
+		<td>$<%=  text_field 'charge', 'value', { :name => 'plan[charges_values][]' } %></td>
+	</tr>
+<%   end %>
+</table>
+<% else %>
+<div class="text">None</div>
+<% end %>
+</p>
 

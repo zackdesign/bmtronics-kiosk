@@ -1,56 +1,59 @@
-<h1><%=h @phone.name %></h1>
-
-<p><div class="label">Picture:</div><%= show_picture_if_available(@phone) %></p>
+<h1><%=h @plan.name %></h1>
 
 <div class="row_container">
-	<div class="row"><span class="label">Description:</span><span class="text"><%=h @phone.description %></span></div>
-	<div class="row"><span class="label">Buy Outright Cost:</span><span class="text"><%= number_to_currency @phone.outright %></span></div>
-	<div class="row"><span class="label">Stock:</span><span class="text"><%= @phone.outofstock? ? "Sold Out" : "Available" %></span></div>
-	<div class="row"><span class="label">Discontinued:</span><span class="text"><%= @phone.discontinued? ? "Yes" : "No" %></span></div>
-</div>
+	<div class="row"><span class="label">Categories:</span><span class="text"><%= list_categories(@plan) %></span></div>
 
-<%# display phone features %>
-<div class="row_container">
-	<div class="row"><span class="label">Features:</span>
-<% unless @phone.features.empty? %>
-	<span class="text"><%= @phone.features.count %> <a href="#" onclick="Effect.toggle('features', 'blind');">show/hide features</a></span></div>
-	<div id="features" style="display: none;">
-		<dl>
-			<% for feature in @phone.features %>
-				<dt><%= feature.name %></dt>
-				<dd><%= feature.description %></dd>
-			<% end %>
-		</dl>
-	</div>
-<% else %>
-	<span class="text">None</span></div>
-<% end %>
-</div>
+	<div class="row"><span class="label">Comments:</span><span class="text"><%=h @plan.comments %></span></div>
+	<div class="row"><span class="label">Codes:</span><span class="text"><%=h @plan.code %></span></div>
+	<div class="row"><span class="label">Contract Period (months):</span><span class="text"><%=  @plan.period %></span></div>
+	<div class="row"><span class="label">Phones included in this plan:</span><span class="text">
+	<% if @plan.phones.length > 0 %>
+		<table>
+			<tr>
+				<th>Handset</th>
+				<th>Handset Cost</th>
+				<th>MRO</th>
+			</tr>
+		<%  for phone in @plan.phones %>
+			<tr>
+				<td><%=h phone.name %></td>
+				<td><%=  number_to_currency phone.handset_cost %></td>
+				<td><%=h phone.mro %></td>
+			</tr>
+		<%  end %>
+		</table>
+	<% else %>
+		<div>None</div>
+	<% end %>
+	</span></div>
 
-<%# display phone accessories %>
-<div class="row_container">
-	<div class="row"><span class="label">Accessories:</span>		
-<% unless @phone.accessories.empty? %>
-	<span class="text"><%= @phone.accessories.count %> <a href="#" onclick="Effect.toggle('accessories', 'blind');">show/hide accessories</a></span></div>
-	<div id="accessories" style="display: none;">
-		<dl>
-			<% for accessory in @phone.accessories %>
-				<dt><%= accessory.name %></dt>
-				<dd><%= accessory.description %></dd>
-			<% end %>
-		</dl>
-	</div>
-<% else %>
-	<span class="text">None</span></div>
-<% end %>
-</div>
-
-<div class="row_container">
-		<div class="row"><span class="label">Created:</span><span class="text"><%= @phone.created_at.strftime("%b %d %Y at %H:%M:%S") %></span></div>
-		<div class="row"><span class="label">Updated:</span><span class="text"><%= @phone.updated_at.strftime("%b %d %Y at %H:%M:%S") %></span></div>
+	<div class="row"><span class="label">Offer:</span><span class="text"><%=h @plan.offer %></span></div>
+	<div class="row"><span class="label">Offer Price:</span><span class="text"><%=  number_to_currency @plan.offer_price %></span></div>
+	<div class="row"><span class="label">Monthly repayments:</span><span class="text"><%=  number_to_currency @plan.repayments %></span></div>
+	<div class="row"><span class="label">Discontinued:</span><span class="text"><%= @plan.discontinued? ? "Yes" : "No" %></span></div>
+	<div class="row"><span class="label">Charges Type:</span><span class="text"><%= charge_type(@plan) %></span></div>
+	<div class="row"><span class="label">Charges:</span><span class="text">
+	<% if @plan.charges.length > 0 %>
+		<table>
+			<tr>
+				<th>Charge</th>
+				<th>Amount</th>
+			</tr>
+		<% for charge in @plan.charges %>
+			<tr>
+				<td><%=  ChargeTypeField.find(charge.charge_type_field).name %></td>
+				<td><%=h number_to_currency charge.value %></td>
+			</tr>
+		<%   end %>
+		</table>
+	<% else %>
+		<div>None</div>
+	<% end %>
+	</span></div>
 </div>
 
 <div class="links_bar">
   <div class='buttons'>
-		<%= link_to 'Edit', :action => 'edit', :id => @phone %> <%= link_to 'Back', :action => 'list' %>	</div>
+		<%= link_to 'Edit', :action => 'edit', :id => @plan %> <%= link_to 'Back', :action => 'list' %>
+	</div>
 </div>
