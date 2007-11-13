@@ -31,23 +31,11 @@
 	<div class="row"><span class="label">Offer Price:</span><span class="text"><%=  number_to_currency @plan.offer_price %></span></div>
 	<div class="row"><span class="label">Monthly repayments:</span><span class="text"><%=  number_to_currency @plan.repayments %></span></div>
 	<div class="row"><span class="label">Discontinued:</span><span class="text"><%= @plan.discontinued? ? "Yes" : "No" %></span></div>
-	<div class="row"><span class="label">Charges Type:</span><span class="text"><%= charge_type(@plan) %></span></div>
 	<div class="row"><span class="label">Charges:</span><span class="text">
 	<% if @plan.charges.length > 0 %>
-		<table>
-			<tr>
-				<th>Charge</th>
-				<th>Amount</th>
-			</tr>
-		<% for charge in @plan.charges %>
-			<tr>
-				<td><%=  ChargeTypeField.find(charge.charge_type_field).name %></td>
-				<td><%=h number_to_currency charge.value %></td>
-			</tr>
-		<%   end %>
-		</table>
+		<%= @plan.charges.collect { |c| c.name }.join(",") %>
 	<% else %>
-		<div>None</div>
+		None
 	<% end %>
 	</span></div>
 </div>

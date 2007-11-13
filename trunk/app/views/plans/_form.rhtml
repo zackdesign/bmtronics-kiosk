@@ -168,25 +168,28 @@
 	<div class="row"><span class="label">Offer price:</span><span class="text"><%= text_field 'plan', 'offer_price'  %></span></div>
 	<div class="row"><span class="label">Monthly repayments:</span><span class="text">$<%= text_field 'plan', 'repayments'  %></span></div>	
 	<div class="row"><span class="label">Discontinued:</span><span class="text"><%= select 'plan', 'discontinued', { 'No' => 'false', 'Yes' => 'true' }, :selected => @plan.discontinued.to_s %></span></div>	
-	<div class="row"><span class="label">Charges Type:</span><span class="text"><%= select('plan', 'charge_type', Charge.find(:all).collect { |c| [c.name, c.id] }, { :id => 'charge_type', :include_blank => true, :selected => (@plan.charge_type != nil) ? ChargeType.find(@plan.charge_type).id : '' }, { :onchange => "return charge_change();", :name => 'plan[plan_charge_type]' }) %><input type="hidden" name="prev_charge_type" id="prev_charge_type" value="<%= (@plan.charge_type != nil) ? ChargeType.find(@plan.charge_type).id : '' %>" /></span></div>		
+	<div class="row"><p>Charges:</p>
+	<%
+		@all_charges = Charge.find(:all)
+		if @all_charges == nil or @all_charges.empty?
+		else
+			for @charge in @all_charges
+	%>
+		<div><label for="plan[charges_to_plan][<%= @charge.id.to_s %>]">
+	<%=
+				check_box_tag("plan[charges_to_plan][]", @charge.id,
+							  (@plan.charges.collect { |c| c.id }).include?(@charge.id),
+							  { :id => 'plan[charges_to_plan][' + @charge.id.to_s + ']' }) + @charge.name
+	%>
+		</label></div>
+	<%
+			end
+	%>
+		<p><div><label for="plan[charges_to_plan][-1]"><%= check_box_tag 'plan[charges_to_plan][]', -1, false -%>Remove all charges from plan</label></div></p>
+	<%
+		end
+	-%>
+	</div>
 </div>
 
-
-<% if @plan.charges.length > 0 %>
-<table>
-	<tr>
-		<th>Charge</th>
-		<th>Amount</th>
-	</tr>
-<%   for @charge in @plan.charges %>
-	<tr>
-		<td><%=  ChargeTypeField.find(@charge.charge_type_field).name %></td>
-		<td>$<%=  text_field 'charge', 'value', { :name => 'plan[charges_values][]' } %></td>
-	</tr>
-<%   end %>
-</table>
-<% else %>
-<div class="text">None</div>
-<% end %>
 </p>
-

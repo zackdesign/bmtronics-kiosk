@@ -25,7 +25,8 @@ class Plan < ActiveRecord::Base
 
   has_and_belongs_to_many :phones
   belongs_to :plan_group
-  has_many :charges
+#  has_many :charges
+  has_and_belongs_to_many :charges
   has_and_belongs_to_many :options, :join_table => "plans_options"
   
   def plan_category_set=(new_categories)
@@ -119,5 +120,17 @@ class Plan < ActiveRecord::Base
       @options = Option.find(@local_option_ids)
     end
     self.options = @options
+  end
+  
+  def charges_to_plan=(new_charge_ids)
+    @local_new_charge_ids = new_charge_ids
+    
+    if @local_new_charge_ids.include?("-1")
+      @charges = []
+    else
+      @charges = Charge.find(@local_new_charge_ids)
+    end
+    
+    self.charges = @charges
   end
 end
