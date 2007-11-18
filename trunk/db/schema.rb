@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 30) do
+ActiveRecord::Schema.define(:version => 33) do
 
   create_table "accessories", :force => true do |t|
     t.column "name",         :string
@@ -46,6 +46,13 @@ ActiveRecord::Schema.define(:version => 30) do
     t.column "updated_at",   :datetime
   end
 
+  create_table "charges_plans", :id => false, :force => true do |t|
+    t.column "charge_id", :integer, :null => false
+    t.column "plan_id",   :integer, :null => false
+  end
+
+  add_index "charges_plans", ["charge_id", "plan_id"], :name => "index_charges_plans_on_charge_id_and_plan_id"
+
   create_table "features", :force => true do |t|
     t.column "name",        :string
     t.column "description", :text
@@ -62,21 +69,30 @@ ActiveRecord::Schema.define(:version => 30) do
   end
 
   create_table "phones", :force => true do |t|
-    t.column "name",         :string
-    t.column "description",  :text
-    t.column "outright",     :decimal,  :precision => 9, :scale => 2, :default => 0.0,          :null => false
-    t.column "created_at",   :datetime
-    t.column "updated_at",   :datetime
-    t.column "outofstock",   :boolean,                                :default => false
-    t.column "discontinued", :boolean,                                :default => false
-    t.column "picture_name", :string
-    t.column "picture_type", :string,                                 :default => "image/jpeg"
-    t.column "picture_data", :binary
-    t.column "buy_price",    :decimal,  :precision => 9, :scale => 2
-    t.column "supplier",     :text
-    t.column "partnum",      :string
-    t.column "corp_price",   :decimal,  :precision => 9, :scale => 2
-    t.column "gov_price",    :decimal,  :precision => 9, :scale => 2
+    t.column "name",          :string
+    t.column "description",   :text
+    t.column "outright",      :decimal,  :precision => 9, :scale => 2, :default => 0.0,          :null => false
+    t.column "created_at",    :datetime
+    t.column "updated_at",    :datetime
+    t.column "outofstock",    :boolean,                                :default => false
+    t.column "discontinued",  :boolean,                                :default => false
+    t.column "picture_name",  :string
+    t.column "picture_type",  :string,                                 :default => "image/jpeg"
+    t.column "picture_data",  :binary
+    t.column "buy_price",     :decimal,  :precision => 9, :scale => 2
+    t.column "supplier",      :text
+    t.column "partnum",       :string
+    t.column "corp_price",    :decimal,  :precision => 9, :scale => 2
+    t.column "gov_price",     :decimal,  :precision => 9, :scale => 2
+    t.column "brand",         :text
+    t.column "network",       :text
+    t.column "prepaid",       :decimal,  :precision => 9, :scale => 2
+    t.column "picture2_name", :string
+    t.column "picture2_type", :string,                                 :default => "image/jpeg"
+    t.column "picture2_data", :binary
+    t.column "picture3_name", :string
+    t.column "picture3_type", :string,                                 :default => "image/jpeg"
+    t.column "picture3_data", :binary
   end
 
   create_table "phones_accessories", :id => false, :force => true do |t|
@@ -97,7 +113,6 @@ ActiveRecord::Schema.define(:version => 30) do
     t.column "plan_id",      :integer, :limit => 24,                               :default => 0
     t.column "phone_id",     :integer, :limit => 24,                               :default => 0
     t.column "handset_cost", :decimal,               :precision => 9, :scale => 2
-    t.column "mro",          :text
   end
 
   add_index "phones_plans", ["phone_id", "plan_id"], :name => "index_phones_plans_on_phone_id_and_plan_id"
