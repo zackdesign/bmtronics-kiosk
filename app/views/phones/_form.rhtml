@@ -1,16 +1,41 @@
 <%= error_messages_for 'phone' %>
 
 
-<p>Current picture<br/>
+<p>Current picture(s)</p>
+
+<table style='border: 0px; padding: 0px;'>
+<tr><th style='border: 0px; padding: 0px;'>Main (1)</th><th style='border: 0px; padding: 0px;'>2</th><th style='border: 0px; padding: 0px;'>3</th></tr>
+  <tr>
+  <td style='border: 0px; padding: 0px; text-align: center'>
 <% unless @phone.picture_data.blank? %>
 	<%=  image_tag(url_for({ :action => 'picture', :id => @phone.id }), :alt => @phone.picture_name, :class => 'medium') %><br />
 	<%=  check_box_tag 'remove_picture' %><label for="remove_picture">Remove picture</label>
 <% else %>
-	None
-<% end %></p>
+None
+<% end %>
+
+</td><td style='border: 0px; padding: 0px; text-align: center'>
+<% unless @phone.picture2_data.blank? %>
+	<%=  image_tag(url_for({ :action => 'picture2', :id => @phone.id }), :alt => @phone.picture2_name, :class => 'medium') %><br />
+	<%=  check_box_tag 'remove_picture2' %><label for="remove_picture2">Remove picture</label>
+<% else %>
+None
+<% end %>
+</td><td style='border: 0px; padding: 0px; text-align: center'>
+<% unless @phone.picture3_data.blank? %>
+	<%=  image_tag(url_for({ :action => 'picture3', :id => @phone.id }), :alt => @phone.picture3_name, :class => 'medium') %><br />
+	<%=  check_box_tag 'remove_picture3' %><label for="remove_picture3">Remove picture</label>
+<% else %>
+None
+<% end %>
+</td>
+</tr>
+</table>
 
 <div class="row_container">
-	<div class="row"><span class="label">New picture:</span><span class="text"><%= file_field 'phone', 'picture'  %></span></div>
+	<div class="row"><span class="label">New picture (1):</span><span class="text"><%= file_field 'phone', 'picture'  %></span></div>
+<div class="row"><span class="label">New picture (2):</span><span class="text"><%= file_field 'phone', 'picture2'  %></span></div>
+<div class="row"><span class="label">New picture (3):</span><span class="text"><%= file_field 'phone', 'picture3'  %></span></div>
 	<div class="row"><span class="label">Name:</span><span class="text"><%= text_field 'phone', 'name'  %></span></div>
 	<div class="row"><span class="label">Brand:</span><span class="text"><%= text_field 'phone', 'brand'  %></span></div>
 	<div class="row"><span class="label">Network (Next G, GSM):</span><span class="text"><%= text_field 'phone', 'network'  %></span></div>
@@ -19,6 +44,7 @@
 
 <label for="phone_features">Features</label>
 <div id="tab_view_features">
+<% if @tab %>
 <% for @tab in @feature_tabs -%>
 	<div class="dhtmlgoodies_aTab">
 		<table border="0" cellpadding="0" cellspacing="0">
@@ -46,6 +72,8 @@
 <% feature_tabs = "Array('" << @feature_letters.join("', '") << "')" %>
 <%= javascript_tag "initTabs('tab_view_features', " << feature_tabs << ", 0, 600, '');" %>
 
+<% end  %>
+
 <div class="row_container">
 	<div class="row"><span class="label">RRP:</span><span class="text"><%= text_field 'phone', 'outright'  %></span></div>
 	<div class="row"><span class="label">Buy Price:</span><span class="text"><%= text_field 'phone', 'buy_price'  %></span></div>
@@ -61,6 +89,7 @@
 
 <p><label for="phone_accessories">Accessories</label>
 <div id="tab_view_accessories">
+<% if @tab %>
 <% for @tab in @accessory_tabs -%>
 	<div class="dhtmlgoodies_aTab">
 		<table border="0" cellpadding="0" cellspacing="0">
@@ -87,4 +116,6 @@
 <label for="phone[accessories_to_phones][]"><%= check_box_tag 'phone[accessories_to_phones][]', -1, false -%>Remove all accessories from phone</label></p>
 <% accessory_tabs = "Array('" << @accessory_letters.join("', '") << "')" %>
 <%= javascript_tag "initTabs('tab_view_accessories', " << accessory_tabs << ", 0, 600, '');" %>
+
+<% end %>
 

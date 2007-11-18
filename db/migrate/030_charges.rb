@@ -1,8 +1,8 @@
 class Charges < ActiveRecord::Migration
   def self.up
-    drop_table "charges"
-    drop_table "charge_type_fields"
-    drop_table "charge_types"
+    execute "DROP TABLE IF EXISTS charges"
+    execute "DROP TABLE IF EXISTS charge_type_fields"
+    execute "DROP TABLE IF EXISTS charge_types"
 
     create_table :charge_columns do |t|
       t.column :charge_row_id,  :integer, { :limit => 24 }
