@@ -7,7 +7,7 @@
 		<div class='buttons'>
 			<%= form_button('Update', 'submit', 'tick') %>		
 			<%= form_button('Undo', 'reset', 'undo') %>
-			<%= link_to 'Back', :action => 'list' %>
+			<%= link_to 'Back', :action => 'modify', :id => @charge_id %>
 		</div>
 	</div>
 <% end %>

@@ -59,8 +59,8 @@ class CfieldsController < ApplicationController
     if @charge_row.save
       @charge_col = ChargeColumn.new
       @charge_col.charge_row_id = @charge_row.id #params[:charge_row]
-      @charge_col.name = "New Charge Row Column 1"
-      @charge_col.value = "Column 1 Value"
+      @charge_col.name = "Edit This (New Column Name)"
+      @charge_col.value = "Edit This (New Column Value)"
       if @charge_col.save
         flash[:notice] = 'Plan Charge Row was successfully created.'
 #        params[:name] = Charge.find(params[:id]).name

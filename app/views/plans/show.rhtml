@@ -12,13 +12,11 @@
 			<tr>
 				<th>Handset</th>
 				<th>Handset Cost</th>
-				<th>MRO</th>
 			</tr>
 		<%  for phone in @plan.phones %>
 			<tr>
 				<td><%=h phone.name %></td>
 				<td><%=  number_to_currency phone.handset_cost %></td>
-				<td><%=h phone.mro %></td>
 			</tr>
 		<%  end %>
 		</table>
