@@ -9,7 +9,7 @@ class ChargesV2PlansV4 < ActiveRecord::Migration
 
   def self.down
     # Changes to Charges, Charge_Types, and Charge_Type_Fields tables
-    rename_column :charges, :charge_type_field, :field_id
+    #rename_column :charges, :charge_type_field, :field_id
 
     # Change to Plans table
     remove_column :plans, :charge_type

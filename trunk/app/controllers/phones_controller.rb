@@ -105,6 +105,22 @@ class PhonesController < ApplicationController
         @phone.picture_type = nil
         @phone.picture_data = nil
       end
+      if (@phone.errors.invalid?(:picture2_name) ||
+          @phone.errors.invalid?(:picture2_type) ||
+          @phone.errors.invalid?(:picture2_data))
+        # Remove the image from the phone if it is found that the validation fails
+        @phone.picture2_name = nil
+        @phone.picture2_type = nil
+        @phone.picture2_data = nil
+      end
+      if (@phone.errors.invalid?(:picture3_name) ||
+          @phone.errors.invalid?(:picture3_type) ||
+          @phone.errors.invalid?(:picture3_data))
+        # Remove the image from the phone if it is found that the validation fails
+        @phone.picture3_name = nil
+        @phone.picture3_type = nil
+        @phone.picture3_data = nil
+      end
       render :action => 'new'
     end
   end
@@ -184,10 +200,18 @@ class PhonesController < ApplicationController
   def update
     @phone = Phone.find(params[:id])
     @remove = params[:remove_picture]
+    @remove2 = params[:remove_picture2]
+    @remove3 = params[:remove_picture3]  
 
     @old_pic_name = nil
     @old_pic_type = nil
     @old_pic_data = nil
+    @old_pic2_name = nil
+    @old_pic2_type = nil
+    @old_pic2_data = nil
+    @old_pic3_name = nil
+    @old_pic3_type = nil
+    @old_pic3_data = nil
 
     unless @remove.blank?
       # If the "Remove picture" checkbox has been ticked, set the :picture parameter to nil
@@ -207,6 +231,28 @@ class PhonesController < ApplicationController
       @old_pic_data = @phone.picture_data
     end
 
+    unless @remove2.blank?
+      params[:phone][:picture2] = nil
+      params[:phone][:picture2_name] = nil
+      params[:phone][:picture2_type] = nil
+      params[:phone][:picture2_data] = nil
+    else
+      @old_pic2_name = @phone.picture2_name
+      @old_pic2_type = @phone.picture2_type
+      @old_pic2_data = @phone.picture2_data
+    end
+
+    unless @remove3.blank?
+      params[:phone][:picture3] = nil
+      params[:phone][:picture3_name] = nil
+      params[:phone][:picture3_type] = nil
+      params[:phone][:picture3_data] = nil
+    else
+      @old_pic3_name = @phone.picture3_name
+      @old_pic3_type = @phone.picture3_type
+      @old_pic3_data = @phone.picture3_data
+    end
+
     if @phone.update_attributes(params[:phone])
       flash[:notice] = 'Phone was successfully updated.'
       redirect_to :action => 'show', :id => @phone
@@ -215,6 +261,12 @@ class PhonesController < ApplicationController
       @phone.picture_name = @old_pic_name
       @phone.picture_type = @old_pic_type
       @phone.picture_data = @old_pic_data
+      @phone.picture2_name = @old_pic2_name
+      @phone.picture2_type = @old_pic2_type
+      @phone.picture2_data = @old_pic2_data
+      @phone.picture3_name = @old_pic3_name
+      @phone.picture3_type = @old_pic3_type
+      @phone.picture3_data = @old_pic3_data
       render :action => 'edit'
     end
   end
@@ -247,10 +299,42 @@ class PhonesController < ApplicationController
               :type => @phone.picture_type, :disposition => "inline"
   end
 
+  def picture2
+    # Create a resized image of the uploaded picture for when the phone is shown
+    @phone = Phone.find(params[:id])
+    image = Magick::Image.from_blob(@phone.picture2_data).first
+    max_dimension = (image.columns < image.rows) ? image.rows : image.columns
+    if max_dimension < 300
+      thumb = image
+    else
+      thumb = image.resize_to_fit(300, 300)
+    end
+    send_data thumb.to_blob, :filename => @phone.picture2_name,
+              :type => @phone.picture2_type, :disposition => "inline"
+  end
+
+  def picture3
+    # Create a resized image of the uploaded picture for when the phone is shown
+    @phone = Phone.find(params[:id])
+    image = Magick::Image.from_blob(@phone.picture3_data).first
+    max_dimension = (image.columns < image.rows) ? image.rows : image.columns
+    if max_dimension < 300
+      thumb = image
+    else
+      thumb = image.resize_to_fit(300, 300)
+    end
+    send_data thumb.to_blob, :filename => @phone.picture3_name,
+              :type => @phone.picture3_type, :disposition => "inline"
+  end
+
   def actual
     # Send the uploaded image actual size to the browser
     @phone = Phone.find(params[:id])
     send_data @phone.picture_data, :filename => @phone.picture_name,
               :type => @phone.picture_type, :disposition => "inline"
+    send_data @phone.picture2_data, :filename => @phone.picture2_name,
+              :type => @phone.picture2_type, :disposition => "inline"
+    send_data @phone.picture3_data, :filename => @phone.picture3_name,
+              :type => @phone.picture3_type, :disposition => "inline"
   end
 end
