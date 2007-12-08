@@ -19,6 +19,7 @@
 #  partnum      :string(255)   
 #  corp_price   :decimal(9, 2) 
 #
+#
 
 class Phone < ActiveRecord::Base
   validates_presence_of :name
