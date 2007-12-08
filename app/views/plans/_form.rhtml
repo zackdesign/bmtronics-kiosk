@@ -84,6 +84,7 @@
 			<li class="government"><input type="checkbox" name="plan[plan_category_set][]" value="government" id="plan[plan_category_set][]" <%if @plan.categories.include?("government")%>checked="checked"<%end%> /><label for="plan[plan_category_set][]">Government</label></li>
 		</ul>
 	</span></div>
+        <div class="row"><span class="label">Description:</span><span class="text"><%= text_area 'plan', 'description'  %></span></div>
 	<div class="row"><span class="label">Comments:</span><span class="text"><%= text_area 'plan', 'comments'  %></span></div>
 	<div class="row"><span class="label">Codes:</span><span class="text"><%= text_field 'plan', 'code'  %></span></div>
 	<div class="row"><span class="label">Contract Period (e.g. 12,18,24):</span><span class="text"><%= text_field 'plan', 'period'  %></span></div>

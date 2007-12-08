@@ -19,7 +19,7 @@
         %>
         <tr class="<%= cycle("even", "odd") %>">
 	    <th><%=h field.rname %></th>
-	    <th><%=h field.rvalue %></th>
+	    <th><%= field.rvalue %></th>
 	    <th><%= link_to(image_tag('edit', :alt => 'Edit Row'), {:action => 'editr', :id => field.rid}, :class => 'icon', :title => 'edit') %>
 	    <%= link_to(image_tag('delete', :alt => 'Delete Row'), { :action => 'destroyr', :id => field.rid }, :confirm => "Permanently delete this row and all of its columns?", :class => 'icon', :title => 'delete', :method => :post) %></th>
 	  </tr>

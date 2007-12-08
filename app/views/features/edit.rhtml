@@ -1,6 +1,6 @@
 <h1>Edit Feature</h1>
 
-<% form_tag :action => 'update', :id => @feature do %>
+<% form_tag({ :action => 'update', :id => @feature }, :multipart => true) do %>
   <%= render :partial => 'form' %>
 
 	<div class="links_bar">

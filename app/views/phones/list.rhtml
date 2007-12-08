@@ -19,7 +19,7 @@
 	  <tr class="<%= cycle("even", "odd") %>">
 	    <td class="centered"><%= show_thumbnail_if_available(phone) %></td>
 	    <td><%=h phone.name %></td>
-	    <td><%=h phone.description %></td>
+	    <td><%= phone.description %></td>
 	    <td><%=  number_to_currency phone.outright %></td>
 	    <td><%=  ((phone.outofstock?) ? "Sold Out" : "Available") %></td>
 	    <td><%=  ((phone.discontinued?) ? "Yes" : "No") %></td>

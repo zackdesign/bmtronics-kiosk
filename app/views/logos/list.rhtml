@@ -1,0 +1,31 @@
+<h1>Logos</h1>
+
+<table>
+	<thead>	
+	  <tr>
+	    <th>Picture</th>
+	    <th>Brand</th>
+	    <th>Actions</th>
+	  </tr>
+	</thead>  
+	<tbody>
+	<% for logo in @logos %>
+	  <tr class="<%= cycle("even", "odd") %>">
+	    <td class="centered"><%= show_thumbnail_if_available(logo) %></td>
+	    <td><%=h logo.name %></td>
+	    <td><%= link_to_edit(logo) %>&nbsp;<%= link_to_delete(logo) %></td>
+	  </tr>
+	<% end %>
+	</tbody>
+</table>
+
+<%= control_modal_setup %>
+
+<div class="links_bar">
+  <div class='buttons'>
+		<%= link_to 'Previous page', { :page => @logo_pages.current.previous } if @logo_pages.current.previous %>
+		<%= link_to 'Next page', { :page => @logo_pages.current.next } if @logo_pages.current.next %> 
+	</div>
+</div>
+
+<br />

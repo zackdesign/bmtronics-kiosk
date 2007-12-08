@@ -3,7 +3,7 @@
 <p><div class="label">Picture:</div><%= show_picture_if_available(@phone) %></p>
 
 <div class="row_container">
-	<div class="row"><span class="label">Description:</span><span class="text"><%=h @phone.description %></span></div>
+	<div class="row"><span class="label">Description:</span><span class="text"><%= @phone.description %></span></div>
 	<div class="row"><span class="label">Buy Outright Cost:</span><span class="text"><%= number_to_currency @phone.outright %></span></div>
 	<div class="row"><span class="label">Stock:</span><span class="text"><%= @phone.outofstock? ? "Sold Out" : "Available" %></span></div>
 	<div class="row"><span class="label">Discontinued:</span><span class="text"><%= @phone.discontinued? ? "Yes" : "No" %></span></div>

@@ -13,9 +13,10 @@
 <div class="row_container">
 	<div class="row"><span class="label">New picture:</span><span class="text"><%= file_field 'accessory', 'picture'  %></span></div>
 	<div class="row"><span class="label">Name:</span><span class="text"><%= text_field 'accessory', 'name'  %></span></div>
-	<div class="row"><span class="label">Description:</span><span class="text"><%= text_field 'accessory', 'description'  %></span></div>	
-	<div class="row"><span class="label">RRP:</span><span class="text"><%= text_field 'accessory', 'price'  %></span></div>
+	<div class="desc"><span class="label">Description:</span><span class="text"><%= text_area 'accessory', 'description'  %></span></div>	
+	<div class="row"><span class="label">Sell Price:</span><span class="text"><%= text_field 'accessory', 'price'  %></span></div>
 	<div class="row"><span class="label">Buy Price:</span><span class="text"><%= text_field 'accessory', 'buy_price'  %></span></div>	
+        <div class="row"><span class="label">Government Price:</span><span class="text"><%= text_field 'accessory', 'govt_price'  %></span></div>
 	<div class="row"><span class="label">Corporate Price:</span><span class="text"><%= text_field 'accessory', 'corp_price'  %></span></div>	
 	<div class="row"><span class="label">Supplier:</span><span class="text"><%= text_field 'accessory', 'supplier'  %></span></div>		
 	<div class="row"><span class="label">Part #:</span><span class="text"><%= text_field 'accessory', 'partnum'  %></span></div>			

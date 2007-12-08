@@ -7,6 +7,7 @@
 <table>
 	<thead>
 		<tr>
+                  <th>Picture</th>
 		  <th>Name</th>
 		  <th>Description</th>
 		  <th>Phones</th>
@@ -17,6 +18,7 @@
 	<tbody>
 	<% for feature in @features %>
 	<tr class="<%= cycle("even", "odd") %>">
+          <td class="centered"><%= show_thumbnail_if_available(feature) %></td>
 	  <td><%=h feature.name %></td>
 	  <td><%=h feature.description %></td>
 	  <td class="centered"><%= link_to_feature_phones(feature) %></td>
