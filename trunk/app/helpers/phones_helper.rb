@@ -1,5 +1,9 @@
 module PhonesHelper
   
+  def show_brands(phone)
+    select ('phone', 'brand', Logo.find(:all).collect {|p| [ p.name, p.name ] }, :selected => phone.brand.to_s, :include_blank => true )
+  end
+
   ##
   # used in phones/show.rhtml
   def show_thumbnail_if_available(phone)

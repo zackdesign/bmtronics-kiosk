@@ -14,6 +14,6 @@
 class Charge < ActiveRecord::Base
 
   belongs_to :plan
-  has_and_belongs_to_many :charge_rows
+  has_many :charge_rows, :foreign_key => "charges_id", :dependent => :destroy
 
 end

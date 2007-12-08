@@ -1,10 +1,17 @@
 <%= error_messages_for 'feature' %>
 
-
+<p>Current picture<br/>
+<% unless @feature.picture_data.blank? %>
+	<%=  image_tag(url_for({ :action => 'picture', :id => @feature.id }), :alt => @feature.picture_name) %><br />
+	<%=  check_box_tag 'remove_picture' %><label for="remove_picture">Remove picture</label>
+<% else %>
+	None
+<% end %></p>
 
 <div class="row_container">
+        <div class="row"><span class="label">New picture:</span><span class="text"><%= file_field 'feature', 'picture'  %></span></div>
 	<div class="row"><span class="label">Name:</span><span class="text"><%= text_field 'feature', 'name'  %></span></div>
-	<div class="row"><span class="label">Description:</span><span class="text"><%= text_field 'feature', 'description'  %></span></div>
+	<div class="desc"><span class="label">Description:</span><span class="text"><%= text_area 'feature', 'description'  %></span></div>
 </div>
 
 <p><label for="feature_phones">Phones with this feature</label>

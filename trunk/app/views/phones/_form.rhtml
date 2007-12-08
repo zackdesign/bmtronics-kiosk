@@ -37,9 +37,9 @@ None
 <div class="row"><span class="label">New picture (2):</span><span class="text"><%= file_field 'phone', 'picture2'  %></span></div>
 <div class="row"><span class="label">New picture (3):</span><span class="text"><%= file_field 'phone', 'picture3'  %></span></div>
 	<div class="row"><span class="label">Name:</span><span class="text"><%= text_field 'phone', 'name'  %></span></div>
-	<div class="row"><span class="label">Brand:</span><span class="text"><%= text_field 'phone', 'brand'  %></span></div>
+	<div class="row"><span class="label">Brand:</span><span class="text"><%= show_brands(@phone) %></span></div>
 	<div class="row"><span class="label">Network (Next G, GSM):</span><span class="text"><%= text_field 'phone', 'network'  %></span></div>
-	<div class="row"><span class="label">Description:</span><span class="text"><%= text_field 'phone', 'description'  %></span></div>	
+	<div class="desc"><span class="label">Description:</span><span class="text"><%= text_area 'phone', 'description'  %></span></div>	
 </div>
 
 <label for="phone_features">Features</label>
@@ -75,7 +75,7 @@ None
 <% end  %>
 
 <div class="row_container">
-	<div class="row"><span class="label">RRP:</span><span class="text"><%= text_field 'phone', 'outright'  %></span></div>
+	<div class="row"><span class="label">Sell Price:</span><span class="text"><%= text_field 'phone', 'outright'  %></span></div>
 	<div class="row"><span class="label">Buy Price:</span><span class="text"><%= text_field 'phone', 'buy_price'  %></span></div>
 	<div class="row"><span class="label">Corporate Price:</span><span class="text"><%= text_field 'phone', 'corp_price'  %></span></div>	
 	<div class="row"><span class="label">Government Price:</span><span class="text"><%= text_field 'phone', 'gov_price'  %></span></div>	

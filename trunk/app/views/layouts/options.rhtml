@@ -5,6 +5,9 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title><%= controller.controller_name %>: <%= controller.action_name %></title>
+<% # Include TinyMCE before other JS to avoid problems -%>
+<%= javascript_include_tiny_mce_if_used %>
+<%= tiny_mce if using_tiny_mce? %>
   <%= stylesheet_link_tag "main" , :media => "all" %>
   <%= stylesheet_link_tag "tab-view" , :media => "all" %>
   <%= stylesheet_link_tag "base" , :media => "all" %>
@@ -35,6 +38,7 @@
 		<li><a href="/phones">Phones</a></li>
 		<li><a href="/accessories">Accessories</a></li>
 		<li><a href="/features">Features</a></li>
+<li><a href="/logos">Logos</a></li>
 
 	  </ul>
   </div>

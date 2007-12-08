@@ -5,6 +5,25 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title><%= controller.controller_name %>: <%= controller.action_name %></title>
+<% # Include TinyMCE before other JS to avoid problems -%>
+<%= javascript_include_tiny_mce_if_used %>
+<%= tiny_mce if using_tiny_mce? %>
+<script src="/javascripts/tiny_mce/tiny_mce_src.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+tinyMCE.init({
+browsers : "msie,gecko",
+mode : 'textareas',
+plugins : "contextmenu,paste",
+theme : 'advanced',
+theme_advanced_resize_horizontal : false,
+theme_advanced_resizing : true,
+theme_advanced_toolbar_align : 'left',
+theme_advanced_toolbar_location : 'top'
+});
+//]]>
+</script>
+<% # Copied the above in as a quick fix due to seemingly not working???? -%>
   <%= stylesheet_link_tag "main" , :media => "all" %>
   <%= stylesheet_link_tag "tab-view" , :media => "all" %>
   <%= stylesheet_link_tag "base" , :media => "all" %>
@@ -39,6 +58,7 @@
 			<li><a href="/phones">Phones</a></li>
 			<li><a href="/accessories">Accessories</a></li>
 			<li><a href="/features">Features</a></li>
+<li><a href="/logos">Logos</a></li>
 	  </ul>
   </div>
   

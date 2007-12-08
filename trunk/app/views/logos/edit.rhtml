@@ -1,0 +1,13 @@
+<h1>Edit Logo</h1>
+
+<% form_tag({ :action => 'update', :id => @logo }, :multipart => true) do %>
+  <%= render :partial => 'form' %>
+
+	<div class="links_bar">
+	  <div class='buttons'>
+			<%= form_button('Update') %>
+			<%= form_button('Undo', 'reset', 'undo') %>
+			<%= link_to 'Back', :action => 'list' %>
+		</div>
+	</div>
+<% end %>

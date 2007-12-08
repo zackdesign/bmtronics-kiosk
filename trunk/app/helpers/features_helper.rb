@@ -1,5 +1,27 @@
 module FeaturesHelper
   
+
+  ##
+  # used in features/show.rhtml
+  def show_picture_if_available(feature)
+    unless feature.picture_data.blank?
+      link_to(image_tag(url_for({ :action => 'picture', :id => feature.id }), { :alt => feature.picture_name, :border => 0, :class => "medium" }), url_for({ :action => 'actual', :id => feature.id }), :popup => true)
+    else
+      content_tag(:span, "None")
+    end
+  end
+  
+  ##
+  # used in features/list.rhtml
+  def show_thumbnail_if_available(feature)
+    unless feature.picture_name.blank?
+      image_tag(url_for({ :action => 'thumbnail', :id => feature.id }), :alt => feature.picture_name, :class => "thumb")
+    else
+      content_tag(:span, "None")
+    end
+  end
+
+
   def link_to_archive_action(feature)
     if params[:action] == 'listarch'
       link_to('Unarchive', { :action => 'unarchive', :id => feature }, :confirm => "Unarchive this feature ?", :method => :post)

@@ -1,0 +1,17 @@
+<%= error_messages_for 'logo' %>
+
+
+<p>Current picture<br/>
+<% unless @logo.picture_data.blank? %>
+	<%=  image_tag(url_for({ :action => 'picture', :id => @logo.id }), :alt => @logo.picture_name) %><br />
+	<%=  check_box_tag 'remove_picture' %><label for="remove_picture">Remove picture</label>
+<% else %>
+	None
+<% end %></p>
+
+
+<div class="row_container">
+	<div class="row"><span class="label">New picture:</span><span class="text"><%= file_field 'logo', 'picture'  %></span></div>
+	<div class="row"><span class="label">Brand:</span><span class="text"><%= text_field 'logo', 'name'  %></span></div>
+</div>
+
