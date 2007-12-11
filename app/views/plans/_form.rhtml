@@ -26,10 +26,9 @@
 <%= javascript_tag "function cost_change(sender, id)
 {
 	var cbx = document.getElementById('handset' + id);
-	var mro_tbx = document.getElementById('handset_mro' + id);
-	if ((cbx) && (mro_tbx))
+	if (cbx)
 	{
-		cbx.value = '' + id + '|' + sender.value + '~' + mro_tbx.value;
+		cbx.value = '' + id + '|' + sender.value;
 	}
 }"
 %>

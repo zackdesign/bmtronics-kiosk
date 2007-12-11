@@ -57,6 +57,11 @@ class Plan < ActiveRecord::Base
       end
     }
 
+    # Need to save the Plan record here in case it is a new one, because the self.id attribute won't
+    # be valid (i.e. it will be nil) until the record is created in the database. If it isn't valid,
+    # then NULL values will be created in the database and the Phone will appear not to be saved.
+    self.save
+
     # Find or create entries in the Phones Plans join table      
     @new_phones_plans = @phone_ids.collect { |pid|
       PhonesPlans.find_or_create_by_plan_id_and_phone_id(self.id, pid)
