@@ -227,6 +227,22 @@ div.row_container{
 	width: 600px;
 }
 
+div.desc {
+        font-weight: bold;
+        padding-top: 15px;
+        clear: both;
+}
+
+div.desc span.label {
+  width: 200px;	
+  float: left;
+  text-align: right;
+	font-weight: bold;
+	font-size: 12px;
+  padding-right: 10px;
+}
+
+
 div.row {
   clear: both;
   padding-top: 10px;
