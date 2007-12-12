@@ -13,7 +13,7 @@
 <div class="row_container">
 	<div class="row"><span class="label">Features:</span>
 <% unless @phone.features.empty? %>
-	<span class="text"><%= @phone.features.count %> <a href="#" onclick="Effect.toggle('features', 'blind');">show/hide features</a></span></div>
+	<span class="text"><%= @phone.features.count %> <a href="javascript://" onclick="Effect.toggle('features', 'blind');">show/hide features</a></span></div>
 	<div id="features" style="display: none;">
 		<dl>
 			<% for feature in @phone.features %>
@@ -31,7 +31,7 @@
 <div class="row_container">
 	<div class="row"><span class="label">Accessories:</span>		
 <% unless @phone.accessories.empty? %>
-	<span class="text"><%= @phone.accessories.count %> <a href="#" onclick="Effect.toggle('accessories', 'blind');">show/hide accessories</a></span></div>
+	<span class="text"><%= @phone.accessories.count %> <a href="javascript://" onclick="Effect.toggle('accessories', 'blind');">show/hide accessories</a></span></div>
 	<div id="accessories" style="display: none;">
 		<dl>
 			<% for accessory in @phone.accessories %>

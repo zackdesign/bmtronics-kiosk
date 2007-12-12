@@ -7,7 +7,7 @@
 	<div class="row_container">
 		<div class="row"><span class="label">plans with this option:</span>
 	<% unless @option.plans.empty? %>
-		<span class="text"><%= @option.plans.count %> <a href="#" onclick="Effect.toggle('options', 'blind');">show/hide features</a>
+		<span class="text"><%= @option.plans.count %> <a href="javascript://" onclick="Effect.toggle('options', 'blind');">show/hide features</a>
 		<div id="options" style="display: none;">
 			<ul>
 				<% for plan in @option.plans %>
