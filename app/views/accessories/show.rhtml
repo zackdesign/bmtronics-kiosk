@@ -13,7 +13,7 @@
 <div class="row_container">
 	<div class="row"><span class="label">Phones with this accessory:</span>		
 <% unless @accessory.phones.empty? %>
-	<span class="text"><%= @accessory.phones.count %> <a href="#" onclick="Effect.toggle('phones', 'blind');">show/hide phones</a>
+	<span class="text"><%= @accessory.phones.count %> <a href="javascript://" onclick="Effect.toggle('phones', 'blind');">show/hide phones</a>
 	<div id="phones" style="display: none;">
 		<ul>
 			<% for phone in @accessory.phones %>
