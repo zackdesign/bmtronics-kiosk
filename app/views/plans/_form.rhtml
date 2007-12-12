@@ -3,7 +3,6 @@
 <%= javascript_tag "function handset_click(sender, id)
 {
 	var cost = document.getElementById('handset_cost' + id);
-	var mro = document.getElementById('handset_mro' + id);
 	if (cost)
 	{
 		if (!sender.checked)
@@ -11,14 +10,6 @@
 			cost.value = '';
 		}
 		cost.disabled = !sender.checked;
-	}
-	if (mro)
-	{
-		if (!sender.checked)
-		{
-			mro.value = '';
-		}
-		mro.disabled = !sender.checked;
 	}
 }"
 %>
@@ -29,17 +20,6 @@
 	if (cbx)
 	{
 		cbx.value = '' + id + '|' + sender.value;
-	}
-}"
-%>
-
-<%= javascript_tag "function mro_change(sender, id)
-{
-	var cbx = document.getElementById('handset' + id);
-	var cost_tbx = document.getElementById('handset_cost' + id);
-	if ((cbx) && (cost_tbx))
-	{
-		cbx.value = '' + id + '|' + cost_tbx.value + '~' + sender.value;
 	}
 }"
 %>

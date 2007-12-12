@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 33) do
+ActiveRecord::Schema.define(:version => 39) do
 
   create_table "accessories", :force => true do |t|
     t.column "name",         :string
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 33) do
     t.column "supplier",     :text
     t.column "partnum",      :string
     t.column "corp_price",   :decimal,  :precision => 9, :scale => 2
+    t.column "govt_price",   :decimal,  :precision => 9, :scale => 2
   end
 
   create_table "charge_columns", :force => true do |t|
@@ -54,11 +55,23 @@ ActiveRecord::Schema.define(:version => 33) do
   add_index "charges_plans", ["charge_id", "plan_id"], :name => "index_charges_plans_on_charge_id_and_plan_id"
 
   create_table "features", :force => true do |t|
-    t.column "name",        :string
-    t.column "description", :text
-    t.column "created_at",  :datetime
-    t.column "updated_at",  :datetime
-    t.column "active",      :boolean,  :default => true
+    t.column "name",         :string
+    t.column "description",  :text
+    t.column "created_at",   :datetime
+    t.column "updated_at",   :datetime
+    t.column "active",       :boolean,  :default => true
+    t.column "picture_name", :string
+    t.column "picture_type", :string,   :default => "image/jpeg"
+    t.column "picture_data", :binary
+  end
+
+  create_table "logos", :force => true do |t|
+    t.column "name",         :text
+    t.column "created_at",   :datetime
+    t.column "updated_at",   :datetime
+    t.column "picture_name", :string
+    t.column "picture_type", :string,   :default => "image/jpeg"
+    t.column "picture_data", :binary
   end
 
   create_table "options", :force => true do |t|
