@@ -6,7 +6,7 @@ class ChargesController < ApplicationController
   end
   
   def list
-    @charge_pages, @charges = paginate :charges, :per_page => 20
+    @charge_pages = Charge.paginate :page => params[:page], :per_page => 20, :order => 'name ASC'
   end
   
   def edit 

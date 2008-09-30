@@ -24,17 +24,17 @@ module FeaturesHelper
 
   def link_to_archive_action(feature)
     if params[:action] == 'listarch'
-      link_to('Unarchive', { :action => 'unarchive', :id => feature }, :confirm => "Unarchive this feature ?", :method => :post)
+      link_to(image_tag('undo.png', :alt => 'unarchive'), { :action => 'unarchive', :id => feature }, :confirm => "Unarchive this feature ?", :method => :post, :title => 'unarchive', :class => 'icon')
     else
       confirm_message = feature.phones.empty? ? "Archive this feature ?" : "WARNING: This feature is still used by #{feature.phones.count} phone(s).\n\nArchive this feature ?"
-      link_to('Archive', { :action => 'archive', :id => feature }, :confirm => confirm_message, :method => :post)
+      link_to(image_tag('package_go.png', :alt => 'archive'), { :action => 'archive', :id => feature }, :confirm => confirm_message, :method => :post, :title => 'archive', :class => 'icon')
     end
   end
   
   def link_to_delete(feature)
     confirm_message = feature.phones.empty? ? "Permanently delete this feature ?" : "WARNING: Deleting this feature will also delete it from #{feature.phones.count} phone(s).\n\nPermanently delete this feature ?"
     action_name = params[:action] == 'listarch' ? 'deletearch' : 'delete'
-    link_to(image_tag('delete', :alt => 'delete'), { :action => action_name, :id => feature }, :confirm => confirm_message, :class => 'icon', :title => 'delete', :method => :post)
+    link_to(image_tag('delete.png', :alt => 'delete'), { :action => action_name, :id => feature }, :confirm => confirm_message, :class => 'icon', :title => 'delete', :method => :post)
   end
   
   def link_to_feature_phones(feature)

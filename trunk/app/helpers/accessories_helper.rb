@@ -22,17 +22,17 @@ module AccessoriesHelper
   
   def link_to_archive_action(accessory)
     if params[:action] == 'listarch'
-      link_to('Unarchive', { :action => 'unarchive', :id => accessory }, :confirm => "Unarchive this accessory ?", :method => :post)
+      link_to(image_tag('undo.png', :alt => 'unarchive'), { :action => 'unarchive', :id => accessory }, :confirm => "Unarchive this accessory ?", :method => :post, :title => 'unarchive', :class => 'icon')
     else
       confirm_message = accessory.phones.empty? ? "Archive this accessory ?" : "WARNING: This accessory is still used by #{accessory.phones.count} phone(s).\n\nArchive this accessory ?"
-      link_to('Archive', { :action => 'archive', :id => accessory }, :confirm => confirm_message, :method => :post)
+      link_to(image_tag('package_go.png', :alt => 'archive'), { :action => 'archive', :id => accessory }, :confirm => confirm_message, :method => :post, :title => 'archive', :class => 'icon')
     end
   end
   
   def link_to_delete(accessory)
     confirm_message = accessory.phones.empty? ? "Permanently delete this accessory ?" : "WARNING: Deleting this accessory will also delete it from #{accessory.phones.count} phone(s).\n\nPermanently delete this accessory ?"
     action_name = params[:action] == 'listarch' ? 'deletearch' : 'delete'
-    link_to image_tag('delete', :alt => 'delete'), { :action => action_name, :id => accessory }, :confirm => confirm_message, :class => 'icon', :title => 'delete', :method => :post
+    link_to image_tag('delete.png', :alt => 'delete'), { :action => action_name, :id => accessory }, :confirm => confirm_message, :class => 'icon', :title => 'delete', :method => :post
   end
   
   def link_to_accessory_phones(accessory)

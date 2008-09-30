@@ -1,5 +1,12 @@
 <h1>Charges</h1>
 
+  <div class='buttons'>
+		<%= will_paginate @charge_pages %>
+	</div>
+
+
+<br /><br />
+
 <table>
 	<thead>	
 	  <tr>
@@ -10,7 +17,7 @@
 	  </tr>
 	</thead>  
 	<tbody>
-	<% for charge in @charges %>
+	<% for charge in @charge_pages %>
 	  <tr class="<%= cycle("even", "odd") %>">
 	    <td><%=h charge.name %></td>
 	    <td><%=h charge.description %></td>
@@ -23,7 +30,7 @@
 
 <div class="links_bar">
 	<div class='buttons'>
-		<%= link_to 'Previous page', { :page => @charge_pages.current.previous } if @charge_pages.current.previous %> <%= link_to 'Next page', { :page => @charge_pages.current.next } if @charge_pages.current.next %>
+		<%= will_paginate @charge_pages %>
 	</div>
 </div>
 

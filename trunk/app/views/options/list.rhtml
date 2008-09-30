@@ -4,6 +4,13 @@
 <h1>Bonus Options</h1>
 <% end -%>
 
+  <div class='buttons'>
+		<%= will_paginate @option_pages %>
+	</div>
+
+
+<br /><br />
+
 <table>
 	<thead>
 		<tr>
@@ -14,7 +21,7 @@
 	  </tr>
 	</thead>  
 	<tbody>
-	<% for option in @options %>
+	<% for option in @option_pages %>
 	  <tr class="<%= cycle("even", "odd") %>">
 	    <td><%=h option.name %></td>
 	    <td><%=h option.description %></td>
@@ -29,7 +36,6 @@
 
 <div class="links_bar">
   <div class='buttons'>
-		<%= link_to 'Previous page', { :page => @option_pages.current.previous } if @option_pages.current.previous %>
-		<%= link_to 'Next page', { :page => @option_pages.current.next } if @option_pages.current.next %> 
+		<%= will_paginate @option_pages %>
 	</div>
 </div>

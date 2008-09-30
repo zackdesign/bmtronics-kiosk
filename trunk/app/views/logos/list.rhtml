@@ -1,5 +1,10 @@
 <h1>Logos</h1>
+  <div class='buttons'>
+		<%= will_paginate @logos %>
+	</div>
 
+
+<br /><br />
 <table>
 	<thead>	
 	  <tr>
@@ -23,8 +28,7 @@
 
 <div class="links_bar">
   <div class='buttons'>
-		<%= link_to 'Previous page', { :page => @logo_pages.current.previous } if @logo_pages.current.previous %>
-		<%= link_to 'Next page', { :page => @logo_pages.current.next } if @logo_pages.current.next %> 
+		<%= will_paginate @logos %>
 	</div>
 </div>
 

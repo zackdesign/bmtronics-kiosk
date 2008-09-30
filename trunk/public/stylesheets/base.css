@@ -9,6 +9,7 @@ table {
 	border-top: 1px solid #ccc; 
 	color: #333;
 	font-size: 12px;
+        width: 200px;
 }
 
 table caption {
@@ -398,7 +399,7 @@ a.icon, a.icon img, a.icon:hover, a.icon:hover img{
 
 /* BUTTONS */
 
-.buttons a, .buttons button{
+.buttons a, .buttons button, .buttons span{
     display:block;
     float:left;
     margin:0 7px 0 0;
@@ -416,6 +417,11 @@ a.icon, a.icon img, a.icon:hover, a.icon:hover img{
     cursor:pointer;
     padding:5px 10px 6px 7px; /* Links */
 }
+
+.buttons span {
+  border: 1px solid gray;
+}
+
 .buttons button{
     width:auto;
     overflow:visible;

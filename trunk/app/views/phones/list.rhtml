@@ -1,5 +1,12 @@
 <h1>Phones</h1>
 
+  <div class='buttons'>
+		<%= will_paginate @posts %>
+	</div>
+
+
+<br /><br />
+
 <table>
 	<thead>	
 	  <tr>
@@ -35,8 +42,7 @@
 
 <div class="links_bar">
   <div class='buttons'>
-		<%= link_to 'Previous page', { :page => @phone_pages.current.previous } if @phone_pages.current.previous %>
-		<%= link_to 'Next page', { :page => @phone_pages.current.next } if @phone_pages.current.next %> 
+		<%= will_paginate @posts %>
 	</div>
 </div>
 
