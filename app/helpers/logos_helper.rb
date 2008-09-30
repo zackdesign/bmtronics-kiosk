@@ -28,7 +28,7 @@ module LogosHelper
   
   def link_to_delete(logo)
     action_name = params[:action] == 'listarch' ? 'deletearch' : 'delete'
-    link_to image_tag('delete', :alt => 'delete'), { :action => action_name, :id => logo },  :class => 'icon', :title => 'delete', :method => :post
+    link_to image_tag('delete.png', :alt => 'delete'), { :action => action_name, :id => logo },  :class => 'icon', :title => 'delete', :method => :post
   end
   
   def link_to_logo_phones(logo)

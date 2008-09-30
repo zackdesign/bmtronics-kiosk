@@ -10,12 +10,7 @@ class PlansController < ApplicationController
          :redirect_to => { :action => :list }
 
   def list
-#    @plan_pages, @plans = paginate :plans, :per_page => 10
-    @plan_pages, @plans = paginate :plans, { :per_page => 10, :conditions => 'plan_group IS NULL' }
-#    for plan in @plans
-#      @phones = plan.phones
-#      breakpoint
-#    end
+    @plan_pages = Plan.paginate :page => params[:page], :per_page => 10, :order => 'name ASC', :conditions => 'plan_group IS NULL'
   end
 
   def show
@@ -24,7 +19,7 @@ class PlansController < ApplicationController
   
   def new
     @plan = Plan.new
-    @phones = Phone.find_all
+    @phones = Phone.find(:all)
 	@options = Option.find(:all, :order => 'name ASC')
 	
     # Create the Bonus Option tabs

@@ -1,5 +1,10 @@
 <h1>Plans</h1>
+  <div class='buttons'>
+		<%= will_paginate @plan_pages %>
+	</div>
 
+
+<br /><br />
 <table>
 	<thead>
 		<tr>
@@ -16,7 +21,7 @@
 	  </tr>
 	</thead>
 	<tbody>
-	<% for plan in @plans %>
+	<% for plan in @plan_pages %>
 	  <tr class="<%= cycle("even", "odd") %>">
 	    <td><%= list_categories(plan) %></td>
 	    <td><%=h plan.name %></td>
@@ -37,7 +42,7 @@
 
 <div class="links_bar">
   <div class='buttons'>
-		<%= link_to 'Previous page', { :page => @plan_pages.current.previous } if @plan_pages.current.previous %>
-		<%= link_to 'Next page', { :page => @plan_pages.current.next } if @plan_pages.current.next %> 
+		<%= will_paginate @plan_pages %>
+               <%= link_to 'Plan Groups', { :controller => "plan_groups", :action => "list" } %>
 	</div>
 </div>

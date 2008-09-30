@@ -3,7 +3,12 @@
 <% else -%>
 <h1>Accessories</h1>
 <% end -%>
+  <div class='buttons'>
+		<%= will_paginate @accessories %>
+	</div>
 
+
+<br /><br />
 <table>
 	<thead>	
 		<tr>
@@ -37,7 +42,6 @@
 
 <div class="links_bar">
   <div class='buttons'>
-		<%= link_to 'Previous page', { :page => @accessory_pages.current.previous } if @accessory_pages.current.previous %>
-		<%= link_to 'Next page', { :page => @accessory_pages.current.next } if @accessory_pages.current.next %> 
+		<%= will_paginate @accessories %>
 	</div>
 </div>

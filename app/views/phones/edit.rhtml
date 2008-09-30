@@ -1,6 +1,6 @@
 <h1>Edit Phone</h1>
 
-<% form_tag({ :action => 'update', :id => @phone }, :multipart => true) do %>
+<% form_tag({ :action => 'update', :id => @phone }, :multipart => true, :id => 'phones') do %>
   <%= render :partial => 'form' %>
 
 	<div class="links_bar">

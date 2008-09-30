@@ -10,12 +10,12 @@ class OptionsController < ApplicationController
          :redirect_to => { :action => :list }
 
   def list
-#    @option_pages, @options = paginate :options, :per_page => 10
-    @option_pages, @options = paginate :options, { :per_page => 10 }
+    @option_pages = Option.paginate :page => params[:page], :per_page => 10, :order => 'name ASC'
   end
 
   def listarch
-    @option_pages, @options = paginate :options, { :per_page => 10 }
+    #@option_pages = Option.paginate :page => params[:page], :per_page => 10, :order => 'name ASC', :conditions => ['archived = ?', '1']
+    @option_pages = Option.paginate :page => params[:page], :per_page => 10, :order => 'name ASC'
     render :action => 'list'
   end
 

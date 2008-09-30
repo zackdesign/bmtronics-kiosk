@@ -12,12 +12,11 @@ class AccessoriesController < ApplicationController
          :redirect_to => { :action => :list }
 
   def list
-#    @accessory_pages, @accessories = paginate :accessories, :per_page => 10
-    @accessory_pages, @accessories = paginate :accessories, { :per_page => 10, :conditions => 'active = 1' }
+    @accessories = Accessory.paginate :page => params[:page], :per_page => 7, :order => 'name ASC', :conditions => 'active = 1'
   end
 
   def listarch
-    @accessory_pages, @accessories = paginate :accessories, { :per_page => 10, :conditions => 'active = 0' }
+    @accessories = Accessory.paginate :page => params[:page], :per_page => 7, :order => 'name ASC', :conditions => 'active = 0'
     render :action => 'list'
   end
 
