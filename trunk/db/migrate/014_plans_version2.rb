@@ -1,14 +1,17 @@
 class PlansVersion2 < ActiveRecord::Migration
   def self.up
-    change_column :plans, :id, :integer, { :limit => 24 }
+    change_column :plans, :id, :integer
+    execute " ALTER TABLE `plans` CHANGE `id` `id` INT( 24 ) NOT NULL  "
     change_column :plans, :name, :string
     execute "ALTER TABLE plans ADD COLUMN categories SET('consumer','business','corporate') NOT NULL DEFAULT 'consumer' AFTER name"
     rename_column :plans, :flexi_code, :code
     rename_column :plans, :contract, :period
     execute "ALTER TABLE plans MODIFY COLUMN price DECIMAL(9,2) NULL DEFAULT NULL"
     rename_column :plans, :price, :handset_cost
-    add_column :plans, :handset, :integer, { :limit => 24 }
-    add_column :plans, :plan_group, :integer, { :limit => 24 }
+    add_column :plans, :handset, :integer
+    execute " ALTER TABLE `plans` CHANGE `handset` `handset` INT( 24 ) NOT NULL  "
+    add_column :plans, :plan_group, :integer
+    execute " ALTER TABLE `plans` CHANGE `plan_group` `plan_group` INT( 24 ) NOT NULL  "
     execute "ALTER TABLE plans MODIFY COLUMN flexi_price DECIMAL(9,2) NULL DEFAULT NULL"
     rename_column :plans, :flexi_price, :offer_price
     change_column :plans, :offer, :string
@@ -30,6 +33,6 @@ class PlansVersion2 < ActiveRecord::Migration
     change_column :plans, :flexi_price, :integer
     change_column :plans, :offer, :text
     add_column :plans, :base_etc, :integer
-    remove_column :plans, repayments
+    remove_column :plans, :repayments
   end
 end

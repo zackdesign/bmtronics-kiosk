@@ -1,0 +1,59 @@
+<h1>Kiosks</h1>
+
+<% form_tag({ :action => 'submit' }, :id => 'kiosks') do %>
+	  <div class='buttons'>
+			<%= form_button('Submit') %>
+			<%= form_button('Undo', 'reset', 'undo.png') %>
+		</div>
+<br /><br />
+<table style="width: 600px;">
+	<thead>	
+	  <tr>
+	    <th>Phone</th>
+	    <th>Kiosk 1</th>
+	    <th>Kiosk 2</th>
+	    <th>Kiosk 3</th>
+	    <th>Kiosk 4</th>
+	  </tr>
+	</thead>  
+	<tbody>
+	<% for phone in @phones 
+             
+             kiosk1 = false
+             kiosk2 = false
+             kiosk3 = false
+             kiosk4 = false         
+
+           for kiosk in @kiosks
+             if kiosk.phone_id  == phone.id
+               if kiosk.kiosk == 1
+                 kiosk1 = true
+               elsif kiosk.kiosk == 2
+                 kiosk2 = true
+               elsif kiosk.kiosk == 3
+                 kiosk3 = true
+               elsif kiosk.kiosk == 4
+                 kiosk4 = true
+               end
+             end
+           end
+%>
+	  <tr class="<%= cycle("even", "odd") %>">
+	    <td><%=h phone.name %></td>
+	    <td class="centered"><%= check_box_tag 'kiosk1['+phone.id.to_s+']', phone.id, kiosk1 -%></td>
+	    <td class="centered"><%= check_box_tag 'kiosk2['+phone.id.to_s+']', phone.id, kiosk2 -%></td>
+	    <td class="centered"><%= check_box_tag 'kiosk3['+phone.id.to_s+']', phone.id, kiosk3 -%></td>
+	    <td class="centered"><%= check_box_tag 'kiosk4['+phone.id.to_s+']', phone.id, kiosk4 -%></td>
+	  </tr>
+	<% end %>
+	</tbody>
+</table>
+
+	<div class="links_bar">
+	  <div class='buttons'>
+			<%= form_button('Submit') %>
+			<%= form_button('Undo', 'reset', 'undo.png') %>
+		</div>
+	</div>
+<br /><br />
+<% end %>

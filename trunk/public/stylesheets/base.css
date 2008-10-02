@@ -9,7 +9,6 @@ table {
 	border-top: 1px solid #ccc; 
 	color: #333;
 	font-size: 12px;
-        width: 200px;
 }
 
 table caption {
@@ -94,6 +93,7 @@ table thead th.small{
 td.centered{
 	text-align: center;
 }
+
 
 /*
  		END OF base table layout
