@@ -27,7 +27,7 @@
 	  <tr class="<%= cycle("even", "odd") %>">
 	    <td class="centered"><%= show_thumbnail_if_available(accessory) %></td>
 	    <td><%=h accessory.name %></td>
-	    <td><%=h accessory.description %></td>
+	    <td><%=h shorten(accessory.description) %></td>
 	    <td class="currency"><%=  number_to_currency accessory.price %></td>
 	    <td><%=  ((accessory.outofstock?) ? "Sold Out" : "Available") %></td>
 	    <td><%=  ((accessory.discontinued?) ? "Yes" : "No") %></td>

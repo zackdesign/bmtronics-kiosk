@@ -12,7 +12,7 @@ class PhonesController < ApplicationController
          :redirect_to => { :action => :list }
 
   def list
-    @phones = Phone.paginate :page => params[:page], :per_page => 2, :order => 'name ASC'
+    @phones = Phone.paginate :page => params[:page], :per_page => 10, :order => 'name ASC'
   end
 
   def show

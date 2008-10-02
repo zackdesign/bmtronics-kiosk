@@ -96,7 +96,18 @@ END_OF_STATEMENT
   
   ##
   # submit button
-  def form_button(text, type = 'submit', image='tick', css_class = 'positive')
+  def form_button(text, type = 'submit', image='tick.png', css_class = 'positive')
     content_tag(:button, image_tag(image) + text, :type => type, :class => css_class)
   end
+  
+  ## Shorten all descriptions when listing...
+  def shorten (string, word_limit = 10)
+    words = string.split(/\s/)
+    if words.size >= word_limit
+      words[0,(word_limit-1)].join(" ") + '...'
+    else 
+      string
+    end
+  end
+
 end
