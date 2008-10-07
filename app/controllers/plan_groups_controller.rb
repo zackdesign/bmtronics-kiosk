@@ -21,13 +21,13 @@ class PlanGroupsController < ApplicationController
   
   def new
     @plan_group = PlanGroup.new
-    @phones = Phone.find_all
+    @phones = Phone.find(:all)
     @plans = Plan.find(:all, { :conditions => "plan_group IS NULL" })
   end  
   
   def create
     @plan_group = PlanGroup.new(params[:plan_group])
-    @plan_group.phones = Phone.find(@params[:phone_ids]) if @params[:phone_ids]
+    #@plan_group.phones = Phone.find(@params[:phone_ids]) if @params[:phone_ids]
     if @plan_group.save
       flash[:notice] = 'Plan group was successfully created.'
       redirect_to :action => 'list'
@@ -38,7 +38,7 @@ class PlanGroupsController < ApplicationController
   
   def edit
     @plan_group = PlanGroup.find(params[:id])
-    @plans = Plan.find_all
+    @plans = Plan.find(:all)
   end
   
   def update

@@ -58,7 +58,7 @@ class PlansController < ApplicationController
 
   def create
     @plan = Plan.new(params[:plan])
-    @plan.phones = Phone.find(@params[:phone_ids]) if @params[:phone_ids]
+    #@plan.phones = Phone.find(@params[:phone_ids]) if @params[:phone_ids]
     if @plan.save
       flash[:notice] = 'Plan was successfully created.'
       redirect_to :action => 'list'
@@ -69,7 +69,7 @@ class PlansController < ApplicationController
 
   def edit
     @plan = Plan.find(params[:id])
-    @phones = Phone.find_all
+    @phones = Phone.find(:all)
 	@options = Option.find(:all, :order => 'name ASC')
 	
     # Create the Bonus Option tabs
