@@ -82,16 +82,16 @@ END_OF_STATEMENT
   ##
   # links with images for basic functions
   # used in list.rhtml 
-  def link_to_show(roo)
-    link_to(image_tag('show.png', :alt => 'show'), {:action => 'show', :id => roo}, :class => 'icon', :title => 'show')
+  def link_to_show(roo, controller = controller.controller_name)
+    link_to(image_tag('show.png', :alt => 'show'), {:controller => controller, :action => 'show', :id => roo}, :class => 'icon', :title => 'show')
   end
 
-  def link_to_edit(roo)
-    link_to(image_tag('edit.png', :alt => 'edit'), {:action => 'edit', :id => roo}, :class => 'icon', :title => 'edit')
+  def link_to_edit(roo, controller = controller.controller_name)
+    link_to(image_tag('edit.png', :alt => 'edit'), {:controller => controller, :action => 'edit', :id => roo}, :class => 'icon', :title => 'edit')
   end
   
-  def link_to_delete(roo, confirm = "Are you sure?")
-    link_to(image_tag('delete.png', :alt => 'delete'), { :action => 'destroy', :id => roo }, :confirm => confirm, :class => 'icon', :title => 'delete', :method => :post)
+  def link_to_delete(roo, controller = controller.controller_name, confirm = "Are you sure?")
+    link_to(image_tag('delete.png', :alt => 'delete'), { :controller => controller, :action => 'destroy', :id => roo }, :confirm => confirm, :class => 'icon', :title => 'delete', :method => :post)
   end
   
   ##
