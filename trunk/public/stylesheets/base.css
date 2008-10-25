@@ -94,6 +94,11 @@ td.centered{
 	text-align: center;
 }
 
+.planchargeh {
+	border-bottom: 1px dashed gray;	
+	border-top: 1px dashed gray
+}
+
 
 /*
  		END OF base table layout

@@ -1,10 +1,9 @@
 <%= error_messages_for 'charge_col' %>
 
 <div class="row_container">
-	<div class="row"><span class="label">Row:</span><span class="text"><%= select 'charge_col', 'charge_row_id', @charge_rows.collect { |r| [r.name, r.id] }, { }, { :disabled => (@charge_col_id.empty?) ? false : true } %></span></div>
-<div class="row_container">
 	<div class="row"><span class="label">Name:</span><span class="text"><%= text_field 'charge_col', 'name'  %></span></div>
-	<div class="row"><span class="label">Value:</span><span class="text"><%= text_field 'charge_col', 'value'  %></span></div>
+	<div class="desc"><span class="label">Value:</span><span class="text"><%= text_area 'charge_col', 'value'  %></span></div>
+	<input type="hidden" name="charge_col[charges_id]" value="<%= @charge_id %>" />
 	<input type="hidden" name="charge_col_id" value="<%= @charge_col_id %>" />
 	<input type="hidden" name="id" value="<%= @charge_id %>" />
 </div>

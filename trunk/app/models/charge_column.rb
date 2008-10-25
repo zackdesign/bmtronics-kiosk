@@ -1,5 +1,6 @@
 class ChargeColumn < ActiveRecord::Base
 
-  belongs_to :charge_rows
+  belongs_to :charges
+  has_many :charge_rows, :dependent => :destroy
 
 end

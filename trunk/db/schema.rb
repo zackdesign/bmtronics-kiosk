@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 46) do
+ActiveRecord::Schema.define(:version => 47) do
 
   create_table "accessories", :force => true do |t|
     t.string   "name"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(:version => 46) do
   end
 
   create_table "charge_columns", :force => true do |t|
-    t.integer  "charge_row_id"
+    t.integer  "charges_id"
     t.text     "name"
     t.text     "value"
     t.datetime "created_at"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(:version => 46) do
   end
 
   create_table "charge_rows", :force => true do |t|
-    t.integer  "charges_id"
+    t.integer  "charge_column_id"
     t.text     "name"
     t.text     "value"
     t.datetime "created_at"
