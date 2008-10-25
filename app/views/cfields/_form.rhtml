@@ -1,9 +1,11 @@
-<%= error_messages_for 'charge_row' %>
+<%= error_messages_for 'charge_col' %>
 
 <div class="row_container">
+	<div class="row"><span class="label">Row:</span><span class="text"><%= select 'charge_row', 'charge_column_id', @charge_columns.collect { |r| [r.value+' '+r.name, r.id, ] }, { } %></span></div>
+<div class="row_container">
 	<div class="row"><span class="label">Name:</span><span class="text"><%= text_field 'charge_row', 'name'  %></span></div>
-	<div class="desc"><span class="label">Value:</span><span class="text"><%= text_area 'charge_row', 'value'  %></span></div>
-	<input type="hidden" name="charge_row[charges_id]" value="<%= @charge_id %>" />
+	<div class="row"><span class="label">Value:</span><span class="text"><%= text_field 'charge_row', 'value'  %></span></div>
 	<input type="hidden" name="charge_row_id" value="<%= @charge_row_id %>" />
 	<input type="hidden" name="id" value="<%= @charge_id %>" />
 </div>
+

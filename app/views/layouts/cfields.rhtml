@@ -50,8 +50,8 @@ theme_advanced_toolbar_location : 'top'
 				</ul>
 		        <li id="active"><%= link_to("Charge Modifications", { :action => "modify", :id => params[:id], :name => params[:name] }) %></li>
 				<ul>
-					<li><%= link_to("new row", { :action => "newr", :id => params[:id], :name => params[:name] }) %></li>
-					<li><%= link_to("new column", { :action => "newc", :id => params[:id], :name => params[:name] }) %></li>
+					<li><%= link_to("new row value", { :action => "newr", :id => params[:id], :name => params[:name] }) %></li>
+					<li><%= link_to("new column value", { :action => "newc", :id => params[:id], :name => params[:name] }) %></li>
 					<li><%= link_to("view", { :action => "modify", :id => params[:id], :name => params[:name] }) %></li>
 				</ul>
 			<li><a href="/options">Bonus Options</a></li>
@@ -71,11 +71,8 @@ theme_advanced_toolbar_location : 'top'
 	
   <%= yield  %>
   <br />
-  <p>Terminology: An example of a Row would be the 'Minimum Monthly Spend Amount'. An example of a column would be the charges associated with that main 
-  charge - Monthly Included Value, Call Rates per 30 sec, etc.</p>
-  <p>To continue the example, you would create a new row for each Mimimum Monthly Spend Amount (e.g. 20, 30, 40...) and add a column for each of the charges
-  associated with them.</p>
-  <p>While the output above may look a little different it is still essentially the same.</p>
+  <p>Please note: This layout assumes that you provide a name and a value (even of 0 or nil) for the starting column of every row. Otherwise you will not see that row.</p>
+  <p>Also, if you want more columns or row values, just copy the same value name for each one and they will appear on the right line.</p>
 </div>
 
 </body>

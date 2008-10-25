@@ -1,7 +1,7 @@
 module PhonesHelper
   
   def show_brands(phone)
-    select ('phone', 'brand', Logo.find(:all).collect {|p| [ p.name, p.name ] }, :selected => phone.brand.to_s, :include_blank => true )
+    select('phone', 'brand', Logo.find(:all).collect {|p| [ p.name, p.name ] }, :selected => phone.brand.to_s, :include_blank => true )
   end
 
   ##
