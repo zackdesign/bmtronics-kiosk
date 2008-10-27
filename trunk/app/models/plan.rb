@@ -24,6 +24,7 @@
 class Plan < ActiveRecord::Base
 
   validates_presence_of :name
+  validates_presence_of :description
   has_and_belongs_to_many :phones
   belongs_to :plan_group
 #  has_many :charges

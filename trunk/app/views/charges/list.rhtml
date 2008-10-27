@@ -22,7 +22,7 @@
 	    <td><%=h charge.name %></td>
 	    <td><%=h charge.description %></td>
 	    <td><%=  ((charge.discontinued?) ? "Yes" : "No") %></td>	
-	    <td><%= link_to_show(charge) %>&nbsp;<%= link_to_edit(charge) %>&nbsp;<%= link_to_delete(charge, 'Permanently delete this charge ?') %>&nbsp;<%= link_to 'Modify Fields', :controller => 'cfields', :action => 'modify', :name => charge.name, :id => charge %></td>
+	    <td><%= link_to_show(charge) %>&nbsp;<%= link_to_edit(charge) %>&nbsp;<%= link_to_delete(charge, 'charges', 'Permanently delete this charge ?') %>&nbsp;<%= link_to 'Modify Fields', :controller => 'cfields', :action => 'modify', :name => charge.name, :id => charge %></td>
 	  </tr>
 	<% end %>
 	</tbody>
