@@ -1,0 +1,10 @@
+<%= error_messages_for 'charge' %>
+
+
+
+<div class="row_container">
+	<div class="row"><span class="label">Plan:</span><span class="text"><%= @plan %></span></div>
+	  <div class="row"><span class="label">Name:</span><span class="text"><%= @cname %></span></div>
+	<div class="row"><span class="label">Value:</span><span class="text"><%= text_field 'charge_values', 'value', :value=> @oldvalue %></span></div>
+</div>
+

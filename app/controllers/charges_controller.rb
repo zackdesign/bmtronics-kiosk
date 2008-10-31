@@ -13,15 +13,21 @@ class ChargesController < ApplicationController
   end
   
   def edit 
-    @charge = Charge.find(params[:id])
+    charge = ChargeValue.find(params[:id])
+    @oldvalue = charge.value
+    @group = charge.plan_group_id
+    @cname = params[:cname]
+    @pname = params[:name]
+    @id = params[:id]
+    @plan = params[:plan]
   end
   
   def update
-    @charge = Charge.find(params[:id])
+    @charge = ChargeValue.find(params[:id])
 
-    if @charge.update_attributes(params[:charge])
+    if @charge.update_attributes(params[:charge_values])
       flash[:notice] = 'Charge type was successfully updated.'
-      redirect_to :action => 'show', :id => @charge
+      redirect_to :action => 'list', :id => params[:plan_group], :name => params[:name]
     else
       render :action => 'edit'
     end
@@ -29,7 +35,15 @@ class ChargesController < ApplicationController
   
   def new 
     @charge = ChargeValue.new
-    @plans = Plan.find(:all, :conditions => { :plan_group => params[:id] })
+    
+    values = ChargeValue.find(:all, :conditions => {:plan_group_id => params[:id]} )
+    sql = ''
+    for v in values 
+        sql += ' AND id != '+v.plan_id.to_s+' '
+    end
+    
+    @plans = Plan.find(:all, :conditions => [ "plan_group = ? "+sql, params[:id]] )
+    
     @name = params[:name]
     @cname = params[:cname]
     @id = params[:id]
@@ -49,10 +63,10 @@ class ChargesController < ApplicationController
     @charge = ChargeValue.new(params[:charge_values])
     if @charge.save
       flash[:notice] = 'Charge was successfully created.'
-      redirect_to :action => 'list', :id => params[:charge_values][:plan_group_id], :name => params[:charge_name]
+      redirect_to :action => 'list', :id => params[:charge_values][:plan_group_id], :name => params[:plan_group]
     else
-      flash[:notice] = 'Charge unable to be created. Choose a Plan you have not created a column value for.'
-      redirect_to :action => 'new', :id => params[:charge_values][:plan_group_id], :name => params[:charge_name], :charge => params[:charge_values][:charge_id]
+      flash[:error] = 'Charge unable to be created.'
+      redirect_to :action => 'new', :id => params[:charge_values][:plan_group_id], :name => params[:plan_group], :charge => params[:charge_values][:charge_id], :cname => params[:charge_name]
     end
   end
   
