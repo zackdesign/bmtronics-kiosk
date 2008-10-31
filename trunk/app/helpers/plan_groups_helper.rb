@@ -9,7 +9,7 @@ module PlanGroupsHelper
   end
   
   def link_to_charge(plan_group)
-      link_to image_tag('money_dollar.png', :alt => 'charges'), { :controller => 'charges', :action => 'list', :id => plan_group, :name => plan_group.name }, :class => 'icon', :title => 'charges'
+      link_to image_tag('money_dollar.png', :alt => 'charges'), { :controller => 'charges', :action => 'list', :id => plan_group, :name => plan_group.name }, :class => 'icon', :title => 'call rates'
   end
   
   private

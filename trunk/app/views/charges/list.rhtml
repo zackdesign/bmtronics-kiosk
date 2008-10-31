@@ -1,4 +1,4 @@
-<h1>Charges for <%= @name %></h1>
+<h1>Call Rates for <%= @name %></h1>
 
 <br /><br />
 
@@ -38,9 +38,9 @@
 	          key = '<th class="addnewcharge" id="'+name['name']+'"> '
 	          
 	          if rows[key].nil?
-	              rows[key] = link_to(name['name']+' '+image_tag('new.png', :alt => 'New'), {:action => 'new', :id => @id, :name => @name, :cname => name['name'], :charge => v.charge_id}, :class => 'icon', :title => 'add new')+'</th>'+td+'<td>'+v.value+' '+link_to(image_tag('edit.png', :alt => 'Edit'), {:action => 'edit', :id => v['id']}, :class => 'icon', :title => 'edit')+link_to(image_tag('delete.png', :alt => 'Delete'), { :action => 'destroy', :gid => @id, :name => @name, :id => v['id'] }, :confirm => "Permanently delete this value?", :class => 'icon', :title => 'delete', :method => :post)+'</td>'
+	              rows[key] = link_to(name['name']+' '+image_tag('new.png', :alt => 'New'), {:action => 'new', :id => @id, :name => @name, :cname => name['name'], :charge => v.charge_id}, :class => 'icon', :title => 'add new')+'</th>'+td+'<td>'+v.value+' '+link_to(image_tag('edit.png', :alt => 'Edit'), {:action => 'edit', :id => v['id'], :name=>@name, :cname=>name['name'], :plan =>plan.name}, :class => 'icon', :title => 'edit')+link_to(image_tag('delete.png', :alt => 'Delete'), { :action => 'destroy', :gid => @id, :name => @name, :id => v['id'] }, :confirm => "Permanently delete this value?", :class => 'icon', :title => 'delete', :method => :post)+'</td>'
 	          else
-	              rows[key] << td+'<td>'+v.value+' '+link_to(image_tag('edit.png', :alt => 'Edit'), {:action => 'edit', :id => v['id']}, :class => 'icon', :title => 'edit')+link_to(image_tag('delete.png', :alt => 'Delete'), { :action => 'destroy', :id => v['id'], :gid => @id, :name => @name }, :confirm => "Permanently delete this value?", :class => 'icon', :title => 'delete', :method => :post)+'</td>'
+	              rows[key] << td+'<td>'+v.value+' '+link_to(image_tag('edit.png', :alt => 'Edit'), {:action => 'edit', :id => v['id'], :name=>@name, :cname=>name['name'], :plan =>plan.name}, :class => 'icon', :title => 'edit')+link_to(image_tag('delete.png', :alt => 'Delete'), { :action => 'destroy', :id => v['id'], :gid => @id, :name => @name }, :confirm => "Permanently delete this value?", :class => 'icon', :title => 'delete', :method => :post)+'</td>'
 	          end
 	          td =''
 	      end
