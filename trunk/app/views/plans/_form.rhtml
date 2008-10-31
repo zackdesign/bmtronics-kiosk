@@ -148,28 +148,7 @@
 	<div class="row"><span class="label">Offer price:</span><span class="text"><%= text_field 'plan', 'offer_price'  %></span></div>
 	<div class="row"><span class="label">Monthly repayments:</span><span class="text">$<%= text_field 'plan', 'repayments'  %></span></div>	
 	<div class="row"><span class="label">Discontinued:</span><span class="text"><%= select 'plan', 'discontinued', { 'No' => 'false', 'Yes' => 'true' }, :selected => @plan.discontinued.to_s %></span></div>	
-	<div class="row"><p>Charges:</p>
-	<%
-		@all_charges = Charge.find(:all)
-		if @all_charges == nil or @all_charges.empty?
-		else
-			for @charge in @all_charges
-	%>
-		<div><label for="plan[charges_to_plan][<%= @charge.id.to_s %>]">
-	<%=
-				check_box_tag("plan[charges_to_plan][]", @charge.id,
-							  (@plan.charges.collect { |c| c.id }).include?(@charge.id),
-							  { :id => 'plan[charges_to_plan][' + @charge.id.to_s + ']' }) + @charge.name
-	%>
-		</label></div>
-	<%
-			end
-	%>
-		<p><div><label for="plan[charges_to_plan][-1]"><%= check_box_tag 'plan[charges_to_plan][]', -1, false -%>Remove all charges from plan</label></div></p>
-	<%
-		end
-	-%>
-	</div>
+	
 </div>
 
 </p>

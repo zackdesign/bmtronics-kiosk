@@ -4,10 +4,11 @@
 
 <div class="row_container">
 	<div class="row"><span class="label">Plan:</span><span class="text"><%= select 'charge_values', 'plan_id', @plans.collect { |r| [r.name, r.id, ] }, { } %></span></div>
-	  <div class="row"><span class="label">Name:</span><span class="text"><%= @cname %></span></div>
+	<div class="row"><span class="label">New Row Name:</span><span class="text"><%= text_field_tag 'name'  %></span></div>
+	<div class="row"><span class="label">Or:</span><span class="text"><%= select 'charge_values', 'charge_id', @charges.collect { |r| [r.name, r.id, ] }, { } %></span></div>
 	<div class="row"><span class="label">Value:</span><span class="text"><%= text_field 'charge_values', 'value'  %></span></div>
 	<%= hidden_field( 'charge_values', 'plan_group_id', {:value => @id})  %>
 	<%= hidden_field( 'charge_values', 'charge_id', {:value => @charge_id})  %>
-	<%= hidden_field_tag( 'charge_name', @cname)  %>
+	<%= hidden_field_tag( 'gname',  @name)  %>
 </div>
 

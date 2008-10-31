@@ -22,7 +22,7 @@
 		    <td><%=h plan_group.name %></td>
 		    <td><%=  ((plan_group.discontinued?) ? "Yes" : "No") %></td>
 				<td class="centered"><%=  link_to_group_plans(plan_group) %></td>
-		    <td><%= link_to_show(plan_group) %>&nbsp;<%= link_to_edit(plan_group) %>&nbsp;<%= link_to_delete(plan_group) %></td>
+		    <td><%= link_to_show(plan_group) %>&nbsp;<%= link_to_edit(plan_group) %>&nbsp;<%= link_to_delete(plan_group) %> <%= link_to_charge(plan_group) %></td>
 		  </tr>
 		<% end %>
 	</tbody>

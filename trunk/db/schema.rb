@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 47) do
+ActiveRecord::Schema.define(:version => 48) do
 
   create_table "accessories", :force => true do |t|
     t.string   "name"
@@ -31,36 +31,20 @@ ActiveRecord::Schema.define(:version => 47) do
     t.string   "brand",                                                            :default => ""
   end
 
-  create_table "charge_columns", :force => true do |t|
-    t.integer  "charges_id"
-    t.text     "name"
+  create_table "charge_values", :force => true do |t|
     t.text     "value"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "charge_rows", :force => true do |t|
-    t.integer  "charge_column_id"
-    t.text     "name"
-    t.text     "value"
+    t.integer  "charge_id"
+    t.integer  "plan_id"
+    t.integer  "plan_group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "charges", :force => true do |t|
-    t.string   "name"
-    t.boolean  "discontinued", :default => false
-    t.text     "description"
+    t.text     "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "charges_plans", :id => false, :force => true do |t|
-    t.integer "charge_id", :null => false
-    t.integer "plan_id",   :null => false
-  end
-
-  add_index "charges_plans", ["charge_id", "plan_id"], :name => "index_charges_plans_on_charge_id_and_plan_id"
 
   create_table "features", :force => true do |t|
     t.string   "name"

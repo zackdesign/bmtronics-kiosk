@@ -1,37 +1,61 @@
-<h1>Charges</h1>
-
-  <div class='buttons'>
-		<%= will_paginate @charge_pages %>
-	</div>
-
+<h1>Charges for <%= @name %></h1>
 
 <br /><br />
 
 <table>
-	<thead>	
+    <thead>
 	  <tr>
-	    <th>Name</th>
-	    <th>Description</th>
-	    <th>Discontinued</th>
-	    <th>Actions</th>
+	    <th></th>
+	    <% for plan in @plans %>
+	      <th><%= link_to(plan.name+image_tag('edit.png', :alt => 'Edit'), {:controller => 'plans', :action => 'edit', :id => plan.id}, :class => 'icon', :title => 'edit') %></th>
+	    <% end %>
 	  </tr>
 	</thead>  
 	<tbody>
-	<% for charge in @charge_pages %>
-	  <tr class="<%= cycle("even", "odd") %>">
-	    <td><%=h charge.name %></td>
-	    <td><%=h charge.description %></td>
-	    <td><%=  ((charge.discontinued?) ? "Yes" : "No") %></td>	
-	    <td><%= link_to_show(charge) %>&nbsp;<%= link_to_edit(charge) %>&nbsp;<%= link_to_delete(charge, 'charges', 'Permanently delete this charge ?') %>&nbsp;<%= link_to 'Modify Fields', :controller => 'cfields', :action => 'modify', :name => charge.name, :id => charge %></td>
-	  </tr>
-	<% end %>
-	</tbody>
+	
+	  <% 
+	  
+	  # first get list of all charges associated with plan group
+	  # go through each set of charges based on each plan
+	  # create a first column for the name, then just keep adding cells for each plan
+	    
+	  rows = {}
+	  
+	  td = ''
+	  
+	  for plan in @plans
+	  
+	      value = ChargeValue.find(:all, :conditions => {:plan_id => plan.id})
+	      amount = ChargeValue.count(:conditions => {:plan_id => plan.id})
+	      
+	      if amount == 0
+	          td = td +'<td></td>'
+	      end
+	      for v in value
+	      
+	          name = Charge.find(:first, :conditions => {:id => v.charge_id})
+	          
+	          key = '<th class="addnewcharge" id="'+name['name']+'"> '
+	          
+	          if rows[key].nil?
+	              rows[key] = link_to(name['name']+' '+image_tag('new.png', :alt => 'New'), {:action => 'new', :id => @id, :name => @name, :cname => name['name'], :charge => v.charge_id}, :class => 'icon', :title => 'add new')+'</th>'+td+'<td>'+v.value+' '+link_to(image_tag('edit.png', :alt => 'Edit'), {:action => 'edit', :id => v['id']}, :class => 'icon', :title => 'edit')+link_to(image_tag('delete.png', :alt => 'Delete'), { :action => 'destroy', :gid => @id, :name => @name, :id => v['id'] }, :confirm => "Permanently delete this value?", :class => 'icon', :title => 'delete', :method => :post)+'</td>'
+	          else
+	              rows[key] << td+'<td>'+v.value+' '+link_to(image_tag('edit.png', :alt => 'Edit'), {:action => 'edit', :id => v['id']}, :class => 'icon', :title => 'edit')+link_to(image_tag('delete.png', :alt => 'Delete'), { :action => 'destroy', :id => v['id'], :gid => @id, :name => @name }, :confirm => "Permanently delete this value?", :class => 'icon', :title => 'delete', :method => :post)+'</td>'
+	          end
+	          td =''
+	      end
+	  end
+	  
+	  rows.each { |key, value| %>
+	  
+	      <tr class="<%= cycle("even", "odd") %>">
+	          <%= key %><%= value %>
+	      </tr>
+	  
+	  <%
+	  }
+	  
+	  %>
+	</tbody>	
 </table>
-
-<div class="links_bar">
-	<div class='buttons'>
-		<%= will_paginate @charge_pages %>
-	</div>
-</div>
-
-<br />
+<p><strong> <%= link_to('Create New Row '+image_tag('new.png', :alt => 'New'), {:action => 'new_row', :id => @id, :name => @name}, :class => 'icon', :title => 'add new') %></strong></p>

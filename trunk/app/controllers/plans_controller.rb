@@ -10,7 +10,7 @@ class PlansController < ApplicationController
          :redirect_to => { :action => :list }
 
   def list
-    @plan_pages = Plan.paginate :page => params[:page], :per_page => 10, :order => 'name ASC', :conditions => 'plan_group IS NULL'
+    @plan_pages = Plan.paginate :page => params[:page], :per_page => 10, :order => 'categories, name ASC'
   end
 
   def show
