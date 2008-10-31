@@ -25,11 +25,12 @@
 <div id="sideArea">
 	<div id="navcontainer">
 	  <ul id="navlist">
-			<li><a href="/plans">Plans</a></li>
-			<li id="active"><a href="/charges">Plan Charges</a></li>
+<li id="active"><a href="/plans">Plans</a></li>
 				<ul>
-					<li><%= link_to_new %></li>
-					<li><%= link_to_view %></li>
+					<li><%= link_to "new", :controller => "plans", :action => "new" %></li>               
+					<li><%= link_to "view", :controller => "plans", :action => "list" %></li>
+          <li><%= link_to_newgroup %></li>
+          <li><%= link_to_viewgroup %></li>
 				</ul>
 			<li><a href="/options">Bonus Options</a></li>
 			<li><a href="/phones">Phones</a></li>

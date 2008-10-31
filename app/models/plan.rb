@@ -27,8 +27,7 @@ class Plan < ActiveRecord::Base
   validates_presence_of :description
   has_and_belongs_to_many :phones
   belongs_to :plan_group
-#  has_many :charges
-  has_and_belongs_to_many :charges
+  has_many :charge_values
   has_and_belongs_to_many :options, :join_table => "plans_options"
   
   def plan_category_set=(new_categories)

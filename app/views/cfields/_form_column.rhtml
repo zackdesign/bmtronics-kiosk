@@ -1,9 +1,0 @@
-<%= error_messages_for 'charge_col' %>
-
-<div class="row_container">
-	<div class="row"><span class="label">Name:</span><span class="text"><%= text_field 'charge_col', 'name'  %></span></div>
-	<div class="desc"><span class="label">Value:</span><span class="text"><%= text_area 'charge_col', 'value'  %></span></div>
-	<input type="hidden" name="charge_col[charges_id]" value="<%= @charge_id %>" />
-	<input type="hidden" name="charge_col_id" value="<%= @charge_col_id %>" />
-	<input type="hidden" name="id" value="<%= @charge_id %>" />
-</div>
