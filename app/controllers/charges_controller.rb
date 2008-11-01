@@ -36,7 +36,7 @@ class ChargesController < ApplicationController
   def new 
     @charge = ChargeValue.new
     
-    values = ChargeValue.find(:all, :conditions => {:plan_group_id => params[:id]} )
+    values = ChargeValue.find(:all, :conditions => {:plan_group_id => params[:id], :charge_id => params[:charge] })
     sql = ''
     for v in values 
         sql += ' AND id != '+v.plan_id.to_s+' '
