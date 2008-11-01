@@ -1,1 +1,1109 @@
 
+
+
+Processing PhonesController#index (for 127.0.0.1 at 2008-11-01 10:53:45) [GET]
+  Session ID: 436c3a3ed546e34830b4eb0be4527914
+  Parameters: {"action"=>"index", "controller"=>"phones"}
+  [4;36;1mSQL (0.067162)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mPhone Load (0.253877)[0m   [0mSELECT * FROM `phones` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mPhone Columns (0.171763)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mSQL (0.000751)[0m   [0mSELECT count(*) AS count_all FROM `phones` [0m
+Rendering template within layouts/phones
+Rendering phones/list
+  [4;36;1mJoin Table Columns (0.000954)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000886)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 3 ) [0m
+  [4;36;1mFeature Columns (0.001181)[0m   [0;1mSHOW FIELDS FROM `features`[0m
+  [4;35;1mJoin Table Columns (0.017517)[0m   [0mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;36;1mAccessory Load (0.104673)[0m   [0;1mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 3 ) [0m
+  [4;35;1mAccessory Columns (0.001607)[0m   [0mSHOW FIELDS FROM `accessories`[0m
+  [4;36;1mJoin Table Columns (0.000930)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000653)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 23 ) [0m
+  [4;36;1mJoin Table Columns (0.000906)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.040144)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 23 ) [0m
+  [4;36;1mJoin Table Columns (0.000917)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.001052)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 24 ) [0m
+  [4;36;1mJoin Table Columns (0.000906)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.002796)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 24 ) [0m
+  [4;36;1mJoin Table Columns (0.000904)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.001187)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 25 ) [0m
+  [4;36;1mJoin Table Columns (0.000893)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.051794)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 25 ) [0m
+  [4;36;1mJoin Table Columns (0.000896)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000897)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 26 ) [0m
+  [4;36;1mJoin Table Columns (0.000883)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.017747)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 26 ) [0m
+  [4;36;1mJoin Table Columns (0.000893)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000263)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 20 ) [0m
+  [4;36;1mJoin Table Columns (0.000864)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.027465)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 20 ) [0m
+  [4;36;1mJoin Table Columns (0.000929)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000608)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 21 ) [0m
+  [4;36;1mJoin Table Columns (0.000884)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.003432)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 21 ) [0m
+  [4;36;1mJoin Table Columns (0.000904)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.016194)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 5 ) [0m
+  [4;36;1mJoin Table Columns (0.000895)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.044663)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 5 ) [0m
+  [4;36;1mJoin Table Columns (0.000913)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.010542)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 6 ) [0m
+  [4;36;1mJoin Table Columns (0.000900)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.093529)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 6 ) [0m
+  [4;36;1mJoin Table Columns (0.000926)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.009566)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 17 ) [0m
+  [4;36;1mJoin Table Columns (0.000908)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.005742)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 17 ) [0m
+Completed in 1.19474 (0 reqs/sec) | Rendering: 0.28060 (23%) | DB: 0.96490 (80%) | 200 OK [http://localhost/]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-01 10:53:47) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"3", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001134)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000490)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 3) [0m
+Sending data BB 8100.jpg
+Completed in 0.20096 (4 reqs/sec) | Rendering: 0.00086 (0%) | DB: 0.00162 (0%) | 200 OK [http://localhost/phones/thumbnail/3]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-01 10:53:47) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"26", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001921)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.020377)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 26) [0m
+Sending data BB Bold.jpg
+Completed in 0.07413 (13 reqs/sec) | Rendering: 0.00083 (1%) | DB: 0.02230 (30%) | 200 OK [http://localhost/phones/thumbnail/26]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-01 10:53:47) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"24", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001963)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.018193)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 24) [0m
+Sending data BB 8300.jpg
+Completed in 0.12889 (7 reqs/sec) | Rendering: 0.00058 (0%) | DB: 0.02016 (15%) | 200 OK [http://localhost/phones/thumbnail/24]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-01 10:53:48) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"25", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001139)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000232)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 25) [0m
+Sending data BB 8310.jpg
+Completed in 0.02862 (34 reqs/sec) | Rendering: 0.00053 (1%) | DB: 0.00137 (4%) | 200 OK [http://localhost/phones/thumbnail/25]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-01 10:53:48) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"23", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001129)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000256)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 23) [0m
+Sending data BB 8110.jpg
+Completed in 0.02585 (38 reqs/sec) | Rendering: 0.00055 (2%) | DB: 0.00138 (5%) | 200 OK [http://localhost/phones/thumbnail/23]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-01 10:53:48) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"20", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001335)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000194)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 20) [0m
+Sending data htc_diamond.gif
+Completed in 0.03490 (28 reqs/sec) | Rendering: 0.00050 (1%) | DB: 0.00153 (4%) | 200 OK [http://localhost/phones/thumbnail/20]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-01 10:53:48) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"21", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001136)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000155)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 21) [0m
+Sending data htc_touchdual.gif
+Completed in 0.08798 (11 reqs/sec) | Rendering: 0.00055 (0%) | DB: 0.00129 (1%) | 200 OK [http://localhost/phones/thumbnail/21]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-01 10:53:48) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"5", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001140)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000209)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 5) [0m
+Sending data imate-8502.jpg
+Completed in 0.02524 (39 reqs/sec) | Rendering: 0.00051 (2%) | DB: 0.00135 (5%) | 200 OK [http://localhost/phones/thumbnail/5]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-01 10:53:48) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"6", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001206)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.014419)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 6) [0m
+Sending data i-Mate 9502.jpg
+Completed in 0.04280 (23 reqs/sec) | Rendering: 0.00051 (1%) | DB: 0.01562 (36%) | 200 OK [http://localhost/phones/thumbnail/6]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-01 10:53:48) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"17", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001144)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000179)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 17) [0m
+Sending data lg_kf390.gif
+Completed in 0.03107 (32 reqs/sec) | Rendering: 0.00053 (1%) | DB: 0.00132 (4%) | 200 OK [http://localhost/phones/thumbnail/17]
+
+
+Processing PlansController#index (for 127.0.0.1 at 2008-11-01 10:53:50) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"index", "controller"=>"plans"}
+  [4;36;1mPlan Load (0.000130)[0m   [0;1mSELECT * FROM `plans` ORDER BY categories, name ASC LIMIT 0, 10[0m
+Rendering template within layouts/plans
+Rendering plans/list
+  [4;35;1mPlan Columns (0.001110)[0m   [0mSHOW FIELDS FROM `plans`[0m
+  [4;36;1mJoin Table Columns (0.000678)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.015910)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 3 ) [0m
+  [4;36;1mPhone Columns (0.001861)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mJoin Table Columns (0.001007)[0m   [0mSHOW FIELDS FROM `phones_plans`[0m
+  [4;36;1mPhone Load (0.026240)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 5 ) [0m
+  [4;35;1mJoin Table Columns (0.001018)[0m   [0mSHOW FIELDS FROM `phones_plans`[0m
+  [4;36;1mPhone Load (0.014519)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 7 ) [0m
+  [4;35;1mJoin Table Columns (0.001001)[0m   [0mSHOW FIELDS FROM `phones_plans`[0m
+  [4;36;1mPhone Load (0.022961)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 9 ) [0m
+  [4;35;1mJoin Table Columns (0.001009)[0m   [0mSHOW FIELDS FROM `phones_plans`[0m
+  [4;36;1mPhone Load (0.034080)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 11 ) [0m
+  [4;35;1mJoin Table Columns (0.001032)[0m   [0mSHOW FIELDS FROM `phones_plans`[0m
+  [4;36;1mPhone Load (0.045987)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 4 ) [0m
+  [4;35;1mJoin Table Columns (0.001021)[0m   [0mSHOW FIELDS FROM `phones_plans`[0m
+  [4;36;1mPhone Load (0.045328)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 6 ) [0m
+  [4;35;1mJoin Table Columns (0.001021)[0m   [0mSHOW FIELDS FROM `phones_plans`[0m
+  [4;36;1mPhone Load (0.012052)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 8 ) [0m
+  [4;35;1mJoin Table Columns (0.001033)[0m   [0mSHOW FIELDS FROM `phones_plans`[0m
+  [4;36;1mPhone Load (0.377432)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 10 ) [0m
+Completed in 0.80836 (1 reqs/sec) | Rendering: 0.16263 (20%) | DB: 0.60643 (75%) | 200 OK [http://localhost/plans]
+
+
+Processing PlanGroupsController#list (for 127.0.0.1 at 2008-11-01 10:54:06) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"list", "controller"=>"plan_groups"}
+  [4;35;1mPlanGroup Load (0.000142)[0m   [0mSELECT * FROM `plan_groups` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mPlanGroup Columns (0.000761)[0m   [0;1mSHOW FIELDS FROM `plan_groups`[0m
+  [4;35;1mSQL (0.000108)[0m   [0mSELECT count(*) AS count_all FROM `plan_groups` [0m
+Rendering template within layouts/plans
+Rendering plan_groups/list
+  [4;36;1mPlan Columns (0.000982)[0m   [0;1mSHOW FIELDS FROM `plans`[0m
+  [4;35;1mSQL (0.000104)[0m   [0mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 15) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 15) [0m
+  [4;35;1mSQL (0.000105)[0m   [0mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 17) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 17) [0m
+  [4;35;1mSQL (0.000102)[0m   [0mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 12) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 12) [0m
+  [4;35;1mSQL (0.000099)[0m   [0mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 9) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 9) [0m
+  [4;35;1mPlan Load (0.000107)[0m   [0mSELECT * FROM `plans` WHERE (`plans`.plan_group = 9) [0m
+  [4;36;1mSQL (0.000099)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 14) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 14) [0m
+  [4;36;1mSQL (0.000125)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 16) [0m
+  [4;36;1mSQL (0.000099)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 11) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 11) [0m
+  [4;36;1mSQL (0.000098)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 8) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 8) [0m
+  [4;36;1mPlan Load (0.000106)[0m   [0;1mSELECT * FROM `plans` WHERE (`plans`.plan_group = 8) [0m
+  [4;35;1mSQL (0.000099)[0m   [0mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 13) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 13) [0m
+  [4;35;1mSQL (0.000103)[0m   [0mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 10) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 10) [0m
+Completed in 0.05821 (17 reqs/sec) | Rendering: 0.04807 (82%) | DB: 0.00324 (5%) | 200 OK [http://localhost/plan_groups/list]
+
+
+Processing ChargesController#list (for 127.0.0.1 at 2008-11-01 10:54:08) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"name"=>"Consumer Phone Plan", "action"=>"list", "id"=>"8", "controller"=>"charges"}
+  [4;35;1mPlan Load (0.000219)[0m   [0mSELECT * FROM `plans` WHERE (`plans`.`plan_group` = '8') [0m
+  [4;36;1mChargeValue Load (0.000238)[0m   [0;1mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_group_id` = '8') [0m
+Rendering template within layouts/charges
+Rendering charges/list
+  [4;35;1mPlan Columns (0.001662)[0m   [0mSHOW FIELDS FROM `plans`[0m
+  [4;36;1mChargeValue Load (0.000174)[0m   [0;1mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 3) [0m
+  [4;35;1mChargeValue Columns (0.001122)[0m   [0mSHOW FIELDS FROM `charge_values`[0m
+  [4;36;1mSQL (0.000147)[0m   [0;1mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 3) [0m
+  [4;35;1mCharge Load (0.000178)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;36;1mCharge Columns (0.012630)[0m   [0;1mSHOW FIELDS FROM `charges`[0m
+  [4;35;1mCharge Load (0.000154)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 16) LIMIT 1[0m
+  [4;36;1mChargeValue Load (0.000164)[0m   [0;1mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 5) [0m
+  [4;35;1mSQL (0.000137)[0m   [0mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 5) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;35;1mChargeValue Load (0.000158)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 7) [0m
+  [4;36;1mSQL (0.000134)[0m   [0;1mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 7) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;36;1mChargeValue Load (0.000155)[0m   [0;1mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 9) [0m
+  [4;35;1mSQL (0.000144)[0m   [0mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 9) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;35;1mChargeValue Load (0.000176)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 11) [0m
+  [4;36;1mSQL (0.000132)[0m   [0;1mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 11) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+Completed in 0.17024 (5 reqs/sec) | Rendering: 0.12216 (71%) | DB: 0.01772 (10%) | 200 OK [http://localhost/charges/list/8?name=Consumer+Phone+Plan]
+
+
+Processing PlansController#edit (for 127.0.0.1 at 2008-11-01 10:54:12) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"plans"}
+  [4;36;1mPlan Columns (0.001729)[0m   [0;1mSHOW FIELDS FROM `plans`[0m
+  [4;35;1mPlan Load (0.018288)[0m   [0mSELECT * FROM `plans` WHERE (`plans`.`id` = 3) [0m
+  [4;36;1mPhone Load (0.064868)[0m   [0;1mSELECT * FROM `phones` [0m
+  [4;35;1mOption Load (0.035981)[0m   [0mSELECT * FROM `options` ORDER BY name ASC[0m
+  [4;36;1mOption Columns (0.001001)[0m   [0;1mSHOW FIELDS FROM `options`[0m
+Rendering template within layouts/plans
+Rendering plans/edit
+  [4;35;1mPhone Columns (0.002008)[0m   [0mSHOW FIELDS FROM `phones`[0m
+  [4;36;1mPhonesPlans Columns (0.000862)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhonesPlans Load (0.000443)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 1 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000416)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 2 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000354)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 3 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000477)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 23 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000422)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 24 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000440)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 22 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000470)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 5 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000392)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 6 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000436)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 7 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000368)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 8 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000348)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 11 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000348)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 9 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000355)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 10 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000381)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 12 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000385)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 13 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000426)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 14 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000352)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 15 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000407)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 16 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000462)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 17 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000384)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 18 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000384)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 19 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000409)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 20 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000388)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 21 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000344)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 25 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000365)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 26 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000362)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 27 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000374)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 28 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mJoin Table Columns (0.000861)[0m   [0;1mSHOW FIELDS FROM `plans_options`[0m
+  [4;35;1mOption Load (0.000512)[0m   [0mSELECT * FROM `options` INNER JOIN `plans_options` ON `options`.id = `plans_options`.option_id WHERE (`plans_options`.plan_id = 3 ) [0m
+Rendered plans/_form (0.06899)
+Completed in 0.28930 (3 reqs/sec) | Rendering: 0.10459 (36%) | DB: 0.13680 (47%) | 200 OK [http://localhost/plans/edit/3]
+
+
+Processing PlansController#update (for 127.0.0.1 at 2008-11-01 10:54:20) [POST]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"plan"=>{"name"=>"$20 Consumer Phone Plan", "options_to_plans"=>["7", "3", "5", "8", "4", "6"], "comments"=>"", "code"=>"", "repayments"=>"", "plan_category_set"=>["consumer"], "period"=>"24", "offer"=>"", "discontinued"=>"false", "plan_phones_handset_set"=>["2|2.0", "14|14.0", "19|19.0", "-1|-1"], "description"=>"Get a Subsidized Handsets", "offer_price"=>""}, "handset_cost19"=>"19.0", "action"=>"update", "handset_cost2"=>"2.0", "id"=>"3", "handset_cost14"=>"14.0", "controller"=>"plans"}
+  [4;36;1mPlan Columns (0.001650)[0m   [0;1mSHOW FIELDS FROM `plans`[0m
+  [4;35;1mPlan Load (0.000174)[0m   [0mSELECT * FROM `plans` WHERE (`plans`.`id` = 3) [0m
+  [4;36;1mOption Columns (0.001060)[0m   [0;1mSHOW FIELDS FROM `options`[0m
+  [4;35;1mOption Load (0.000476)[0m   [0mSELECT * FROM `options` WHERE (`options`.`id` IN (7,3,5,8,4,6)) [0m
+  [4;36;1mJoin Table Columns (0.000900)[0m   [0;1mSHOW FIELDS FROM `plans_options`[0m
+  [4;35;1mOption Load (0.000148)[0m   [0mSELECT * FROM `options` INNER JOIN `plans_options` ON `options`.id = `plans_options`.option_id WHERE (`plans_options`.plan_id = 3 ) [0m
+  [4;36;1mSQL (0.000099)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000125)[0m   [0mCOMMIT[0m
+  [4;36;1mJoin Table Columns (0.001011)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.000366)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 3 ) [0m
+  [4;36;1mPhone Columns (0.001909)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhonesPlans Columns (0.001049)[0m   [0mSHOW FIELDS FROM `phones_plans`[0m
+  [4;36;1mPhonesPlans Load (0.000562)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = '19' AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.000106)[0m   [0mBEGIN[0m
+  [4;36;1mPhonesPlans Destroy (0.027331)[0m   [0;1m DELETE FROM `phones_plans`
+ WHERE `id` = 231
+[0m
+  [4;35;1mSQL (0.000101)[0m   [0mCOMMIT[0m
+  [4;36;1mPhonesPlans Load (0.000493)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = '14' AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.000095)[0m   [0mBEGIN[0m
+  [4;36;1mPhonesPlans Destroy (0.000242)[0m   [0;1m DELETE FROM `phones_plans`
+ WHERE `id` = 230
+[0m
+  [4;35;1mSQL (0.000093)[0m   [0mCOMMIT[0m
+  [4;36;1mPhonesPlans Load (0.000381)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = '2' AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.000092)[0m   [0mBEGIN[0m
+  [4;36;1mPhonesPlans Destroy (0.000266)[0m   [0;1m DELETE FROM `phones_plans`
+ WHERE `id` = 229
+[0m
+  [4;35;1mSQL (0.000086)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000084)[0m   [0;1mBEGIN[0m
+  [4;35;1mPlan Update (0.004309)[0m   [0mUPDATE `plans` SET `updated_at` = '2008-10-31 23:54:20', `repayments` = NULL WHERE `id` = 3[0m
+  [4;36;1mSQL (0.000109)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPhonesPlans Load (0.000393)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 2 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.000106)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhonesPlans Create (0.000304)[0m   [0mINSERT INTO `phones_plans` (`phone_id`, `handset_cost`, `plan_id`) VALUES(2, NULL, 3)[0m
+  [4;36;1mSQL (0.000099)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPhonesPlans Load (0.000392)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 14 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.000103)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhonesPlans Create (0.000271)[0m   [0mINSERT INTO `phones_plans` (`phone_id`, `handset_cost`, `plan_id`) VALUES(14, NULL, 3)[0m
+  [4;36;1mSQL (0.000098)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPhonesPlans Load (0.000410)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 19 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.000102)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhonesPlans Create (0.000263)[0m   [0mINSERT INTO `phones_plans` (`phone_id`, `handset_cost`, `plan_id`) VALUES(19, NULL, 3)[0m
+  [4;36;1mSQL (0.000092)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000084)[0m   [0mBEGIN[0m
+  [4;36;1mPhonesPlans Update (0.000247)[0m   [0;1mUPDATE `phones_plans` SET `handset_cost` = '2.0' WHERE `id` = 262[0m
+  [4;35;1mSQL (0.000105)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000084)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhonesPlans Update (0.000245)[0m   [0mUPDATE `phones_plans` SET `handset_cost` = '14.0' WHERE `id` = 263[0m
+  [4;36;1mSQL (0.000092)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000092)[0m   [0mBEGIN[0m
+  [4;36;1mPhonesPlans Update (0.000260)[0m   [0;1mUPDATE `phones_plans` SET `handset_cost` = '19.0' WHERE `id` = 264[0m
+  [4;35;1mSQL (0.000086)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000095)[0m   [0;1mBEGIN[0m
+  [4;35;1mPlan Update (0.000302)[0m   [0mUPDATE `plans` SET `updated_at` = '2008-10-31 23:54:20', `offer_price` = NULL, `description` = 'Get a Subsidized Handsets' WHERE `id` = 3[0m
+  [4;36;1mSQL (0.000115)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/plans/show/3
+Completed in 0.21111 (4 reqs/sec) | DB: 0.04776 (22%) | 302 Found [http://localhost/plans/update/3]
+
+
+Processing PlansController#show (for 127.0.0.1 at 2008-11-01 10:54:20) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgtub3RpY2UiI1BsYW4gd2FzIHN1Y2Nlc3NmdWxseSB1cGRhdGVk
+LgY6CkB1c2VkewY7BkY=--1140230ac9404825b84d24f3a140353809311fc5
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"plans"}
+  [4;35;1mPlan Columns (0.000941)[0m   [0mSHOW FIELDS FROM `plans`[0m
+  [4;36;1mPlan Load (0.000242)[0m   [0;1mSELECT * FROM `plans` WHERE (`plans`.`id` = 3) [0m
+Rendering template within layouts/plans
+Rendering plans/show
+  [4;35;1mJoin Table Columns (0.000631)[0m   [0mSHOW FIELDS FROM `phones_plans`[0m
+  [4;36;1mPhone Load (0.000538)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 3 ) [0m
+  [4;35;1mPhone Columns (0.001075)[0m   [0mSHOW FIELDS FROM `phones`[0m
+
+
+ActionView::TemplateError (undefined method `charges' for #<Plan:0x7f6df0a91360>) on line #33 of plans/show.rhtml:
+30: 	<div class="row"><span class="label">Monthly repayments:</span><span class="text"><%=  number_to_currency @plan.repayments %></span></div>
+31: 	<div class="row"><span class="label">Discontinued:</span><span class="text"><%= @plan.discontinued? ? "Yes" : "No" %></span></div>
+32: 	<div class="row"><span class="label">Charges:</span><span class="text">
+33: 	<% if @plan.charges.length > 0 %>
+34: 		<%= @plan.charges.collect { |c| c.name }.join(",") %>
+35: 	<% else %>
+36: 		None
+
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/attribute_methods.rb:256:in `method_missing'
+    app/views/plans/show.rhtml:33:in `_run_erb_47app47views47plans47show46rhtml'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_view/base.rb:342:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_view/base.rb:342:in `execute'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_view/template_handlers/compilable.rb:29:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_view/template_handlers/compilable.rb:29:in `render'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_view/template.rb:35:in `render'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_view/template.rb:22:in `render_template'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_view/base.rb:248:in `render_file'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:1112:in `render_for_file'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:845:in `render_with_no_layout'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/layout.rb:251:in `render_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:1161:in `default_render'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:1167:in `perform_action_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:579:in `call_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:529:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:529:in `process_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/session_management.rb:130:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:389:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:503:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:503:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:503:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/commands/server.rb:39
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing PlansController#show (for 127.0.0.1 at 2008-11-01 10:56:01) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgtub3RpY2UiI1BsYW4gd2FzIHN1Y2Nlc3NmdWxseSB1cGRhdGVk
+LgY6CkB1c2VkewY7BlQ=--b225a6385a1829f686b0c89dfdb932fec0df1cfa
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"plans"}
+  [4;36;1mPlan Columns (0.002045)[0m   [0;1mSHOW FIELDS FROM `plans`[0m
+  [4;35;1mPlan Load (0.000157)[0m   [0mSELECT * FROM `plans` WHERE (`plans`.`id` = 3) [0m
+Rendering template within layouts/plans
+Rendering plans/show
+  [4;36;1mJoin Table Columns (0.001040)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.000334)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 3 ) [0m
+  [4;36;1mPhone Columns (0.001964)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+Completed in 0.05382 (18 reqs/sec) | Rendering: 0.03374 (62%) | DB: 0.00778 (14%) | 200 OK [http://localhost/plans/show/3]
+
+
+Processing PlansController#edit (for 127.0.0.1 at 2008-11-01 10:56:08) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"plans"}
+  [4;35;1mPlan Columns (0.001585)[0m   [0mSHOW FIELDS FROM `plans`[0m
+  [4;36;1mPlan Load (0.000149)[0m   [0;1mSELECT * FROM `plans` WHERE (`plans`.`id` = 3) [0m
+  [4;35;1mPhone Load (0.005546)[0m   [0mSELECT * FROM `phones` [0m
+  [4;36;1mOption Load (0.000122)[0m   [0;1mSELECT * FROM `options` ORDER BY name ASC[0m
+  [4;35;1mOption Columns (0.000649)[0m   [0mSHOW FIELDS FROM `options`[0m
+Rendering template within layouts/plans
+Rendering plans/edit
+  [4;36;1mPhone Columns (0.001142)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhonesPlans Columns (0.000624)[0m   [0mSHOW FIELDS FROM `phones_plans`[0m
+  [4;36;1mPhonesPlans Load (0.000369)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 1 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000411)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 2 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000362)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 3 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000364)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 23 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000395)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 24 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000313)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 22 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000297)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 5 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000330)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 6 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000294)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 7 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000295)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 8 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000298)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 11 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000297)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 9 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000299)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 10 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000309)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 12 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000302)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 13 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000337)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 14 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000303)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 15 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000292)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 16 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000289)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 17 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000292)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 18 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000304)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 19 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000301)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 20 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000300)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 21 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000282)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 25 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000287)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 26 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000278)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 27 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000283)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 28 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mJoin Table Columns (0.000575)[0m   [0mSHOW FIELDS FROM `plans_options`[0m
+  [4;36;1mOption Load (0.000084)[0m   [0;1mSELECT * FROM `options` INNER JOIN `plans_options` ON `options`.id = `plans_options`.option_id WHERE (`plans_options`.plan_id = 3 ) [0m
+Rendered plans/_form (0.04552)
+Completed in 0.14350 (6 reqs/sec) | Rendering: 0.03967 (27%) | DB: 0.01896 (13%) | 200 OK [http://localhost/plans/edit/3]
+
+
+Processing PlansController#update (for 127.0.0.1 at 2008-11-01 10:56:16) [POST]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"plan"=>{"name"=>"$20 Consumer Phone Plan", "options_to_plans"=>["7", "3", "5", "8", "4", "6"], "comments"=>"", "code"=>"", "repayments"=>"", "plan_category_set"=>["consumer"], "period"=>"24", "offer"=>"", "discontinued"=>"false", "plan_phones_handset_set"=>["2|2.0", "14|14.0", "19|19.0", "-1|-1"], "description"=>"Get a Subsidized Handset", "offer_price"=>""}, "handset_cost19"=>"19.0", "action"=>"update", "handset_cost2"=>"2.0", "id"=>"3", "handset_cost14"=>"14.0", "controller"=>"plans"}
+  [4;35;1mPlan Columns (0.001676)[0m   [0mSHOW FIELDS FROM `plans`[0m
+  [4;36;1mPlan Load (0.000165)[0m   [0;1mSELECT * FROM `plans` WHERE (`plans`.`id` = 3) [0m
+  [4;35;1mOption Columns (0.001059)[0m   [0mSHOW FIELDS FROM `options`[0m
+  [4;36;1mOption Load (0.000151)[0m   [0;1mSELECT * FROM `options` WHERE (`options`.`id` IN (7,3,5,8,4,6)) [0m
+  [4;35;1mJoin Table Columns (0.000900)[0m   [0mSHOW FIELDS FROM `plans_options`[0m
+  [4;36;1mOption Load (0.000142)[0m   [0;1mSELECT * FROM `options` INNER JOIN `plans_options` ON `options`.id = `plans_options`.option_id WHERE (`plans_options`.plan_id = 3 ) [0m
+  [4;35;1mSQL (0.000087)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000121)[0m   [0;1mCOMMIT[0m
+  [4;35;1mJoin Table Columns (0.001031)[0m   [0mSHOW FIELDS FROM `phones_plans`[0m
+  [4;36;1mPhone Load (0.000337)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 3 ) [0m
+  [4;35;1mPhone Columns (0.002029)[0m   [0mSHOW FIELDS FROM `phones`[0m
+  [4;36;1mPhonesPlans Columns (0.001032)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhonesPlans Load (0.000511)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = '19' AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.000101)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhonesPlans Destroy (0.000612)[0m   [0m DELETE FROM `phones_plans`
+ WHERE `id` = 264
+[0m
+  [4;36;1mSQL (0.000093)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPhonesPlans Load (0.000597)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = '14' AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.000095)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhonesPlans Destroy (0.000298)[0m   [0m DELETE FROM `phones_plans`
+ WHERE `id` = 263
+[0m
+  [4;36;1mSQL (0.000083)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPhonesPlans Load (0.000546)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = '2' AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (0.000094)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhonesPlans Destroy (0.000290)[0m   [0m DELETE FROM `phones_plans`
+ WHERE `id` = 262
+[0m
+  [4;36;1mSQL (0.000084)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000069)[0m   [0mBEGIN[0m
+  [4;36;1mPlan Update (0.000439)[0m   [0;1mUPDATE `plans` SET `updated_at` = '2008-10-31 23:56:16', `repayments` = NULL WHERE `id` = 3[0m
+  [4;35;1mSQL (0.000125)[0m   [0mCOMMIT[0m
+  [4;36;1mPhonesPlans Load (0.000460)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 2 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.000144)[0m   [0mBEGIN[0m
+  [4;36;1mPhonesPlans Create (0.000329)[0m   [0;1mINSERT INTO `phones_plans` (`phone_id`, `handset_cost`, `plan_id`) VALUES(2, NULL, 3)[0m
+  [4;35;1mSQL (0.000105)[0m   [0mCOMMIT[0m
+  [4;36;1mPhonesPlans Load (0.000457)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 14 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.000111)[0m   [0mBEGIN[0m
+  [4;36;1mPhonesPlans Create (0.000337)[0m   [0;1mINSERT INTO `phones_plans` (`phone_id`, `handset_cost`, `plan_id`) VALUES(14, NULL, 3)[0m
+  [4;35;1mSQL (0.000101)[0m   [0mCOMMIT[0m
+  [4;36;1mPhonesPlans Load (0.000445)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 19 AND `phones_plans`.`plan_id` = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.000112)[0m   [0mBEGIN[0m
+  [4;36;1mPhonesPlans Create (0.000222)[0m   [0;1mINSERT INTO `phones_plans` (`phone_id`, `handset_cost`, `plan_id`) VALUES(19, NULL, 3)[0m
+  [4;35;1mSQL (0.000069)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000052)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhonesPlans Update (0.000228)[0m   [0mUPDATE `phones_plans` SET `handset_cost` = '2.0' WHERE `id` = 265[0m
+  [4;36;1mSQL (0.000059)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000049)[0m   [0mBEGIN[0m
+  [4;36;1mPhonesPlans Update (0.000225)[0m   [0;1mUPDATE `phones_plans` SET `handset_cost` = '14.0' WHERE `id` = 266[0m
+  [4;35;1mSQL (0.000059)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000055)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhonesPlans Update (0.000227)[0m   [0mUPDATE `phones_plans` SET `handset_cost` = '19.0' WHERE `id` = 267[0m
+  [4;36;1mSQL (0.000057)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000055)[0m   [0mBEGIN[0m
+  [4;36;1mPlan Update (0.000264)[0m   [0;1mUPDATE `plans` SET `updated_at` = '2008-10-31 23:56:16', `offer_price` = NULL, `description` = 'Get a Subsidized Handset' WHERE `id` = 3[0m
+  [4;35;1mSQL (0.000085)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/plans/show/3
+Completed in 0.09732 (10 reqs/sec) | DB: 0.01707 (17%) | 302 Found [http://localhost/plans/update/3]
+
+
+Processing PlansController#show (for 127.0.0.1 at 2008-11-01 10:56:16) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgtub3RpY2UiI1BsYW4gd2FzIHN1Y2Nlc3NmdWxseSB1cGRhdGVk
+LgY6CkB1c2VkewY7BkY=--1140230ac9404825b84d24f3a140353809311fc5
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"plans"}
+  [4;36;1mPlan Columns (0.001009)[0m   [0;1mSHOW FIELDS FROM `plans`[0m
+  [4;35;1mPlan Load (0.000318)[0m   [0mSELECT * FROM `plans` WHERE (`plans`.`id` = 3) [0m
+Rendering template within layouts/plans
+Rendering plans/show
+  [4;36;1mJoin Table Columns (0.000666)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.000648)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 3 ) [0m
+  [4;36;1mPhone Columns (0.001123)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+Completed in 0.08700 (11 reqs/sec) | Rendering: 0.01858 (21%) | DB: 0.00376 (4%) | 200 OK [http://localhost/plans/show/3]
+
+
+Processing PlansController#new (for 127.0.0.1 at 2008-11-01 10:56:19) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgtub3RpY2UiI1BsYW4gd2FzIHN1Y2Nlc3NmdWxseSB1cGRhdGVk
+LgY6CkB1c2VkewY7BlQ=--b225a6385a1829f686b0c89dfdb932fec0df1cfa
+  Parameters: {"action"=>"new", "controller"=>"plans"}
+  [4;35;1mPlan Columns (0.001572)[0m   [0mSHOW FIELDS FROM `plans`[0m
+  [4;36;1mPhone Load (0.003529)[0m   [0;1mSELECT * FROM `phones` [0m
+  [4;35;1mOption Load (0.000104)[0m   [0mSELECT * FROM `options` ORDER BY name ASC[0m
+  [4;36;1mOption Columns (0.000608)[0m   [0;1mSHOW FIELDS FROM `options`[0m
+Rendering template within layouts/plans
+Rendering plans/new
+  [4;35;1mPhone Columns (0.000966)[0m   [0mSHOW FIELDS FROM `phones`[0m
+  [4;36;1mPhonesPlans Columns (0.000614)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhonesPlans Load (0.000311)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 1 AND `phones_plans`.`plan_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000242)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 2 AND `phones_plans`.`plan_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000241)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 3 AND `phones_plans`.`plan_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000232)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 23 AND `phones_plans`.`plan_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000258)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 24 AND `phones_plans`.`plan_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000212)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 22 AND `phones_plans`.`plan_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000198)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 5 AND `phones_plans`.`plan_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000245)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 6 AND `phones_plans`.`plan_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000227)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 7 AND `phones_plans`.`plan_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000201)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 8 AND `phones_plans`.`plan_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000223)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 11 AND `phones_plans`.`plan_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000194)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 9 AND `phones_plans`.`plan_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000206)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 10 AND `phones_plans`.`plan_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000205)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 12 AND `phones_plans`.`plan_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000211)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 13 AND `phones_plans`.`plan_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000211)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 14 AND `phones_plans`.`plan_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000205)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 15 AND `phones_plans`.`plan_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000209)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 16 AND `phones_plans`.`plan_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000188)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 17 AND `phones_plans`.`plan_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000201)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 18 AND `phones_plans`.`plan_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000202)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 19 AND `phones_plans`.`plan_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000191)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 20 AND `phones_plans`.`plan_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000185)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 21 AND `phones_plans`.`plan_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000191)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 25 AND `phones_plans`.`plan_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000202)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 26 AND `phones_plans`.`plan_id` IS NULL) LIMIT 1[0m
+  [4;36;1mPhonesPlans Load (0.000200)[0m   [0;1mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 27 AND `phones_plans`.`plan_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPhonesPlans Load (0.000195)[0m   [0mSELECT * FROM `phones_plans` WHERE (`phones_plans`.`phone_id` = 28 AND `phones_plans`.`plan_id` IS NULL) LIMIT 1[0m
+Rendered plans/_form (0.03322)
+Completed in 0.07944 (12 reqs/sec) | Rendering: 0.04088 (51%) | DB: 0.01318 (16%) | 200 OK [http://localhost/plans/new]
+
+
+Processing PlansController#create (for 127.0.0.1 at 2008-11-01 10:56:24) [POST]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"plan"=>{"name"=>"tset", "comments"=>"", "code"=>"", "repayments"=>"", "plan_category_set"=>["consumer"], "period"=>"", "offer"=>"", "discontinued"=>"false", "plan_phones_handset_set"=>["-1|-1"], "description"=>"test", "offer_price"=>""}, "action"=>"create", "controller"=>"plans"}
+  [4;36;1mPlan Columns (0.001021)[0m   [0;1mSHOW FIELDS FROM `plans`[0m
+  [4;35;1mSQL (0.000102)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000089)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000074)[0m   [0mBEGIN[0m
+  [4;36;1mPlan Create (0.000300)[0m   [0;1mINSERT INTO `plans` (`name`, `created_at`, `handset`, `comments`, `code`, `plan_group`, `repayments`, `handset_cost`, `period`, `updated_at`, `offer`, `discontinued`, `categories`, `description`, `charge_type`, `offer_price`) VALUES('tset', '2008-10-31 23:56:24', NULL, '', '', NULL, NULL, NULL, '', '2008-10-31 23:56:24', '', 0, 'consumer', 'test', NULL, NULL)[0m
+  [4;35;1mSQL (0.000086)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/plans/list
+Completed in 0.02297 (43 reqs/sec) | DB: 0.00167 (7%) | 302 Found [http://localhost/plans/create]
+
+
+Processing PlansController#list (for 127.0.0.1 at 2008-11-01 10:56:25) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgtub3RpY2UiI1BsYW4gd2FzIHN1Y2Nlc3NmdWxseSBjcmVhdGVk
+LgY6CkB1c2VkewY7BkY=--ee9d42f2d4e07e072419862d4ed2654f7f39e22f
+  Parameters: {"action"=>"list", "controller"=>"plans"}
+  [4;36;1mPlan Load (0.000401)[0m   [0;1mSELECT * FROM `plans` ORDER BY categories, name ASC LIMIT 0, 10[0m
+  [4;35;1mPlan Columns (0.000933)[0m   [0mSHOW FIELDS FROM `plans`[0m
+  [4;36;1mSQL (0.000228)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` [0m
+Rendering template within layouts/plans
+Rendering plans/list
+  [4;35;1mJoin Table Columns (0.000642)[0m   [0mSHOW FIELDS FROM `phones_plans`[0m
+  [4;36;1mPhone Load (0.000212)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 3 ) [0m
+  [4;35;1mPhone Columns (0.001106)[0m   [0mSHOW FIELDS FROM `phones`[0m
+  [4;36;1mJoin Table Columns (0.000622)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.001077)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 5 ) [0m
+  [4;36;1mJoin Table Columns (0.000634)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.001655)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 7 ) [0m
+  [4;36;1mJoin Table Columns (0.000676)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.002239)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 9 ) [0m
+  [4;36;1mJoin Table Columns (0.000651)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.002983)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 11 ) [0m
+  [4;36;1mJoin Table Columns (0.000649)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.000356)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 13 ) [0m
+  [4;36;1mJoin Table Columns (0.000627)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.001441)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 4 ) [0m
+  [4;36;1mJoin Table Columns (0.000653)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.001945)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 6 ) [0m
+  [4;36;1mJoin Table Columns (0.000670)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.002698)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 8 ) [0m
+  [4;36;1mJoin Table Columns (0.000658)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.003559)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 10 ) [0m
+Completed in 0.13867 (7 reqs/sec) | Rendering: 0.10235 (73%) | DB: 0.02732 (19%) | 200 OK [http://localhost/plans/list]
+
+
+Processing PlansController#destroy (for 127.0.0.1 at 2008-11-01 10:56:29) [POST]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgtub3RpY2UiI1BsYW4gd2FzIHN1Y2Nlc3NmdWxseSBjcmVhdGVk
+LgY6CkB1c2VkewY7BlQ=--6bedefe76dfa5bfd170a3d90157e08f66a627286
+  Parameters: {"action"=>"destroy", "id"=>"13", "controller"=>"plans"}
+  [4;36;1mPlan Columns (0.001650)[0m   [0;1mSHOW FIELDS FROM `plans`[0m
+  [4;35;1mPlan Load (0.000435)[0m   [0mSELECT * FROM `plans` WHERE (`plans`.`id` = 13) [0m
+  [4;36;1mSQL (0.000104)[0m   [0;1mBEGIN[0m
+  [4;35;1mJoin Table Columns (0.000934)[0m   [0mSHOW FIELDS FROM `plans_options`[0m
+  [4;36;1mOption Load (0.000487)[0m   [0;1mSELECT * FROM `options` INNER JOIN `plans_options` ON `options`.id = `plans_options`.option_id WHERE (`plans_options`.plan_id = 13 ) [0m
+  [4;35;1mJoin Table Columns (0.001027)[0m   [0mSHOW FIELDS FROM `phones_plans`[0m
+  [4;36;1mPhone Load (0.000152)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 13 ) [0m
+  [4;35;1mPlan Destroy (0.000351)[0m   [0m DELETE FROM `plans`
+ WHERE `id` = 13
+[0m
+  [4;36;1mSQL (0.000084)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/plans/list
+Completed in 0.03773 (26 reqs/sec) | DB: 0.00522 (13%) | 302 Found [http://localhost/plans/destroy/13]
+
+
+Processing PlansController#list (for 127.0.0.1 at 2008-11-01 10:56:29) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"list", "controller"=>"plans"}
+  [4;35;1mPlan Load (0.000364)[0m   [0mSELECT * FROM `plans` ORDER BY categories, name ASC LIMIT 0, 10[0m
+Rendering template within layouts/plans
+Rendering plans/list
+  [4;36;1mPlan Columns (0.000926)[0m   [0;1mSHOW FIELDS FROM `plans`[0m
+  [4;35;1mJoin Table Columns (0.000677)[0m   [0mSHOW FIELDS FROM `phones_plans`[0m
+  [4;36;1mPhone Load (0.000230)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 3 ) [0m
+  [4;35;1mPhone Columns (0.001134)[0m   [0mSHOW FIELDS FROM `phones`[0m
+  [4;36;1mJoin Table Columns (0.000635)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.000419)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 5 ) [0m
+  [4;36;1mJoin Table Columns (0.000640)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.000652)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 7 ) [0m
+  [4;36;1mJoin Table Columns (0.000643)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.000952)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 9 ) [0m
+  [4;36;1mJoin Table Columns (0.000653)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.001247)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 11 ) [0m
+  [4;36;1mJoin Table Columns (0.000654)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.000561)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 4 ) [0m
+  [4;36;1mJoin Table Columns (0.000649)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.000736)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 6 ) [0m
+  [4;36;1mJoin Table Columns (0.000646)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.001016)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 8 ) [0m
+  [4;36;1mJoin Table Columns (0.000640)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.003200)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 10 ) [0m
+Completed in 0.13199 (7 reqs/sec) | Rendering: 0.10727 (81%) | DB: 0.01727 (13%) | 200 OK [http://localhost/plans/list]
+
+
+Processing PlanGroupsController#list (for 127.0.0.1 at 2008-11-01 10:56:41) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"list", "controller"=>"plan_groups"}
+  [4;36;1mPlanGroup Load (0.000113)[0m   [0;1mSELECT * FROM `plan_groups` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;35;1mPlanGroup Columns (0.000735)[0m   [0mSHOW FIELDS FROM `plan_groups`[0m
+  [4;36;1mSQL (0.000089)[0m   [0;1mSELECT count(*) AS count_all FROM `plan_groups` [0m
+Rendering template within layouts/plans
+Rendering plan_groups/list
+  [4;35;1mPlan Columns (0.000957)[0m   [0mSHOW FIELDS FROM `plans`[0m
+  [4;36;1mSQL (0.000315)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 15) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 15) [0m
+  [4;36;1mSQL (0.000284)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 17) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 17) [0m
+  [4;36;1mSQL (0.000279)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 12) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 12) [0m
+  [4;36;1mSQL (0.000276)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 9) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 9) [0m
+  [4;36;1mPlan Load (0.000299)[0m   [0;1mSELECT * FROM `plans` WHERE (`plans`.plan_group = 9) [0m
+  [4;35;1mSQL (0.000288)[0m   [0mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 14) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 14) [0m
+  [4;35;1mSQL (0.000280)[0m   [0mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 16) [0m
+  [4;35;1mSQL (0.000280)[0m   [0mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 11) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 11) [0m
+  [4;35;1mSQL (0.000275)[0m   [0mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 8) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 8) [0m
+  [4;35;1mPlan Load (0.000313)[0m   [0mSELECT * FROM `plans` WHERE (`plans`.plan_group = 8) [0m
+  [4;36;1mSQL (0.000274)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 13) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 13) [0m
+  [4;36;1mSQL (0.000271)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 10) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 10) [0m
+Completed in 0.04976 (20 reqs/sec) | Rendering: 0.03678 (73%) | DB: 0.00533 (10%) | 200 OK [http://localhost/plan_groups/list]
+
+
+Processing ChargesController#list (for 127.0.0.1 at 2008-11-01 10:56:43) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"name"=>"Consumer Phone Plan", "action"=>"list", "id"=>"8", "controller"=>"charges"}
+  [4;36;1mPlan Load (0.000529)[0m   [0;1mSELECT * FROM `plans` WHERE (`plans`.`plan_group` = '8') [0m
+  [4;35;1mChargeValue Load (0.000161)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_group_id` = '8') [0m
+Rendering template within layouts/charges
+Rendering charges/list
+  [4;36;1mPlan Columns (0.001578)[0m   [0;1mSHOW FIELDS FROM `plans`[0m
+  [4;35;1mChargeValue Load (0.000155)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 3) [0m
+  [4;36;1mChargeValue Columns (0.001100)[0m   [0;1mSHOW FIELDS FROM `charge_values`[0m
+  [4;35;1mSQL (0.000138)[0m   [0mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 3) [0m
+  [4;36;1mCharge Load (0.000146)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;35;1mCharge Columns (0.000965)[0m   [0mSHOW FIELDS FROM `charges`[0m
+  [4;36;1mCharge Load (0.000157)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 16) LIMIT 1[0m
+  [4;35;1mChargeValue Load (0.000146)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 5) [0m
+  [4;36;1mSQL (0.000124)[0m   [0;1mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 5) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;36;1mChargeValue Load (0.000146)[0m   [0;1mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 7) [0m
+  [4;35;1mSQL (0.000121)[0m   [0mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 7) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;35;1mChargeValue Load (0.000144)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 9) [0m
+  [4;36;1mSQL (0.000121)[0m   [0;1mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 9) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;36;1mChargeValue Load (0.000143)[0m   [0;1mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 11) [0m
+  [4;35;1mSQL (0.000122)[0m   [0mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 11) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+Completed in 0.06850 (14 reqs/sec) | Rendering: 0.04367 (63%) | DB: 0.00600 (8%) | 200 OK [http://localhost/charges/list/8?name=Consumer+Phone+Plan]
+
+
+Processing ChargesController#new (for 127.0.0.1 at 2008-11-01 10:56:44) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"name"=>"Consumer Phone Plan", "action"=>"new", "cname"=>"rett", "id"=>"8", "controller"=>"charges", "charge"=>"16"}
+  [4;35;1mChargeValue Columns (0.001188)[0m   [0mSHOW FIELDS FROM `charge_values`[0m
+  [4;36;1mChargeValue Load (0.000165)[0m   [0;1mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_group_id` = '8') [0m
+  [4;35;1mPlan Load (0.000602)[0m   [0mSELECT * FROM `plans` WHERE (plan_group = '8' AND id != 5 AND id != 9 AND id != 11 AND id != 3 AND id != 7 AND id != 3 ) [0m
+Rendering template within layouts/charges
+Rendering charges/new
+Rendered charges/_form (0.00089)
+Completed in 0.04877 (20 reqs/sec) | Rendering: 0.02505 (51%) | DB: 0.00195 (4%) | 200 OK [http://localhost/charges/new/8?charge=16&cname=rett&name=Consumer+Phone+Plan]
+
+
+Processing ChargesController#list (for 127.0.0.1 at 2008-11-01 10:56:47) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"name"=>"Consumer Phone Plan", "action"=>"list", "id"=>"8", "controller"=>"charges"}
+  [4;36;1mPlan Load (0.000127)[0m   [0;1mSELECT * FROM `plans` WHERE (`plans`.`plan_group` = '8') [0m
+  [4;35;1mChargeValue Load (0.000114)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_group_id` = '8') [0m
+Rendering template within layouts/charges
+Rendering charges/list
+  [4;36;1mPlan Columns (0.000952)[0m   [0;1mSHOW FIELDS FROM `plans`[0m
+  [4;35;1mChargeValue Load (0.000129)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 3) [0m
+  [4;36;1mChargeValue Columns (0.000661)[0m   [0;1mSHOW FIELDS FROM `charge_values`[0m
+  [4;35;1mSQL (0.000104)[0m   [0mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 3) [0m
+  [4;36;1mCharge Load (0.000111)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;35;1mCharge Columns (0.000598)[0m   [0mSHOW FIELDS FROM `charges`[0m
+  [4;36;1mCharge Load (0.000108)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 16) LIMIT 1[0m
+  [4;35;1mChargeValue Load (0.000111)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 5) [0m
+  [4;36;1mSQL (0.000084)[0m   [0;1mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 5) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;36;1mChargeValue Load (0.000115)[0m   [0;1mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 7) [0m
+  [4;35;1mSQL (0.000086)[0m   [0mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 7) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;35;1mChargeValue Load (0.000110)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 9) [0m
+  [4;36;1mSQL (0.000084)[0m   [0;1mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 9) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;36;1mChargeValue Load (0.000109)[0m   [0;1mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 11) [0m
+  [4;35;1mSQL (0.000083)[0m   [0mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 11) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+Completed in 0.04059 (24 reqs/sec) | Rendering: 0.02528 (62%) | DB: 0.00369 (9%) | 200 OK [http://localhost/charges/list/8?name=Consumer+Phone+Plan]
+
+
+Processing ChargesController#new (for 127.0.0.1 at 2008-11-01 10:56:49) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"name"=>"Consumer Phone Plan", "action"=>"new", "cname"=>"Flagfall", "id"=>"8", "controller"=>"charges", "charge"=>"2"}
+  [4;35;1mChargeValue Columns (0.001203)[0m   [0mSHOW FIELDS FROM `charge_values`[0m
+  [4;36;1mChargeValue Load (0.000166)[0m   [0;1mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_group_id` = '8') [0m
+  [4;35;1mPlan Load (0.000166)[0m   [0mSELECT * FROM `plans` WHERE (plan_group = '8' AND id != 5 AND id != 9 AND id != 11 AND id != 3 AND id != 7 AND id != 3 ) [0m
+Rendering template within layouts/charges
+Rendering charges/new
+Rendered charges/_form (0.00092)
+Completed in 0.03099 (32 reqs/sec) | Rendering: 0.00797 (25%) | DB: 0.00154 (4%) | 200 OK [http://localhost/charges/new/8?charge=2&cname=Flagfall&name=Consumer+Phone+Plan]
+
+
+Processing ChargesController#list (for 127.0.0.1 at 2008-11-01 10:56:51) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"name"=>"Consumer Phone Plan", "action"=>"list", "id"=>"8", "controller"=>"charges"}
+  [4;36;1mPlan Load (0.000181)[0m   [0;1mSELECT * FROM `plans` WHERE (`plans`.`plan_group` = '8') [0m
+  [4;35;1mChargeValue Load (0.000172)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_group_id` = '8') [0m
+Rendering template within layouts/charges
+Rendering charges/list
+  [4;36;1mPlan Columns (0.001611)[0m   [0;1mSHOW FIELDS FROM `plans`[0m
+  [4;35;1mChargeValue Load (0.000147)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 3) [0m
+  [4;36;1mChargeValue Columns (0.001075)[0m   [0;1mSHOW FIELDS FROM `charge_values`[0m
+  [4;35;1mSQL (0.000137)[0m   [0mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 3) [0m
+  [4;36;1mCharge Load (0.000098)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;35;1mCharge Columns (0.000605)[0m   [0mSHOW FIELDS FROM `charges`[0m
+  [4;36;1mCharge Load (0.000104)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 16) LIMIT 1[0m
+  [4;35;1mChargeValue Load (0.000104)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 5) [0m
+  [4;36;1mSQL (0.000087)[0m   [0;1mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 5) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;36;1mChargeValue Load (0.000104)[0m   [0;1mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 7) [0m
+  [4;35;1mSQL (0.000085)[0m   [0mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 7) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;35;1mChargeValue Load (0.000103)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 9) [0m
+  [4;36;1mSQL (0.000085)[0m   [0;1mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 9) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;36;1mChargeValue Load (0.000100)[0m   [0;1mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 11) [0m
+  [4;35;1mSQL (0.000083)[0m   [0mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 11) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+Completed in 0.12974 (7 reqs/sec) | Rendering: 0.10609 (81%) | DB: 0.00488 (3%) | 200 OK [http://localhost/charges/list/8?name=Consumer+Phone+Plan]
+
+
+Processing ChargesController#new (for 127.0.0.1 at 2008-11-01 10:57:26) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"name"=>"Consumer Phone Plan", "action"=>"new", "cname"=>"rett", "id"=>"8", "controller"=>"charges", "charge"=>"16"}
+  [4;35;1mChargeValue Columns (0.001521)[0m   [0mSHOW FIELDS FROM `charge_values`[0m
+  [4;36;1mChargeValue Load (0.000153)[0m   [0;1mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_group_id` = '8') [0m
+  [4;35;1mPlan Load (0.000191)[0m   [0mSELECT * FROM `plans` WHERE (plan_group = '8' AND id != 5 AND id != 9 AND id != 11 AND id != 3 AND id != 7 AND id != 3 ) [0m
+Rendering template within layouts/charges
+Rendering charges/new
+Rendered charges/_form (0.00102)
+Completed in 0.03472 (28 reqs/sec) | Rendering: 0.00852 (24%) | DB: 0.00186 (5%) | 200 OK [http://localhost/charges/new/8?charge=16&cname=rett&name=Consumer+Phone+Plan]
+
+
+Processing ChargesController#new (for 127.0.0.1 at 2008-11-01 10:58:02) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"name"=>"Consumer Phone Plan", "action"=>"new", "cname"=>"rett", "id"=>"8", "controller"=>"charges", "charge"=>"16"}
+  [4;36;1mChargeValue Columns (0.001210)[0m   [0;1mSHOW FIELDS FROM `charge_values`[0m
+  [4;35;1mChargeValue Load (0.000168)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_group_id` = '8') [0m
+  [4;36;1mPlan Load (0.000183)[0m   [0;1mSELECT * FROM `plans` WHERE (plan_group = '8' AND id != 5 AND id != 9 AND id != 11 AND id != 3 AND id != 7 AND id != 3 ) [0m
+Rendering template within layouts/charges
+Rendering charges/new
+Rendered charges/_form (0.00093)
+Completed in 0.03139 (31 reqs/sec) | Rendering: 0.00810 (25%) | DB: 0.00156 (4%) | 200 OK [http://localhost/charges/new/8?charge=16&cname=rett&name=Consumer+Phone+Plan]
+
+
+Processing ChargesController#new (for 127.0.0.1 at 2008-11-01 10:59:24) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"name"=>"Consumer Phone Plan", "action"=>"new", "cname"=>"rett", "id"=>"8", "controller"=>"charges", "charge"=>"16"}
+  [4;35;1mChargeValue Columns (0.001604)[0m   [0mSHOW FIELDS FROM `charge_values`[0m
+
+
+ArgumentError (Unknown key(s): charge_id):
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/core_ext/hash/keys.rb:47:in `assert_valid_keys'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/base.rb:2109:in `validate_find_options'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/base.rb:534:in `find'
+    /app/controllers/charges_controller.rb:39:in `new'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:1166:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:1166:in `perform_action_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:579:in `call_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:529:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:529:in `process_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/session_management.rb:130:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:389:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:503:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:503:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:503:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/commands/server.rb:39
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing ChargesController#new (for 127.0.0.1 at 2008-11-01 10:59:51) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"name"=>"Consumer Phone Plan", "action"=>"new", "cname"=>"rett", "id"=>"8", "controller"=>"charges", "charge"=>"16"}
+  [4;36;1mChargeValue Columns (0.001233)[0m   [0;1mSHOW FIELDS FROM `charge_values`[0m
+  [4;35;1mChargeValue Load (0.000568)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`charge_id` = '16' AND `charge_values`.`plan_group_id` = '8') [0m
+  [4;36;1mPlan Load (0.000567)[0m   [0;1mSELECT * FROM `plans` WHERE (plan_group = '8' AND id != 3 ) [0m
+Rendering template within layouts/charges
+Rendering charges/new
+  [4;35;1mPlan Columns (0.001649)[0m   [0mSHOW FIELDS FROM `plans`[0m
+Rendered charges/_form (0.00890)
+Completed in 0.04109 (24 reqs/sec) | Rendering: 0.01463 (35%) | DB: 0.00562 (13%) | 200 OK [http://localhost/charges/new/8?charge=16&cname=rett&name=Consumer+Phone+Plan]
+
+
+Processing ChargesController#create (for 127.0.0.1 at 2008-11-01 10:59:57) [POST]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"plan_group"=>"Consumer Phone Plan", "charge_name"=>"rett", "action"=>"create", "charge_values"=>{"value"=>"34", "plan_group_id"=>"8", "plan_id"=>"5", "charge_id"=>"16"}, "controller"=>"charges"}
+  [4;36;1mChargeValue Columns (0.001184)[0m   [0;1mSHOW FIELDS FROM `charge_values`[0m
+  [4;35;1mSQL (0.000136)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000422)[0m   [0;1mSELECT `plan_id` FROM `charge_values` WHERE (`charge_values`.plan_id = 5 AND `charge_values`.charge_id = 16 AND `charge_values`.plan_group_id = 8) [0m
+  [4;35;1mChargeValue Create (0.000836)[0m   [0mINSERT INTO `charge_values` (`created_at`, `updated_at`, `value`, `plan_group_id`, `charge_id`, `plan_id`) VALUES('2008-10-31 23:59:57', '2008-10-31 23:59:57', '34', 8, 16, 5)[0m
+  [4;36;1mSQL (0.017823)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/charges/list/8?name=Consumer+Phone+Plan
+Completed in 0.03661 (27 reqs/sec) | DB: 0.02040 (55%) | 302 Found [http://localhost/charges/create]
+
+
+Processing ChargesController#list (for 127.0.0.1 at 2008-11-01 10:59:57) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgtub3RpY2UiJUNoYXJnZSB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0
+ZWQuBjoKQHVzZWR7BjsGRg==--2ffffb9b2f984ec3be55b327943c472c61db2f53
+  Parameters: {"name"=>"Consumer Phone Plan", "action"=>"list", "id"=>"8", "controller"=>"charges"}
+  [4;35;1mPlan Load (0.000167)[0m   [0mSELECT * FROM `plans` WHERE (`plans`.`plan_group` = '8') [0m
+  [4;36;1mChargeValue Load (0.000485)[0m   [0;1mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_group_id` = '8') [0m
+Rendering template within layouts/charges
+Rendering charges/list
+  [4;35;1mPlan Columns (0.001587)[0m   [0mSHOW FIELDS FROM `plans`[0m
+  [4;36;1mChargeValue Load (0.000284)[0m   [0;1mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 3) [0m
+  [4;35;1mChargeValue Columns (0.000575)[0m   [0mSHOW FIELDS FROM `charge_values`[0m
+  [4;36;1mSQL (0.000194)[0m   [0;1mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 3) [0m
+  [4;35;1mCharge Load (0.000098)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;36;1mCharge Columns (0.000553)[0m   [0;1mSHOW FIELDS FROM `charges`[0m
+  [4;35;1mCharge Load (0.000090)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 16) LIMIT 1[0m
+  [4;36;1mChargeValue Load (0.000257)[0m   [0;1mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 5) [0m
+  [4;35;1mSQL (0.000158)[0m   [0mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 5) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 16) LIMIT 1[0m
+  [4;36;1mChargeValue Load (0.000189)[0m   [0;1mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 7) [0m
+  [4;35;1mSQL (0.000162)[0m   [0mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 7) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;35;1mChargeValue Load (0.000187)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 9) [0m
+  [4;36;1mSQL (0.000168)[0m   [0;1mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 9) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;36;1mChargeValue Load (0.000194)[0m   [0;1mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 11) [0m
+  [4;35;1mSQL (0.000174)[0m   [0mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 11) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+Completed in 0.13635 (7 reqs/sec) | Rendering: 0.02845 (20%) | DB: 0.00552 (4%) | 200 OK [http://localhost/charges/list/8?name=Consumer+Phone+Plan]
+
+
+Processing ChargesController#new (for 127.0.0.1 at 2008-11-01 10:59:58) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsGOgtub3RpY2UiJUNoYXJnZSB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0
+ZWQuBjoKQHVzZWR7BjsGVA==--f9f2a938b4fdafc4880181ce9fb6769775fdc3fd
+  Parameters: {"name"=>"Consumer Phone Plan", "action"=>"new", "cname"=>"Flagfall", "id"=>"8", "controller"=>"charges", "charge"=>"2"}
+  [4;35;1mChargeValue Columns (0.001124)[0m   [0mSHOW FIELDS FROM `charge_values`[0m
+  [4;36;1mChargeValue Load (0.000434)[0m   [0;1mSELECT * FROM `charge_values` WHERE (`charge_values`.`charge_id` = '2' AND `charge_values`.`plan_group_id` = '8') [0m
+  [4;35;1mPlan Load (0.000613)[0m   [0mSELECT * FROM `plans` WHERE (plan_group = '8' AND id != 5 AND id != 9 AND id != 11 AND id != 3 AND id != 7 ) [0m
+Rendering template within layouts/charges
+Rendering charges/new
+Rendered charges/_form (0.00091)
+Completed in 0.03095 (32 reqs/sec) | Rendering: 0.00771 (24%) | DB: 0.00217 (7%) | 200 OK [http://localhost/charges/new/8?charge=2&cname=Flagfall&name=Consumer+Phone+Plan]
+
+
+Processing ChargesController#list (for 127.0.0.1 at 2008-11-01 11:00:00) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"name"=>"Consumer Phone Plan", "action"=>"list", "id"=>"8", "controller"=>"charges"}
+  [4;36;1mPlan Load (0.000266)[0m   [0;1mSELECT * FROM `plans` WHERE (`plans`.`plan_group` = '8') [0m
+  [4;35;1mChargeValue Load (0.000157)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_group_id` = '8') [0m
+Rendering template within layouts/charges
+Rendering charges/list
+  [4;36;1mPlan Columns (0.001644)[0m   [0;1mSHOW FIELDS FROM `plans`[0m
+  [4;35;1mChargeValue Load (0.000151)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 3) [0m
+  [4;36;1mChargeValue Columns (0.001136)[0m   [0;1mSHOW FIELDS FROM `charge_values`[0m
+  [4;35;1mSQL (0.000137)[0m   [0mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 3) [0m
+  [4;36;1mCharge Load (0.000144)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;35;1mCharge Columns (0.000975)[0m   [0mSHOW FIELDS FROM `charges`[0m
+  [4;36;1mCharge Load (0.000141)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 16) LIMIT 1[0m
+  [4;35;1mChargeValue Load (0.000142)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 5) [0m
+  [4;36;1mSQL (0.000119)[0m   [0;1mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 5) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 16) LIMIT 1[0m
+  [4;35;1mChargeValue Load (0.000158)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 7) [0m
+  [4;36;1mSQL (0.000118)[0m   [0;1mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 7) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;36;1mChargeValue Load (0.000141)[0m   [0;1mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 9) [0m
+  [4;35;1mSQL (0.000119)[0m   [0mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 9) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;35;1mChargeValue Load (0.000148)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 11) [0m
+  [4;36;1mSQL (0.000132)[0m   [0;1mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 11) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+Completed in 0.07023 (14 reqs/sec) | Rendering: 0.04574 (65%) | DB: 0.00583 (8%) | 200 OK [http://localhost/charges/list/8?name=Consumer+Phone+Plan]
+
+
+Processing ChargesController#new (for 127.0.0.1 at 2008-11-01 11:00:10) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"name"=>"Consumer Phone Plan", "action"=>"new", "cname"=>"rett", "id"=>"8", "controller"=>"charges", "charge"=>"16"}
+  [4;36;1mChargeValue Columns (0.000741)[0m   [0;1mSHOW FIELDS FROM `charge_values`[0m
+  [4;35;1mChargeValue Load (0.000352)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`charge_id` = '16' AND `charge_values`.`plan_group_id` = '8') [0m
+  [4;36;1mPlan Load (0.000373)[0m   [0;1mSELECT * FROM `plans` WHERE (plan_group = '8' AND id != 3 AND id != 5 ) [0m
+Rendering template within layouts/charges
+Rendering charges/new
+  [4;35;1mPlan Columns (0.000927)[0m   [0mSHOW FIELDS FROM `plans`[0m
+Rendered charges/_form (0.00510)
+Completed in 0.02533 (39 reqs/sec) | Rendering: 0.00844 (33%) | DB: 0.00239 (9%) | 200 OK [http://localhost/charges/new/8?charge=16&cname=rett&name=Consumer+Phone+Plan]
