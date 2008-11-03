@@ -57,8 +57,9 @@ class PlansController < ApplicationController
   end
 
   def create
+    
     @plan = Plan.new(params[:plan])
-    #@plan.phones = Phone.find(@params[:phone_ids]) if @params[:phone_ids]
+    
     if @plan.save
       flash[:notice] = 'Plan was successfully created.'
       redirect_to :action => 'list'
