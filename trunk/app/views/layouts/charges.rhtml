@@ -25,19 +25,19 @@
 <div id="sideArea">
 	<div id="navcontainer">
 	  <ul id="navlist">
-<li id="active"><a href="/plans">Plans</a></li>
+<li id="active"><%= link_to 'Plans', :controller => 'plans' %></li>
 				<ul>
 					<li><%= link_to "new", :controller => "plans", :action => "new" %></li>               
 					<li><%= link_to "view", :controller => "plans", :action => "list" %></li>
           <li><%= link_to_newgroup %></li>
           <li><%= link_to_viewgroup %></li>
 				</ul>
-			<li><a href="/options">Bonus Options</a></li>
-			<li><a href="/phones">Phones</a></li>
-			<li><a href="/accessories">Accessories</a></li>
-			<li><a href="/features">Features</a></li>
-<li><a href="/logos">Logos</a></li>
-<li><a href="/kiosks">Kiosks</a></li>
+			<li><%= link_to 'Bonus Options', :controller => 'options' %></li>
+					<li><%= link_to 'Phones', :controller => 'phones' %></li>
+		<li><%= link_to 'Accessories', :controller => 'accessories' %></li>
+			<li><%= link_to 'Features', :controller => 'features' %></li>
+			<li><%= link_to 'Logos', :controller => 'logos' %></li>
+<li><%= link_to 'Kiosks', :controller => 'kiosks' %></li>
 	  </ul>
   </div>
   

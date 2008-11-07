@@ -27,18 +27,18 @@
 	  <ul id="navlist">
 
 		
-		<li><a href="/plans">Plans</a></li>
-		<li><a href="/options">Bonus Options</a></li>
-		<li><a href="/phones">Phones</a></li>
-		<li id="active"><a href="/accessories">Accessories</a></li>
+		<li><%= link_to 'Plans', :controller => 'plans' %></li>
+		<li><%= link_to 'Bonus Options', :controller => 'options' %></li>
+		<li><%= link_to 'Phones', :controller => 'phones' %></li>
+		<li id="active"><%= link_to 'Accessories', :controller => 'accessories' %></li>
 			<ul>
 				<li><%= link_to_new %></li>
 				<li><%= link_to_view %></li>
 				<li><%= link_to_archive %></li>
 			</ul>
-		<li><a href="/features">Features</a></li>
-<li><a href="/logos">Logos</a></li>
-<li><a href="/kiosks">Kiosks</a></li>
+		<li><%= link_to 'Features', :controller => 'features' %></li>
+<li><%= link_to 'Logos', :controller => 'logos' %></li>
+<li><%= link_to 'Kiosks', :controller => 'kiosks' %></li>
 
 	  </ul>
   </div>
