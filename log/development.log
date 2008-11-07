@@ -1,1 +1,2100 @@
 
+
+
+Processing PhonesController#index (for 127.0.0.1 at 2008-11-05 11:34:19) [GET]
+  Session ID: 66ffaaea23c6f881dbb56809424b09d5
+  Parameters: {"action"=>"index", "controller"=>"phones"}
+  [4;36;1mSQL (0.000100)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mPhone Load (0.002478)[0m   [0mSELECT * FROM `phones` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mPhone Columns (0.001164)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mSQL (0.000154)[0m   [0mSELECT count(*) AS count_all FROM `phones` [0m
+Rendering template within layouts/phones
+Rendering phones/list
+  [4;36;1mJoin Table Columns (0.000584)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.013804)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 3 ) [0m
+  [4;36;1mFeature Columns (0.000691)[0m   [0;1mSHOW FIELDS FROM `features`[0m
+  [4;35;1mJoin Table Columns (0.000571)[0m   [0mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;36;1mAccessory Load (0.028700)[0m   [0;1mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 3 ) [0m
+  [4;35;1mAccessory Columns (0.001011)[0m   [0mSHOW FIELDS FROM `accessories`[0m
+  [4;36;1mJoin Table Columns (0.000563)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000500)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 23 ) [0m
+  [4;36;1mJoin Table Columns (0.000442)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.002768)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 23 ) [0m
+  [4;36;1mJoin Table Columns (0.000619)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000502)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 24 ) [0m
+  [4;36;1mJoin Table Columns (0.000459)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.001964)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 24 ) [0m
+  [4;36;1mJoin Table Columns (0.000599)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000503)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 25 ) [0m
+  [4;36;1mJoin Table Columns (0.000448)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.001959)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 25 ) [0m
+  [4;36;1mJoin Table Columns (0.000588)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000514)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 26 ) [0m
+  [4;36;1mJoin Table Columns (0.000449)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.001957)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 26 ) [0m
+  [4;36;1mJoin Table Columns (0.000582)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000367)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 20 ) [0m
+  [4;36;1mJoin Table Columns (0.000416)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.001539)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 20 ) [0m
+  [4;36;1mJoin Table Columns (0.000604)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000517)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 21 ) [0m
+  [4;36;1mJoin Table Columns (0.000445)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.001531)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 21 ) [0m
+  [4;36;1mJoin Table Columns (0.000583)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000508)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 5 ) [0m
+  [4;36;1mJoin Table Columns (0.000437)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.002058)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 5 ) [0m
+  [4;36;1mJoin Table Columns (0.000604)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000502)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 6 ) [0m
+  [4;36;1mJoin Table Columns (0.000442)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.001958)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 6 ) [0m
+  [4;36;1mJoin Table Columns (0.000585)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000522)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 17 ) [0m
+  [4;36;1mJoin Table Columns (0.000438)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.001931)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 17 ) [0m
+Completed in 0.26523 (3 reqs/sec) | Rendering: 0.17547 (66%) | DB: 0.08066 (30%) | 200 OK [http://localhost/]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 11:34:20) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"3", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001211)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000233)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 3) [0m
+Sending data BB 8100.jpg
+Completed in 0.04480 (22 reqs/sec) | Rendering: 0.00051 (1%) | DB: 0.00144 (3%) | 200 OK [http://localhost/phones/thumbnail/3]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 11:34:20) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"6", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001264)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000236)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 6) [0m
+Sending data i-Mate 9502.jpg
+Completed in 0.03153 (31 reqs/sec) | Rendering: 0.00054 (1%) | DB: 0.00150 (4%) | 200 OK [http://localhost/phones/thumbnail/6]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 11:34:20) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"24", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001100)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000256)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 24) [0m
+Sending data BB 8300.jpg
+Completed in 0.03080 (32 reqs/sec) | Rendering: 0.00050 (1%) | DB: 0.00136 (4%) | 200 OK [http://localhost/phones/thumbnail/24]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 11:34:20) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"25", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001107)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000203)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 25) [0m
+Sending data BB 8310.jpg
+Completed in 0.08883 (11 reqs/sec) | Rendering: 0.00052 (0%) | DB: 0.00131 (1%) | 200 OK [http://localhost/phones/thumbnail/25]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 11:34:20) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"26", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001110)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000183)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 26) [0m
+Sending data BB Bold.jpg
+Completed in 0.02855 (35 reqs/sec) | Rendering: 0.00051 (1%) | DB: 0.00129 (4%) | 200 OK [http://localhost/phones/thumbnail/26]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 11:34:20) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"20", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001160)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000103)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 20) [0m
+Sending data htc_diamond.gif
+Completed in 0.02369 (42 reqs/sec) | Rendering: 0.00050 (2%) | DB: 0.00126 (5%) | 200 OK [http://localhost/phones/thumbnail/20]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 11:34:20) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"21", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001109)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000114)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 21) [0m
+Sending data htc_touchdual.gif
+Completed in 0.02201 (45 reqs/sec) | Rendering: 0.00047 (2%) | DB: 0.00122 (5%) | 200 OK [http://localhost/phones/thumbnail/21]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 11:34:20) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"5", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001091)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000117)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 5) [0m
+Sending data imate-8502.jpg
+Completed in 0.08349 (11 reqs/sec) | Rendering: 0.00051 (0%) | DB: 0.00121 (1%) | 200 OK [http://localhost/phones/thumbnail/5]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 11:34:21) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"23", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001143)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000183)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 23) [0m
+Sending data BB 8110.jpg
+Completed in 0.02483 (40 reqs/sec) | Rendering: 0.00056 (2%) | DB: 0.00133 (5%) | 200 OK [http://localhost/phones/thumbnail/23]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 11:34:21) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"17", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001118)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000120)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 17) [0m
+Sending data lg_kf390.gif
+Completed in 0.03087 (32 reqs/sec) | Rendering: 0.00048 (1%) | DB: 0.00124 (4%) | 200 OK [http://localhost/phones/thumbnail/17]
+
+
+Processing KiosksController#index (for 127.0.0.1 at 2008-11-05 11:34:24) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"index", "controller"=>"kiosks"}
+  [4;36;1mKiosk Load (0.001160)[0m   [0;1mSELECT * FROM `kiosks` [0m
+  [4;35;1mPhone Load (0.007089)[0m   [0mSELECT * FROM `phones` [0m
+Rendering template within layouts/kiosks
+Rendering kiosks/list
+  [4;36;1mKiosk Columns (0.000601)[0m   [0;1mSHOW FIELDS FROM `kiosks`[0m
+  [4;35;1mPhone Columns (0.001140)[0m   [0mSHOW FIELDS FROM `phones`[0m
+Completed in 0.11288 (8 reqs/sec) | Rendering: 0.08551 (75%) | DB: 0.00999 (8%) | 200 OK [http://localhost/kiosks]
+
+
+Processing KiosksController#submit (for 127.0.0.1 at 2008-11-05 11:34:44) [POST]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"kiosk2"=>{"22"=>"22", "11"=>"11", "23"=>"23", "24"=>"24", "9"=>"9", "10"=>"10"}, "kiosk3"=>{"12"=>"12", "13"=>"13", "14"=>"14", "15"=>"15", "16"=>"16"}, "kiosk4"=>{"25"=>"25", "17"=>"17", "28"=>"28", "18"=>"18", "19"=>"19", "21"=>"21"}, "action"=>"submit", "controller"=>"kiosks", "kiosk1"=>{"6"=>"6", "7"=>"7", "8"=>"8", "26"=>"26", "27"=>"27", "1"=>"1", "2"=>"2", "3"=>"3", "20"=>"20", "5"=>"5"}}
+  [4;36;1mKiosk Delete all (0.018635)[0m   [0;1mDELETE FROM `kiosks` [0m
+  [4;35;1mKiosk Columns (0.000536)[0m   [0mSHOW FIELDS FROM `kiosks`[0m
+  [4;36;1mSQL (0.000065)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000214)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 6)[0m
+  [4;36;1mSQL (0.005436)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000051)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000123)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 7)[0m
+  [4;35;1mSQL (0.000238)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000057)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000109)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 8)[0m
+  [4;36;1mSQL (0.000254)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000051)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000110)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 26)[0m
+  [4;35;1mSQL (0.000236)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000057)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000117)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 27)[0m
+  [4;36;1mSQL (0.000220)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000048)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000110)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 1)[0m
+  [4;35;1mSQL (0.000238)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000054)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000116)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 2)[0m
+  [4;36;1mSQL (0.024328)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000049)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000141)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 3)[0m
+  [4;35;1mSQL (0.000232)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000054)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000109)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 20)[0m
+  [4;36;1mSQL (0.000241)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000053)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000110)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 5)[0m
+  [4;35;1mSQL (0.000237)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000057)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000113)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(2, 22)[0m
+  [4;36;1mSQL (0.006731)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000053)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000137)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(2, 11)[0m
+  [4;35;1mSQL (0.000266)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000054)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000107)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(2, 23)[0m
+  [4;36;1mSQL (0.000240)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000049)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000114)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(2, 24)[0m
+  [4;35;1mSQL (0.000259)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000059)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000107)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(2, 9)[0m
+  [4;36;1mSQL (0.000259)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000055)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000116)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(2, 10)[0m
+  [4;35;1mSQL (0.000309)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000098)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000225)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(3, 12)[0m
+  [4;36;1mSQL (0.000348)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000108)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000230)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(3, 13)[0m
+  [4;35;1mSQL (0.000335)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000106)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000225)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(3, 14)[0m
+  [4;36;1mSQL (0.000350)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000103)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000228)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(3, 15)[0m
+  [4;35;1mSQL (0.000334)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000114)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000221)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(3, 16)[0m
+  [4;36;1mSQL (0.000351)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000105)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000227)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(4, 25)[0m
+  [4;35;1mSQL (0.009886)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000107)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000228)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(4, 17)[0m
+  [4;36;1mSQL (0.000338)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000095)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000201)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(4, 28)[0m
+  [4;35;1mSQL (0.006248)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000101)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000206)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(4, 18)[0m
+  [4;36;1mSQL (0.000340)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000103)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000230)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(4, 19)[0m
+  [4;35;1mSQL (0.006210)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000110)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000211)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(4, 21)[0m
+  [4;36;1mSQL (0.000336)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/kiosks/list
+Completed in 0.13684 (7 reqs/sec) | DB: 0.09037 (66%) | 302 Found [http://localhost/kiosks/submit]
+
+
+Processing KiosksController#list (for 127.0.0.1 at 2008-11-05 11:34:44) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"list", "controller"=>"kiosks"}
+  [4;35;1mKiosk Load (0.000437)[0m   [0mSELECT * FROM `kiosks` [0m
+  [4;36;1mPhone Load (0.005546)[0m   [0;1mSELECT * FROM `phones` [0m
+Rendering template within layouts/kiosks
+Rendering kiosks/list
+  [4;35;1mKiosk Columns (0.000914)[0m   [0mSHOW FIELDS FROM `kiosks`[0m
+  [4;36;1mPhone Columns (0.001882)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+Completed in 0.05706 (17 reqs/sec) | Rendering: 0.03039 (53%) | DB: 0.00878 (15%) | 200 OK [http://localhost/kiosks/list]
+
+
+Processing PhonesController#index (for 127.0.0.1 at 2008-11-05 13:09:16) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"index", "controller"=>"phones"}
+  [4;36;1mSQL (0.000182)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mPhone Load (0.001116)[0m   [0mSELECT * FROM `phones` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mPhone Columns (0.001906)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mSQL (0.000171)[0m   [0mSELECT count(*) AS count_all FROM `phones` [0m
+Rendering template within layouts/phones
+Rendering phones/list
+  [4;36;1mJoin Table Columns (0.000625)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000225)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 3 ) [0m
+  [4;36;1mFeature Columns (0.000747)[0m   [0;1mSHOW FIELDS FROM `features`[0m
+  [4;35;1mJoin Table Columns (0.000624)[0m   [0mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;36;1mAccessory Load (0.000957)[0m   [0;1mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 3 ) [0m
+  [4;35;1mAccessory Columns (0.000996)[0m   [0mSHOW FIELDS FROM `accessories`[0m
+  [4;36;1mJoin Table Columns (0.000581)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000204)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 23 ) [0m
+  [4;36;1mJoin Table Columns (0.000582)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.000870)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 23 ) [0m
+  [4;36;1mJoin Table Columns (0.000593)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000189)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 24 ) [0m
+  [4;36;1mJoin Table Columns (0.000582)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.000715)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 24 ) [0m
+  [4;36;1mJoin Table Columns (0.000643)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000215)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 25 ) [0m
+  [4;36;1mJoin Table Columns (0.000579)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.000810)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 25 ) [0m
+  [4;36;1mJoin Table Columns (0.000599)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000191)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 26 ) [0m
+  [4;36;1mJoin Table Columns (0.000585)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.000702)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 26 ) [0m
+  [4;36;1mJoin Table Columns (0.000591)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000139)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 20 ) [0m
+  [4;36;1mJoin Table Columns (0.000571)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.000580)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 20 ) [0m
+  [4;36;1mJoin Table Columns (0.000600)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000186)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 21 ) [0m
+  [4;36;1mJoin Table Columns (0.000575)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.000616)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 21 ) [0m
+  [4;36;1mJoin Table Columns (0.000619)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000201)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 5 ) [0m
+  [4;36;1mJoin Table Columns (0.000580)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.000785)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 5 ) [0m
+  [4;36;1mJoin Table Columns (0.000600)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000186)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 6 ) [0m
+  [4;36;1mJoin Table Columns (0.000579)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.044593)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 6 ) [0m
+  [4;36;1mJoin Table Columns (0.000639)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000208)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 17 ) [0m
+  [4;36;1mJoin Table Columns (0.000588)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.000646)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 17 ) [0m
+Completed in 0.24567 (4 reqs/sec) | Rendering: 0.16012 (65%) | DB: 0.07027 (28%) | 200 OK [http://localhost/]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 13:09:17) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"3", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.002759)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000281)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 3) [0m
+Sending data BB 8100.jpg
+Completed in 0.06786 (14 reqs/sec) | Rendering: 0.00084 (1%) | DB: 0.00304 (4%) | 200 OK [http://localhost/phones/thumbnail/3]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 13:09:17) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"23", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001104)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000179)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 23) [0m
+Sending data BB 8110.jpg
+Completed in 0.02647 (37 reqs/sec) | Rendering: 0.00049 (1%) | DB: 0.00128 (4%) | 200 OK [http://localhost/phones/thumbnail/23]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 13:09:17) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"24", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001130)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000231)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 24) [0m
+Sending data BB 8300.jpg
+Completed in 0.09077 (11 reqs/sec) | Rendering: 0.00055 (0%) | DB: 0.00136 (1%) | 200 OK [http://localhost/phones/thumbnail/24]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 13:09:17) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"25", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001110)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000163)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 25) [0m
+Sending data BB 8310.jpg
+Completed in 0.02852 (35 reqs/sec) | Rendering: 0.00051 (1%) | DB: 0.00127 (4%) | 200 OK [http://localhost/phones/thumbnail/25]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 13:09:17) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"26", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001177)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000204)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 26) [0m
+Sending data BB Bold.jpg
+Completed in 0.02815 (35 reqs/sec) | Rendering: 0.00050 (1%) | DB: 0.00138 (4%) | 200 OK [http://localhost/phones/thumbnail/26]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 13:09:17) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"20", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001098)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000101)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 20) [0m
+Sending data htc_diamond.gif
+Completed in 0.02321 (43 reqs/sec) | Rendering: 0.00052 (2%) | DB: 0.00120 (5%) | 200 OK [http://localhost/phones/thumbnail/20]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 13:09:17) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"21", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001108)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000105)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 21) [0m
+Sending data htc_touchdual.gif
+Completed in 0.02254 (44 reqs/sec) | Rendering: 0.00052 (2%) | DB: 0.00121 (5%) | 200 OK [http://localhost/phones/thumbnail/21]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 13:09:17) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"5", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001187)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000133)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 5) [0m
+Sending data imate-8502.jpg
+Completed in 0.02454 (40 reqs/sec) | Rendering: 0.00052 (2%) | DB: 0.00132 (5%) | 200 OK [http://localhost/phones/thumbnail/5]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 13:09:17) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"6", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001168)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000155)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 6) [0m
+Sending data i-Mate 9502.jpg
+Completed in 0.02799 (35 reqs/sec) | Rendering: 0.00051 (1%) | DB: 0.00132 (4%) | 200 OK [http://localhost/phones/thumbnail/6]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 13:09:17) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"17", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001185)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000165)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 17) [0m
+Sending data lg_kf390.gif
+Completed in 0.03153 (31 reqs/sec) | Rendering: 0.00048 (1%) | DB: 0.00135 (4%) | 200 OK [http://localhost/phones/thumbnail/17]
+
+
+Processing KiosksController#index (for 127.0.0.1 at 2008-11-05 13:09:24) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"index", "controller"=>"kiosks"}
+  [4;36;1mKiosk Load (0.000159)[0m   [0;1mSELECT * FROM `kiosks` [0m
+  [4;35;1mPhone Load (0.003499)[0m   [0mSELECT * FROM `phones` [0m
+Rendering template within layouts/kiosks
+Rendering kiosks/list
+  [4;36;1mKiosk Columns (0.000604)[0m   [0;1mSHOW FIELDS FROM `kiosks`[0m
+  [4;35;1mPhone Columns (0.001113)[0m   [0mSHOW FIELDS FROM `phones`[0m
+Completed in 0.04473 (22 reqs/sec) | Rendering: 0.01939 (43%) | DB: 0.00537 (12%) | 200 OK [http://localhost/kiosks]
+
+
+Processing KiosksController#submit (for 127.0.0.1 at 2008-11-05 13:09:46) [POST]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"kiosk2"=>{"22"=>"22", "11"=>"11", "23"=>"23", "24"=>"24", "9"=>"9", "10"=>"10"}, "kiosk3"=>{"12"=>"12", "13"=>"13", "14"=>"14", "15"=>"15", "16"=>"16"}, "kiosk4"=>{"25"=>"25", "28"=>"28"}, "action"=>"submit", "controller"=>"kiosks", "kiosk1"=>{"6"=>"6", "7"=>"7", "8"=>"8", "26"=>"26", "27"=>"27", "1"=>"1", "2"=>"2", "3"=>"3", "20"=>"20", "5"=>"5"}}
+  [4;36;1mKiosk Delete all (0.014381)[0m   [0;1mDELETE FROM `kiosks` [0m
+  [4;35;1mKiosk Columns (0.000888)[0m   [0mSHOW FIELDS FROM `kiosks`[0m
+  [4;36;1mSQL (0.000102)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000254)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 6)[0m
+  [4;36;1mSQL (0.003575)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000090)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000223)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 7)[0m
+  [4;35;1mSQL (0.000327)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000094)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000191)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 8)[0m
+  [4;36;1mSQL (0.000339)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000089)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000208)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 26)[0m
+  [4;35;1mSQL (0.000326)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000088)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000211)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 27)[0m
+  [4;36;1mSQL (0.000312)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000088)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000206)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 1)[0m
+  [4;35;1mSQL (0.000879)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000094)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000207)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 2)[0m
+  [4;36;1mSQL (0.000320)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000088)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000187)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 3)[0m
+  [4;35;1mSQL (0.014608)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000097)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000242)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 20)[0m
+  [4;36;1mSQL (0.000480)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000097)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000200)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 5)[0m
+  [4;35;1mSQL (0.006052)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000091)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000274)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(2, 22)[0m
+  [4;36;1mSQL (0.000317)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000181)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000199)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(2, 11)[0m
+  [4;35;1mSQL (0.006398)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000090)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000211)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(2, 23)[0m
+  [4;36;1mSQL (0.000329)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000095)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000213)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(2, 24)[0m
+  [4;35;1mSQL (0.006281)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000101)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000218)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(2, 9)[0m
+  [4;36;1mSQL (0.000658)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000107)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000210)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(2, 10)[0m
+  [4;35;1mSQL (0.005882)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000080)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000183)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(3, 12)[0m
+  [4;36;1mSQL (0.000289)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000080)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000200)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(3, 13)[0m
+  [4;35;1mSQL (0.006832)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000093)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000207)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(3, 14)[0m
+  [4;36;1mSQL (0.000334)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000093)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000206)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(3, 15)[0m
+  [4;35;1mSQL (0.006444)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000104)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000223)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(3, 16)[0m
+  [4;36;1mSQL (0.000318)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000105)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000224)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(4, 25)[0m
+  [4;35;1mSQL (0.006180)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000088)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000194)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(4, 28)[0m
+  [4;36;1mSQL (0.000500)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/kiosks/list
+Completed in 0.14383 (6 reqs/sec) | DB: 0.09038 (62%) | 302 Found [http://localhost/kiosks/submit]
+
+
+Processing KiosksController#list (for 127.0.0.1 at 2008-11-05 13:09:47) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"list", "controller"=>"kiosks"}
+  [4;35;1mKiosk Load (0.000408)[0m   [0mSELECT * FROM `kiosks` [0m
+  [4;36;1mPhone Load (0.005703)[0m   [0;1mSELECT * FROM `phones` [0m
+Rendering template within layouts/kiosks
+Rendering kiosks/list
+  [4;35;1mKiosk Columns (0.000631)[0m   [0mSHOW FIELDS FROM `kiosks`[0m
+  [4;36;1mPhone Columns (0.001140)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+Completed in 0.09942 (10 reqs/sec) | Rendering: 0.01610 (16%) | DB: 0.00788 (7%) | 200 OK [http://localhost/kiosks/list]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-11-05 13:10:28) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/kiosk/plasma" with {:method=>:get}):
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/routing/recognition_optimisation.rb:67:in `recognize_path'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/routing/route_set.rb:384:in `recognize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:148:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:503:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:503:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:503:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/commands/server.rb:39
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-11-05 13:10:32) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/kiosk/plasma" with {:method=>:get}):
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/routing/recognition_optimisation.rb:67:in `recognize_path'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/routing/route_set.rb:384:in `recognize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:148:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:503:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:503:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:503:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/commands/server.rb:39
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-11-05 13:10:33) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/kiosk/plasma" with {:method=>:get}):
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/routing/recognition_optimisation.rb:67:in `recognize_path'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/routing/route_set.rb:384:in `recognize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:148:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:503:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:503:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:503:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/commands/server.rb:39
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-11-05 13:10:33) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/kiosk/plasma" with {:method=>:get}):
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/routing/recognition_optimisation.rb:67:in `recognize_path'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/routing/route_set.rb:384:in `recognize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:148:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:503:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:503:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:503:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/commands/server.rb:39
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing PhonesController#index (for 127.0.0.1 at 2008-11-05 14:13:45) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"index", "controller"=>"phones"}
+  [4;36;1mSQL (0.000124)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mPhone Load (0.000752)[0m   [0mSELECT * FROM `phones` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mPhone Columns (0.001161)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mSQL (0.000110)[0m   [0mSELECT count(*) AS count_all FROM `phones` [0m
+Rendering template within layouts/phones
+Rendering phones/list
+  [4;36;1mJoin Table Columns (0.000741)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000254)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 3 ) [0m
+  [4;36;1mFeature Columns (0.000839)[0m   [0;1mSHOW FIELDS FROM `features`[0m
+  [4;35;1mJoin Table Columns (0.000607)[0m   [0mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;36;1mAccessory Load (0.001249)[0m   [0;1mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 3 ) [0m
+  [4;35;1mAccessory Columns (0.000997)[0m   [0mSHOW FIELDS FROM `accessories`[0m
+  [4;36;1mJoin Table Columns (0.000588)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000195)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 23 ) [0m
+  [4;36;1mJoin Table Columns (0.000582)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.001113)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 23 ) [0m
+  [4;36;1mJoin Table Columns (0.000620)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000210)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 24 ) [0m
+  [4;36;1mJoin Table Columns (0.000587)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.000684)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 24 ) [0m
+  [4;36;1mJoin Table Columns (0.000601)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000200)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 25 ) [0m
+  [4;36;1mJoin Table Columns (0.000582)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.000646)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 25 ) [0m
+  [4;36;1mJoin Table Columns (0.000601)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000193)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 26 ) [0m
+  [4;36;1mJoin Table Columns (0.000604)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.000637)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 26 ) [0m
+  [4;36;1mJoin Table Columns (0.000611)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000145)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 20 ) [0m
+  [4;36;1mJoin Table Columns (0.000589)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.000540)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 20 ) [0m
+  [4;36;1mJoin Table Columns (0.000610)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000187)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 21 ) [0m
+  [4;36;1mJoin Table Columns (0.000579)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.000603)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 21 ) [0m
+  [4;36;1mJoin Table Columns (0.000595)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000192)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 5 ) [0m
+  [4;36;1mJoin Table Columns (0.000578)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.000798)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 5 ) [0m
+  [4;36;1mJoin Table Columns (0.000598)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000196)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 6 ) [0m
+  [4;36;1mJoin Table Columns (0.000593)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.000715)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 6 ) [0m
+  [4;36;1mJoin Table Columns (0.000603)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000199)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 17 ) [0m
+  [4;36;1mJoin Table Columns (0.000579)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.000676)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 17 ) [0m
+Completed in 0.16824 (5 reqs/sec) | Rendering: 0.13376 (79%) | DB: 0.02566 (15%) | 200 OK [http://localhost/]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 14:13:45) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"3", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001913)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000287)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 3) [0m
+Sending data BB 8100.jpg
+Completed in 0.12247 (8 reqs/sec) | Rendering: 0.00059 (0%) | DB: 0.00220 (1%) | 200 OK [http://localhost/phones/thumbnail/3]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 14:13:46) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"23", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001154)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000206)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 23) [0m
+Sending data BB 8110.jpg
+Completed in 0.02477 (40 reqs/sec) | Rendering: 0.00052 (2%) | DB: 0.00136 (5%) | 200 OK [http://localhost/phones/thumbnail/23]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 14:13:46) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"24", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001136)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000245)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 24) [0m
+Sending data BB 8300.jpg
+Completed in 0.03076 (32 reqs/sec) | Rendering: 0.00052 (1%) | DB: 0.00138 (4%) | 200 OK [http://localhost/phones/thumbnail/24]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 14:13:46) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"25", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001199)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000230)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 25) [0m
+Sending data BB 8310.jpg
+Completed in 0.02880 (34 reqs/sec) | Rendering: 0.00050 (1%) | DB: 0.00143 (4%) | 200 OK [http://localhost/phones/thumbnail/25]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 14:13:46) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"26", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001166)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000303)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 26) [0m
+Sending data BB Bold.jpg
+Completed in 0.03533 (28 reqs/sec) | Rendering: 0.00057 (1%) | DB: 0.00147 (4%) | 200 OK [http://localhost/phones/thumbnail/26]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 14:13:46) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"20", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001221)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000168)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 20) [0m
+Sending data htc_diamond.gif
+Completed in 0.02483 (40 reqs/sec) | Rendering: 0.00054 (2%) | DB: 0.00139 (5%) | 200 OK [http://localhost/phones/thumbnail/20]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 14:13:46) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"21", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001189)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000148)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 21) [0m
+Sending data htc_touchdual.gif
+Completed in 0.02225 (44 reqs/sec) | Rendering: 0.00053 (2%) | DB: 0.00134 (6%) | 200 OK [http://localhost/phones/thumbnail/21]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 14:13:46) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"5", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001172)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000168)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 5) [0m
+Sending data imate-8502.jpg
+Completed in 0.02450 (40 reqs/sec) | Rendering: 0.00051 (2%) | DB: 0.00134 (5%) | 200 OK [http://localhost/phones/thumbnail/5]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 14:13:46) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"6", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001224)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000216)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 6) [0m
+Sending data i-Mate 9502.jpg
+Completed in 0.02968 (33 reqs/sec) | Rendering: 0.00054 (1%) | DB: 0.00144 (4%) | 200 OK [http://localhost/phones/thumbnail/6]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-05 14:13:46) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"17", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001150)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000168)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 17) [0m
+Sending data lg_kf390.gif
+Completed in 0.03134 (31 reqs/sec) | Rendering: 0.00053 (1%) | DB: 0.00132 (4%) | 200 OK [http://localhost/phones/thumbnail/17]
+
+
+Processing KiosksController#index (for 127.0.0.1 at 2008-11-05 14:13:47) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"index", "controller"=>"kiosks"}
+  [4;36;1mKiosk Load (0.000204)[0m   [0;1mSELECT * FROM `kiosks` [0m
+  [4;35;1mPhone Load (0.005749)[0m   [0mSELECT * FROM `phones` [0m
+Rendering template within layouts/kiosks
+Rendering kiosks/list
+  [4;36;1mKiosk Columns (0.000600)[0m   [0;1mSHOW FIELDS FROM `kiosks`[0m
+  [4;35;1mPhone Columns (0.001132)[0m   [0mSHOW FIELDS FROM `phones`[0m
+Completed in 0.04482 (22 reqs/sec) | Rendering: 0.01916 (42%) | DB: 0.00768 (17%) | 200 OK [http://localhost/kiosks]
+
+
+Processing KiosksController#submit (for 127.0.0.1 at 2008-11-05 14:13:53) [POST]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"kiosk2"=>{"22"=>"22", "11"=>"11", "23"=>"23", "24"=>"24", "9"=>"9", "10"=>"10"}, "kiosk3"=>{"12"=>"12", "13"=>"13", "14"=>"14", "15"=>"15", "16"=>"16"}, "kiosk4"=>{"25"=>"25", "17"=>"17", "28"=>"28", "18"=>"18", "19"=>"19", "20"=>"20", "21"=>"21"}, "action"=>"submit", "controller"=>"kiosks", "kiosk1"=>{"6"=>"6", "7"=>"7", "8"=>"8", "26"=>"26", "27"=>"27", "1"=>"1", "2"=>"2", "3"=>"3", "20"=>"20", "5"=>"5"}}
+  [4;36;1mKiosk Delete all (0.026554)[0m   [0;1mDELETE FROM `kiosks` [0m
+  [4;35;1mKiosk Columns (0.000562)[0m   [0mSHOW FIELDS FROM `kiosks`[0m
+  [4;36;1mSQL (0.000096)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000211)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 6)[0m
+  [4;36;1mSQL (0.000286)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000068)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000193)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 7)[0m
+  [4;35;1mSQL (0.011635)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000107)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000263)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 8)[0m
+  [4;36;1mSQL (0.000343)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000111)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000218)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 26)[0m
+  [4;35;1mSQL (0.000343)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000093)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000199)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 27)[0m
+  [4;36;1mSQL (0.000346)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000099)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000281)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 1)[0m
+  [4;35;1mSQL (0.012942)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000097)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000216)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 2)[0m
+  [4;36;1mSQL (0.000320)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000098)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000208)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 3)[0m
+  [4;35;1mSQL (0.006495)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000087)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000204)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 20)[0m
+  [4;36;1mSQL (0.000326)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000092)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000210)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(1, 5)[0m
+  [4;35;1mSQL (0.000334)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000100)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000200)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(2, 22)[0m
+  [4;36;1mSQL (0.000308)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000092)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000202)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(2, 11)[0m
+  [4;35;1mSQL (0.000325)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000084)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000202)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(2, 23)[0m
+  [4;36;1mSQL (0.000357)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000099)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000217)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(2, 24)[0m
+  [4;35;1mSQL (0.000321)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000085)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000322)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(2, 9)[0m
+  [4;36;1mSQL (0.015261)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000092)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.007618)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(2, 10)[0m
+  [4;35;1mSQL (0.001350)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000103)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000248)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(3, 12)[0m
+  [4;36;1mSQL (0.000324)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000098)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000205)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(3, 13)[0m
+  [4;35;1mSQL (0.006138)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000095)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000226)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(3, 14)[0m
+  [4;36;1mSQL (0.000350)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000112)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000198)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(3, 15)[0m
+  [4;35;1mSQL (0.006272)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000088)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000200)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(3, 16)[0m
+  [4;36;1mSQL (0.000306)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000088)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000210)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(4, 25)[0m
+  [4;35;1mSQL (0.006705)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000095)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000217)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(4, 17)[0m
+  [4;36;1mSQL (0.000315)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000084)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000203)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(4, 28)[0m
+  [4;35;1mSQL (0.000312)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000087)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000215)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(4, 18)[0m
+  [4;36;1mSQL (0.004097)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000091)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000190)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(4, 19)[0m
+  [4;35;1mSQL (0.000289)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000091)[0m   [0;1mBEGIN[0m
+  [4;35;1mKiosk Create (0.000219)[0m   [0mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(4, 20)[0m
+  [4;36;1mSQL (0.006214)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000096)[0m   [0mBEGIN[0m
+  [4;36;1mKiosk Create (0.000206)[0m   [0;1mINSERT INTO `kiosks` (`kiosk`, `phone_id`) VALUES(4, 21)[0m
+  [4;35;1mSQL (0.000288)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/kiosks/list
+Completed in 0.19535 (5 reqs/sec) | DB: 0.12615 (64%) | 302 Found [http://localhost/kiosks/submit]
+
+
+Processing KiosksController#list (for 127.0.0.1 at 2008-11-05 14:13:54) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"list", "controller"=>"kiosks"}
+  [4;36;1mKiosk Load (0.000415)[0m   [0;1mSELECT * FROM `kiosks` [0m
+  [4;35;1mPhone Load (0.005458)[0m   [0mSELECT * FROM `phones` [0m
+Rendering template within layouts/kiosks
+Rendering kiosks/list
+  [4;36;1mKiosk Columns (0.000923)[0m   [0;1mSHOW FIELDS FROM `kiosks`[0m
+  [4;35;1mPhone Columns (0.001781)[0m   [0mSHOW FIELDS FROM `phones`[0m
+Completed in 0.04737 (21 reqs/sec) | Rendering: 0.02115 (44%) | DB: 0.00858 (18%) | 200 OK [http://localhost/kiosks/list]
+
+
+Processing PhonesController#index (for 127.0.0.1 at 2008-11-07 14:56:27) [GET]
+  Session ID: 93d3b4d7c422c266bd05717fd15d66dc
+  Parameters: {"action"=>"index", "controller"=>"phones"}
+  [4;36;1mSQL (0.000210)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mPhone Load (0.027157)[0m   [0mSELECT * FROM `phones` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mPhone Columns (0.002085)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mSQL (0.000329)[0m   [0mSELECT count(*) AS count_all FROM `phones` [0m
+Rendering template within layouts/phones
+Rendering phones/list
+  [4;36;1mJoin Table Columns (0.000633)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.012949)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 3 ) [0m
+  [4;36;1mFeature Columns (0.000747)[0m   [0;1mSHOW FIELDS FROM `features`[0m
+  [4;35;1mJoin Table Columns (0.000592)[0m   [0mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;36;1mAccessory Load (0.030014)[0m   [0;1mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 3 ) [0m
+  [4;35;1mAccessory Columns (0.000983)[0m   [0mSHOW FIELDS FROM `accessories`[0m
+  [4;36;1mJoin Table Columns (0.000949)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000901)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 23 ) [0m
+  [4;36;1mJoin Table Columns (0.000926)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.004122)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 23 ) [0m
+  [4;36;1mJoin Table Columns (0.000943)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000871)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 24 ) [0m
+  [4;36;1mJoin Table Columns (0.000922)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.003786)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 24 ) [0m
+  [4;36;1mJoin Table Columns (0.000927)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000945)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 25 ) [0m
+  [4;36;1mJoin Table Columns (0.000913)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.003905)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 25 ) [0m
+  [4;36;1mJoin Table Columns (0.000948)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000916)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 26 ) [0m
+  [4;36;1mJoin Table Columns (0.000915)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.003787)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 26 ) [0m
+  [4;36;1mJoin Table Columns (0.000930)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000654)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 20 ) [0m
+  [4;36;1mJoin Table Columns (0.000908)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.002846)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 20 ) [0m
+  [4;36;1mJoin Table Columns (0.000920)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000889)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 21 ) [0m
+  [4;36;1mJoin Table Columns (0.000914)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.003024)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 21 ) [0m
+  [4;36;1mJoin Table Columns (0.000946)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000977)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 5 ) [0m
+  [4;36;1mJoin Table Columns (0.000926)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.003817)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 5 ) [0m
+  [4;36;1mJoin Table Columns (0.000589)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000553)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 6 ) [0m
+  [4;36;1mJoin Table Columns (0.000583)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.046541)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 6 ) [0m
+  [4;36;1mJoin Table Columns (0.000646)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mFeature Load (0.000618)[0m   [0mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 17 ) [0m
+  [4;36;1mJoin Table Columns (0.000603)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.001956)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 17 ) [0m
+Completed in 0.53806 (1 reqs/sec) | Rendering: 0.34935 (64%) | DB: 0.17221 (32%) | 200 OK [http://localhost/]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:56:28) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"3", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.002006)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000742)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 3) [0m
+Sending data BB 8100.jpg
+Completed in 0.19517 (5 reqs/sec) | Rendering: 0.00055 (0%) | DB: 0.00275 (1%) | 200 OK [http://localhost/phones/thumbnail/3]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:56:28) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"6", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001190)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000474)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 6) [0m
+Sending data i-Mate 9502.jpg
+Completed in 0.03156 (31 reqs/sec) | Rendering: 0.00055 (1%) | DB: 0.00166 (5%) | 200 OK [http://localhost/phones/thumbnail/6]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:56:28) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"24", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001601)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000844)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 24) [0m
+Sending data BB 8300.jpg
+Completed in 0.03329 (30 reqs/sec) | Rendering: 0.00057 (1%) | DB: 0.00244 (7%) | 200 OK [http://localhost/phones/thumbnail/24]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:56:29) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"25", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001231)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000576)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 25) [0m
+Sending data BB 8310.jpg
+Completed in 0.02880 (34 reqs/sec) | Rendering: 0.00052 (1%) | DB: 0.00181 (6%) | 200 OK [http://localhost/phones/thumbnail/25]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:56:29) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"26", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001263)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000645)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 26) [0m
+Sending data BB Bold.jpg
+Completed in 0.02944 (33 reqs/sec) | Rendering: 0.00052 (1%) | DB: 0.00191 (6%) | 200 OK [http://localhost/phones/thumbnail/26]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:56:29) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"20", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001154)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000408)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 20) [0m
+Sending data htc_diamond.gif
+Completed in 0.09100 (10 reqs/sec) | Rendering: 0.00057 (0%) | DB: 0.00156 (1%) | 200 OK [http://localhost/phones/thumbnail/20]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:56:29) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"21", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001245)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000432)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 21) [0m
+Sending data htc_touchdual.gif
+Completed in 0.02352 (42 reqs/sec) | Rendering: 0.00054 (2%) | DB: 0.00168 (7%) | 200 OK [http://localhost/phones/thumbnail/21]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:56:29) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"5", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001150)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000419)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 5) [0m
+Sending data imate-8502.jpg
+Completed in 0.02490 (40 reqs/sec) | Rendering: 0.00051 (2%) | DB: 0.00157 (6%) | 200 OK [http://localhost/phones/thumbnail/5]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:56:29) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"23", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001161)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000547)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 23) [0m
+Sending data BB 8110.jpg
+Completed in 0.02438 (41 reqs/sec) | Rendering: 0.00050 (2%) | DB: 0.00171 (7%) | 200 OK [http://localhost/phones/thumbnail/23]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:56:29) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"17", "controller"=>"phones"}
+  [4;36;1mPhone Columns (0.001192)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mPhone Load (0.000455)[0m   [0mSELECT * FROM `phones` WHERE (`phones`.`id` = 17) [0m
+Sending data lg_kf390.gif
+Completed in 0.09376 (10 reqs/sec) | Rendering: 0.00059 (0%) | DB: 0.00165 (1%) | 200 OK [http://localhost/phones/thumbnail/17]
+
+
+Processing AccessoriesController#index (for 127.0.0.1 at 2008-11-07 14:58:21) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"index", "controller"=>"accessories"}
+  [4;36;1mAccessory Load (0.023160)[0m   [0;1mSELECT * FROM `accessories` WHERE (active = 1) ORDER BY name ASC LIMIT 0, 10[0m
+  [4;35;1mAccessory Columns (0.001839)[0m   [0mSHOW FIELDS FROM `accessories`[0m
+  [4;36;1mSQL (0.002114)[0m   [0;1mSELECT count(*) AS count_all FROM `accessories` WHERE (active = 1) [0m
+Rendering template within layouts/accessories
+Rendering accessories/list
+  [4;35;1mJoin Table Columns (0.000681)[0m   [0mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;36;1mPhone Load (0.001368)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 44 ) [0m
+  [4;35;1mPhone Columns (0.001142)[0m   [0mSHOW FIELDS FROM `phones`[0m
+  [4;36;1mJoin Table Columns (0.000575)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mPhone Load (0.001255)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 45 ) [0m
+  [4;36;1mJoin Table Columns (0.000577)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mPhone Load (0.001872)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 46 ) [0m
+  [4;36;1mJoin Table Columns (0.000601)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mPhone Load (0.001860)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 47 ) [0m
+  [4;36;1mJoin Table Columns (0.000582)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mPhone Load (0.001759)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 48 ) [0m
+  [4;36;1mJoin Table Columns (0.000581)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mPhone Load (0.001230)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 49 ) [0m
+  [4;36;1mJoin Table Columns (0.000585)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mPhone Load (0.001647)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 50 ) [0m
+  [4;36;1mJoin Table Columns (0.000577)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mPhone Load (0.001224)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 51 ) [0m
+  [4;36;1mJoin Table Columns (0.000573)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mPhone Load (0.001298)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 52 ) [0m
+  [4;36;1mJoin Table Columns (0.000574)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mPhone Load (0.001836)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 53 ) [0m
+Completed in 0.11511 (8 reqs/sec) | Rendering: 0.05166 (44%) | DB: 0.04951 (43%) | 200 OK [http://localhost/accessories]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:58:22) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"44", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.002235)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000404)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 44) [0m
+Sending data Blackberry 8100 Extreme Hard Case.JPG
+Completed in 0.03094 (32 reqs/sec) | Rendering: 0.00056 (1%) | DB: 0.00264 (8%) | 200 OK [http://localhost/accessories/thumbnail/44]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:58:22) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"45", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.001023)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000378)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 45) [0m
+Sending data BlackBerry Euro Range Leather Pocket Black suits 8100 Series.jpg
+Completed in 0.02271 (44 reqs/sec) | Rendering: 0.00053 (2%) | DB: 0.00140 (6%) | 200 OK [http://localhost/accessories/thumbnail/45]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:58:22) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"46", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.001024)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000368)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 46) [0m
+Sending data BlackBerry Headset.jpg
+Completed in 0.02175 (45 reqs/sec) | Rendering: 0.00052 (2%) | DB: 0.00139 (6%) | 200 OK [http://localhost/accessories/thumbnail/46]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:58:22) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"47", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.001203)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000399)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 47) [0m
+Sending data BlackBerry HS-655 Bluetooth Headset.JPG
+Completed in 0.02350 (42 reqs/sec) | Rendering: 0.00054 (2%) | DB: 0.00160 (6%) | 200 OK [http://localhost/accessories/thumbnail/47]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:58:22) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"48", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.001012)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000355)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 48) [0m
+Sending data BlackBerry Lambskin Leather Swivel Holster Black.jpg
+Completed in 0.02253 (44 reqs/sec) | Rendering: 0.00058 (2%) | DB: 0.00137 (6%) | 200 OK [http://localhost/accessories/thumbnail/48]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:58:22) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"49", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.000996)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000416)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 49) [0m
+Sending data BlackBerry Pearl 81008120 Power Station with Extra Battery Charger.jpg
+Completed in 0.02498 (40 reqs/sec) | Rendering: 0.00052 (2%) | DB: 0.00141 (5%) | 200 OK [http://localhost/accessories/thumbnail/49]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:58:22) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"50", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.001038)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000387)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 50) [0m
+Sending data BlackBerry Pearl Charging Pod suits 81xx.JPG
+Completed in 0.02314 (43 reqs/sec) | Rendering: 0.00051 (2%) | DB: 0.00143 (6%) | 200 OK [http://localhost/accessories/thumbnail/50]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:58:22) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"51", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.001060)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000377)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 51) [0m
+Sending data BlackBerry Stereo Headset 2.5mm White suits 8100.jpg
+Completed in 0.02036 (49 reqs/sec) | Rendering: 0.00051 (2%) | DB: 0.00144 (7%) | 200 OK [http://localhost/accessories/thumbnail/51]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:58:22) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"52", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.001021)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000353)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 52) [0m
+Sending data BlackBerry Stereo Headset suits 8100.jpg
+Completed in 0.08078 (12 reqs/sec) | Rendering: 0.00057 (0%) | DB: 0.00137 (1%) | 200 OK [http://localhost/accessories/thumbnail/52]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:58:22) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"53", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.000988)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000394)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 53) [0m
+Sending data BlackBerry Travel Charger.jpg
+Completed in 0.02360 (42 reqs/sec) | Rendering: 0.00052 (2%) | DB: 0.00138 (5%) | 200 OK [http://localhost/accessories/thumbnail/53]
+
+
+Processing AccessoriesController#index (for 127.0.0.1 at 2008-11-07 14:59:56) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"index", "controller"=>"accessories"}
+  [4;36;1mAccessory Load (0.000452)[0m   [0;1mSELECT * FROM `accessories` WHERE (active = 1) ORDER BY name ASC LIMIT 0, 10[0m
+  [4;35;1mAccessory Columns (0.002000)[0m   [0mSHOW FIELDS FROM `accessories`[0m
+  [4;36;1mSQL (0.000118)[0m   [0;1mSELECT count(*) AS count_all FROM `accessories` WHERE (active = 1) [0m
+Rendering template within layouts/accessories
+Rendering accessories/list
+  [4;35;1mJoin Table Columns (0.001027)[0m   [0mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;36;1mPhone Load (0.000383)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 44 ) [0m
+  [4;35;1mPhone Columns (0.001754)[0m   [0mSHOW FIELDS FROM `phones`[0m
+  [4;36;1mJoin Table Columns (0.000877)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mPhone Load (0.000331)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 45 ) [0m
+  [4;36;1mJoin Table Columns (0.000810)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mPhone Load (0.000721)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 46 ) [0m
+  [4;36;1mJoin Table Columns (0.001015)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mPhone Load (0.000744)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 47 ) [0m
+  [4;36;1mJoin Table Columns (0.000979)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mPhone Load (0.000611)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 48 ) [0m
+  [4;36;1mJoin Table Columns (0.000982)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mPhone Load (0.000337)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 49 ) [0m
+  [4;36;1mJoin Table Columns (0.000898)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mPhone Load (0.000607)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 50 ) [0m
+  [4;36;1mJoin Table Columns (0.000640)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mPhone Load (0.000225)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 51 ) [0m
+  [4;36;1mJoin Table Columns (0.000593)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mPhone Load (0.000213)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 52 ) [0m
+  [4;36;1mJoin Table Columns (0.000477)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mPhone Load (0.000414)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 53 ) [0m
+Completed in 0.09701 (10 reqs/sec) | Rendering: 0.06740 (69%) | DB: 0.01721 (17%) | 200 OK [http://localhost/accessories]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:59:56) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"44", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.001676)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000236)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 44) [0m
+Sending data Blackberry 8100 Extreme Hard Case.JPG
+Completed in 0.05518 (18 reqs/sec) | Rendering: 0.00089 (1%) | DB: 0.00191 (3%) | 200 OK [http://localhost/accessories/thumbnail/44]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:59:56) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"51", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.001079)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000151)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 51) [0m
+Sending data BlackBerry Stereo Headset 2.5mm White suits 8100.jpg
+Completed in 0.02104 (47 reqs/sec) | Rendering: 0.00052 (2%) | DB: 0.00123 (5%) | 200 OK [http://localhost/accessories/thumbnail/51]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:59:56) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"46", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.001046)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000142)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 46) [0m
+Sending data BlackBerry Headset.jpg
+Completed in 0.02341 (42 reqs/sec) | Rendering: 0.00054 (2%) | DB: 0.00119 (5%) | 200 OK [http://localhost/accessories/thumbnail/46]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:59:56) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"47", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.001091)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000181)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 47) [0m
+Sending data BlackBerry HS-655 Bluetooth Headset.JPG
+Completed in 0.08737 (11 reqs/sec) | Rendering: 0.00064 (0%) | DB: 0.00127 (1%) | 200 OK [http://localhost/accessories/thumbnail/47]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:59:56) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"48", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.001081)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000167)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 48) [0m
+Sending data BlackBerry Lambskin Leather Swivel Holster Black.jpg
+Completed in 0.02269 (44 reqs/sec) | Rendering: 0.00056 (2%) | DB: 0.00125 (5%) | 200 OK [http://localhost/accessories/thumbnail/48]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:59:57) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"49", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.000982)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000172)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 49) [0m
+Sending data BlackBerry Pearl 81008120 Power Station with Extra Battery Charger.jpg
+Completed in 0.02534 (39 reqs/sec) | Rendering: 0.00052 (2%) | DB: 0.00115 (4%) | 200 OK [http://localhost/accessories/thumbnail/49]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:59:57) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"50", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.001023)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000149)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 50) [0m
+Sending data BlackBerry Pearl Charging Pod suits 81xx.JPG
+Completed in 0.02494 (40 reqs/sec) | Rendering: 0.00053 (2%) | DB: 0.00117 (4%) | 200 OK [http://localhost/accessories/thumbnail/50]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:59:57) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"45", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.001209)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000168)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 45) [0m
+Sending data BlackBerry Euro Range Leather Pocket Black suits 8100 Series.jpg
+Completed in 0.02248 (44 reqs/sec) | Rendering: 0.00050 (2%) | DB: 0.00138 (6%) | 200 OK [http://localhost/accessories/thumbnail/45]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:59:57) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"52", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.001027)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000137)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 52) [0m
+Sending data BlackBerry Stereo Headset suits 8100.jpg
+Completed in 0.02189 (45 reqs/sec) | Rendering: 0.00053 (2%) | DB: 0.00116 (5%) | 200 OK [http://localhost/accessories/thumbnail/52]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 14:59:57) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"53", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.001378)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000156)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 53) [0m
+Sending data BlackBerry Travel Charger.jpg
+Completed in 0.02460 (40 reqs/sec) | Rendering: 0.00052 (2%) | DB: 0.00153 (6%) | 200 OK [http://localhost/accessories/thumbnail/53]
+
+
+Processing KiosksController#index (for 127.0.0.1 at 2008-11-07 15:00:01) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"index", "controller"=>"kiosks"}
+  [4;36;1mKiosk Load (0.000596)[0m   [0;1mSELECT * FROM `kiosks` [0m
+  [4;35;1mPhone Load (0.007382)[0m   [0mSELECT * FROM `phones` [0m
+Rendering template within layouts/kiosks
+Rendering kiosks/list
+  [4;36;1mKiosk Columns (0.000949)[0m   [0;1mSHOW FIELDS FROM `kiosks`[0m
+  [4;35;1mPhone Columns (0.001979)[0m   [0mSHOW FIELDS FROM `phones`[0m
+Completed in 0.08762 (11 reqs/sec) | Rendering: 0.05706 (65%) | DB: 0.01091 (12%) | 200 OK [http://localhost/kiosks]
+
+
+Processing KiosksController#index (for 127.0.0.1 at 2008-11-07 15:00:03) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"index", "controller"=>"kiosks"}
+  [4;36;1mKiosk Load (0.000168)[0m   [0;1mSELECT * FROM `kiosks` [0m
+  [4;35;1mPhone Load (0.005513)[0m   [0mSELECT * FROM `phones` [0m
+Rendering template within layouts/kiosks
+Rendering kiosks/list
+  [4;36;1mKiosk Columns (0.000977)[0m   [0;1mSHOW FIELDS FROM `kiosks`[0m
+  [4;35;1mPhone Columns (0.002033)[0m   [0mSHOW FIELDS FROM `phones`[0m
+Completed in 0.05642 (17 reqs/sec) | Rendering: 0.02774 (49%) | DB: 0.00869 (15%) | 200 OK [http://localhost/kiosks]
+
+
+Processing AccessoriesController#index (for 127.0.0.1 at 2008-11-07 15:00:03) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"index", "controller"=>"accessories"}
+  [4;36;1mAccessory Load (0.000525)[0m   [0;1mSELECT * FROM `accessories` WHERE (active = 1) ORDER BY name ASC LIMIT 0, 10[0m
+  [4;35;1mAccessory Columns (0.001659)[0m   [0mSHOW FIELDS FROM `accessories`[0m
+  [4;36;1mSQL (0.000152)[0m   [0;1mSELECT count(*) AS count_all FROM `accessories` WHERE (active = 1) [0m
+Rendering template within layouts/accessories
+Rendering accessories/list
+  [4;35;1mJoin Table Columns (0.001017)[0m   [0mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;36;1mPhone Load (0.000359)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 44 ) [0m
+  [4;35;1mPhone Columns (0.001933)[0m   [0mSHOW FIELDS FROM `phones`[0m
+  [4;36;1mJoin Table Columns (0.000589)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mPhone Load (0.000220)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 45 ) [0m
+  [4;36;1mJoin Table Columns (0.000572)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mPhone Load (0.000430)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 46 ) [0m
+  [4;36;1mJoin Table Columns (0.000581)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mPhone Load (0.000419)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 47 ) [0m
+  [4;36;1mJoin Table Columns (0.000570)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mPhone Load (0.000343)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 48 ) [0m
+  [4;36;1mJoin Table Columns (0.000586)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mPhone Load (0.000214)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 49 ) [0m
+  [4;36;1mJoin Table Columns (0.000569)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mPhone Load (0.000349)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 50 ) [0m
+  [4;36;1mJoin Table Columns (0.000623)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mPhone Load (0.000242)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 51 ) [0m
+  [4;36;1mJoin Table Columns (0.000596)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mPhone Load (0.000358)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 52 ) [0m
+  [4;36;1mJoin Table Columns (0.000610)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mPhone Load (0.000445)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 53 ) [0m
+Completed in 0.14496 (6 reqs/sec) | Rendering: 0.11721 (80%) | DB: 0.01396 (9%) | 200 OK [http://localhost/accessories]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 15:00:04) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"44", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.001654)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000231)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 44) [0m
+Sending data Blackberry 8100 Extreme Hard Case.JPG
+Completed in 0.03630 (27 reqs/sec) | Rendering: 0.00054 (1%) | DB: 0.00188 (5%) | 200 OK [http://localhost/accessories/thumbnail/44]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 15:00:04) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"45", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.000971)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000126)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 45) [0m
+Sending data BlackBerry Euro Range Leather Pocket Black suits 8100 Series.jpg
+Completed in 0.02170 (46 reqs/sec) | Rendering: 0.00051 (2%) | DB: 0.00110 (5%) | 200 OK [http://localhost/accessories/thumbnail/45]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 15:00:04) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"46", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.000988)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000129)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 46) [0m
+Sending data BlackBerry Headset.jpg
+Completed in 0.02176 (45 reqs/sec) | Rendering: 0.00052 (2%) | DB: 0.00112 (5%) | 200 OK [http://localhost/accessories/thumbnail/46]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 15:00:04) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"47", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.001047)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000147)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 47) [0m
+Sending data BlackBerry HS-655 Bluetooth Headset.JPG
+Completed in 0.02399 (41 reqs/sec) | Rendering: 0.00055 (2%) | DB: 0.00119 (4%) | 200 OK [http://localhost/accessories/thumbnail/47]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 15:00:04) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"48", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.001024)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000148)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 48) [0m
+Sending data BlackBerry Lambskin Leather Swivel Holster Black.jpg
+Completed in 0.02097 (47 reqs/sec) | Rendering: 0.00051 (2%) | DB: 0.00117 (5%) | 200 OK [http://localhost/accessories/thumbnail/48]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 15:00:04) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"49", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.001101)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000176)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 49) [0m
+Sending data BlackBerry Pearl 81008120 Power Station with Extra Battery Charger.jpg
+Completed in 0.02443 (40 reqs/sec) | Rendering: 0.00067 (2%) | DB: 0.00128 (5%) | 200 OK [http://localhost/accessories/thumbnail/49]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 15:00:04) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"50", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.001261)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000133)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 50) [0m
+Sending data BlackBerry Pearl Charging Pod suits 81xx.JPG
+Completed in 0.02330 (42 reqs/sec) | Rendering: 0.00054 (2%) | DB: 0.00139 (5%) | 200 OK [http://localhost/accessories/thumbnail/50]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 15:00:04) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"51", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.000991)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000129)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 51) [0m
+Sending data BlackBerry Stereo Headset 2.5mm White suits 8100.jpg
+Completed in 0.02181 (45 reqs/sec) | Rendering: 0.00055 (2%) | DB: 0.00112 (5%) | 200 OK [http://localhost/accessories/thumbnail/51]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 15:00:04) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"52", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.001051)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000154)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 52) [0m
+Sending data BlackBerry Stereo Headset suits 8100.jpg
+Completed in 0.03978 (25 reqs/sec) | Rendering: 0.00054 (1%) | DB: 0.00120 (3%) | 200 OK [http://localhost/accessories/thumbnail/52]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-07 15:00:04) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"53", "controller"=>"accessories"}
+  [4;36;1mAccessory Columns (0.001044)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mAccessory Load (0.000148)[0m   [0mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 53) [0m
+Sending data BlackBerry Travel Charger.jpg
+Completed in 0.02287 (43 reqs/sec) | Rendering: 0.00051 (2%) | DB: 0.00119 (5%) | 200 OK [http://localhost/accessories/thumbnail/53]
+
+
+Processing PlansController#index (for 127.0.0.1 at 2008-11-07 15:01:17) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"index", "controller"=>"plans"}
+  [4;36;1mPlan Load (0.008339)[0m   [0;1mSELECT * FROM `plans` ORDER BY categories, name ASC LIMIT 0, 10[0m
+  [4;35;1mPlan Columns (0.000952)[0m   [0mSHOW FIELDS FROM `plans`[0m
+  [4;36;1mSQL (0.000208)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` [0m
+Rendering template within layouts/plans
+Rendering plans/list
+  [4;35;1mJoin Table Columns (0.000668)[0m   [0mSHOW FIELDS FROM `phones_plans`[0m
+  [4;36;1mPhone Load (0.000302)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 66 ) [0m
+  [4;35;1mJoin Table Columns (0.000627)[0m   [0mSHOW FIELDS FROM `phones_plans`[0m
+  [4;36;1mPhone Load (0.000294)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 15 ) [0m
+  [4;35;1mJoin Table Columns (0.000628)[0m   [0mSHOW FIELDS FROM `phones_plans`[0m
+  [4;36;1mPhone Load (0.000305)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 72 ) [0m
+  [4;35;1mJoin Table Columns (0.000623)[0m   [0mSHOW FIELDS FROM `phones_plans`[0m
+  [4;36;1mPhone Load (0.000294)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 21 ) [0m
+  [4;35;1mJoin Table Columns (0.000691)[0m   [0mSHOW FIELDS FROM `phones_plans`[0m
+  [4;36;1mPhone Load (0.000316)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 76 ) [0m
+  [4;35;1mJoin Table Columns (0.000647)[0m   [0mSHOW FIELDS FROM `phones_plans`[0m
+  [4;36;1mPhone Load (0.000336)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 65 ) [0m
+  [4;35;1mJoin Table Columns (0.000646)[0m   [0mSHOW FIELDS FROM `phones_plans`[0m
+  [4;36;1mPhone Load (0.000312)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 73 ) [0m
+  [4;35;1mJoin Table Columns (0.000640)[0m   [0mSHOW FIELDS FROM `phones_plans`[0m
+  [4;36;1mPhone Load (0.000338)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 22 ) [0m
+  [4;35;1mJoin Table Columns (0.000637)[0m   [0mSHOW FIELDS FROM `phones_plans`[0m
+  [4;36;1mPhone Load (0.000320)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 77 ) [0m
+  [4;35;1mJoin Table Columns (0.000633)[0m   [0mSHOW FIELDS FROM `phones_plans`[0m
+  [4;36;1mPhone Load (0.000313)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 67 ) [0m
+Completed in 0.15339 (6 reqs/sec) | Rendering: 0.11399 (74%) | DB: 0.01907 (12%) | 200 OK [http://localhost/plans]
+
+
+Processing PlanGroupsController#list (for 127.0.0.1 at 2008-11-07 15:01:20) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"list", "controller"=>"plan_groups"}
+  [4;35;1mPlanGroup Load (0.012686)[0m   [0mSELECT * FROM `plan_groups` ORDER BY name ASC LIMIT 0, 10[0m
+Rendering template within layouts/plans
+Rendering plan_groups/list
+  [4;36;1mPlanGroup Columns (0.001241)[0m   [0;1mSHOW FIELDS FROM `plan_groups`[0m
+  [4;35;1mPlan Columns (0.001558)[0m   [0mSHOW FIELDS FROM `plans`[0m
+  [4;36;1mSQL (0.000471)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 15) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 15) [0m
+  [4;36;1mPlan Load (0.000543)[0m   [0;1mSELECT * FROM `plans` WHERE (`plans`.plan_group = 15) [0m
+  [4;35;1mSQL (0.000471)[0m   [0mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 17) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 17) [0m
+  [4;35;1mPlan Load (0.000560)[0m   [0mSELECT * FROM `plans` WHERE (`plans`.plan_group = 17) [0m
+  [4;36;1mSQL (0.000472)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 12) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 12) [0m
+  [4;36;1mPlan Load (0.000539)[0m   [0;1mSELECT * FROM `plans` WHERE (`plans`.plan_group = 12) [0m
+  [4;35;1mSQL (0.000455)[0m   [0mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 9) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 9) [0m
+  [4;35;1mPlan Load (0.000556)[0m   [0mSELECT * FROM `plans` WHERE (`plans`.plan_group = 9) [0m
+  [4;36;1mSQL (0.000465)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 14) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 14) [0m
+  [4;36;1mPlan Load (0.000538)[0m   [0;1mSELECT * FROM `plans` WHERE (`plans`.plan_group = 14) [0m
+  [4;35;1mSQL (0.000459)[0m   [0mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 16) [0m
+  [4;35;1mPlan Load (0.000548)[0m   [0mSELECT * FROM `plans` WHERE (`plans`.plan_group = 16) [0m
+  [4;36;1mSQL (0.000465)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 11) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 11) [0m
+  [4;36;1mPlan Load (0.000527)[0m   [0;1mSELECT * FROM `plans` WHERE (`plans`.plan_group = 11) [0m
+  [4;35;1mSQL (0.000447)[0m   [0mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 8) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `plans` WHERE (`plans`.plan_group = 8) [0m
+  [4;35;1mPlan Load (0.000546)[0m   [0mSELECT * FROM `plans` WHERE (`plans`.plan_group = 8) [0m
+Completed in 0.11702 (8 reqs/sec) | Rendering: 0.08316 (71%) | DB: 0.02355 (20%) | 200 OK [http://localhost/plan_groups/list]
+
+
+Processing ChargesController#list (for 127.0.0.1 at 2008-11-07 15:01:22) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"name"=>"Business Cap Plan", "action"=>"list", "id"=>"15", "controller"=>"charges"}
+  [4;36;1mPlan Load (0.000600)[0m   [0;1mSELECT * FROM `plans` WHERE (`plans`.`plan_group` = '15') [0m
+  [4;35;1mChargeValue Load (0.000962)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_group_id` = '15') [0m
+Rendering template within layouts/charges
+Rendering charges/list
+  [4;36;1mPlan Columns (0.001614)[0m   [0;1mSHOW FIELDS FROM `plans`[0m
+  [4;35;1mChargeValue Load (0.000695)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 47) [0m
+  [4;36;1mChargeValue Columns (0.001046)[0m   [0;1mSHOW FIELDS FROM `charge_values`[0m
+  [4;35;1mSQL (0.000454)[0m   [0mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 47) [0m
+  [4;36;1mCharge Load (0.000551)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;35;1mCharge Columns (0.000906)[0m   [0mSHOW FIELDS FROM `charges`[0m
+  [4;36;1mCharge Load (0.000327)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 1) LIMIT 1[0m
+  [4;35;1mChargeValue Load (0.000593)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 52) [0m
+  [4;36;1mSQL (0.000424)[0m   [0;1mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 52) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 1) LIMIT 1[0m
+  [4;35;1mChargeValue Load (0.000604)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 53) [0m
+  [4;36;1mSQL (0.000386)[0m   [0;1mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 53) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 1) LIMIT 1[0m
+  [4;35;1mChargeValue Load (0.000635)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 54) [0m
+  [4;36;1mSQL (0.000366)[0m   [0;1mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 54) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 1) LIMIT 1[0m
+  [4;35;1mChargeValue Load (0.000584)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 55) [0m
+  [4;36;1mSQL (0.000383)[0m   [0;1mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 55) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 1) LIMIT 1[0m
+  [4;35;1mChargeValue Load (0.000620)[0m   [0mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 56) [0m
+  [4;36;1mSQL (0.000371)[0m   [0;1mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 56) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 1) LIMIT 1[0m
+Completed in 0.23072 (4 reqs/sec) | Rendering: 0.18379 (79%) | DB: 0.01212 (5%) | 200 OK [http://localhost/charges/list/15?name=Business+Cap+Plan]
+
+
+Processing ChargesController#list (for 127.0.0.1 at 2008-11-07 15:01:30) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"name"=>"Business Cap Plan", "action"=>"list", "id"=>"15", "controller"=>"charges"}
+  [4;35;1mPlan Load (0.000187)[0m   [0mSELECT * FROM `plans` WHERE (`plans`.`plan_group` = '15') [0m
+  [4;36;1mChargeValue Load (0.000173)[0m   [0;1mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_group_id` = '15') [0m
+Rendering template within layouts/charges
+Rendering charges/list
+  [4;35;1mPlan Columns (0.001721)[0m   [0mSHOW FIELDS FROM `plans`[0m
+  [4;36;1mChargeValue Load (0.000113)[0m   [0;1mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 47) [0m
+  [4;35;1mChargeValue Columns (0.000663)[0m   [0mSHOW FIELDS FROM `charge_values`[0m
+  [4;36;1mSQL (0.000104)[0m   [0;1mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 47) [0m
+  [4;35;1mCharge Load (0.000113)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;36;1mCharge Columns (0.000592)[0m   [0;1mSHOW FIELDS FROM `charges`[0m
+  [4;35;1mCharge Load (0.000104)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 1) LIMIT 1[0m
+  [4;36;1mChargeValue Load (0.000109)[0m   [0;1mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 52) [0m
+  [4;35;1mSQL (0.000091)[0m   [0mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 52) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 1) LIMIT 1[0m
+  [4;36;1mChargeValue Load (0.000110)[0m   [0;1mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 53) [0m
+  [4;35;1mSQL (0.000091)[0m   [0mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 53) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 1) LIMIT 1[0m
+  [4;36;1mChargeValue Load (0.000110)[0m   [0;1mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 54) [0m
+  [4;35;1mSQL (0.000089)[0m   [0mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 54) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 1) LIMIT 1[0m
+  [4;36;1mChargeValue Load (0.000109)[0m   [0;1mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 55) [0m
+  [4;35;1mSQL (0.000087)[0m   [0mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 55) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 1) LIMIT 1[0m
+  [4;36;1mChargeValue Load (0.000110)[0m   [0;1mSELECT * FROM `charge_values` WHERE (`charge_values`.`plan_id` = 56) [0m
+  [4;35;1mSQL (0.000090)[0m   [0mSELECT count(*) AS count_all FROM `charge_values` WHERE (`charge_values`.`plan_id` = 56) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `charges` WHERE (`charges`.`id` = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `charges` WHERE (`charges`.`id` = 1) LIMIT 1[0m
+Completed in 0.06334 (15 reqs/sec) | Rendering: 0.03758 (59%) | DB: 0.00477 (7%) | 200 OK [http://localhost/charges/list/15?name=Business+Cap+Plan]
+
+
+Processing FeaturesController#index (for 127.0.0.1 at 2008-11-07 15:02:47) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"index", "controller"=>"features"}
+  [4;36;1mFeature Load (0.000984)[0m   [0;1mSELECT * FROM `features` WHERE (active = 1) ORDER BY name ASC LIMIT 0, 7[0m
+Rendering template within layouts/features
+Rendering features/list
+  [4;35;1mFeature Columns (0.001272)[0m   [0mSHOW FIELDS FROM `features`[0m
+  [4;36;1mJoin Table Columns (0.000924)[0m   [0;1mSHOW FIELDS FROM `phones_features`[0m
+  [4;35;1mPhone Load (0.001382)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_features` ON `phones`.id = `phones_features`.phone_id WHERE (`phones_features`.feature_id = 1 ) [0m
+  [4;36;1mPhone Columns (0.001953)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mJoin Table Columns (0.000934)[0m   [0mSHOW FIELDS FROM `phones_features`[0m
+  [4;36;1mPhone Load (0.005217)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_features` ON `phones`.id = `phones_features`.phone_id WHERE (`phones_features`.feature_id = 2 ) [0m
+  [4;35;1mJoin Table Columns (0.000640)[0m   [0mSHOW FIELDS FROM `phones_features`[0m
+  [4;36;1mPhone Load (0.003462)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_features` ON `phones`.id = `phones_features`.phone_id WHERE (`phones_features`.feature_id = 3 ) [0m
+Completed in 0.16811 (5 reqs/sec) | Rendering: 0.14113 (83%) | DB: 0.01677 (9%) | 200 OK [http://localhost/features]
+
+
+Processing FeaturesController#thumbnail (for 127.0.0.1 at 2008-11-07 15:02:47) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"1", "controller"=>"features"}
+  [4;35;1mFeature Columns (0.000695)[0m   [0mSHOW FIELDS FROM `features`[0m
+  [4;36;1mFeature Load (0.000471)[0m   [0;1mSELECT * FROM `features` WHERE (`features`.`id` = 1) [0m
+Sending data ruraltick.jpg
+Completed in 0.02501 (39 reqs/sec) | Rendering: 0.00082 (3%) | DB: 0.00117 (4%) | 200 OK [http://localhost/features/thumbnail/1]
+
+
+Processing FeaturesController#thumbnail (for 127.0.0.1 at 2008-11-07 15:02:47) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"2", "controller"=>"features"}
+  [4;35;1mFeature Columns (0.001235)[0m   [0mSHOW FIELDS FROM `features`[0m
+  [4;36;1mFeature Load (0.000490)[0m   [0;1mSELECT * FROM `features` WHERE (`features`.`id` = 2) [0m
+Sending data bluetooth-logo.png
+Completed in 0.05085 (19 reqs/sec) | Rendering: 0.00050 (0%) | DB: 0.00172 (3%) | 200 OK [http://localhost/features/thumbnail/2]
+
+
+Processing FeaturesController#thumbnail (for 127.0.0.1 at 2008-11-07 15:02:47) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"3", "controller"=>"features"}
+  [4;35;1mFeature Columns (0.001249)[0m   [0mSHOW FIELDS FROM `features`[0m
+  [4;36;1mFeature Load (0.000693)[0m   [0;1mSELECT * FROM `features` WHERE (`features`.`id` = 3) [0m
+Sending data Expandable Memory (Micro SD Card).jpg
+Completed in 0.05027 (19 reqs/sec) | Rendering: 0.00085 (1%) | DB: 0.00194 (3%) | 200 OK [http://localhost/features/thumbnail/3]
+
+
+Processing KiosksController#index (for 127.0.0.1 at 2008-11-07 15:03:22) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"index", "controller"=>"kiosks"}
+  [4;35;1mKiosk Load (0.000110)[0m   [0mSELECT * FROM `kiosks` [0m
+  [4;36;1mPhone Load (0.003786)[0m   [0;1mSELECT * FROM `phones` [0m
+Rendering template within layouts/kiosks
+Rendering kiosks/list
+  [4;35;1mKiosk Columns (0.000599)[0m   [0mSHOW FIELDS FROM `kiosks`[0m
+  [4;36;1mPhone Columns (0.000926)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+Completed in 0.03474 (28 reqs/sec) | Rendering: 0.01814 (52%) | DB: 0.00542 (15%) | 200 OK [http://localhost/kiosks]
+
+
+Processing LogosController#index (for 127.0.0.1 at 2008-11-07 15:04:06) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"index", "controller"=>"logos"}
+  [4;35;1mLogo Load (0.011691)[0m   [0mSELECT * FROM `logos` ORDER BY name ASC LIMIT 0, 7[0m
+  [4;36;1mLogo Columns (0.001056)[0m   [0;1mSHOW FIELDS FROM `logos`[0m
+  [4;35;1mSQL (0.000225)[0m   [0mSELECT count(*) AS count_all FROM `logos` [0m
+Rendering template within layouts/logos
+Rendering logos/list
+Completed in 0.05083 (19 reqs/sec) | Rendering: 0.02768 (54%) | DB: 0.01297 (25%) | 200 OK [http://localhost/logos]
+
+
+Processing LogosController#thumbnail (for 127.0.0.1 at 2008-11-07 15:04:06) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"6", "controller"=>"logos"}
+  [4;36;1mLogo Columns (0.003126)[0m   [0;1mSHOW FIELDS FROM `logos`[0m
+  [4;35;1mLogo Load (0.000528)[0m   [0mSELECT * FROM `logos` WHERE (`logos`.`id` = 6) [0m
+Sending data BlackBerry Logo.jpg
+Completed in 0.03900 (25 reqs/sec) | Rendering: 0.00084 (2%) | DB: 0.00365 (9%) | 200 OK [http://localhost/logos/thumbnail/6]
+
+
+Processing LogosController#thumbnail (for 127.0.0.1 at 2008-11-07 15:04:06) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"1", "controller"=>"logos"}
+  [4;36;1mLogo Columns (0.000757)[0m   [0;1mSHOW FIELDS FROM `logos`[0m
+  [4;35;1mLogo Load (0.000211)[0m   [0mSELECT * FROM `logos` WHERE (`logos`.`id` = 1) [0m
+Sending data leftCol_logo.gif
+Completed in 0.13923 (7 reqs/sec) | Rendering: 0.00055 (0%) | DB: 0.00097 (0%) | 200 OK [http://localhost/logos/thumbnail/1]
+
+
+Processing LogosController#thumbnail (for 127.0.0.1 at 2008-11-07 15:04:06) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"10", "controller"=>"logos"}
+  [4;36;1mLogo Columns (0.000723)[0m   [0;1mSHOW FIELDS FROM `logos`[0m
+  [4;35;1mLogo Load (0.000240)[0m   [0mSELECT * FROM `logos` WHERE (`logos`.`id` = 10) [0m
+Sending data HTC Logo.jpg
+Completed in 0.02005 (49 reqs/sec) | Rendering: 0.00059 (2%) | DB: 0.00096 (4%) | 200 OK [http://localhost/logos/thumbnail/10]
+
+
+Processing LogosController#thumbnail (for 127.0.0.1 at 2008-11-07 15:04:06) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"7", "controller"=>"logos"}
+  [4;36;1mLogo Columns (0.000774)[0m   [0;1mSHOW FIELDS FROM `logos`[0m
+  [4;35;1mLogo Load (0.000221)[0m   [0mSELECT * FROM `logos` WHERE (`logos`.`id` = 7) [0m
+Sending data i-mate Logo.jpg
+Completed in 0.01195 (83 reqs/sec) | Rendering: 0.00051 (4%) | DB: 0.00099 (8%) | 200 OK [http://localhost/logos/thumbnail/7]
+
+
+Processing LogosController#thumbnail (for 127.0.0.1 at 2008-11-07 15:04:06) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"2", "controller"=>"logos"}
+  [4;36;1mLogo Columns (0.000712)[0m   [0;1mSHOW FIELDS FROM `logos`[0m
+  [4;35;1mLogo Load (0.000264)[0m   [0mSELECT * FROM `logos` WHERE (`logos`.`id` = 2) [0m
+Sending data LG_Logo$20WWS_HR.jpg
+Completed in 0.02049 (48 reqs/sec) | Rendering: 0.00051 (2%) | DB: 0.00098 (4%) | 200 OK [http://localhost/logos/thumbnail/2]
+
+
+Processing LogosController#thumbnail (for 127.0.0.1 at 2008-11-07 15:04:06) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"9", "controller"=>"logos"}
+  [4;36;1mLogo Columns (0.000703)[0m   [0;1mSHOW FIELDS FROM `logos`[0m
+  [4;35;1mLogo Load (0.000293)[0m   [0mSELECT * FROM `logos` WHERE (`logos`.`id` = 9) [0m
+Sending data Motorola logo.jpg
+Completed in 0.02445 (40 reqs/sec) | Rendering: 0.00054 (2%) | DB: 0.00100 (4%) | 200 OK [http://localhost/logos/thumbnail/9]
+
+
+Processing LogosController#thumbnail (for 127.0.0.1 at 2008-11-07 15:04:06) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"4", "controller"=>"logos"}
+  [4;36;1mLogo Columns (0.000709)[0m   [0;1mSHOW FIELDS FROM `logos`[0m
+  [4;35;1mLogo Load (0.000228)[0m   [0mSELECT * FROM `logos` WHERE (`logos`.`id` = 4) [0m
+Sending data Nokia-logo.jpg
+Completed in 0.01750 (57 reqs/sec) | Rendering: 0.00051 (2%) | DB: 0.00094 (5%) | 200 OK [http://localhost/logos/thumbnail/4]
+
+
+Processing OptionsController#index (for 127.0.0.1 at 2008-11-07 15:04:38) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"index", "controller"=>"options"}
+  [4;36;1mOption Load (0.009117)[0m   [0;1mSELECT * FROM `options` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;35;1mOption Columns (0.000666)[0m   [0mSHOW FIELDS FROM `options`[0m
+  [4;36;1mSQL (0.000187)[0m   [0;1mSELECT count(*) AS count_all FROM `options` [0m
+Rendering template within layouts/options
+Rendering options/list
+  [4;35;1mJoin Table Columns (0.000609)[0m   [0mSHOW FIELDS FROM `plans_options`[0m
+  [4;36;1mPlan Load (0.000518)[0m   [0;1mSELECT * FROM `plans` INNER JOIN `plans_options` ON `plans`.id = `plans_options`.plan_id WHERE (`plans_options`.option_id = 10 ) [0m
+  [4;35;1mPlan Columns (0.000932)[0m   [0mSHOW FIELDS FROM `plans`[0m
+  [4;36;1mJoin Table Columns (0.000588)[0m   [0;1mSHOW FIELDS FROM `plans_options`[0m
+  [4;35;1mPlan Load (0.000502)[0m   [0mSELECT * FROM `plans` INNER JOIN `plans_options` ON `plans`.id = `plans_options`.plan_id WHERE (`plans_options`.option_id = 9 ) [0m
+  [4;36;1mJoin Table Columns (0.000578)[0m   [0;1mSHOW FIELDS FROM `plans_options`[0m
+  [4;35;1mPlan Load (0.000493)[0m   [0mSELECT * FROM `plans` INNER JOIN `plans_options` ON `plans`.id = `plans_options`.plan_id WHERE (`plans_options`.option_id = 7 ) [0m
+  [4;36;1mJoin Table Columns (0.000579)[0m   [0;1mSHOW FIELDS FROM `plans_options`[0m
+  [4;35;1mPlan Load (0.000507)[0m   [0mSELECT * FROM `plans` INNER JOIN `plans_options` ON `plans`.id = `plans_options`.plan_id WHERE (`plans_options`.option_id = 13 ) [0m
+  [4;36;1mJoin Table Columns (0.000581)[0m   [0;1mSHOW FIELDS FROM `plans_options`[0m
+  [4;35;1mPlan Load (0.000495)[0m   [0mSELECT * FROM `plans` INNER JOIN `plans_options` ON `plans`.id = `plans_options`.plan_id WHERE (`plans_options`.option_id = 12 ) [0m
+  [4;36;1mJoin Table Columns (0.000579)[0m   [0;1mSHOW FIELDS FROM `plans_options`[0m
+  [4;35;1mPlan Load (0.000475)[0m   [0mSELECT * FROM `plans` INNER JOIN `plans_options` ON `plans`.id = `plans_options`.plan_id WHERE (`plans_options`.option_id = 11 ) [0m
+  [4;36;1mJoin Table Columns (0.000604)[0m   [0;1mSHOW FIELDS FROM `plans_options`[0m
+  [4;35;1mPlan Load (0.000413)[0m   [0mSELECT * FROM `plans` INNER JOIN `plans_options` ON `plans`.id = `plans_options`.plan_id WHERE (`plans_options`.option_id = 3 ) [0m
+  [4;36;1mJoin Table Columns (0.000532)[0m   [0;1mSHOW FIELDS FROM `plans_options`[0m
+  [4;35;1mPlan Load (0.000409)[0m   [0mSELECT * FROM `plans` INNER JOIN `plans_options` ON `plans`.id = `plans_options`.plan_id WHERE (`plans_options`.option_id = 5 ) [0m
+  [4;36;1mJoin Table Columns (0.000424)[0m   [0;1mSHOW FIELDS FROM `plans_options`[0m
+  [4;35;1mPlan Load (0.000373)[0m   [0mSELECT * FROM `plans` INNER JOIN `plans_options` ON `plans`.id = `plans_options`.plan_id WHERE (`plans_options`.option_id = 8 ) [0m
+  [4;36;1mJoin Table Columns (0.000420)[0m   [0;1mSHOW FIELDS FROM `plans_options`[0m
+  [4;35;1mPlan Load (0.000384)[0m   [0mSELECT * FROM `plans` INNER JOIN `plans_options` ON `plans`.id = `plans_options`.plan_id WHERE (`plans_options`.option_id = 4 ) [0m
+Completed in 0.08605 (11 reqs/sec) | Rendering: 0.05817 (67%) | DB: 0.02097 (24%) | 200 OK [http://localhost/options]
+
+
+Processing PhonesController#index (for 127.0.0.1 at 2008-11-07 15:05:05) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"index", "controller"=>"phones"}
+  [4;36;1mPhone Load (0.001001)[0m   [0;1mSELECT * FROM `phones` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;35;1mPhone Columns (0.002071)[0m   [0mSHOW FIELDS FROM `phones`[0m
+  [4;36;1mSQL (0.000175)[0m   [0;1mSELECT count(*) AS count_all FROM `phones` [0m
+Rendering template within layouts/phones
+Rendering phones/list
+  [4;35;1mJoin Table Columns (0.000977)[0m   [0mSHOW FIELDS FROM `phones_features`[0m
+  [4;36;1mFeature Load (0.000337)[0m   [0;1mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 3 ) [0m
+  [4;35;1mFeature Columns (0.001218)[0m   [0mSHOW FIELDS FROM `features`[0m
+  [4;36;1mJoin Table Columns (0.000980)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mAccessory Load (0.001419)[0m   [0mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 3 ) [0m
+  [4;36;1mAccessory Columns (0.000990)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mJoin Table Columns (0.000583)[0m   [0mSHOW FIELDS FROM `phones_features`[0m
+  [4;36;1mFeature Load (0.000205)[0m   [0;1mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 23 ) [0m
+  [4;35;1mJoin Table Columns (0.000586)[0m   [0mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;36;1mAccessory Load (0.000760)[0m   [0;1mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 23 ) [0m
+  [4;35;1mJoin Table Columns (0.000611)[0m   [0mSHOW FIELDS FROM `phones_features`[0m
+  [4;36;1mFeature Load (0.000215)[0m   [0;1mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 24 ) [0m
+  [4;35;1mJoin Table Columns (0.000594)[0m   [0mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;36;1mAccessory Load (0.000706)[0m   [0;1mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 24 ) [0m
+  [4;35;1mJoin Table Columns (0.000605)[0m   [0mSHOW FIELDS FROM `phones_features`[0m
+  [4;36;1mFeature Load (0.000201)[0m   [0;1mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 25 ) [0m
+  [4;35;1mJoin Table Columns (0.000588)[0m   [0mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;36;1mAccessory Load (0.000674)[0m   [0;1mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 25 ) [0m
+  [4;35;1mJoin Table Columns (0.000598)[0m   [0mSHOW FIELDS FROM `phones_features`[0m
+  [4;36;1mFeature Load (0.000196)[0m   [0;1mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 26 ) [0m
+  [4;35;1mJoin Table Columns (0.000581)[0m   [0mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;36;1mAccessory Load (0.000656)[0m   [0;1mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 26 ) [0m
+  [4;35;1mJoin Table Columns (0.000599)[0m   [0mSHOW FIELDS FROM `phones_features`[0m
+  [4;36;1mFeature Load (0.000143)[0m   [0;1mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 20 ) [0m
+  [4;35;1mJoin Table Columns (0.000579)[0m   [0mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;36;1mAccessory Load (0.000529)[0m   [0;1mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 20 ) [0m
+  [4;35;1mJoin Table Columns (0.000600)[0m   [0mSHOW FIELDS FROM `phones_features`[0m
+  [4;36;1mFeature Load (0.000190)[0m   [0;1mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 21 ) [0m
+  [4;35;1mJoin Table Columns (0.000585)[0m   [0mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;36;1mAccessory Load (0.000529)[0m   [0;1mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 21 ) [0m
+  [4;35;1mJoin Table Columns (0.000596)[0m   [0mSHOW FIELDS FROM `phones_features`[0m
+  [4;36;1mFeature Load (0.000198)[0m   [0;1mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 5 ) [0m
+  [4;35;1mJoin Table Columns (0.000594)[0m   [0mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;36;1mAccessory Load (0.000673)[0m   [0;1mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 5 ) [0m
+  [4;35;1mJoin Table Columns (0.000604)[0m   [0mSHOW FIELDS FROM `phones_features`[0m
+  [4;36;1mFeature Load (0.049495)[0m   [0;1mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 6 ) [0m
+  [4;35;1mJoin Table Columns (0.000632)[0m   [0mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;36;1mAccessory Load (0.000724)[0m   [0;1mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 6 ) [0m
+  [4;35;1mJoin Table Columns (0.000619)[0m   [0mSHOW FIELDS FROM `phones_features`[0m
+  [4;36;1mFeature Load (0.000208)[0m   [0;1mSELECT * FROM `features` INNER JOIN `phones_features` ON `features`.id = `phones_features`.feature_id WHERE (`phones_features`.phone_id = 17 ) [0m
+  [4;35;1mJoin Table Columns (0.000606)[0m   [0mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;36;1mAccessory Load (0.000607)[0m   [0;1mSELECT * FROM `accessories` INNER JOIN `phones_accessories` ON `accessories`.id = `phones_accessories`.accessory_id WHERE (`phones_accessories`.phone_id = 17 ) [0m
+Completed in 0.18635 (5 reqs/sec) | Rendering: 0.09260 (49%) | DB: 0.07684 (41%) | 200 OK [http://localhost/]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-07 15:05:05) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"3", "controller"=>"phones"}
+  [4;35;1mPhone Columns (0.001146)[0m   [0mSHOW FIELDS FROM `phones`[0m
+  [4;36;1mPhone Load (0.000204)[0m   [0;1mSELECT * FROM `phones` WHERE (`phones`.`id` = 3) [0m
+Sending data BB 8100.jpg
+Completed in 0.03068 (32 reqs/sec) | Rendering: 0.00053 (1%) | DB: 0.00135 (4%) | 200 OK [http://localhost/phones/thumbnail/3]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-07 15:05:05) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"23", "controller"=>"phones"}
+  [4;35;1mPhone Columns (0.001226)[0m   [0mSHOW FIELDS FROM `phones`[0m
+  [4;36;1mPhone Load (0.000275)[0m   [0;1mSELECT * FROM `phones` WHERE (`phones`.`id` = 23) [0m
+Sending data BB 8110.jpg
+Completed in 0.02481 (40 reqs/sec) | Rendering: 0.00051 (2%) | DB: 0.00150 (6%) | 200 OK [http://localhost/phones/thumbnail/23]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-07 15:05:05) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"24", "controller"=>"phones"}
+  [4;35;1mPhone Columns (0.001171)[0m   [0mSHOW FIELDS FROM `phones`[0m
+  [4;36;1mPhone Load (0.000267)[0m   [0;1mSELECT * FROM `phones` WHERE (`phones`.`id` = 24) [0m
+Sending data BB 8300.jpg
+Completed in 0.10114 (9 reqs/sec) | Rendering: 0.00059 (0%) | DB: 0.00144 (1%) | 200 OK [http://localhost/phones/thumbnail/24]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-07 15:05:05) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"25", "controller"=>"phones"}
+  [4;35;1mPhone Columns (0.001135)[0m   [0mSHOW FIELDS FROM `phones`[0m
+  [4;36;1mPhone Load (0.000205)[0m   [0;1mSELECT * FROM `phones` WHERE (`phones`.`id` = 25) [0m
+Sending data BB 8310.jpg
+Completed in 0.02847 (35 reqs/sec) | Rendering: 0.00056 (1%) | DB: 0.00134 (4%) | 200 OK [http://localhost/phones/thumbnail/25]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-07 15:05:05) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"26", "controller"=>"phones"}
+  [4;35;1mPhone Columns (0.001141)[0m   [0mSHOW FIELDS FROM `phones`[0m
+  [4;36;1mPhone Load (0.000232)[0m   [0;1mSELECT * FROM `phones` WHERE (`phones`.`id` = 26) [0m
+Sending data BB Bold.jpg
+Completed in 0.02931 (34 reqs/sec) | Rendering: 0.00053 (1%) | DB: 0.00137 (4%) | 200 OK [http://localhost/phones/thumbnail/26]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-07 15:05:05) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"20", "controller"=>"phones"}
+  [4;35;1mPhone Columns (0.001217)[0m   [0mSHOW FIELDS FROM `phones`[0m
+  [4;36;1mPhone Load (0.000166)[0m   [0;1mSELECT * FROM `phones` WHERE (`phones`.`id` = 20) [0m
+Sending data htc_diamond.gif
+Completed in 0.02381 (41 reqs/sec) | Rendering: 0.00053 (2%) | DB: 0.00138 (5%) | 200 OK [http://localhost/phones/thumbnail/20]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-07 15:05:06) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"21", "controller"=>"phones"}
+  [4;35;1mPhone Columns (0.001148)[0m   [0mSHOW FIELDS FROM `phones`[0m
+  [4;36;1mPhone Load (0.000154)[0m   [0;1mSELECT * FROM `phones` WHERE (`phones`.`id` = 21) [0m
+Sending data htc_touchdual.gif
+Completed in 0.02411 (41 reqs/sec) | Rendering: 0.00057 (2%) | DB: 0.00130 (5%) | 200 OK [http://localhost/phones/thumbnail/21]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-07 15:05:06) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"5", "controller"=>"phones"}
+  [4;35;1mPhone Columns (0.001258)[0m   [0mSHOW FIELDS FROM `phones`[0m
+  [4;36;1mPhone Load (0.000214)[0m   [0;1mSELECT * FROM `phones` WHERE (`phones`.`id` = 5) [0m
+Sending data imate-8502.jpg
+Completed in 0.02546 (39 reqs/sec) | Rendering: 0.00052 (2%) | DB: 0.00147 (5%) | 200 OK [http://localhost/phones/thumbnail/5]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-07 15:05:06) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"6", "controller"=>"phones"}
+  [4;35;1mPhone Columns (0.001259)[0m   [0mSHOW FIELDS FROM `phones`[0m
+  [4;36;1mPhone Load (0.000197)[0m   [0;1mSELECT * FROM `phones` WHERE (`phones`.`id` = 6) [0m
+Sending data i-Mate 9502.jpg
+Completed in 0.02903 (34 reqs/sec) | Rendering: 0.00052 (1%) | DB: 0.00146 (5%) | 200 OK [http://localhost/phones/thumbnail/6]
+
+
+Processing PhonesController#thumbnail (for 127.0.0.1 at 2008-11-07 15:05:06) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"17", "controller"=>"phones"}
+  [4;35;1mPhone Columns (0.001133)[0m   [0mSHOW FIELDS FROM `phones`[0m
+  [4;36;1mPhone Load (0.000192)[0m   [0;1mSELECT * FROM `phones` WHERE (`phones`.`id` = 17) [0m
+Sending data lg_kf390.gif
+Completed in 0.05150 (19 reqs/sec) | Rendering: 0.00055 (1%) | DB: 0.00132 (2%) | 200 OK [http://localhost/phones/thumbnail/17]
+
+
+Processing PlansController#index (for 127.0.0.1 at 2008-11-07 15:05:36) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"index", "controller"=>"plans"}
+  [4;35;1mPlan Load (0.000200)[0m   [0mSELECT * FROM `plans` ORDER BY categories, name ASC LIMIT 0, 10[0m
+  [4;36;1mPlan Columns (0.001625)[0m   [0;1mSHOW FIELDS FROM `plans`[0m
+  [4;35;1mSQL (0.000118)[0m   [0mSELECT count(*) AS count_all FROM `plans` [0m
+Rendering template within layouts/plans
+Rendering plans/list
+  [4;36;1mJoin Table Columns (0.000676)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.000081)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 66 ) [0m
+  [4;36;1mJoin Table Columns (0.000564)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.000082)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 15 ) [0m
+  [4;36;1mJoin Table Columns (0.000485)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.000076)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 72 ) [0m
+  [4;36;1mJoin Table Columns (0.000466)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.000074)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 21 ) [0m
+  [4;36;1mJoin Table Columns (0.000472)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.000073)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 76 ) [0m
+  [4;36;1mJoin Table Columns (0.000470)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.000076)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 65 ) [0m
+  [4;36;1mJoin Table Columns (0.000491)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.000074)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 73 ) [0m
+  [4;36;1mJoin Table Columns (0.000461)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.000073)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 22 ) [0m
+  [4;36;1mJoin Table Columns (0.000457)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.000071)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 77 ) [0m
+  [4;36;1mJoin Table Columns (0.000467)[0m   [0;1mSHOW FIELDS FROM `phones_plans`[0m
+  [4;35;1mPhone Load (0.000071)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_plans` ON `phones`.id = `phones_plans`.phone_id WHERE (`phones_plans`.plan_id = 67 ) [0m
+Completed in 0.05796 (17 reqs/sec) | Rendering: 0.03337 (57%) | DB: 0.00770 (13%) | 200 OK [http://localhost/plans]
