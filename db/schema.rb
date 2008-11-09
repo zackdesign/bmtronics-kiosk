@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 49) do
+ActiveRecord::Schema.define(:version => 50) do
 
   create_table "accessories", :force => true do |t|
     t.string   "name"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 49) do
     t.decimal  "corp_price",                         :precision => 9, :scale => 2
     t.decimal  "govt_price",                         :precision => 9, :scale => 2
     t.string   "brand",                                                            :default => ""
+    t.integer  "plasma"
   end
 
   create_table "charge_values", :force => true do |t|
@@ -79,6 +80,7 @@ ActiveRecord::Schema.define(:version => 49) do
     t.string   "picture_name"
     t.string   "picture_type",                       :default => "image/jpeg"
     t.binary   "picture_data", :limit => 2147483647
+    t.integer  "plasma"
   end
 
   create_table "options", :force => true do |t|

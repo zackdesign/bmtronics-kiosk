@@ -182,6 +182,22 @@ class AccessoriesController < ApplicationController
     end
     redirect_to :action => 'listarch'
   end
+  
+  def plasma
+  
+    @accessories = Accessory.find(:all)
+  
+  end
+  
+  def update_plasma
+   
+    params[:accessory].each do |id, key|
+      @accessory = Accessory.find(id)
+      @accessory.update_attributes(key)
+    end
+    
+    redirect_to :action => 'plasma'
+  end
 
   def thumbnail
     # Create a thumbnail image of the uploaded picture for the accessory list

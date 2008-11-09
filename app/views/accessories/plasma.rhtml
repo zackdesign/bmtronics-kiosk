@@ -1,0 +1,40 @@
+<h1>Plasma</h1>
+
+<% form_tag({ :action => 'update_plasma' }, :id => 'plasma') do %>
+	  <div class='buttons'>
+			<%= form_button('Submit') %>
+			<%= form_button('Undo', 'reset', 'undo.png') %>
+		</div>
+<br /><br />
+<table >
+	<thead>	
+	  <tr>
+	    <th>Accessory</th>
+	    <th>Plasma</th>
+	  </tr>
+	</thead>  
+	<tbody>
+	<% for accessory in @accessories
+	
+             plasma = 'unchecked'
+             unless accessory.plasma == 0
+               plasma = 'checked'
+             end
+             
+%>
+	  <tr class="<%= cycle("even", "odd") %>">
+	    <td><%=h accessory.name %></td>
+	    <td class="centered"><%= check_box 'accessory['+accessory.id.to_s+']', 'plasma', :checked=>plasma -%></td>
+	  </tr>
+	<% end %>
+	</tbody>
+</table>
+
+	<div class="links_bar">
+	  <div class='buttons'>
+			<%= form_button('Submit') %>
+			<%= form_button('Undo', 'reset', 'undo.png') %>
+		</div>
+	</div>
+<br /><br />
+<% end %>
