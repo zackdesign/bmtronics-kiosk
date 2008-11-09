@@ -17,7 +17,7 @@
 	<% for accessory in @accessories
 	
              plasma = 'unchecked'
-             unless accessory.plasma == 0
+             unless accessory.plasma == 0 || accessory.plasma.nil?
                plasma = 'checked'
              end
              

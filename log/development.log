@@ -1,1 +1,172 @@
 
+
+
+Processing KiosksController#index (for 127.0.0.1 at 2008-11-10 10:51:41) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"index", "controller"=>"kiosks"}
+  [4;36;1mSQL (0.000175)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mKiosk Load (0.000175)[0m   [0mSELECT * FROM `kiosks` [0m
+  [4;36;1mPhone Load (0.006142)[0m   [0;1mSELECT * FROM `phones` [0m
+Rendering template within layouts/kiosks
+Rendering kiosks/list
+  [4;35;1mKiosk Columns (0.001000)[0m   [0mSHOW FIELDS FROM `kiosks`[0m
+  [4;36;1mPhone Columns (0.001817)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+Completed in 0.06176 (16 reqs/sec) | Rendering: 0.03329 (53%) | DB: 0.00931 (15%) | 200 OK [http://localhost/kiosks]
+
+
+Processing KiosksController#index (for 127.0.0.1 at 2008-11-10 10:52:01) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"index", "controller"=>"kiosks"}
+  [4;35;1mKiosk Load (0.000205)[0m   [0mSELECT * FROM `kiosks` [0m
+  [4;36;1mPhone Load (0.006838)[0m   [0;1mSELECT * FROM `phones` [0m
+Rendering template within layouts/kiosks
+Rendering kiosks/list
+  [4;35;1mKiosk Columns (0.000951)[0m   [0mSHOW FIELDS FROM `kiosks`[0m
+  [4;36;1mPhone Columns (0.001872)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+Completed in 0.12094 (8 reqs/sec) | Rendering: 0.03075 (25%) | DB: 0.00987 (8%) | 200 OK [http://localhost/kiosks]
+
+
+Processing AccessoriesController#index (for 127.0.0.1 at 2008-11-10 10:52:02) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"index", "controller"=>"accessories"}
+  [4;35;1mAccessory Load (0.000431)[0m   [0mSELECT * FROM `accessories` WHERE (active = 1) ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mAccessory Columns (0.001673)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+  [4;35;1mSQL (0.000150)[0m   [0mSELECT count(*) AS count_all FROM `accessories` WHERE (active = 1) [0m
+Rendering template within layouts/accessories
+Rendering accessories/list
+  [4;36;1mJoin Table Columns (0.000916)[0m   [0;1mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;35;1mPhone Load (0.000366)[0m   [0mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 44 ) [0m
+  [4;36;1mPhone Columns (0.001114)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mJoin Table Columns (0.000584)[0m   [0mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;36;1mPhone Load (0.000239)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 45 ) [0m
+  [4;35;1mJoin Table Columns (0.000582)[0m   [0mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;36;1mPhone Load (0.000480)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 46 ) [0m
+  [4;35;1mJoin Table Columns (0.000593)[0m   [0mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;36;1mPhone Load (0.000416)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 47 ) [0m
+  [4;35;1mJoin Table Columns (0.000581)[0m   [0mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;36;1mPhone Load (0.000364)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 48 ) [0m
+  [4;35;1mJoin Table Columns (0.000586)[0m   [0mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;36;1mPhone Load (0.000221)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 49 ) [0m
+  [4;35;1mJoin Table Columns (0.000571)[0m   [0mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;36;1mPhone Load (0.000409)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 50 ) [0m
+  [4;35;1mJoin Table Columns (0.000593)[0m   [0mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;36;1mPhone Load (0.000211)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 51 ) [0m
+  [4;35;1mJoin Table Columns (0.000572)[0m   [0mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;36;1mPhone Load (0.000244)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 52 ) [0m
+  [4;35;1mJoin Table Columns (0.000639)[0m   [0mSHOW FIELDS FROM `phones_accessories`[0m
+  [4;36;1mPhone Load (0.000486)[0m   [0;1mSELECT * FROM `phones` INNER JOIN `phones_accessories` ON `phones`.id = `phones_accessories`.phone_id WHERE (`phones_accessories`.accessory_id = 53 ) [0m
+Completed in 0.14137 (7 reqs/sec) | Rendering: 0.11550 (81%) | DB: 0.01302 (9%) | 200 OK [http://localhost/accessories]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-10 10:52:03) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"44", "controller"=>"accessories"}
+  [4;35;1mAccessory Columns (0.001735)[0m   [0mSHOW FIELDS FROM `accessories`[0m
+  [4;36;1mAccessory Load (0.000229)[0m   [0;1mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 44) [0m
+Sending data Blackberry 8100 Extreme Hard Case.JPG
+Completed in 0.06735 (14 reqs/sec) | Rendering: 0.00055 (0%) | DB: 0.00196 (2%) | 200 OK [http://localhost/accessories/thumbnail/44]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-10 10:52:03) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"45", "controller"=>"accessories"}
+  [4;35;1mAccessory Columns (0.001031)[0m   [0mSHOW FIELDS FROM `accessories`[0m
+  [4;36;1mAccessory Load (0.000137)[0m   [0;1mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 45) [0m
+Sending data BlackBerry Euro Range Leather Pocket Black suits 8100 Series.jpg
+Completed in 0.02217 (45 reqs/sec) | Rendering: 0.00051 (2%) | DB: 0.00117 (5%) | 200 OK [http://localhost/accessories/thumbnail/45]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-10 10:52:03) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"46", "controller"=>"accessories"}
+  [4;35;1mAccessory Columns (0.001105)[0m   [0mSHOW FIELDS FROM `accessories`[0m
+  [4;36;1mAccessory Load (0.000154)[0m   [0;1mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 46) [0m
+Sending data BlackBerry Headset.jpg
+Completed in 0.07973 (12 reqs/sec) | Rendering: 0.00056 (0%) | DB: 0.00126 (1%) | 200 OK [http://localhost/accessories/thumbnail/46]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-10 10:52:03) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"47", "controller"=>"accessories"}
+  [4;35;1mAccessory Columns (0.001018)[0m   [0mSHOW FIELDS FROM `accessories`[0m
+  [4;36;1mAccessory Load (0.000133)[0m   [0;1mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 47) [0m
+Sending data BlackBerry HS-655 Bluetooth Headset.JPG
+Completed in 0.02330 (42 reqs/sec) | Rendering: 0.00056 (2%) | DB: 0.00115 (4%) | 200 OK [http://localhost/accessories/thumbnail/47]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-10 10:52:03) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"48", "controller"=>"accessories"}
+  [4;35;1mAccessory Columns (0.001022)[0m   [0mSHOW FIELDS FROM `accessories`[0m
+  [4;36;1mAccessory Load (0.000117)[0m   [0;1mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 48) [0m
+Sending data BlackBerry Lambskin Leather Swivel Holster Black.jpg
+Completed in 0.02099 (47 reqs/sec) | Rendering: 0.00052 (2%) | DB: 0.00114 (5%) | 200 OK [http://localhost/accessories/thumbnail/48]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-10 10:52:03) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"49", "controller"=>"accessories"}
+  [4;35;1mAccessory Columns (0.001053)[0m   [0mSHOW FIELDS FROM `accessories`[0m
+  [4;36;1mAccessory Load (0.000162)[0m   [0;1mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 49) [0m
+Sending data BlackBerry Pearl 81008120 Power Station with Extra Battery Charger.jpg
+Completed in 0.02468 (40 reqs/sec) | Rendering: 0.00064 (2%) | DB: 0.00122 (4%) | 200 OK [http://localhost/accessories/thumbnail/49]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-10 10:52:03) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"50", "controller"=>"accessories"}
+  [4;35;1mAccessory Columns (0.001012)[0m   [0mSHOW FIELDS FROM `accessories`[0m
+  [4;36;1mAccessory Load (0.000120)[0m   [0;1mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 50) [0m
+Sending data BlackBerry Pearl Charging Pod suits 81xx.JPG
+Completed in 0.08690 (11 reqs/sec) | Rendering: 0.00060 (0%) | DB: 0.00113 (1%) | 200 OK [http://localhost/accessories/thumbnail/50]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-10 10:52:04) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"51", "controller"=>"accessories"}
+  [4;35;1mAccessory Columns (0.001007)[0m   [0mSHOW FIELDS FROM `accessories`[0m
+  [4;36;1mAccessory Load (0.000113)[0m   [0;1mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 51) [0m
+Sending data BlackBerry Stereo Headset 2.5mm White suits 8100.jpg
+Completed in 0.02086 (47 reqs/sec) | Rendering: 0.00055 (2%) | DB: 0.00112 (5%) | 200 OK [http://localhost/accessories/thumbnail/51]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-10 10:52:04) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"52", "controller"=>"accessories"}
+  [4;35;1mAccessory Columns (0.001233)[0m   [0mSHOW FIELDS FROM `accessories`[0m
+  [4;36;1mAccessory Load (0.000131)[0m   [0;1mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 52) [0m
+Sending data BlackBerry Stereo Headset suits 8100.jpg
+Completed in 0.02111 (47 reqs/sec) | Rendering: 0.00052 (2%) | DB: 0.00136 (6%) | 200 OK [http://localhost/accessories/thumbnail/52]
+
+
+Processing AccessoriesController#thumbnail (for 127.0.0.1 at 2008-11-10 10:52:04) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"thumbnail", "id"=>"53", "controller"=>"accessories"}
+  [4;35;1mAccessory Columns (0.001077)[0m   [0mSHOW FIELDS FROM `accessories`[0m
+  [4;36;1mAccessory Load (0.000144)[0m   [0;1mSELECT * FROM `accessories` WHERE (`accessories`.`id` = 53) [0m
+Sending data BlackBerry Travel Charger.jpg
+Completed in 0.02329 (42 reqs/sec) | Rendering: 0.00052 (2%) | DB: 0.00122 (5%) | 200 OK [http://localhost/accessories/thumbnail/53]
+
+
+Processing AccessoriesController#plasma (for 127.0.0.1 at 2008-11-10 10:52:06) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1be2344511a2cdbb122a4bc8a7be78dd18f2f6f7
+  Parameters: {"action"=>"plasma", "controller"=>"accessories"}
+  [4;35;1mAccessory Load (0.007326)[0m   [0mSELECT * FROM `accessories` [0m
+Rendering template within layouts/accessories
+Rendering accessories/plasma
+  [4;36;1mAccessory Columns (0.001046)[0m   [0;1mSHOW FIELDS FROM `accessories`[0m
+Completed in 0.13349 (7 reqs/sec) | Rendering: 0.03802 (28%) | DB: 0.00837 (6%) | 200 OK [http://localhost/accessories/plasma]
