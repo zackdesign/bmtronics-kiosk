@@ -84,6 +84,22 @@ class LogosController < ApplicationController
     Logo.find(params[:id]).destroy
     redirect_to :action => 'list'
   end
+  
+  def plasma
+    
+      @logos = Logo.find(:all)
+    
+    end
+    
+    def update_plasma
+     
+      params[:logo].each do |id, key|
+        @logo = Logo.find(id)
+        @logo.update_attributes(key)
+      end
+      
+      redirect_to :action => 'plasma'
+  end
 
   def thumbnail
     # Create a thumbnail image of the uploaded picture for the logo list

@@ -20,12 +20,16 @@
 
 		
 		<li><%= link_to 'Plans', :controller => 'plans' %></li>
-				<li><%= link_to 'Bonus Options', :controller => 'options' %></li>
-				<li><%= link_to 'Phones', :controller => 'phones' %></li>
+						<li><%= link_to 'Bonus Options', :controller => 'options' %></li>
+				<li id="active"><%= link_to 'Phones', :controller => 'phones' %></li>
+			<ul>
+				<li><%= link_to 'new', :controller => 'phones', :action=>'new' %></li>
+				<li><%= link_to 'view', :controller => 'phones' %></li>
+				<li><%= link_to 'kiosks', :controller => 'kiosks' %></li>
+			</ul>	
 		<li><%= link_to 'Accessories', :controller => 'accessories' %></li>
-		<li><%= link_to 'Features', :controller => 'features' %></li>
-		<li><%= link_to 'Logos', :controller => 'logos' %></li>
-<li id="active"><%= link_to 'Kiosks', :controller => 'kiosks' %></li>
+				<li><%= link_to 'Features', :controller => 'features' %></li>
+				<li><%= link_to 'Logos', :controller => 'logos' %></li>
 
 	  </ul>
   </div>
