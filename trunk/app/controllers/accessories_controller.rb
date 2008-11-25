@@ -185,7 +185,7 @@ class AccessoriesController < ApplicationController
   
   def plasma
   
-    @accessories = Accessory.find(:all)
+    @accessories = Accessory.find(:all, :order=> "name ASC")
   
   end
   

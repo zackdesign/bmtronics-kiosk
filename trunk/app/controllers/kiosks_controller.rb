@@ -11,7 +11,7 @@ class KiosksController < ApplicationController
 
   def list
     @kiosks = Kiosk.find(:all)
-    @phones = Phone.find(:all)
+    @phones = Phone.find(:all, :order=> "name ASC")
   end
  
 

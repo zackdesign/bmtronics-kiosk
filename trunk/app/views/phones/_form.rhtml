@@ -83,7 +83,8 @@ None
 	<div class="row"><span class="label">Supplier:</span><span class="text"><%= text_field 'phone', 'supplier'  %></span></div>	
 	<div class="row"><span class="label">Part #:</span><span class="text"><%= text_field 'phone', 'partnum'  %></span></div>		
 	<div class="row"><span class="label">Stock:</span><span class="text"><%= select 'phone', 'outofstock', { 'Available' => 'false', 'Sold Out' => 'true' }, :selected => @phone.outofstock.to_s %></span></div>
-	<div class="row"><span class="label">Discontinued:</span><span class="text"><%= select 'phone', 'discontinued', { 'No' => 'false', 'Yes' => 'true' }, :selected => @phone.discontinued.to_s %></span></div>				
+	<div class="row"><span class="label">Discontinued:</span><span class="text"><%= select 'phone', 'discontinued', { 'No' => 'false', 'Yes' => 'true' }, :selected => @phone.discontinued.to_s %></span></div>
+	<div class="row"><span class="label">Coming Soon:</span><span class="text"><%= select 'phone', 'coming_soon', { 'No' => 'false', 'Yes' => 'true' }, :selected => @phone.coming_soon.to_s %></span></div>
 </div>
 
 
