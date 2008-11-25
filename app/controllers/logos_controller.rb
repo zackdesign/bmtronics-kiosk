@@ -87,7 +87,7 @@ class LogosController < ApplicationController
   
   def plasma
     
-      @logos = Logo.find(:all)
+      @logos = Logo.find(:all, :order=> "name ASC")
     
     end
     

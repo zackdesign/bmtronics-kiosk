@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 50) do
+ActiveRecord::Schema.define(:version => 51) do
 
   create_table "accessories", :force => true do |t|
     t.string   "name"
@@ -122,6 +122,7 @@ ActiveRecord::Schema.define(:version => 50) do
     t.string   "picture3_name"
     t.string   "picture3_type",                                                     :default => "image/jpeg"
     t.binary   "picture3_data", :limit => 2147483647
+    t.boolean  "coming_soon"
   end
 
   create_table "phones_accessories", :id => false, :force => true do |t|
