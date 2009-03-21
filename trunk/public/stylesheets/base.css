@@ -249,13 +249,13 @@ div.desc span.label {
 }
 
 
-div.row {
+div.row, div.mcerow {
   clear: both;
   padding-top: 10px;
 	border-bottom: 1px solid #DCDCDC;
 }
 
-div.row span.label {
+div.row span.label, div.mcerow span.label {
   width: 200px;	
   float: left;
   text-align: right;
@@ -268,6 +268,10 @@ div.row span.text, div.row table {
 	padding-left: 10px;
   width: 390px;
   text-align: left;
+}
+
+div.mcerow span.text {
+  float: right;
 }
 
 div.row table{
