@@ -1,6 +1,7 @@
 <%= error_messages_for 'phone' %>
 
 
+
 <p>Current picture(s)</p>
 
 <table style='border: 0px; padding: 0px;'>
@@ -39,9 +40,9 @@ None
 	<div class="row"><span class="label">Name:</span><span class="text"><%= text_field 'phone', 'name'  %></span></div>
 	<div class="row"><span class="label">Brand:</span><span class="text"><%= show_brands(@phone) %></span></div>
 	<div class="row"><span class="label">Network (Next G, GSM):</span><span class="text"><%= text_field 'phone', 'network'  %></span></div>
-	<div class="desc"><span class="label">Description:</span><span class="text"><%= text_area 'phone', 'description'  %></span></div>	
+		
 </div>
-
+<div class="desc"><span class="label">Description:</span><span class="text"><%= text_area 'phone', 'description'  %></span></div>
 <label for="phone_features">Features</label>
 <div id="tab_view_features">
 <% if @tab %>
