@@ -66,7 +66,17 @@
         <div class="mcerow"><span class="label">Description:</span><span class="text"><%= text_area 'plan', 'description'  %></span></div>
 	<div class="mcerow"><span class="label">Comments:</span><span class="text"><%= text_area 'plan', 'comments'  %></span></div>
 	<div class="row"><span class="label">Codes:</span><span class="text"><%= text_field 'plan', 'code'  %></span></div>
-	<div class="row"><span class="label">Contract Period (e.g. 12,18,24):</span><span class="text"><%= text_field 'plan', 'period'  %></span></div>
+	<div class="row">
+		<span class="label">Contract Period:</span>
+		<span class="text">
+			<ul>
+				<li><input type="checkbox" name="plan[plan_contract_set][]" value="12" <% if @plan.period.include?("12") %>checked="checked"<% end %> /><label>12 months</label></li>
+				<li><input type="checkbox" name="plan[plan_contract_set][]" value="18" <% if @plan.period.include?("18") %>checked="checked"<% end %> /><label>18 months</label></li>
+				<li><input type="checkbox" name="plan[plan_contract_set][]" value="24" <% if @plan.period.include?("24") %>checked="checked"<% end %> /><label>24 months</label></li>
+			</ul>
+			<input name="plan[plan_contract_set][]" type="hidden" value="" />
+		</span>
+	</div>
 </div>
 
 <%# *** phones includes in this plan %>
