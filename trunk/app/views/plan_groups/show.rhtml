@@ -4,6 +4,7 @@
 	<div class="row"><span class="label">Categories:</span><span class="text"><%= list_categories(@plan_group) %></span></div>
 	<div class="row"><span class="label">Description:</span><span class="text"><%=h @plan_group.description  %></span></div>
 	<div class="row"><span class="label">Discontinued:</span><span class="text"><%= ((@plan_group.discontinued?) ? "Yes" : "No") %></span></div>
+	<div class="row"><span class="label">MRO applies to all phones:</span><span class="text"><%= ((@plan_group.applies_all_phones?) ? "Yes" : "No") %></span></div>
 
 	<div class="row"><span class="label">Plans:</span>
 	<% if @plan_group.plans.length > 0 -%>

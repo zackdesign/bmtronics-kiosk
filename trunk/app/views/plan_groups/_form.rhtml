@@ -16,6 +16,14 @@
 	</span></div>
 	<div class="row"><span class="label">Discontinued:</span><span class="text"><%= select 'plan_group', 'discontinued', { 'No' => 'false', 'Yes' => 'true' }, :selected => @plan_group.discontinued.to_s %></span></div>
 </div>
+
+<div class="row_container">
+	<div class="row">
+		<span class="label">MRO applies to all phones:</span>
+		<span class="text"><label for="plan_group[applies_to_all]"><%= check_box "plan_group", "applies_all_phones" %></label></span>
+	</div>
+</div>
+
 <p><label for="plan_group_plans">Plans</label><br/>
 <% if @plans
      for plan in @plans %>
