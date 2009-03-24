@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 51) do
+ActiveRecord::Schema.define(:version => 53) do
 
   create_table "accessories", :force => true do |t|
     t.string   "name"
@@ -29,14 +29,14 @@ ActiveRecord::Schema.define(:version => 51) do
     t.decimal  "corp_price",                         :precision => 9, :scale => 2
     t.decimal  "govt_price",                         :precision => 9, :scale => 2
     t.string   "brand",                                                            :default => ""
-    t.integer  "plasma"
+    t.integer  "plasma",       :limit => 11
   end
 
   create_table "charge_values", :force => true do |t|
     t.text     "value"
-    t.integer  "charge_id"
-    t.integer  "plan_id"
-    t.integer  "plan_group_id"
+    t.integer  "charge_id",     :limit => 11
+    t.integer  "plan_id",       :limit => 11
+    t.integer  "plan_group_id", :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -59,15 +59,15 @@ ActiveRecord::Schema.define(:version => 51) do
   end
 
   create_table "kiosks", :id => false, :force => true do |t|
-    t.integer "phone_id", :null => false
-    t.integer "kiosk",    :null => false
+    t.integer "phone_id", :limit => 11, :null => false
+    t.integer "kiosk",    :limit => 11, :null => false
   end
 
   create_table "line_items", :force => true do |t|
-    t.integer "product_id",                                :null => false
-    t.integer "order_id",                                  :null => false
-    t.integer "quantity",                                  :null => false
-    t.decimal "total_price", :precision => 8, :scale => 2, :null => false
+    t.integer "product_id",  :limit => 11,                               :null => false
+    t.integer "order_id",    :limit => 11,                               :null => false
+    t.integer "quantity",    :limit => 11,                               :null => false
+    t.decimal "total_price",               :precision => 8, :scale => 2, :null => false
   end
 
   add_index "line_items", ["product_id"], :name => "fk_line_item_products"
@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(:version => 51) do
     t.string   "picture_name"
     t.string   "picture_type",                       :default => "image/jpeg"
     t.binary   "picture_data", :limit => 2147483647
-    t.integer  "plasma"
+    t.integer  "plasma",       :limit => 11
   end
 
   create_table "options", :force => true do |t|
@@ -92,9 +92,9 @@ ActiveRecord::Schema.define(:version => 51) do
 
   create_table "orders", :force => true do |t|
     t.string "name"
-    t.text   "address"
+    t.text   "message"
     t.string "email"
-    t.string "pay_type", :limit => 10
+    t.string "phone_no"
   end
 
   create_table "phones", :force => true do |t|
@@ -126,23 +126,23 @@ ActiveRecord::Schema.define(:version => 51) do
   end
 
   create_table "phones_accessories", :id => false, :force => true do |t|
-    t.integer "phone_id",     :null => false
-    t.integer "accessory_id", :null => false
+    t.integer "phone_id",     :limit => 11, :null => false
+    t.integer "accessory_id", :limit => 11, :null => false
   end
 
   add_index "phones_accessories", ["phone_id", "accessory_id"], :name => "index_phones_accessories_on_phone_id_and_accessory_id"
 
   create_table "phones_features", :id => false, :force => true do |t|
-    t.integer "phone_id",   :null => false
-    t.integer "feature_id", :null => false
+    t.integer "phone_id",   :limit => 11, :null => false
+    t.integer "feature_id", :limit => 11, :null => false
   end
 
   add_index "phones_features", ["phone_id", "feature_id"], :name => "index_phones_features_on_phone_id_and_feature_id"
 
   create_table "phones_plans", :force => true do |t|
-    t.integer "plan_id",                                    :default => 0
-    t.integer "phone_id",                                   :default => 0
-    t.decimal "handset_cost", :precision => 9, :scale => 2
+    t.integer "plan_id",      :limit => 24,                               :default => 0
+    t.integer "phone_id",     :limit => 24,                               :default => 0
+    t.decimal "handset_cost",               :precision => 9, :scale => 2
   end
 
   add_index "phones_plans", ["phone_id", "plan_id"], :name => "index_phones_plans_on_phone_id_and_plan_id"
@@ -154,8 +154,8 @@ ActiveRecord::Schema.define(:version => 51) do
 #   Unknown type 'set('consumer','business','corporate','government')' for column 'categories'
 
   create_table "plans_options", :id => false, :force => true do |t|
-    t.integer "plan_id",   :null => false
-    t.integer "option_id", :null => false
+    t.integer "plan_id",   :limit => 11, :null => false
+    t.integer "option_id", :limit => 11, :null => false
   end
 
   add_index "plans_options", ["plan_id", "option_id"], :name => "index_plans_options_on_plan_id_and_option_id"
@@ -165,6 +165,10 @@ ActiveRecord::Schema.define(:version => 51) do
     t.text    "description"
     t.string  "image_url"
     t.decimal "price",       :precision => 8, :scale => 2, :default => 0.0
+  end
+
+  create_table "schema_info", :id => false, :force => true do |t|
+    t.integer "version", :limit => 11
   end
 
   create_table "sessions", :force => true do |t|
