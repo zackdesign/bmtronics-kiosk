@@ -35,6 +35,12 @@ class Plan < ActiveRecord::Base
     self.categories = categories;
   end
 
+  def plan_contract_set=(new_periods)
+    @local_new_periods = new_periods.delete_if { |period| period.empty? }
+    periods = @local_new_periods.join(",")
+    self.period = periods;
+  end
+
   def plan_phones_handset_set=(new_handsets)
     @local_new_handsets = new_handsets
     @ids = nil

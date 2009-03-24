@@ -5,7 +5,7 @@
 
 	<div class="row"><span class="label">Comments:</span><span class="text"><%=h @plan.comments %></span></div>
 	<div class="row"><span class="label">Codes:</span><span class="text"><%=h @plan.code %></span></div>
-	<div class="row"><span class="label">Contract Period (months):</span><span class="text"><%=  @plan.period %></span></div>
+	<div class="row"><span class="label">Contract Period (months):</span><span class="text"><%= @plan.period.empty? ? "None" : @plan.period %></span></div>
 	<div class="row"><span class="label">Phones included in this plan:</span><span class="text">
 	<% if @plan.phones.length > 0 %>
 		<table>
