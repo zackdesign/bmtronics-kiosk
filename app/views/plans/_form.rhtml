@@ -70,9 +70,21 @@
 		<span class="label">Contract Period:</span>
 		<span class="text">
 			<ul>
-				<li><input type="checkbox" name="plan[plan_contract_set][]" value="12" <% if @plan.period.include?("12") %>checked="checked"<% end %> /><label>12 months</label></li>
-				<li><input type="checkbox" name="plan[plan_contract_set][]" value="18" <% if @plan.period.include?("18") %>checked="checked"<% end %> /><label>18 months</label></li>
-				<li><input type="checkbox" name="plan[plan_contract_set][]" value="24" <% if @plan.period.include?("24") %>checked="checked"<% end %> /><label>24 months</label></li>
+				<li><input type="checkbox" name="plan[plan_contract_set][]" value="12" 
+				<% unless @plan.period.blank?
+				   if @plan.period.include?("12") %>
+				    checked="checked"
+				<% end end %> /><label>12 months</label></li>
+				<li><input type="checkbox" name="plan[plan_contract_set][]" value="18" 
+				<% unless @plan.period.blank?
+				   if @plan.period.include?("18") %>
+				    checked="checked"
+				<% end end %> /><label>18 months</label></li>
+				<li><input type="checkbox" name="plan[plan_contract_set][]" value="24" 
+				<% unless @plan.period.blank?
+				   if @plan.period.include?("24") %>
+				    checked="checked"
+				<% end end %> /><label>24 months</label></li>
 			</ul>
 			<input name="plan[plan_contract_set][]" type="hidden" value="" />
 		</span>
@@ -80,7 +92,7 @@
 </div>
 
 <%# *** phones includes in this plan %>
-<p>Phones included in this plan:</p>
+<p  style="clear: both">Phones included in this plan:</p>
 <p><table><tr><th>Handset</th><th>Handset Cost</th></tr>
 <% for phone in @phones %>
 <tr>
