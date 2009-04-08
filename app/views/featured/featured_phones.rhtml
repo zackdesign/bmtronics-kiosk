@@ -1,0 +1,42 @@
+<h1>Featured Phones</h1>
+<p>More than three phones chosen? A random set of three will be chosen on each load...</p>
+<% form_tag({ :action => 'submit_phones' }, :id => 'phones') do %>
+	  <div class='buttons'>
+			<%= form_button('Submit') %>
+			<%= form_button('Undo', 'reset', 'undo.png') %>
+		</div>
+<br /><br />
+<table style="width: 600px;">
+	<thead>	
+	  <tr>
+	    <th>Phone</th>
+	    <th>Featured</th>
+	  </tr>
+	</thead>  
+	<tbody>
+	<% for phone in @phones 
+             
+             featured = false    
+
+           for f in @featured
+             if f.phone_id  == phone.id
+               featured = true
+             end
+           end
+%>
+	  <tr class="<%= cycle("even", "odd") %>">
+	    <td><%=h phone.name %></td>
+	    <td class="centered"><%= check_box_tag 'featured['+phone.id.to_s+']', phone.id, featured -%></td>
+	  </tr>
+	<% end %>
+	</tbody>
+</table>
+
+	<div class="links_bar">
+	  <div class='buttons'>
+			<%= form_button('Submit') %>
+			<%= form_button('Undo', 'reset', 'undo.png') %>
+		</div>
+	</div>
+<br /><br />
+<% end %>
