@@ -1,0 +1,48 @@
+<h1>Featured & Latest Accessories</h1>
+<p>More than three of each featured? A random set of three will be chosen on each load... For Latest this will show a random subset of 10.</p>
+
+<% form_tag({ :action => 'submit_accessories' }, :id => 'accessories') do %>
+	  <div class='buttons'>
+			<%= form_button('Submit') %>
+			<%= form_button('Undo', 'reset', 'undo.png') %>
+		</div>
+<br /><br />
+<table style="width: 600px;">
+	<thead>	
+	  <tr>
+	    <th>Accessory</th>
+	    <th>Featured</th>
+	    <th>Latest</th>
+	  </tr>
+	</thead>  
+	<tbody>
+	<% for accessory in @accessories
+             
+             featured = false    
+             latest  = false
+
+           for f in @featured
+             if f.accessory_id  == accessory.id && f.atype == 'featured'
+               featured = true
+             elsif f.accessory_id  == accessory.id && f.atype == 'latest'
+               latest = true
+             end
+           end
+%>
+	  <tr class="<%= cycle("even", "odd") %>">
+	    <td><%=h accessory.name %></td>
+	    <td class="centered"><%= check_box_tag 'featured['+accessory.id.to_s+']', accessory.id, featured -%></td>
+	    <td class="centered"><%= check_box_tag 'latest['+accessory.id.to_s+']', accessory.id, latest -%></td>
+	  </tr>
+	<% end %>
+	</tbody>
+</table>
+
+	<div class="links_bar">
+	  <div class='buttons'>
+			<%= form_button('Submit') %>
+			<%= form_button('Undo', 'reset', 'undo.png') %>
+		</div>
+	</div>
+<br /><br />
+<% end %>

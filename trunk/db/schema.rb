@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 53) do
+ActiveRecord::Schema.define(:version => 55) do
 
   create_table "accessories", :force => true do |t|
     t.string   "name"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 53) do
     t.decimal  "govt_price",                         :precision => 9, :scale => 2
     t.string   "brand",                                                            :default => ""
     t.integer  "plasma"
+    t.integer  "popularity",                                                       :default => 0
   end
 
   create_table "charge_values", :force => true do |t|
@@ -45,6 +46,15 @@ ActiveRecord::Schema.define(:version => 53) do
     t.text     "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "featured_accessories", :id => false, :force => true do |t|
+    t.integer "accessory_id", :null => false
+    t.text    "type",         :null => false
+  end
+
+  create_table "featured_phones", :id => false, :force => true do |t|
+    t.integer "phone_id", :null => false
   end
 
   create_table "features", :force => true do |t|
@@ -133,6 +143,7 @@ ActiveRecord::Schema.define(:version => 53) do
     t.string   "picture3_type",                                                     :default => "image/jpeg"
     t.binary   "picture3_data", :limit => 2147483647
     t.boolean  "coming_soon"
+    t.integer  "popularity",                                                        :default => 0
   end
 
   create_table "phones_accessories", :id => false, :force => true do |t|

@@ -34,10 +34,10 @@
 		<li><%= link_to 'Phones', :controller => 'phones' %></li>
 		<li id="active"><%= link_to 'Accessories', :controller => 'accessories' %></li>
 			<ul>
-				<li><%= link_to_new %></li>
-				<li><%= link_to_view %></li>
-				<li><%= link_to_archive %></li>
-				<li><%= link_to 'plasma', :action=>'plasma' %>
+				<li><%= link_to 'new', :controller => 'accessories', :action=>'new' %>
+				<li><%= link_to 'view', :controller => 'accessories', :action=>'list' %>
+				<li><%= link_to 'archive', :controller => 'accessories', :action=>'listarch' %>
+				<li><%= link_to 'plasma', :controller => 'accessories', :action=>'plasma' %>
 				<li><%= link_to 'featured &amp; latest', :controller => 'featured', :action=>'featured_accessories' %>
 			</ul>
 		<li><%= link_to 'Features', :controller => 'features' %></li>
