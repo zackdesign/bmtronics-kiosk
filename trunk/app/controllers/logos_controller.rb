@@ -12,7 +12,7 @@ class LogosController < ApplicationController
          :redirect_to => { :action => :list }
 
   def list
-    @logos = Logo.paginate :page => params[:page], :per_page => 7, :order => 'name ASC'
+    @logos = Logo.paginate :page => params[:page], :per_page => 10, :order => 'name ASC'
   end
 
   def new

@@ -12,7 +12,12 @@ class PhonesController < ApplicationController
          :redirect_to => { :action => :list }
 
   def list
-    @phones = Phone.paginate :page => params[:page], :per_page => 10, :order => 'name ASC'
+    @phones = Phone.paginate :page => params[:page], :per_page => 10, :order => 'name ASC', :conditions => 'discontinued = 0'
+  end
+
+  def archived
+    @phones = Phone.paginate :page => params[:page], :per_page => 10, :order => 'name ASC', :conditions => 'discontinued = 1'
+    render :action=>'list'
   end
 
   def show

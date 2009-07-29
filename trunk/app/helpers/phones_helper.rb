@@ -39,7 +39,7 @@ module PhonesHelper
       content_tag(:span, phone.accessories.count)
     end
   end
-  
+
   private
   def list_related_features(phone)
     result = ""

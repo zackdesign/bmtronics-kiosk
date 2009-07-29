@@ -12,11 +12,11 @@ class FeaturesController < ApplicationController
          :redirect_to => { :action => :list }
 
   def list
-    @features = Feature.paginate :page => params[:page], :per_page => 7, :order => 'name ASC', :conditions => 'active = 1'
+    @features = Feature.paginate :page => params[:page], :per_page => 10, :order => 'name ASC', :conditions => 'active = 1'
   end
 
   def listarch
-    @features = Feature.paginate :page => params[:page], :per_page => 7, :order => 'name ASC', :conditions => 'active = 0'
+    @features = Feature.paginate :page => params[:page], :per_page => 10, :order => 'name ASC', :conditions => 'active = 0'
     render :action => 'list'
   end
 
