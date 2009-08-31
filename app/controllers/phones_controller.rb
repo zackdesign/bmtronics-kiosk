@@ -29,6 +29,7 @@ class PhonesController < ApplicationController
     @accessories = Accessory.find(:all, :order => 'name ASC')
     @features = Feature.find(:all, :order => 'name ASC')
 
+
     # Create the Accessory tabs
     @current_letter = ''
     @accessory_letters = Array.new
@@ -99,6 +100,7 @@ class PhonesController < ApplicationController
   def create
     @phone = Phone.new(params[:phone])
     if @phone.save
+      quick_add_to_plans
       flash[:notice] = 'Phone was successfully created.'
       redirect_to :action => 'list'
     else
@@ -258,7 +260,15 @@ class PhonesController < ApplicationController
       @old_pic3_data = @phone.picture3_data
     end
 
+    # Bulk add to plans - at the moment it only adds the first plan chosen, needs to add successive plans
+    unless params[:plan][:plan_id].empty?
+      new_plan = PhonesPlans.find_or_create_by_plan_id_and_phone_id(params[:id], params[:plan][:plan_id])
+      new_plan.handset_cost = '0'
+      new_plan.save
+    end
+
     if @phone.update_attributes(params[:phone])
+      quick_add_to_plans
       flash[:notice] = 'Phone was successfully updated.'
       redirect_to :action => 'show', :id => @phone
     else
@@ -342,4 +352,14 @@ class PhonesController < ApplicationController
     send_data @phone.picture3_data, :filename => @phone.picture3_name,
               :type => @phone.picture3_type, :disposition => "inline"
   end
+
+  private
+
+    def quick_add_to_plans
+      plan_group = PlanGroup.find_by_id(params[:plan_group_id])
+      minimum_monthly_cost = params[:minimum_monthly_cost].to_i
+      if plan_group && minimum_monthly_cost != 0
+        @phone.add_to_plans(plan_group, minimum_monthly_cost)
+      end
+    end
 end

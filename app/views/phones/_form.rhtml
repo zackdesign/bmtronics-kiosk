@@ -40,7 +40,7 @@ None
 	<div class="row"><span class="label">Name:</span><span class="text"><%= text_field 'phone', 'name'  %></span></div>
 	<div class="row"><span class="label">Brand:</span><span class="text"><%= show_brands(@phone) %></span></div>
 	<div class="row"><span class="label">Network (Next G, GSM):</span><span class="text"><%= text_field 'phone', 'network'  %></span></div>
-		
+    
 </div>
 <div class="desc"><span class="label">Description:</span><span class="text"><%= text_area 'phone', 'description'  %></span></div>
 <label for="phone_features">Features</label>
@@ -69,6 +69,9 @@ None
 	</div>
 <% end -%>
 </div>
+
+
+
 <label for="phone[features_to_phones][]"><%= check_box_tag 'phone[features_to_phones][]', -1, false -%>Remove all features from phone</label>
 <% feature_tabs = "Array('" << @feature_letters.join("', '") << "')" %>
 <%= javascript_tag "initTabs('tab_view_features', " << feature_tabs << ", 0, 600, '');" %>
@@ -126,3 +129,18 @@ None
 
 <% end %>
 
+<div class="row">
+  <span class="label">Quick Add to Plans:</span>
+  <span class="text">
+    <%= select_tag 'plan_group_id', "<option value=''>None</option>" +
+      options_from_collection_for_select(
+        PlanGroup.named("phone"), :id, :name) %>
+    <%= observe_field 'plan_group_id',
+      :url => { :controller => 'plan_groups', :action => 'monthly_costs' },
+      :with => "'id=' + $('plan_group_id').value",
+      :update => 'minimum_monthly_cost' %>
+    :
+    <%= select_tag 'minimum_monthly_cost' %>
+    and above
+  </span>
+</div>

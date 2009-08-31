@@ -46,6 +46,15 @@
 </div>
 
 <div class="row_container">
+	<div class="row">
+    <span class="label">Plans:</span>		
+    <span class="text">
+      <%=h @phone.plans.to_sentence %>
+    </span>
+  </div>
+</div>
+
+<div class="row_container">
 		<div class="row"><span class="label">Created:</span><span class="text"><%= @phone.created_at.strftime("%b %d %Y at %H:%M:%S") %></span></div>
 		<div class="row"><span class="label">Updated:</span><span class="text"><%= @phone.updated_at.strftime("%b %d %Y at %H:%M:%S") %></span></div>
 </div>
