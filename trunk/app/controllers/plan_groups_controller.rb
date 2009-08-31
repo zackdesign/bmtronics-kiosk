@@ -56,4 +56,11 @@ class PlanGroupsController < ApplicationController
     PlanGroup.find(params[:id]).destroy
     redirect_to :action => 'list'
   end        
+
+  def monthly_costs
+    @plan_group = PlanGroup.find(params[:id])
+    render :layout => false
+  rescue
+    render :text => ''
+  end
 end

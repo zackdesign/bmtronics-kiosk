@@ -51,5 +51,6 @@ module PhonesHelper
     result = ""
     phone.accessories.each{|a| result << content_tag(:li, a.name)}
     content_tag(:div, content_tag(:ul, result), :id => "phone#{phone.id}_accessories")
-  end  
+  end
+
 end
