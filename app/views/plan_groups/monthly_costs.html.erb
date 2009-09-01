@@ -1,0 +1,6 @@
+<option></option>
+<% for plan in @plan_group.plans %>
+  <% if plan.monthly_cost %>
+    <option value="<%= plan.monthly_cost %>">$<%= plan.monthly_cost %></option>
+  <% end %>
+<% end %>
