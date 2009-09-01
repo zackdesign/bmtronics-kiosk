@@ -30,4 +30,14 @@ class PlanGroup < ActiveRecord::Base
     @local_new_plan_ids = new_plan_ids
     self.plans = Plan.find(@local_new_plan_ids)
   end
+
+  def plans_costing_at_least(minimum_monthly_cost)
+    plans.select do |plan|
+      plan.monthly_cost && plan.monthly_cost >= minimum_monthly_cost
+    end
+  end
+
+  def self.named(part_name)
+    find(:all, :conditions => ["name LIKE ?", "%#{part_name}%"])
+  end
 end

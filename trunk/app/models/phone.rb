@@ -32,6 +32,7 @@ class Phone < ActiveRecord::Base
 
   has_and_belongs_to_many :accessories, :join_table => "phones_accessories"
   has_and_belongs_to_many :features, :join_table => "phones_features"
+  has_and_belongs_to_many :plans, :join_table => "phones_plans"
   
 
   def picture=(picture_data_field)
@@ -80,5 +81,12 @@ class Phone < ActiveRecord::Base
       @features = Feature.find(@local_feature_ids)
     end
     self.features = @features
+  end
+
+  def add_to_plans(plan_group, minimum_monthly_cost)
+    save or return if new_record?
+    plan_group.plans_costing_at_least(minimum_monthly_cost).each do |plan|
+      PhonesPlans.add id, plan.id
+    end
   end
 end
