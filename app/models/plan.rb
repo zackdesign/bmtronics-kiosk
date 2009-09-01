@@ -144,4 +144,16 @@ class Plan < ActiveRecord::Base
     
     self.charges = @charges
   end
+
+  #
+  # Pseudo-field derived from name -- the first integer found in the name
+  #
+  def monthly_cost
+    cost = name[/\d+/].to_i
+    cost unless cost == 0
+  end
+
+  def to_s
+    name
+  end
 end
