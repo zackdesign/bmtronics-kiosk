@@ -260,13 +260,6 @@ class PhonesController < ApplicationController
       @old_pic3_data = @phone.picture3_data
     end
 
-    # Bulk add to plans - at the moment it only adds the first plan chosen, needs to add successive plans
-    unless params[:plan][:plan_id].empty?
-      new_plan = PhonesPlans.find_or_create_by_plan_id_and_phone_id(params[:id], params[:plan][:plan_id])
-      new_plan.handset_cost = '0'
-      new_plan.save
-    end
-
     if @phone.update_attributes(params[:phone])
       quick_add_to_plans
       flash[:notice] = 'Phone was successfully updated.'
