@@ -132,15 +132,20 @@ None
 <div class="row">
   <span class="label">Quick Add to Plans:</span>
   <span class="text">
-    <%= select_tag 'plan_group_id', "<option value=''>None</option>" +
-      options_from_collection_for_select(
-        PlanGroup.named("phone"), :id, :name) %>
-    <%= observe_field 'plan_group_id',
-      :url => { :controller => 'plan_groups', :action => 'monthly_costs' },
-      :with => "'id=' + $('plan_group_id').value",
-      :update => 'minimum_monthly_cost' %>
-    :
-    <%= select_tag 'minimum_monthly_cost' %>
-    and above
+    <select name="add_to_plans">
+      <option value="">None</option>
+      <% for plan_group in PlanGroup.named("phone") %>
+        <optgroup label="<%=h plan_group.name.pluralize %>">
+          <% for plan in plan_group.plans %>
+            <% if plan.monthly_cost %>
+              <option value="<%= plan_group.id %>,<%= plan.monthly_cost %>">
+                $<%= plan.monthly_cost %>+
+                <%=h plan_group.name.pluralize %>
+              </option>
+            <% end %>
+          <% end %>
+        </optgroup>
+      <% end %>
+    </select>
   </span>
 </div>
