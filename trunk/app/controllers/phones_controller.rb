@@ -349,8 +349,9 @@ class PhonesController < ApplicationController
   private
 
     def quick_add_to_plans
-      plan_group = PlanGroup.find_by_id(params[:plan_group_id])
-      minimum_monthly_cost = params[:minimum_monthly_cost].to_i
+      plan_group_id, minimum_monthly_cost = params[:add_to_plans].split(',')
+      plan_group = PlanGroup.find_by_id(plan_group_id)
+      minimum_monthly_cost = minimum_monthly_cost.to_i
       if plan_group && minimum_monthly_cost != 0
         @phone.add_to_plans(plan_group, minimum_monthly_cost)
       end
